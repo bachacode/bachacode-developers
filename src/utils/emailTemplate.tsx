@@ -14,29 +14,23 @@ export default function generateContactEmail({
   message,
 }: EmailTemplateProps) {
   return `
-    <div className="p-6 bg-white text-gray-800">
-      <h1 className="text-2xl font-bold text-primary mb-4">
-        Nuevo mensaje de contacto
-      </h1>
-      <p className="mb-2">
-        <span className="font-semibold">Nombre:</span> ${name}
-      </p>
-      <p className="mb-2">
-        <span className="font-semibold">Empresa:</span> ${
-          company ? company : "Sin empresa"
-        }
-      </p>
-      <p className="mb-2">
-        <span className="font-semibold">Correo electrónico:</span> ${email}
-      </p>
-      <p className="mb-2">
-        <span className="font-semibold">Asunto:</span> ${subject}
-      </p>
-      <p className="mb-2">
-        <span className="font-semibold">Mensaje:</span> ${
-          message ? message : "Sin mensaje"
-        }
-      </p>
+     <div style="font-family: Arial, sans-serif; color: #333;">
+      <div style="background-color: #f8f8f8; padding: 20px;">
+        <h2 style="color: #1B4965;">Nuevo Mensaje de Contacto</h2>
+        <div style="background-color: #fff; border-radius: 8px; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+          <p style="color: #1B4965; font-weight: bold;">Nombre completo:</p>
+          <p>${name}</p>
+          <p style="color: #1B4965; font-weight: bold;">Compañia:</p>
+          <p>${company ?? "Sin compañia"}</p>
+          <p style="color: #1B4965; font-weight: bold;">Correo electrónico:</p>
+          <p>${email}</p>
+          <p style="color: #1B4965; font-weight: bold;">Asunto:</p>
+          <p>${subject}</p>
+          <p style="color: #1B4965; font-weight: bold;">Mensaje:</p>
+          <p>${message.trim() != "" ? message : "Sin mensaje"}</p>
+        </div>
+        <p style="color: #FF5C10; text-align: center;">¡Gracias por comunicarte con nosotros!</p>
+      </div>
     </div>
   `;
 }

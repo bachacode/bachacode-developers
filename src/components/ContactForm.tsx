@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { z } from "zod";
 import {
   Form,
@@ -14,6 +14,9 @@ import { Button } from "./ui/button";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Textarea } from "./ui/textarea";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 
 const formSchema = z.object({
   name: z
@@ -48,22 +51,6 @@ const formSchema = z.object({
   ),
 });
 
-export function sendEmail(data: z.infer<typeof formSchema>) {
-  const apiEndpoint = "/api/contacto";
-
-  fetch(apiEndpoint, {
-    method: "POST",
-    body: JSON.stringify(data),
-  })
-    .then((res) => res.json())
-    .then((response) => {
-      alert(response.message);
-    })
-    .catch((err) => {
-      alert(err);
-    });
-}
-
 export default function ContactForm() {
   // 1. Define your form.
   const form = useForm<z.infer<typeof formSchema>>({
@@ -76,10 +63,44 @@ export default function ContactForm() {
       message: "",
     },
   });
+  const [notification, setNotification] = useState("");
+  const [loading, setLoading] = useState(false);
+  const { executeRecaptcha } = useGoogleReCaptcha();
 
   // 2. Define a submit handler.
   function onSubmit(data: z.infer<typeof formSchema>) {
-    sendEmail(data);
+    setLoading(true);
+    if (!executeRecaptcha) {
+      setNotification(
+        "Algo ha fallado con la llave del reCAPTCHA, pongase en contacto con la administración por otros medios."
+      );
+      setLoading(false);
+      return;
+    }
+    executeRecaptcha("enquiryFormSubmit").then((gReCaptchaToken) => {
+      sendEmail(gReCaptchaToken, data);
+    });
+  }
+
+  function sendEmail(
+    gReCaptchaToken: string,
+    data: z.infer<typeof formSchema>
+  ) {
+    const apiEndpoint = "/api/contacto";
+
+    fetch(apiEndpoint, {
+      method: "POST",
+      body: JSON.stringify({ ...data, gReCaptchaToken }),
+    })
+      .then((res) => res.json())
+      .then((response) => {
+        setNotification(response.message);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setNotification(err.message);
+        setLoading(false);
+      });
   }
 
   return (
@@ -165,12 +186,32 @@ export default function ContactForm() {
             </FormItem>
           )}
         />
-        <Button
-          type="submit"
-          className="w-full bg-primary hover:bg-orange-primary-400"
-        >
-          Enviar
-        </Button>
+        <div className="relative">
+          {loading ? (
+            <Button
+              type="submit"
+              className="w-full bg-orange-primary-400"
+              disabled
+            >
+              <FontAwesomeIcon
+                className="animate-spin w-6 h-6 cursor-not-allowed"
+                icon={faSpinner}
+              />
+            </Button>
+          ) : (
+            <Button
+              type="submit"
+              className="w-full bg-primary hover:bg-orange-primary-400"
+            >
+              Enviar
+            </Button>
+          )}
+          {notification && (
+            <p className="absolute mt-3  text-accent text-center w-full">
+              {notification}
+            </p>
+          )}
+        </div>
       </form>
     </Form>
   );

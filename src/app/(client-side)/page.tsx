@@ -16,6 +16,11 @@ import TechCarousel from "@/components/TechCarousel";
 import Heading from "@/components/Heading";
 import TeamCard from "@/components/TeamCard";
 import OfferingCard from "@/components/OfferingCard";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Bachacode Developers | Desarrollo Web & Consultoría de proyectos",
+};
 
 export default function Home() {
   return (
@@ -24,7 +29,7 @@ export default function Home() {
       <div className="w-full bg-orange-primary-50 flex flex-col items-center">
         <div className="container min-h-screen flex flex-col items-center justify-center space-y-8">
           {/* Title */}
-          <div className="flex flex-col items-center w-1/2 text-center">
+          <div className="flex flex-col items-center lg:w-1/2 text-center">
             <h1
               id="hero"
               className="font-bold text-6xl lg:text-6xl tracking-widest pb-3"
@@ -45,15 +50,15 @@ export default function Home() {
       {/* About us section */}
       <div className="flex flex-col items-center p-6 lg:p-12">
         <div className="flex w-full justify-around container">
-          <div className="flex flex-col lg:w-7/12 lg:pr-6 items-center lg:items-start">
+          <div className="relative flex flex-col lg:w-7/12 lg:pr-6 items-center lg:items-start">
             <h2
               id="about"
-              className="font-bold text-4xl pb-3 lg:pb-0 text-center lg:text-left text-accent"
+              className="font-bold text-4xl pb-4 lg:pb-0 text-center lg:text-left text-accent"
             >
               Conectando el Futuro: Nuestra Historia en el Mundo de la
               Tecnología.
             </h2>
-            <div className="w-36 border-t-2 border-primary pb-6 "></div>
+            <div className="w-36 border-t-2 border-primary pb-6 mt-1.5"></div>
             <p className="text-base lg:text-2xl pb-3">
               Somos un equipo de expertos en desarrollo web dedicados a crear
               soluciones digitales personalizadas que se ajusten a tus
@@ -67,15 +72,27 @@ export default function Home() {
               asegurándonos de que cada detalle esté alineado con tus objetivos
               y visión.
             </p>
+
+            <div className="lg:hidden absolute h-48 top-24 max-w-sm w-full self-center">
+              <Image
+                src="/images/bachacode-big.png"
+                className="relative z-10 rounded-r-xl rounded-tl-xl opacity-20"
+                alt="Bachacode logo"
+                fill={true}
+                style={{ objectFit: "contain" }}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              />
+            </div>
           </div>
 
-          <div className="w-[380px] relative">
+          <div className="hidden lg:block relative h-48 max-w-sm w-full self-center">
             <Image
               src="/images/bachacode-big.png"
               className="relative z-10 rounded-r-xl rounded-tl-xl"
               alt="Bachacode logo"
               fill={true}
               style={{ objectFit: "contain" }}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
           </div>
         </div>
@@ -120,7 +137,7 @@ export default function Home() {
           subtitle="Los servicios accessibles a todos nuestros clientes"
         />
 
-        <div className="flex flex-col lg:flex-row flex-wrap container">
+        <div className="flex flex-col items-center lg:flex-row flex-wrap container">
           <ServiceCard
             title="Sitios Web Estaticos"
             icon={faWindowRestore}
@@ -203,14 +220,14 @@ export default function Home() {
         <div className="flex w-full flex-wrap container">
           <TestimonialCard
             name="Guillermo Saez"
-            profession="VP of Engineering"
+            profession="CEO de TailorSheet"
             testimony="Synth chartreuse iPhone lomo cray raw denim brunch everyday carry neutra before they sold out fixie 90's microdosing. Tacos pinterest fanny pack venmo, post-ironic heirloom try-hard pabst authentic iceland."
           />
 
           <TestimonialCard
-            name="Pato"
-            profession="CEO"
-            testimony="Synth chartreuse iPhone lomo cray raw denim brunch everyday carry neutra before they sold out fixie 90's microdosing. Tacos pinterest fanny pack venmo, post-ironic heirloom try-hard pabst authentic iceland."
+            name="Luis Fernando Carbajal"
+            profession="CEO de MESGO"
+            testimony="Gracias a Bachacode Developers logramos cumplir con los requerimientos establecidos por la empresa CBI Group para obtener nuestro número de proveedor. El sitio web que desarrollaron no solo superó nuestras expectativas, sino que también facilitó el proceso y la presentación de nuestra empresa."
           />
         </div>
       </div>
@@ -254,7 +271,7 @@ export default function Home() {
             <p className="font-light text-2xl self-start">
               Hecho posible por...
             </p>
-            <h3 className="font-semibold text-6xl text-center lg:text-left text-primary">
+            <h3 className="font-semibold text-4xl lg:text-6xl text-center lg:text-left text-primary">
               Desarrolladores experimentados.
             </h3>
           </div>
