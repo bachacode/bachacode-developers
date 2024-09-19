@@ -21,12 +21,12 @@ export default function TestimonialCard({
           icon={faQuoteRight}
         />
         <p className="leading-relaxed mb-6">{testimony}</p>
-        <a className="inline-flex items-center">
+        <span className="inline-flex items-center">
           <span className="flex-grow flex flex-col">
             <span className="title-font font-medium text-gray-900">{name}</span>
             <span className="text-gray-500 text-sm">{profession}</span>
           </span>
-        </a>
+        </span>
       </div>
     </div>
   );

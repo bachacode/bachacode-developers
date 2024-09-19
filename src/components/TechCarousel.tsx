@@ -28,9 +28,9 @@ function TechCarouselItem({
         className={`w-28 h-28 py-1.5 text-gray-500 transition-all duration-300 group-hover:scale-105 ${className}`}
         icon={icon}
       />
-      <h5 className="text-gray-500 transition-all duration-300 group-hover:text-accent group-hover:scale-105">
+      <span className="text-gray-500 transition-all duration-300 group-hover:text-accent group-hover:scale-105">
         {title}
-      </h5>
+      </span>
     </CarouselItem>
   );
 }

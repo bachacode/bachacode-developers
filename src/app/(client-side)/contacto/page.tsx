@@ -55,7 +55,7 @@ export default function Contacto() {
           <div className="flex flex-col items-center space-y-6 lg:flex-row lg:space-x-6 lg:space-y-0 w-full justify-around">
             <ContactCard
               title="Correo Electrónico"
-              value="bachacode@gmail.com"
+              value="support@bachacode.com"
               icon={faEnvelope}
             />
 

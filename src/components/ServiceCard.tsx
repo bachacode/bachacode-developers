@@ -22,9 +22,9 @@ export default function ServiceCard({
           className={`w-12 h-12 pb-3 ${iconColor}`}
         />
 
-        <h5 className="text-lg text-gray-900 font-medium title-font mb-2">
+        <h3 className="text-lg text-gray-900 font-medium title-font mb-2">
           {title}
-        </h5>
+        </h3>
         <p className="leading-relaxed text-base">{children}</p>
       </div>
     </div>

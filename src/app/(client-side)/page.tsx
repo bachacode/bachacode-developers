@@ -16,12 +16,7 @@ import TechCarousel from "@/components/TechCarousel";
 import Heading from "@/components/Heading";
 import TeamCard from "@/components/TeamCard";
 import OfferingCard from "@/components/OfferingCard";
-import { Metadata } from "next";
 import bachacodeBig from "../../../public/images/bachacode-big.png";
-
-export const metadata: Metadata = {
-  title: "Bachacode Developers | Desarrollo Web & Consultoría de proyectos",
-};
 
 export default function Home() {
   return (
@@ -100,36 +95,30 @@ export default function Home() {
       </div>
 
       {/* Counter */}
-      {/* <section className="text-white bg-primary body-font">
-        <div className="container px-5 py-24 mx-auto">
-          <div className="flex flex-wrap -m-4 text-center">
-            <div className="p-4 sm:w-1/4 w-1/2">
-              <h2 className="title-font font-medium sm:text-4xl text-3xl text-gray-900">
-                2.7K
-              </h2>
-              <p className="leading-relaxed">Users</p>
+      <section className="text-white bg-accent body-font">
+        <div className="container px-5 py-12 mx-auto">
+          <div className="flex flex-wrap -m-4 text-center justify-center w-full">
+            <div className="p-4 sm:w-1/3 w-1/2">
+              <span className="title-font font-medium sm:text-4xl text-3xl text-white">
+                +15
+              </span>
+              <p className="leading-relaxed">Proyectos completados</p>
             </div>
-            <div className="p-4 sm:w-1/4 w-1/2">
-              <h2 className="title-font font-medium sm:text-4xl text-3xl text-gray-900">
-                1.8K
-              </h2>
-              <p className="leading-relaxed">Subscribes</p>
+            <div className="p-4 sm:w-1/3 w-1/2">
+              <span className="title-font font-medium sm:text-4xl text-3xl text-white">
+                +10
+              </span>
+              <p className="leading-relaxed">Clientes satisfechos</p>
             </div>
-            <div className="p-4 sm:w-1/4 w-1/2">
-              <h2 className="title-font font-medium sm:text-4xl text-3xl text-gray-900">
-                35
-              </h2>
-              <p className="leading-relaxed">Downloads</p>
-            </div>
-            <div className="p-4 sm:w-1/4 w-1/2">
-              <h2 className="title-font font-medium sm:text-4xl text-3xl text-gray-900">
-                4
-              </h2>
-              <p className="leading-relaxed">Products</p>
+            <div className="p-4 sm:w-1/3 w-1/2">
+              <span className="title-font font-medium sm:text-4xl text-3xl text-white">
+                +4
+              </span>
+              <p className="leading-relaxed">Años de experiencia</p>
             </div>
           </div>
         </div>
-      </section> */}
+      </section>
       {/* Services section */}
       <div className="bg-orange-primary-50 flex flex-col items-center p-6 lg:p-12">
         <Heading
@@ -157,7 +146,7 @@ export default function Home() {
             iconColor="text-primary"
           >
             Desarrollo de sitios web con{" "}
-            <strong className="text-primary">WordPress</strong>, brindando
+            <strong className="text-accent">WordPress</strong>, brindando
             control total del contenido sin necesidad de tocar código. Ideal
             para proyectos medianos como blogs, portafolios o sitios
             corporativos, ofreciendo flexibilidad, escalabilidad y fácil
@@ -262,7 +251,7 @@ export default function Home() {
 
           <OfferingCard
             title="Caracteristicas flexibles"
-            description="Nuestros proyectos se distinguen por su flexibilidad, ajustándose a tus necesidades en evolución. Cada característica es personalizable para asegurar tu plena satisfacción, permitiéndote modificar el proyecto según tus requerimientos cambiantes a lo largo del desarrollo."
+            description="Nuestros proyectos se distinguen por su flexibilidad, ajustándose a tus necesidades en evolución. Cada característica es personalizable para asegurar tu plena satisfacción, permitiéndote modificar el proyecto según tus requerimientos cambiantes a lo largo del desarrollo hasta su puesta en línea."
             icon={faPuzzlePiece}
           />
         </div>
@@ -303,7 +292,8 @@ export default function Home() {
         <div className="flex flex-col w-3/4 md:w-1/3 text-balance space-y-6">
           <p className="text-white font-semi-bold text-2xl">
             Creemos en hacer posible cualquier proyecto que nuestros clientes
-            tengan en mente, ¿estas interesado en empezar un nuevo proyecto?
+            tengan en mente, ¿estás interesado en construir tu presencia en
+            línea?
             {"\n"}
             <strong className="text-primary text-4xl">
               Trabaja con nosotros.
