@@ -17,6 +17,7 @@ import Heading from "@/components/Heading";
 import TeamCard from "@/components/TeamCard";
 import OfferingCard from "@/components/OfferingCard";
 import { Metadata } from "next";
+import bachacodeBig from "../../../public/images/bachacode-big.png";
 
 export const metadata: Metadata = {
   title: "Bachacode Developers | Desarrollo Web & Consultoría de proyectos",
@@ -87,7 +88,7 @@ export default function Home() {
 
           <div className="hidden lg:block relative h-48 max-w-sm w-full self-center">
             <Image
-              src="/images/bachacode-big.png"
+              src={bachacodeBig}
               className="relative z-10 rounded-r-xl rounded-tl-xl"
               alt="Bachacode logo"
               fill={true}

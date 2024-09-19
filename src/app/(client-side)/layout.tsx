@@ -2,7 +2,7 @@ import Link from "next/link";
 import MenuLink from "@/components/MenuLink";
 import NavButton from "@/components/NavButton";
 import Image from "next/image";
-
+import bachacodeRemoveBg from "../../../public/images/bachacode-removebg.png";
 export default function ClientSideLayout({
   children,
 }: Readonly<{
@@ -15,10 +15,11 @@ export default function ClientSideLayout({
         <div className="max-w-screen-xl flex items-center justify-around w-full  py-6 px-3">
           <Link href="/" className="flex items-center space-x-2">
             <Image
-              src="/images/bachacode-removebg.png"
+              src={bachacodeRemoveBg}
               height={47}
               width={180}
               alt="Header bachacode logo"
+              style={{ height: "auto", width: "100%" }}
             />
           </Link>
 
