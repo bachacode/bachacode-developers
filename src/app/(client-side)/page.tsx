@@ -95,7 +95,7 @@ export default function Home() {
       </div>
 
       {/* Counter */}
-      <section className="text-white bg-accent body-font">
+      <div className="text-white bg-accent body-font">
         <div className="container px-5 py-12 mx-auto">
           <div className="flex flex-wrap -m-4 text-center justify-center w-full">
             <div className="p-4 sm:w-1/3 w-1/2">
@@ -118,7 +118,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </div>
       {/* Services section */}
       <div className="bg-orange-primary-50 flex flex-col items-center p-6 lg:p-12">
         <Heading
