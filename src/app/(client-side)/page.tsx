@@ -221,7 +221,7 @@ export default function Home() {
           <TestimonialCard
             name="Guillermo Saez"
             profession="CEO de TailorSheet"
-            testimony="Synth chartreuse iPhone lomo cray raw denim brunch everyday carry neutra before they sold out fixie 90's microdosing. Tacos pinterest fanny pack venmo, post-ironic heirloom try-hard pabst authentic iceland."
+            testimony="Con Bachacode Developers encontré lo que muchos emprendedores buscan y nunca encuentran: La tranquilidad de poder dejar tu negocio en manos de personas que lo cuidan y ayudan a hacerlo crecer con soluciones que rozan la excelencia. Que aportan ideas y que se implican al 100% con cada proyecto."
           />
 
           <TestimonialCard
