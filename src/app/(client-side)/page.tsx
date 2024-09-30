@@ -17,6 +17,7 @@ import Heading from "@/components/Heading";
 import TeamCard from "@/components/TeamCard";
 import OfferingCard from "@/components/OfferingCard";
 import bachacodeBig from "../../../public/images/bachacode-big.png";
+import HomePageCounter from "@/components/HomePageCounter";
 
 export default function Home() {
   return (
@@ -95,30 +96,7 @@ export default function Home() {
       </div>
 
       {/* Counter */}
-      <div className="text-white bg-accent body-font">
-        <div className="container px-5 py-12 mx-auto">
-          <div className="flex flex-wrap -m-4 text-center justify-center w-full">
-            <div className="p-4 sm:w-1/3 w-1/2">
-              <span className="title-font font-medium sm:text-4xl text-3xl text-white">
-                +15
-              </span>
-              <p className="leading-relaxed">Proyectos completados</p>
-            </div>
-            <div className="p-4 sm:w-1/3 w-1/2">
-              <span className="title-font font-medium sm:text-4xl text-3xl text-white">
-                +10
-              </span>
-              <p className="leading-relaxed">Clientes satisfechos</p>
-            </div>
-            <div className="p-4 sm:w-1/3 w-1/2">
-              <span className="title-font font-medium sm:text-4xl text-3xl text-white">
-                +4
-              </span>
-              <p className="leading-relaxed">Años de experiencia</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <HomePageCounter />
       {/* Services section */}
       <div className="bg-orange-primary-50 flex flex-col items-center p-6 lg:p-12">
         <Heading
