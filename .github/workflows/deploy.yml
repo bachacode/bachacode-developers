@@ -25,7 +25,7 @@ jobs:
           # Fetch and pull changes
           git fetch && git pull
           # Install new dependencies if needed and rebuild app
-          npm install && next build
+          npm install && npm run build
           # Check if PM2 process is running
           if pm2 list | grep -q 'next-bachacode'; then
             # Reload application to ensure zero downtime
