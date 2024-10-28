@@ -15,7 +15,7 @@ export default function TestimonialCard({
 }: TestimonialCardProps) {
   return (
     <div className="p-4 md:w-1/2 w-full">
-      <div className="h-full bg-white p-8 rounded">
+      <div className="h-full bg-white p-8 rounded shadow-md">
         <FontAwesomeIcon
           className="w-8 h-8 pb-1.5 text-accent"
           icon={faQuoteRight}
