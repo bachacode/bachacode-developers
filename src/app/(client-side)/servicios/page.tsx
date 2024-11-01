@@ -2,13 +2,19 @@ import NavButton from "@/components/NavButton";
 import Image from "next/image";
 import React from "react";
 import ocOnTheLaptop from "../../../../public/images/oc-on-the-laptop.svg";
+import ocTakingNote from "../../../../public/images/oc-taking-note.svg";
 import ServiceCardAlt from "@/components/ServiceCardAlt";
 import {
   faCode,
+  faHeadphones,
   faMessage,
+  faPalette,
+  faServer,
+  faShield,
   faWindowRestore,
 } from "@fortawesome/free-solid-svg-icons";
 import { faWordpress } from "@fortawesome/free-brands-svg-icons";
+import AdvantageCard from "@/components/AdvantageCard";
 
 export default function Servicios() {
   return (
@@ -111,6 +117,79 @@ export default function Servicios() {
               tecnologías que dominamos, garantizando un desarrollo ágil y
               acorde a tus necesidades.
             </ServiceCardAlt>
+          </div>
+        </div>
+      </div>
+
+      <div className="w-full bg-orange-primary-50 flex justify-center">
+        <div className="container py-8 items-center flex flex-col space-y-3">
+          {/* Title*/}
+          <div className="flex flex-col items-center text-center w-full md:w-1/2 space-y-2">
+            <h2
+              id="hero"
+              className="font-bold text-3xl md:text-4xl tracking-widest text-zinc-900"
+            >
+              ¿Qué te ofrecemos?
+            </h2>
+            <p className="text-lg text-zinc-800">
+              Ventajas exclusivas de nuestros clientes
+            </p>
+          </div>
+
+          <div className="flex relative w-full">
+            {/* Image */}
+            <div className="absolute h-full lg:relative flex flex-col items-center justify-center w-full lg:w-1/2 lg:left-0 px-6 md:px-0 opacity-20 lg:opacity-100">
+              <Image
+                src={ocTakingNote}
+                height={152}
+                width={145}
+                alt="Header bachacode logo"
+                style={{ height: "auto", width: "100%" }}
+              />
+            </div>
+
+            {/* Advantages List */}
+            <div className="flex flex-col justify-stretch gap-6 w-full md:px-12 lg:w-1/2 p-6 relative z-10">
+              <AdvantageCard
+                title="Hosting Profesional"
+                icon={faServer}
+                iconColor="text-accent"
+              >
+                No tendrás que preocuparte más por gestionar tu propio sitio
+                web, nosotros lo haremos por ti. Te ofrecemos un servicio de
+                hosting escalable que se adapta a tus necesidades.
+              </AdvantageCard>
+              <AdvantageCard
+                title="Diseños Modernos"
+                icon={faPalette}
+                iconColor="text-accent"
+              >
+                Nos encargamos de darle a tu sitio web un diseño atractivo que
+                refleje lo que busca transmitir tu negocio. Si esta página te
+                resulta atractiva, ¡obtendrás una calidad igual o superior en tu
+                proyecto!
+              </AdvantageCard>
+
+              <AdvantageCard
+                title="Seguridad Garantizada"
+                icon={faShield}
+                iconColor="text-accent"
+              >
+                No corras riesgos innecesarios: nuestros desarrolladores se
+                encargarán de integrar todas las medidas de seguridad necesarias
+                para proteger tu sitio web.
+              </AdvantageCard>
+
+              <AdvantageCard
+                title="Soporte Eficaz"
+                icon={faHeadphones}
+                iconColor="text-accent"
+              >
+                Estamos preparados para atender cualquier urgencia que requiera
+                soporte técnico. ¡Te garantizamos mantener tu sitio web activo
+                las 24 horas!
+              </AdvantageCard>
+            </div>
           </div>
         </div>
       </div>
