@@ -51,7 +51,7 @@ export default function Servicios() {
           {/* Title*/}
           <div className="flex flex-col items-center text-center w-full md:w-1/2 space-y-2">
             <h2
-              id="hero"
+              id="services"
               className="font-bold text-3xl md:text-4xl tracking-widest text-zinc-900"
             >
               Impulsa tu Presencia Digital
