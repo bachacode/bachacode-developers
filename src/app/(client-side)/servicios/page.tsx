@@ -193,6 +193,28 @@ export default function Servicios() {
           </div>
         </div>
       </div>
+
+      {/* Contact Us */}
+      <div className="flex justify-center w-full bg-black py-6 md:py-20">
+        <div className="flex flex-col w-3/4 md:w-1/3 text-balance space-y-6">
+          <p className="text-white font-semi-bold text-2xl">
+            Creemos en hacer posible cualquier proyecto que nuestros clientes
+            tengan en mente, ¿estás interesado en construir tu presencia en
+            línea?
+            {"\n"}
+            <strong className="text-primary text-4xl">
+              Trabaja con nosotros.
+            </strong>
+          </p>
+
+          <NavButton
+            href="/contacto"
+            className="text-white border-white max-w-max transition-colors hover:text-primary hover:border-gray-400"
+          >
+            Contáctanos
+          </NavButton>
+        </div>
+      </div>
     </main>
   );
 }
