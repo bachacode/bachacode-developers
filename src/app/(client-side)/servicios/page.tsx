@@ -12,9 +12,38 @@ import {
   faServer,
   faShield,
   faWindowRestore,
+  IconDefinition,
 } from "@fortawesome/free-solid-svg-icons";
-import { faWordpress } from "@fortawesome/free-brands-svg-icons";
+import {
+  faCss3Alt,
+  faHtml5,
+  faJsSquare,
+  faLaravel,
+  faPhp,
+  faReact,
+  faVuejs,
+  faWordpress,
+} from "@fortawesome/free-brands-svg-icons";
 import AdvantageCard from "@/components/AdvantageCard";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+interface TechCardProps {
+  icon: IconDefinition;
+  className: string;
+  title: string;
+}
+
+function TechCard({ icon, className, title }: TechCardProps) {
+  return (
+    <div className="group border border-accent rounded-md w-32 h-32 flex flex-col items-center justify-center shadow-md">
+      <FontAwesomeIcon
+        icon={icon}
+        className={`text-gray-600 w-20 h-20 transition-all duration-300 group-hover:scale-105 group-hover:-translate-y-1 ${className}`}
+        title={title}
+      ></FontAwesomeIcon>
+    </div>
+  );
+}
 
 export default function Servicios() {
   return (
@@ -190,6 +219,68 @@ export default function Servicios() {
                 las 24 horas!
               </AdvantageCard>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Technologies section */}
+      <div className="w-full bg-white flex justify-center">
+        <div className="container py-8 items-center flex flex-col space-y-3">
+          {/* Title*/}
+          <div className="flex flex-col items-center text-center w-full md:w-1/2 space-y-2">
+            <h2
+              id="technology"
+              className="font-bold text-3xl md:text-4xl tracking-widest text-zinc-900"
+            >
+              ¿Qué tecnologías usamos?
+            </h2>
+            <p className="text-lg text-zinc-800">
+              Trabajamos con las mejores tecnologías para tus proyectos
+            </p>
+          </div>
+
+          <div className="grid  grid-cols-2 md:grid-cols-3 gap-4 x-12">
+            {/* Tech Box */}
+            <TechCard
+              icon={faHtml5}
+              className="group-hover:text-orange-600"
+              title="HTML"
+            ></TechCard>
+            <TechCard
+              icon={faCss3Alt}
+              className="group-hover:text-blue-600"
+              title="CSS"
+            ></TechCard>
+            <TechCard
+              icon={faJsSquare}
+              className="group-hover:text-yellow-500"
+              title="JavaScript"
+            ></TechCard>
+            <TechCard
+              icon={faReact}
+              className="group-hover:text-blue-400"
+              title="React.Js"
+            ></TechCard>
+            <TechCard
+              icon={faVuejs}
+              className="group-hover:text-emerald-500"
+              title="Vue.Js"
+            ></TechCard>
+            <TechCard
+              icon={faLaravel}
+              className="group-hover:text-red-600"
+              title="Laravel"
+            ></TechCard>
+            <TechCard
+              icon={faWordpress}
+              className="group-hover:text-blue-500"
+              title="WordPress"
+            ></TechCard>
+            <TechCard
+              icon={faPhp}
+              title="PHP"
+              className="group-hover:text-indigo-500"
+            ></TechCard>
           </div>
         </div>
       </div>
