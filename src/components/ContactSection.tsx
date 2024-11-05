@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function ContactSection() {
   return (
     <div className="flex justify-center w-full bg-teal-blue-accent-950 py-6 md:py-20">
-      <div className="flex flex-col w-3/4 md:w-1/3 text-balance space-y-6 text-2xl">
+      <div className="flex flex-col items-center md:items-start w-3/4 md:w-1/3 text-balance space-y-6 text-2xl">
         <p className="text-white font-semi-bold">
           Creemos en hacer posible cualquier proyecto que nuestros clientes
           tengan en mente, ¿estás interesado en construir tu presencia en línea?
