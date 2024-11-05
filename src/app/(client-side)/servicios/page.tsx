@@ -331,7 +331,7 @@ export default function Servicios() {
             </p>
           </div>
 
-          <div className="grid  grid-cols-2 md:grid-cols-3 gap-4 x-12">
+          <div className="grid  grid-cols-2 md:grid-cols-3 gap-4 p-6">
             {/* Tech Box */}
             <TechCard
               icon={faHtml5}
