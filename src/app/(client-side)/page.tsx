@@ -18,6 +18,8 @@ import TeamCard from "@/components/TeamCard";
 import OfferingCard from "@/components/OfferingCard";
 import bachacodeBig from "../../../public/images/bachacode-big.png";
 import HomePageCounter from "@/components/HomePageCounter";
+import PageSectionWrapper from "@/components/PageSectionWrapper";
+import ContactSection from "@/components/ContactSection";
 
 export default function Home() {
   return (
@@ -44,6 +46,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+
       {/* About us section */}
       <div className="flex flex-col items-center p-6 lg:p-12">
         <div className="flex w-full justify-around container">
@@ -98,13 +101,12 @@ export default function Home() {
       {/* Counter */}
       <HomePageCounter />
       {/* Services section */}
-      <div className="bg-orange-primary-50 flex flex-col items-center p-6 lg:p-12">
-        <Heading
-          id="services"
-          title="¿Que ofrecemos?"
-          subtitle="Los servicios accessibles a todos nuestros clientes"
-        />
-
+      <PageSectionWrapper
+        titleId="services"
+        titleName="¿Qué te ofrecemos?"
+        subtitle="Los servicios accessibles a todos nuestros clientes"
+        altBackground
+      >
         <div className="flex flex-col items-center lg:flex-row flex-wrap container">
           <ServiceCard
             title="Sitios Web Estaticos"
@@ -158,7 +160,8 @@ export default function Home() {
             eficiente y acorde a tus necesidades.
           </ServiceCard>
         </div>
-      </div>
+      </PageSectionWrapper>
+
       {/* Tech Stack */}
       <div className="flex flex-col bg-white w-full items-center py-12">
         <Heading
@@ -178,13 +181,12 @@ export default function Home() {
       </div>
 
       {/* Our clients */}
-      <div className="flex flex-col items-center p-6 lg:p-12 bg-orange-primary-50">
-        <Heading
-          id="clients"
-          title="Nuestros clientes"
-          subtitle="Los que han depositado su confianza en nosotros"
-        />
-
+      <PageSectionWrapper
+        titleId="clients"
+        titleName="Nuestros clientes"
+        subtitle="Los que han depositado su confianza en nosotros"
+        altBackground
+      >
         <div className="flex w-full flex-wrap container">
           <TestimonialCard
             name="Guillermo Saez"
@@ -198,16 +200,14 @@ export default function Home() {
             testimony="Gracias a Bachacode Developers logramos cumplir con los requerimientos establecidos por la empresa CBI Group para obtener nuestro número de proveedor. El sitio web que desarrollaron no solo superó nuestras expectativas, sino que también facilitó el proceso y la presentación de nuestra empresa."
           />
         </div>
-      </div>
+      </PageSectionWrapper>
 
       {/* Our team */}
-      <div className="flex flex-col items-center p-6 lg:p-20">
-        <Heading
-          id="team"
-          title="Nosotros garantizamos"
-          subtitle="Lo que obtendrás trabajando con nosotros"
-        />
-
+      <PageSectionWrapper
+        titleId="team"
+        titleName="Nosotros garantizamos"
+        subtitle="Lo que obtendrás trabajando con nosotros"
+      >
         <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6 pb-16">
           <OfferingCard
             title="Desarrollo ágil"
@@ -262,30 +262,11 @@ export default function Home() {
             />
           </div>
         </div>
-      </div>
+      </PageSectionWrapper>
       {/* Steps */}
 
       {/* Contact Us */}
-      <div className="flex justify-center w-full bg-black py-6 md:py-20">
-        <div className="flex flex-col w-3/4 md:w-1/3 text-balance space-y-6">
-          <p className="text-white font-semi-bold text-2xl">
-            Creemos en hacer posible cualquier proyecto que nuestros clientes
-            tengan en mente, ¿estás interesado en construir tu presencia en
-            línea?
-            {"\n"}
-            <strong className="text-primary text-4xl">
-              Trabaja con nosotros.
-            </strong>
-          </p>
-
-          <NavButton
-            href="/contacto"
-            className="text-white border-white max-w-max transition-colors hover:text-primary hover:border-gray-400"
-          >
-            Contáctanos
-          </NavButton>
-        </div>
-      </div>
+      <ContactSection />
     </main>
   );
 }

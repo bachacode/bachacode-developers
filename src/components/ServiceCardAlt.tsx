@@ -15,7 +15,7 @@ export default function ServiceCardAlt({
   iconColor,
 }: ServiceCardProps) {
   return (
-    <div className="group w-full md:w-1/2 lg:w-1/4 p-4 transition-transform duration-200 delay-75 hover:-translate-y-3">
+    <div className="group w-full transition-transform duration-200 delay-75 hover:-translate-y-3">
       <div className="border border-accent h-full bg-white transition-shadow duration-200 delay-75 shadow-md group-hover:shadow-xl p-6 rounded-lg">
         <FontAwesomeIcon
           icon={icon}

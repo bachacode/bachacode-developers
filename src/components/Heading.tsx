@@ -8,7 +8,7 @@ interface HeadingProps {
 
 export default function Heading({ title, subtitle, id }: HeadingProps) {
   return (
-    <div className="flex flex-col items-center space-y-2 text-center pb-6">
+    <div className="flex flex-col items-center space-y-2 text-center pb-6 px-8 md:px-6 lg:px-0">
       <h2 id={id} className="uppercase font-semibold text-accent text-4xl">
         {title}
       </h2>
