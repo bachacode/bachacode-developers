@@ -33,6 +33,8 @@ import AdvantageCard from "@/components/AdvantageCard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import PageSectionWrapper from "@/components/PageSectionWrapper";
+import { Metadata } from "next";
+import generateTitle from "@/utils/generateTitle";
 
 interface TechCardProps {
   icon: IconDefinition;
@@ -139,6 +141,10 @@ function PriceCard({ title, subtitle, price, benefits }: PriceCardProps) {
     </div>
   );
 }
+
+export const metadata: Metadata = {
+  title: generateTitle("Servicios"),
+};
 
 export default function Servicios() {
   return (
