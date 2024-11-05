@@ -127,12 +127,14 @@ function PriceCard({ title, subtitle, price, benefits }: PriceCardProps) {
           99.9% de uptime del servidor
         </li>
       </ul>
-      <Link
-        href="/contacto"
-        className="w-full self-center transition-colors duration-200 bg-orange-primary-500 hover:bg-orange-primary-700 text-white py-3 px-6 rounded-lg font-semibold"
-      >
-        Contáctanos
-      </Link>
+      <div className="w-full text-center">
+        <Link
+          href="/contacto"
+          className="transition-colors duration-200 bg-orange-primary-500 hover:bg-orange-primary-700 text-white py-3 px-6 rounded-lg font-semibold"
+        >
+          Contáctanos
+        </Link>
+      </div>
     </div>
   );
 }
