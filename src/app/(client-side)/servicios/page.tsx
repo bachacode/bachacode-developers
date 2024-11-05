@@ -187,7 +187,7 @@ export default function Servicios() {
         subtitle="Soluciones personalizadas que transforman tu negocio"
       >
         {/* Service cards */}
-        <div className="flex flex-col items-center md:flex-row flex-wrap md:items-stretch">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 px-2">
           <ServiceCardAlt
             title="Sitios Web Estaticos"
             icon={faWindowRestore}
@@ -258,7 +258,7 @@ export default function Servicios() {
           </div>
 
           {/* Advantages List */}
-          <div className="flex flex-col justify-stretch gap-6 w-full md:px-12 lg:w-1/2 p-6 relative z-10">
+          <div className="flex flex-col justify-stretch gap-6 w-full px-2 md:px-12 lg:w-1/2 relative z-10">
             <AdvantageCard
               title="Hosting Profesional"
               icon={faServer}
@@ -308,7 +308,7 @@ export default function Servicios() {
         titleName="¿Qué tecnologías utilizamos?"
         subtitle="Trabajamos con las mejores tecnologías para tus proyectos"
       >
-        <div className="grid  grid-cols-2 md:grid-cols-3 gap-4 p-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {/* Tech Box */}
           <TechCard
             icon={faHtml5}
@@ -361,7 +361,7 @@ export default function Servicios() {
         altBackground
       >
         {/* Hosting plans */}
-        <div className="flex flex-col md:flex-row gap-4 p-6">
+        <div className="flex flex-col md:flex-row gap-4 px-2">
           <PriceCard
             title="Plan Básico"
             subtitle="Ideal para proyectos personales y sitios web pequeños."

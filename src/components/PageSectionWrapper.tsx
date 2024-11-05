@@ -22,7 +22,7 @@ export default function PageSectionWrapper({
         altBackground ? "bg-orange-primary-50" : "bg-white"
       }`}
     >
-      <div className="container py-8 items-center flex flex-col space-y-3">
+      <div className="container px-4 py-6 items-center flex flex-col space-y-3">
         {/* Title*/}
         <Heading id={titleId} title={titleName} subtitle={subtitle} />
         {children}
