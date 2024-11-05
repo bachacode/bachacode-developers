@@ -144,8 +144,8 @@ export default function Servicios() {
   return (
     <main className="w-full">
       {/* Hero section */}
-      <div className="w-full bg-orange-primary-50 flex flex-col items-center pt-36 pb-12">
-        <div className="container relative py-36 items-center flex md:space-x-8">
+      <div className="w-full bg-orange-primary-50 flex flex-col items-center pt-36 px-8 pb-12">
+        <div className="container relative items-center flex md:space-x-8  lg:min-h-[600px]">
           {/* Title & CTA */}
           <div className="flex flex-col items-center text-center space-y-6 w-full md:w-1/2">
             <div className="px-6 md:px-3">
@@ -163,12 +163,11 @@ export default function Servicios() {
           </div>
 
           {/* Image */}
-          <div className="absolute flex flex-col items-center text-center w-full md:w-1/2 md:right-0 px-6 md:px-0 opacity-20 md:opacity-100">
+          <div className="absolute flex flex-col h-full items-center text-center w-full md:w-1/2 md:right-0 px-6 md:px-0 opacity-20 md:opacity-100">
             <Image
               src={ocOnTheLaptop}
-              height={401}
-              width={424}
-              alt="Header bachacode logo"
+              alt="OC on the laptop hero image"
+              className="max-w-full max-h-full object-contain"
               style={{ height: "auto", width: "100%" }}
             />
           </div>
