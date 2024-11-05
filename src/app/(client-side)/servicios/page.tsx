@@ -32,6 +32,7 @@ import {
 import AdvantageCard from "@/components/AdvantageCard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
+import PageSectionWrapper from "@/components/PageSectionWrapper";
 
 interface TechCardProps {
   icon: IconDefinition;
@@ -174,303 +175,261 @@ export default function Servicios() {
         </div>
       </div>
 
-      {/* Services section */}
-      <div className="w-full bg-white flex justify-center">
-        <div className="container py-8 items-center flex flex-col space-y-3">
-          {/* Title*/}
-          <div className="flex flex-col items-center text-center w-full md:w-1/2 space-y-2">
-            <h2
-              id="services"
-              className="font-bold text-3xl md:text-4xl tracking-widest text-zinc-900"
-            >
-              Impulsa tu Presencia Digital
-            </h2>
-            <p className="text-lg text-zinc-800">
-              Soluciones Personalizadas que Transforman tu Negocio
-            </p>
+      {/* Services Section */}
+      <PageSectionWrapper
+        titleId="services"
+        titleName="Impulsa tu Presencia Digital"
+        subtitle="Soluciones Personalizadas que Transforman tu Negocio"
+      >
+        {/* Service cards */}
+        <div className="flex flex-col items-center md:flex-row flex-wrap md:items-stretch">
+          <ServiceCardAlt
+            title="Sitios Web Estaticos"
+            icon={faWindowRestore}
+            iconColor="text-primary"
+          >
+            Desarrolla sitios web personalizados con contenido estático,
+            perfectos para proyectos pequeños que no requieren actualizaciones
+            constantes, como landing pages o catálogos. Estos sitios aseguran
+            rapidez, seguridad y eficiencia para contenido estable y atractivo.
+          </ServiceCardAlt>
+
+          <ServiceCardAlt
+            title="Sitios WordPress"
+            icon={faWordpress}
+            iconColor="text-primary"
+          >
+            Desarrollo de sitios web con{" "}
+            <strong className="text-accent">WordPress</strong>, ofreciendo
+            control total del contenido sin necesidad de programación. Ideal
+            para proyectos medianos, como blogs o portafolios, brinda
+            flexibilidad, escalabilidad y fácil personalización para cualquier
+            necesidad.
+          </ServiceCardAlt>
+
+          <ServiceCardAlt
+            title="Aplicaciones Web"
+            icon={faCode}
+            iconColor="text-primary"
+          >
+            Creamos aplicaciones web a medida con funcionalidades avanzadas,
+            como pagos en línea, sistemas de recomendación, chat en vivo y
+            análisis de datos. Perfectas para proyectos medianos y grandes, como
+            tiendas en línea, plataformas educativas y sistemas de gestión
+            empresarial.
+          </ServiceCardAlt>
+
+          <ServiceCardAlt
+            title="Consultoría y Soporte"
+            icon={faMessage}
+            iconColor="text-primary"
+          >
+            Si tienes un proyecto que deseas actualizar, nosotros planificamos
+            todo el proceso por ti. Desde la estimación de tiempos hasta la
+            elaboración de presupuestos, ofrecemos soluciones en las tecnologías
+            que dominamos, garantizando un desarrollo ágil y acorde a tus
+            necesidades.
+          </ServiceCardAlt>
+        </div>
+      </PageSectionWrapper>
+
+      {/* Advantages Section */}
+      <PageSectionWrapper
+        titleId="advantages"
+        titleName="¿Qué te ofrecemos?"
+        subtitle="Ventajas exclusivas de nuestros clientes"
+        altBackground
+      >
+        <div className="flex relative w-full">
+          {/* Image */}
+          <div className="absolute h-full lg:relative flex flex-col items-center justify-center w-full lg:w-1/2 lg:left-0 px-6 md:px-0 opacity-20 lg:opacity-100">
+            <Image
+              src={ocTakingNote}
+              height={152}
+              width={145}
+              alt="Header bachacode logo"
+              style={{ height: "auto", width: "100%" }}
+            />
           </div>
 
-          {/* Service cards */}
-          <div className="flex flex-col items-center md:flex-row flex-wrap md:items-stretch">
-            <ServiceCardAlt
-              title="Sitios Web Estaticos"
-              icon={faWindowRestore}
-              iconColor="text-primary"
+          {/* Advantages List */}
+          <div className="flex flex-col justify-stretch gap-6 w-full md:px-12 lg:w-1/2 p-6 relative z-10">
+            <AdvantageCard
+              title="Hosting Profesional"
+              icon={faServer}
+              iconColor="text-accent"
             >
-              Desarrolla sitios web personalizados con contenido estático,
-              perfectos para proyectos pequeños que no requieren actualizaciones
-              constantes, como landing pages o catálogos. Estos sitios aseguran
-              rapidez, seguridad y eficiencia para contenido estable y
-              atractivo.
-            </ServiceCardAlt>
+              No tendrás que preocuparte más por gestionar tu propio sitio web,
+              nosotros lo haremos por ti. Te ofrecemos un servicio de hosting
+              escalable que se adapta a tus necesidades.
+            </AdvantageCard>
+            <AdvantageCard
+              title="Diseños Modernos"
+              icon={faPalette}
+              iconColor="text-accent"
+            >
+              Nos encargamos de darle a tu sitio web un diseño atractivo que
+              refleje lo que busca transmitir tu negocio. Si esta página te
+              resulta atractiva, ¡obtendrás una calidad igual o superior en tu
+              proyecto!
+            </AdvantageCard>
 
-            <ServiceCardAlt
-              title="Sitios WordPress"
-              icon={faWordpress}
-              iconColor="text-primary"
+            <AdvantageCard
+              title="Seguridad Garantizada"
+              icon={faShield}
+              iconColor="text-accent"
             >
-              Desarrollo de sitios web con{" "}
-              <strong className="text-accent">WordPress</strong>, ofreciendo
-              control total del contenido sin necesidad de programación. Ideal
-              para proyectos medianos, como blogs o portafolios, brinda
-              flexibilidad, escalabilidad y fácil personalización para cualquier
-              necesidad.
-            </ServiceCardAlt>
+              No corras riesgos innecesarios: nuestros desarrolladores se
+              encargarán de integrar todas las medidas de seguridad necesarias
+              para proteger tu sitio web.
+            </AdvantageCard>
 
-            <ServiceCardAlt
-              title="Aplicaciones Web"
-              icon={faCode}
-              iconColor="text-primary"
+            <AdvantageCard
+              title="Soporte Eficaz"
+              icon={faHeadphones}
+              iconColor="text-accent"
             >
-              Creamos aplicaciones web a medida con funcionalidades avanzadas,
-              como pagos en línea, sistemas de recomendación, chat en vivo y
-              análisis de datos. Perfectas para proyectos medianos y grandes,
-              como tiendas en línea, plataformas educativas y sistemas de
-              gestión empresarial.
-            </ServiceCardAlt>
-
-            <ServiceCardAlt
-              title="Consultoría y Soporte"
-              icon={faMessage}
-              iconColor="text-primary"
-            >
-              Si tienes un proyecto que deseas actualizar, nosotros planificamos
-              todo el proceso por ti. Desde la estimación de tiempos hasta la
-              elaboración de presupuestos, ofrecemos soluciones en las
-              tecnologías que dominamos, garantizando un desarrollo ágil y
-              acorde a tus necesidades.
-            </ServiceCardAlt>
+              Estamos preparados para atender cualquier urgencia que requiera
+              soporte técnico. ¡Te garantizamos mantener tu sitio web activo las
+              24 horas!
+            </AdvantageCard>
           </div>
         </div>
-      </div>
-
-      <div className="w-full bg-orange-primary-50 flex justify-center">
-        <div className="container py-8 items-center flex flex-col space-y-3">
-          {/* Title*/}
-          <div className="flex flex-col items-center text-center w-full md:w-1/2 space-y-2">
-            <h2
-              id="advantages"
-              className="font-bold text-3xl md:text-4xl tracking-widest text-zinc-900"
-            >
-              ¿Qué te ofrecemos?
-            </h2>
-            <p className="text-lg text-zinc-800">
-              Ventajas exclusivas de nuestros clientes
-            </p>
-          </div>
-
-          <div className="flex relative w-full">
-            {/* Image */}
-            <div className="absolute h-full lg:relative flex flex-col items-center justify-center w-full lg:w-1/2 lg:left-0 px-6 md:px-0 opacity-20 lg:opacity-100">
-              <Image
-                src={ocTakingNote}
-                height={152}
-                width={145}
-                alt="Header bachacode logo"
-                style={{ height: "auto", width: "100%" }}
-              />
-            </div>
-
-            {/* Advantages List */}
-            <div className="flex flex-col justify-stretch gap-6 w-full md:px-12 lg:w-1/2 p-6 relative z-10">
-              <AdvantageCard
-                title="Hosting Profesional"
-                icon={faServer}
-                iconColor="text-accent"
-              >
-                No tendrás que preocuparte más por gestionar tu propio sitio
-                web, nosotros lo haremos por ti. Te ofrecemos un servicio de
-                hosting escalable que se adapta a tus necesidades.
-              </AdvantageCard>
-              <AdvantageCard
-                title="Diseños Modernos"
-                icon={faPalette}
-                iconColor="text-accent"
-              >
-                Nos encargamos de darle a tu sitio web un diseño atractivo que
-                refleje lo que busca transmitir tu negocio. Si esta página te
-                resulta atractiva, ¡obtendrás una calidad igual o superior en tu
-                proyecto!
-              </AdvantageCard>
-
-              <AdvantageCard
-                title="Seguridad Garantizada"
-                icon={faShield}
-                iconColor="text-accent"
-              >
-                No corras riesgos innecesarios: nuestros desarrolladores se
-                encargarán de integrar todas las medidas de seguridad necesarias
-                para proteger tu sitio web.
-              </AdvantageCard>
-
-              <AdvantageCard
-                title="Soporte Eficaz"
-                icon={faHeadphones}
-                iconColor="text-accent"
-              >
-                Estamos preparados para atender cualquier urgencia que requiera
-                soporte técnico. ¡Te garantizamos mantener tu sitio web activo
-                las 24 horas!
-              </AdvantageCard>
-            </div>
-          </div>
-        </div>
-      </div>
+      </PageSectionWrapper>
 
       {/* Technologies section */}
-      <div className="w-full bg-white flex justify-center">
-        <div className="container py-8 items-center flex flex-col space-y-3">
-          {/* Title*/}
-          <div className="flex flex-col items-center text-center w-full md:w-1/2 space-y-2">
-            <h2
-              id="technology"
-              className="font-bold text-3xl md:text-4xl tracking-widest text-zinc-900"
-            >
-              ¿Qué tecnologías usamos?
-            </h2>
-            <p className="text-lg text-zinc-800">
-              Trabajamos con las mejores tecnologías para tus proyectos
-            </p>
-          </div>
-
-          <div className="grid  grid-cols-2 md:grid-cols-3 gap-4 p-6">
-            {/* Tech Box */}
-            <TechCard
-              icon={faHtml5}
-              className="group-hover:text-orange-600"
-              title="HTML"
-            ></TechCard>
-            <TechCard
-              icon={faCss3Alt}
-              className="group-hover:text-blue-600"
-              title="CSS"
-            ></TechCard>
-            <TechCard
-              icon={faJsSquare}
-              className="group-hover:text-yellow-500"
-              title="JavaScript"
-            ></TechCard>
-            <TechCard
-              icon={faReact}
-              className="group-hover:text-blue-400"
-              title="React.Js"
-            ></TechCard>
-            <TechCard
-              icon={faVuejs}
-              className="group-hover:text-emerald-500"
-              title="Vue.Js"
-            ></TechCard>
-            <TechCard
-              icon={faLaravel}
-              className="group-hover:text-red-600"
-              title="Laravel"
-            ></TechCard>
-            <TechCard
-              icon={faWordpress}
-              className="group-hover:text-blue-500"
-              title="WordPress"
-            ></TechCard>
-            <TechCard
-              icon={faPhp}
-              title="PHP"
-              className="group-hover:text-indigo-500"
-            ></TechCard>
-          </div>
+      <PageSectionWrapper
+        titleId="technology"
+        titleName="¿Qué tecnologías utilizamos?"
+        subtitle="Trabajamos con las mejores tecnologías para tus proyectos"
+      >
+        <div className="grid  grid-cols-2 md:grid-cols-3 gap-4 p-6">
+          {/* Tech Box */}
+          <TechCard
+            icon={faHtml5}
+            className="group-hover:text-orange-600"
+            title="HTML"
+          ></TechCard>
+          <TechCard
+            icon={faCss3Alt}
+            className="group-hover:text-blue-600"
+            title="CSS"
+          ></TechCard>
+          <TechCard
+            icon={faJsSquare}
+            className="group-hover:text-yellow-500"
+            title="JavaScript"
+          ></TechCard>
+          <TechCard
+            icon={faReact}
+            className="group-hover:text-blue-400"
+            title="React.Js"
+          ></TechCard>
+          <TechCard
+            icon={faVuejs}
+            className="group-hover:text-emerald-500"
+            title="Vue.Js"
+          ></TechCard>
+          <TechCard
+            icon={faLaravel}
+            className="group-hover:text-red-600"
+            title="Laravel"
+          ></TechCard>
+          <TechCard
+            icon={faWordpress}
+            className="group-hover:text-blue-500"
+            title="WordPress"
+          ></TechCard>
+          <TechCard
+            icon={faPhp}
+            title="PHP"
+            className="group-hover:text-indigo-500"
+          ></TechCard>
         </div>
-      </div>
+      </PageSectionWrapper>
 
       {/* Hosting section */}
-      <div className="w-full bg-orange-primary-50 flex justify-center">
-        <div className="container py-8 items-center flex flex-col space-y-3">
-          {/* Title*/}
-          <div className="flex flex-col items-center text-center w-full md:w-1/2 space-y-2">
-            <h2
-              id="hosting"
-              className="font-bold text-3xl md:text-4xl tracking-widest text-zinc-900"
-            >
-              Planes de Hosting
-            </h2>
-            <p className="text-lg text-zinc-800">
-              ¡Hostea tu proyecto con uno de nuestros planes flexibles!
-            </p>
-          </div>
+      <PageSectionWrapper
+        titleId="hosting"
+        titleName="Planes de hosting"
+        subtitle="¡Aloja tu proyecto con uno de nuestros planes flexibles!"
+        altBackground
+      >
+        {/* Hosting plans */}
+        <div className="flex flex-col md:flex-row gap-4 p-6">
+          <PriceCard
+            title="Plan Básico"
+            subtitle="Ideal para proyectos personales y sitios web pequeños."
+            price="$15"
+            benefits={[
+              {
+                icon: faMemory,
+                text: "1GB Ram",
+              },
+              {
+                icon: faMicrochip,
+                text: "1 Core CPU",
+              },
+              {
+                icon: faHardDrive,
+                text: "10GB de almacenamiento NVMe",
+              },
+              {
+                icon: faNetworkWired,
+                text: "1TB de ancho de banda",
+              },
+            ]}
+          />
 
-          {/* Hosting plans */}
-          <div className="flex flex-col md:flex-row gap-4 p-6">
-            <PriceCard
-              title="Plan Básico"
-              subtitle="Ideal para proyectos personales y sitios web pequeños."
-              price="$15"
-              benefits={[
-                {
-                  icon: faMemory,
-                  text: "1GB Ram",
-                },
-                {
-                  icon: faMicrochip,
-                  text: "1 Core CPU",
-                },
-                {
-                  icon: faHardDrive,
-                  text: "10GB de almacenamiento NVMe",
-                },
-                {
-                  icon: faNetworkWired,
-                  text: "1TB de ancho de banda",
-                },
-              ]}
-            />
+          <PriceCard
+            title="Plan Avanzado"
+            subtitle="Diseñado para negocios en crecimiento y sitios web dinámicos."
+            price="$25"
+            benefits={[
+              {
+                icon: faMemory,
+                text: "2GB Ram",
+              },
+              {
+                icon: faMicrochip,
+                text: "1 Core CPU",
+              },
+              {
+                icon: faHardDrive,
+                text: "25GB de almacenamiento NVMe",
+              },
+              {
+                icon: faNetworkWired,
+                text: "2TB de ancho de banda",
+              },
+            ]}
+          />
 
-            <PriceCard
-              title="Plan Avanzado"
-              subtitle="Diseñado para negocios en crecimiento y sitios web dinámicos."
-              price="$25"
-              benefits={[
-                {
-                  icon: faMemory,
-                  text: "2GB Ram",
-                },
-                {
-                  icon: faMicrochip,
-                  text: "1 Core CPU",
-                },
-                {
-                  icon: faHardDrive,
-                  text: "25GB de almacenamiento NVMe",
-                },
-                {
-                  icon: faNetworkWired,
-                  text: "2TB de ancho de banda",
-                },
-              ]}
-            />
-
-            <PriceCard
-              title="Plan Profesional"
-              subtitle="La mejor opción para proyectos empresariales de alto rendimiento."
-              price="$51"
-              benefits={[
-                {
-                  icon: faMemory,
-                  text: "4GB Ram",
-                },
-                {
-                  icon: faMicrochip,
-                  text: "2 Core CPU",
-                },
-                {
-                  icon: faHardDrive,
-                  text: "50GB de almacenamiento NVMe",
-                },
-                {
-                  icon: faNetworkWired,
-                  text: "4TB de ancho de banda",
-                },
-              ]}
-            />
-          </div>
+          <PriceCard
+            title="Plan Profesional"
+            subtitle="La mejor opción para proyectos empresariales de alto rendimiento."
+            price="$51"
+            benefits={[
+              {
+                icon: faMemory,
+                text: "4GB Ram",
+              },
+              {
+                icon: faMicrochip,
+                text: "2 Core CPU",
+              },
+              {
+                icon: faHardDrive,
+                text: "50GB de almacenamiento NVMe",
+              },
+              {
+                icon: faNetworkWired,
+                text: "4TB de ancho de banda",
+              },
+            ]}
+          />
         </div>
-      </div>
+      </PageSectionWrapper>
 
       {/* Contact Us */}
       <div className="flex justify-center w-full bg-black py-6 md:py-20">
