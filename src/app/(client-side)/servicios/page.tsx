@@ -177,8 +177,8 @@ export default function Servicios() {
       {/* Services Section */}
       <PageSectionWrapper
         titleId="services"
-        titleName="Impulsa tu Presencia Digital"
-        subtitle="Soluciones Personalizadas que Transforman tu Negocio"
+        titleName="Impulsa tu presencia digital"
+        subtitle="Soluciones personalizadas que transforman tu negocio"
       >
         {/* Service cards */}
         <div className="flex flex-col items-center md:flex-row flex-wrap md:items-stretch">
