@@ -3,18 +3,15 @@ import { MetadataRoute } from "next";
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl =
     process.env.NEXT_PUBLIC_FRONTEND_URL ?? "https://bachacode.com";
-  return [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/contacto`,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.8,
-    },
-  ];
+
+  const routes: MetadataRoute.Sitemap = ["/", "/servicios", "/contacto"].map(
+    (route) => ({
+      url: `${baseUrl}${route}`,
+      lastModified: new Date().toISOString(),
+      changeFrequency: "monthly", // Optional, adjust based on expected changes
+      priority: route === "/" ? 1.0 : 0.8, // Homepage gets higher priority
+    })
+  );
+
+  return [...routes];
 }
