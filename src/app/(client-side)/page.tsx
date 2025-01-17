@@ -234,7 +234,7 @@ export default function Home() {
           />
         </div>
 
-        <div className="flex flex-col items-center lg:items-start lg:flex-row w-full justify-between">
+        {/* <div className="flex flex-col items-center lg:items-start lg:flex-row w-full justify-between">
           <div className="flex flex-col w-full items-center lg:items-start space-y-2 pb-12 self-start">
             <p className="font-light text-2xl self-start">
               Hecho posible por...
@@ -261,7 +261,7 @@ export default function Home() {
               githubUrl="https://www.github.com/IngJaneB"
             />
           </div>
-        </div>
+        </div> */}
       </PageSectionWrapper>
       {/* Steps */}
 
