@@ -47,6 +47,44 @@ export default function SobreNosotrosPage() {
           </div>
         </div>
       </div>
+
+      {/* Our values section */}
+      <PageSectionWrapper
+        titleId="our-values"
+        titleName="Nuestros Valores"
+        subtitle="La ética que nos destaca sobre la competencia"
+        altBackground
+      >
+        <div className="flex flex-col md:flex-row md:space-x-8">
+          <ServiceCard
+            icon={faLightbulb}
+            title="Innovación"
+            iconColor="text-yellow-500"
+          >
+            Nos esforzamos por estar a la vanguardia de la tecnología,
+            implementando soluciones innovadoras que impulsen el éxito de
+            nuestros clientes.
+          </ServiceCard>
+          <ServiceCard
+            icon={faCheckCircle}
+            title="Calidad"
+            iconColor="text-green-500"
+          >
+            La calidad es nuestra prioridad. Nos comprometemos a entregar
+            productos y servicios que superen las expectativas de nuestros
+            clientes.
+          </ServiceCard>
+          <ServiceCard
+            icon={faHandshake}
+            title="Compromiso"
+            iconColor="text-blue-500"
+          >
+            Estamos dedicados a construir relaciones duraderas con nuestros
+            clientes, basadas en la confianza, la transparencia y el compromiso
+            mutuo.
+          </ServiceCard>
+        </div>
+      </PageSectionWrapper>
     </main>
   );
 }
