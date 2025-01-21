@@ -1,5 +1,6 @@
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import React from "react";
 
 interface TeamCardProps {
@@ -8,6 +9,8 @@ interface TeamCardProps {
   description: string;
   linkedinUrl?: string;
   githubUrl?: string;
+  icon?: IconProp;
+  optionalIcon?: IconProp;
 }
 
 export default function TeamCard({
@@ -16,16 +19,33 @@ export default function TeamCard({
   description,
   linkedinUrl,
   githubUrl,
+  icon,
+  optionalIcon,
 }: TeamCardProps) {
   return (
-    <div className="p-3 lg:w-full">
-      <div className="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
-        <div className="flex-grow bg-white border border-gray-500 rounded p-6 transition-shadow shadow-md hover:shadow-lg">
-          <span className="title-font font-medium text-lg text-gray-900">
-            {memberName}
-          </span>
-          <h3 className="text-gray-500 mb-3">{profession}</h3>
-          <p className="mb-4">{description}</p>
+    <div className="p-3 lg:w-full flex">
+      <div className="h-full flex flex-col items-center sm:justify-start justify-center text-center sm:text-left flex-grow">
+        <div className="flex-grow bg-white border border-gray-500 rounded p-6 transition-shadow shadow-md hover:shadow-lg relative flex flex-col">
+          {optionalIcon && (
+            <FontAwesomeIcon
+              icon={optionalIcon}
+              className="absolute top-2 right-2 text-gray-500"
+            />
+          )}
+          <div className="flex justify-between items-center pb-3">
+            <div className="flex flex-col">
+              <span className="title-font font-medium text-lg text-gray-900">
+                {memberName}
+              </span>
+              <h3 className="text-gray-500 mb-3">{profession}</h3>
+            </div>
+            {icon ? (
+              <FontAwesomeIcon className="w-12 h-12 text-primary" icon={icon} />
+            ) : (
+              <div className="w-12 h-12"></div>
+            )}
+          </div>
+          <p className="mb-4 flex-grow">{description}</p>
           <span className="inline-flex">
             {linkedinUrl ? (
               <a
