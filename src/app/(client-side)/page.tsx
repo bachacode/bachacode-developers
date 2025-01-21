@@ -234,7 +234,7 @@ export default function Home() {
           />
         </div>
 
-        {/* <div className="flex flex-col items-center lg:items-start lg:flex-row w-full justify-between">
+        <div className="flex flex-col items-center lg:items-start lg:flex-row w-full justify-between">
           <div className="flex flex-col w-full items-center lg:items-start space-y-2 pb-12 self-start">
             <p className="font-light text-2xl self-start">
               Hecho posible por...
@@ -248,20 +248,19 @@ export default function Home() {
             <TeamCard
               memberName="Cristhian Flores"
               profession="Fullstack Developer"
-              description="Experimentado en el desarrollo de interfaces y diseño con conocimientos tanto en frontend como en backend."
+              description="Experimentado en el desarrollo de interfaces y APIs con conocimientos tanto en frontend como en backend."
               linkedinUrl="https://www.linkedin.com/in/cristhian-flo"
               githubUrl="https://github.com/bachacode"
             />
 
             <TeamCard
-              memberName="Jackeline Estaba"
-              profession="Fullstack Developer"
-              description="Experta en desarrollo de aplicaciones web con extensos conocimientos en backend experiencia trabajando en aplicaciones de PHP Nativo, Laravel y WordPress."
-              linkedinUrl="https://www.linkedin.com/in/janeb95"
-              githubUrl="https://www.github.com/IngJaneB"
+              memberName="Josibel Farías"
+              profession="Diseñadora UX/UI"
+              description="Especializada en la creación de experiencias de usuario intuitivas y atractivas, con un enfoque en el diseño visual y la usabilidad para garantizar interfaces eficientes y agradables."
+              linkedinUrl="https://www.linkedin.com/in/josibel-far%C3%ADas-espa%C3%B1a-b36390254"
             />
           </div>
-        </div> */}
+        </div>
       </PageSectionWrapper>
       {/* Steps */}
 

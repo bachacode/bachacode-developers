@@ -19,14 +19,14 @@ export default function ClientSideLayout({
               height={47}
               width={180}
               alt="Header bachacode logo"
-              style={{ height: "auto", width: "100%" }}
+              style={{ height: "auto", width: "180px" }}
             />
           </Link>
 
           <div className="hidden lg:flex justify-around w-8/12">
             <MenuLink href="/" label="Inicio" />
+            <MenuLink href="/sobre-nosotros" label="Sobre Nosotros" />
             <MenuLink href="/servicios" label="Servicios" />
-            <MenuLink href="/#clients" label="Clientes" />
             <MenuLink href="/#team" label="Equipo" />
           </div>
           <NavButton href="/contacto">Contacto</NavButton>
