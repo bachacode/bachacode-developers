@@ -1,6 +1,5 @@
 import React from "react";
 import PageSectionWrapper from "@/components/PageSectionWrapper";
-import NavButton from "@/components/NavButton";
 import Image from "next/image";
 import ncWomanTypingOnMachine from "../../../../public/images/nc-woman-typing-on-machine.png";
 import ServiceCard from "@/components/ServiceCard";
@@ -13,6 +12,12 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import ContactSection from "@/components/ContactSection";
 import TeamCard from "@/components/TeamCard";
+import generateTitle from "@/utils/generateTitle";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: generateTitle("Sobre Nosotros"),
+};
 
 export default function SobreNosotrosPage() {
   return (
@@ -24,7 +29,7 @@ export default function SobreNosotrosPage() {
           <div className="absolute md:relative flex flex-col h-full items-center text-center w-full md:w-1/2 md:right-0 px-6 md:px-0 opacity-20 md:opacity-100">
             <Image
               src={ncWomanTypingOnMachine}
-              alt="OC on the laptop hero image"
+              alt="Woman typing on a writing machine"
               className="max-w-full max-h-full object-contain"
               style={{ height: "auto", width: "100%" }}
             />
