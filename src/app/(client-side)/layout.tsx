@@ -19,7 +19,7 @@ export default function ClientSideLayout({
               height={47}
               width={180}
               alt="Header bachacode logo"
-              style={{ height: "auto", width: "100%" }}
+              style={{ height: "auto", width: "180px" }}
             />
           </Link>
 
