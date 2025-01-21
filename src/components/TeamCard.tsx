@@ -6,8 +6,8 @@ interface TeamCardProps {
   memberName: string;
   profession: string;
   description: string;
-  linkedinUrl: string;
-  githubUrl: string;
+  linkedinUrl?: string;
+  githubUrl?: string;
 }
 
 export default function TeamCard({
@@ -27,20 +27,38 @@ export default function TeamCard({
           <h3 className="text-gray-500 mb-3">{profession}</h3>
           <p className="mb-4">{description}</p>
           <span className="inline-flex">
-            <a
-              title={`Página de Linkedin de ${memberName}`}
-              className="text-gray-500 hover:text-primary transition-colors"
-              href={linkedinUrl}
-            >
-              <FontAwesomeIcon className="w-8 h-8" icon={faLinkedin} />
-            </a>
-            <a
-              title={`Página de Github de ${memberName}`}
-              className="ml-2 text-gray-500 hover:text-primary transition-colors"
-              href={githubUrl}
-            >
-              <FontAwesomeIcon className="w-8 h-8" icon={faGithub} />
-            </a>
+            {linkedinUrl ? (
+              <a
+                title={`Página de Linkedin de ${memberName}`}
+                className="text-gray-500 hover:text-primary transition-colors"
+                href={linkedinUrl}
+              >
+                <FontAwesomeIcon className="w-8 h-8" icon={faLinkedin} />
+              </a>
+            ) : (
+              <span
+                title="LinkedIn no disponible"
+                className="text-gray-300 cursor-not-allowed"
+              >
+                <FontAwesomeIcon className="w-8 h-8" icon={faLinkedin} />
+              </span>
+            )}
+            {githubUrl ? (
+              <a
+                title={`Página de Github de ${memberName}`}
+                className="ml-2 text-gray-500 hover:text-primary transition-colors"
+                href={githubUrl}
+              >
+                <FontAwesomeIcon className="w-8 h-8" icon={faGithub} />
+              </a>
+            ) : (
+              <span
+                title="GitHub no disponible"
+                className="ml-2 text-gray-300 cursor-not-allowed"
+              >
+                <FontAwesomeIcon className="w-8 h-8" icon={faGithub} />
+              </span>
+            )}
           </span>
         </div>
       </div>
