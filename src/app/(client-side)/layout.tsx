@@ -25,8 +25,8 @@ export default function ClientSideLayout({
 
           <div className="hidden lg:flex justify-around w-8/12">
             <MenuLink href="/" label="Inicio" />
+            <MenuLink href="/sobre-nosotros" label="Sobre Nosotros" />
             <MenuLink href="/servicios" label="Servicios" />
-            <MenuLink href="/#clients" label="Clientes" />
             <MenuLink href="/#team" label="Equipo" />
           </div>
           <NavButton href="/contacto">Contacto</NavButton>
