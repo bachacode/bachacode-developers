@@ -32,17 +32,20 @@ export default function TeamCard({
               className="absolute top-2 right-2 text-gray-500"
             />
           )}
-          <div className="flex justify-between items-center pb-3">
-            <div className="flex flex-col">
+          <div className="flex justify-center md:justify-between pb-3">
+            <div className="flex flex-col items-center md:items-start">
               <span className="title-font font-medium text-lg text-gray-900">
                 {memberName}
               </span>
               <h3 className="text-gray-500 mb-3">{profession}</h3>
             </div>
             {icon ? (
-              <FontAwesomeIcon className="w-12 h-12 text-primary" icon={icon} />
+              <FontAwesomeIcon
+                className="hidden md:block w-12 h-12 text-primary"
+                icon={icon}
+              />
             ) : (
-              <div className="w-12 h-12"></div>
+              <div className="hidden"></div>
             )}
           </div>
           <p className="mb-4 flex-grow">{description}</p>
