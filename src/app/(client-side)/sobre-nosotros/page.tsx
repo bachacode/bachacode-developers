@@ -8,7 +8,11 @@ import {
   faLightbulb,
   faCheckCircle,
   faHandshake,
+  faCode,
+  faPalette,
 } from "@fortawesome/free-solid-svg-icons";
+import ContactSection from "@/components/ContactSection";
+import TeamCard from "@/components/TeamCard";
 
 export default function SobreNosotrosPage() {
   return (
@@ -85,6 +89,35 @@ export default function SobreNosotrosPage() {
           </ServiceCard>
         </div>
       </PageSectionWrapper>
+
+      {/* Our team */}
+      <PageSectionWrapper
+        titleId="team"
+        titleName="Nuestro equipo"
+        subtitle="Los profesionales que desarrollarán tu idea"
+      >
+        <div className="grid grid-cols-2">
+          <TeamCard
+            memberName="Cristhian Flores"
+            profession="Fullstack Developer"
+            description="Experimentado en el desarrollo de interfaces y diseño con conocimientos tanto en frontend como en backend."
+            linkedinUrl="https://www.linkedin.com/in/cristhian-flo"
+            githubUrl="https://github.com/bachacode"
+            icon={faCode}
+          />
+
+          <TeamCard
+            memberName="Josibel Farías"
+            profession="Diseñadora UX/UI"
+            description="Especializada en la creación de experiencias de usuario intuitivas y atractivas, con un enfoque en el diseño visual y la usabilidad para garantizar interfaces eficientes y agradables."
+            linkedinUrl="https://www.linkedin.com/in/josibel-far%C3%ADas-espa%C3%B1a-b36390254"
+            icon={faPalette}
+          />
+        </div>
+      </PageSectionWrapper>
+
+      {/* Contact Us */}
+      <ContactSection />
     </main>
   );
 }
