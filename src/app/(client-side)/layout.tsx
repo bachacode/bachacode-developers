@@ -27,7 +27,7 @@ export default function ClientSideLayout({
             <MenuLink href="/" label="Inicio" />
             <MenuLink href="/sobre-nosotros" label="Sobre Nosotros" />
             <MenuLink href="/servicios" label="Servicios" />
-            <MenuLink href="/#team" label="Equipo" />
+            <MenuLink href="/portafolio" label="Portafolio" />
           </div>
           <NavButton href="/contacto">Contacto</NavButton>
         </div>
