@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   title: generateTitle("Sobre Nosotros"),
 };
 
-export default function SobreNosotrosPage() {
+export default function SobreNosotros() {
   return (
     <main className="w-full">
       {/* Hero section */}
