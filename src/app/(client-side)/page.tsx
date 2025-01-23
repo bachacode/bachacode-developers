@@ -25,17 +25,17 @@ export default function Home() {
   return (
     <main className="w-full">
       {/* Hero section */}
-      <div className="w-full bg-orange-primary-50 flex flex-col items-center">
-        <div className="container min-h-screen flex flex-col items-center justify-center space-y-8">
+      <div className="flex w-full flex-col items-center bg-orange-primary-50">
+        <div className="container flex min-h-screen flex-col items-center justify-center space-y-8">
           {/* Title */}
-          <div className="flex flex-col items-center lg:w-1/2 text-center">
+          <div className="flex flex-col items-center text-center lg:w-1/2">
             <h1
               id="hero"
-              className="font-bold text-6xl lg:text-6xl tracking-widest pb-3"
+              className="pb-3 text-6xl font-bold tracking-widest lg:text-6xl"
             >
               Construye tu presencia en línea
             </h1>
-            <p className="font-extralight text-xl text-gray-600">
+            <p className="text-xl font-extralight text-gray-600">
               con nosotros tu nuevo proyecto se hará realidad
             </p>
           </div>
@@ -49,17 +49,17 @@ export default function Home() {
 
       {/* About us section */}
       <div className="flex flex-col items-center p-6 lg:p-12">
-        <div className="flex w-full justify-around container">
-          <div className="relative flex flex-col lg:w-7/12 lg:pr-6 items-center lg:items-start">
+        <div className="container flex w-full justify-around">
+          <div className="relative flex flex-col items-center lg:w-7/12 lg:items-start lg:pr-6">
             <h2
               id="about"
-              className="font-bold text-4xl pb-4 lg:pb-0 text-center lg:text-left text-accent"
+              className="pb-4 text-center text-4xl font-bold text-accent lg:pb-0 lg:text-left"
             >
               Conectando el Futuro: Nuestra Historia en el Mundo de la
               Tecnología.
             </h2>
-            <div className="w-36 border-t-2 border-primary pb-6 mt-1.5"></div>
-            <p className="text-base lg:text-2xl pb-3">
+            <div className="mt-1.5 w-36 border-t-2 border-primary pb-6"></div>
+            <p className="pb-3 text-base lg:text-2xl">
               Somos un equipo de expertos en desarrollo web dedicados a crear
               soluciones digitales personalizadas que se ajusten a tus
               necesidades, presupuesto y conocimientos técnicos. Nos
@@ -73,7 +73,7 @@ export default function Home() {
               y visión.
             </p>
 
-            <div className="lg:hidden absolute h-48 top-24 max-w-sm w-full self-center">
+            <div className="absolute top-24 h-48 w-full max-w-sm self-center lg:hidden">
               <Image
                 src="/images/bachacode-big.png"
                 className="relative z-10 rounded-r-xl rounded-tl-xl opacity-20"
@@ -85,7 +85,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="hidden lg:block relative h-48 max-w-sm w-full self-center">
+          <div className="relative hidden h-48 w-full max-w-sm self-center lg:block">
             <Image
               src={bachacodeBig}
               className="relative z-10 rounded-r-xl rounded-tl-xl"
@@ -107,7 +107,7 @@ export default function Home() {
         subtitle="Los servicios accessibles a todos nuestros clientes"
         altBackground
       >
-        <div className="flex flex-col items-center lg:flex-row flex-wrap container">
+        <div className="container flex flex-col flex-wrap items-center lg:flex-row">
           <ServiceCard
             title="Sitios Web Estaticos"
             icon={faWindowRestore}
@@ -163,14 +163,14 @@ export default function Home() {
       </PageSectionWrapper>
 
       {/* Tech Stack */}
-      <div className="flex flex-col bg-white w-full items-center py-12">
+      <div className="flex w-full flex-col items-center bg-white py-12">
         <Heading
           id="tech"
           title="Nuestras tecnologías"
           subtitle="Somos expertos en la tecnología mas vanguardista del desarrollo web"
         />
 
-        <div className="w-full flex flex-col items-center">
+        <div className="flex w-full flex-col items-center">
           <TechCarousel />
           <TechCarousel
             directionAS="backward"
@@ -187,7 +187,7 @@ export default function Home() {
         subtitle="Los que han depositado su confianza en nosotros"
         altBackground
       >
-        <div className="flex w-full flex-wrap container">
+        <div className="container flex w-full flex-wrap">
           <TestimonialCard
             name="Guillermo Saez"
             profession="CEO de TailorSheet"
@@ -208,7 +208,7 @@ export default function Home() {
         titleName="Nosotros garantizamos"
         subtitle="Lo que obtendrás trabajando con nosotros"
       >
-        <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6 pb-16">
+        <div className="-mx-4 -mb-10 -mt-4 flex flex-wrap space-y-6 pb-16 sm:-m-4 md:space-y-0">
           <OfferingCard
             title="Desarrollo ágil"
             description="Con nosotros, el desarrollo ágil significa adaptación rápida a tus necesidades y resultados constantes. Garantizamos eficiencia y ajuste preciso a lo que realmente necesitas en tu proyecto."
@@ -234,17 +234,17 @@ export default function Home() {
           />
         </div>
 
-        <div className="flex flex-col items-center lg:items-start lg:flex-row w-full justify-between">
-          <div className="flex flex-col w-full items-center lg:items-start space-y-2 pb-12 self-start">
-            <p className="font-light text-2xl self-start">
+        <div className="flex w-full flex-col items-center justify-between lg:flex-row lg:items-start">
+          <div className="flex w-full flex-col items-center space-y-2 self-start pb-12 lg:items-start">
+            <p className="self-start text-2xl font-light">
               Hecho posible por...
             </p>
-            <h3 className="font-semibold text-4xl lg:text-6xl text-center lg:text-left text-primary">
+            <h3 className="text-center text-4xl font-semibold text-primary lg:text-left lg:text-6xl">
               Desarrolladores experimentados.
             </h3>
           </div>
 
-          <div className="flex flex-col w-9/12">
+          <div className="flex w-9/12 flex-col">
             <TeamCard
               memberName="Cristhian Flores"
               profession="Fullstack Developer"

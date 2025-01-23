@@ -9,25 +9,23 @@ export default function ClientSideLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="min-h-screen flex flex-col items-center w-full">
+    <div className="flex min-h-screen w-full flex-col items-center">
       {/* Header */}
-      <header className="absolute top-0 z-10 flex items-center justify-center bg-white h-24 w-full shadow-md">
-        <div className="max-w-screen-xl flex items-center justify-around w-full  py-6 px-3">
+      <header className="absolute top-0 z-10 flex h-24 w-full items-center justify-center bg-white shadow-md">
+        <div className="flex w-full max-w-screen-xl items-center justify-around px-3 py-6">
           <Link href="/" className="flex items-center space-x-2">
             <Image
               src={bachacodeRemoveBg}
-              height={47}
-              width={180}
               alt="Header bachacode logo"
               style={{ height: "auto", width: "180px" }}
             />
           </Link>
 
-          <div className="hidden lg:flex justify-around w-8/12">
+          <div className="hidden w-8/12 justify-around lg:flex">
             <MenuLink href="/" label="Inicio" />
             <MenuLink href="/sobre-nosotros" label="Sobre Nosotros" />
             <MenuLink href="/servicios" label="Servicios" />
-            <MenuLink href="/#team" label="Equipo" />
+            <MenuLink href="/portafolio" label="Portafolio" />
           </div>
           <NavButton href="/contacto">Contacto</NavButton>
         </div>
@@ -37,12 +35,12 @@ export default function ClientSideLayout({
       {children}
 
       {/* Footer */}
-      <footer className="bg-zinc-900 h-2/4 w-full text-white">
-        <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+      <footer className="h-2/4 w-full bg-zinc-900 text-white">
+        <div className="container mx-auto flex flex-col items-center px-5 py-8 sm:flex-row">
           <Link href="/" className="flex items-center space-x-2">
             <span>Bacha / Code;</span>
           </Link>
-          <p className="text-sm text-gray-400 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
+          <p className="mt-4 text-sm text-gray-400 sm:ml-4 sm:mt-0 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:pl-4">
             Copyright © 2024 Bachacode
           </p>
         </div>
