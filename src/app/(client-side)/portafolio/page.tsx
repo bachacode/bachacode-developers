@@ -6,6 +6,7 @@ import MesgoHome from "@/assets/images/mesgo-home.png";
 import TailorsheetHome from "@/assets/images/tailorsheet-home.png";
 import ProjectCard from "@/components/ProjectCard";
 import TestimonialCard from "@/components/TestimonialCard";
+import ContactSection from "@/components/ContactSection";
 
 export const metadata: Metadata = {
   title: generateTitle("Portafolio"),
@@ -61,7 +62,7 @@ export default function Portafolio() {
         </div>
       </PageSectionWrapper>
 
-      {/* Our clients */}
+      {/* Testimonies */}
       <PageSectionWrapper
         titleId="testimonies"
         titleName="Testimonios"
@@ -82,6 +83,9 @@ export default function Portafolio() {
           />
         </div>
       </PageSectionWrapper>
+
+      {/* Contact Us */}
+      <ContactSection />
     </main>
   );
 }
