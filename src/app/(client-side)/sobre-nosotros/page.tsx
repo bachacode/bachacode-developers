@@ -1,8 +1,8 @@
 import React from "react";
-import PageSectionWrapper from "@/components/PageSectionWrapper";
+import PageSectionWrapper from "@/components/layout/PageSectionWrapper";
 import Image from "next/image";
 import ncWomanTypingOnMachine from "../../../../public/images/nc-woman-typing-on-machine.png";
-import ServiceCard from "@/components/ServiceCard";
+import ServiceCard from "@/components/cards/ServiceCard";
 import {
   faLightbulb,
   faCheckCircle,
@@ -10,8 +10,8 @@ import {
   faCode,
   faPalette,
 } from "@fortawesome/free-solid-svg-icons";
-import ContactSection from "@/components/ContactSection";
-import TeamCard from "@/components/TeamCard";
+import ContactSection from "@/components/sections/ContactSection";
+import TeamCard from "@/components/cards/TeamCard";
 import generateTitle from "@/utils/generateTitle";
 import { Metadata } from "next";
 

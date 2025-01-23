@@ -8,12 +8,12 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "./ui/form";
-import { Input } from "./ui/input";
-import { Button } from "./ui/button";
+} from "../ui/form";
+import { Input } from "../ui/input";
+import { Button } from "../ui/button";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Textarea } from "./ui/textarea";
+import { Textarea } from "../ui/textarea";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
@@ -47,7 +47,7 @@ const formSchema = z.object({
   message: z.optional(
     z.string().max(250, {
       message: "El mensaje debe de ser de un maximo de 250 caracteres.",
-    })
+    }),
   ),
 });
 
@@ -72,7 +72,7 @@ export default function ContactForm() {
     setLoading(true);
     if (!executeRecaptcha) {
       setNotification(
-        "Algo ha fallado con la llave del reCAPTCHA, pongase en contacto con la administración por otros medios."
+        "Algo ha fallado con la llave del reCAPTCHA, pongase en contacto con la administración por otros medios.",
       );
       setLoading(false);
       return;
@@ -84,7 +84,7 @@ export default function ContactForm() {
 
   function sendEmail(
     gReCaptchaToken: string,
-    data: z.infer<typeof formSchema>
+    data: z.infer<typeof formSchema>,
   ) {
     const apiEndpoint = "/api/contacto";
 
@@ -178,7 +178,7 @@ export default function ContactForm() {
               <FormControl>
                 <Textarea
                   placeholder="Escribenos un mensaje"
-                  className="resize-none h-48"
+                  className="h-48 resize-none"
                   {...field}
                 />
               </FormControl>
@@ -194,7 +194,7 @@ export default function ContactForm() {
               disabled
             >
               <FontAwesomeIcon
-                className="animate-spin w-6 h-6 cursor-not-allowed"
+                className="h-6 w-6 animate-spin cursor-not-allowed"
                 icon={faSpinner}
               />
             </Button>
@@ -207,7 +207,7 @@ export default function ContactForm() {
             </Button>
           )}
           {notification && (
-            <p className="absolute mt-3  text-accent text-center w-full">
+            <p className="absolute mt-3 w-full text-center text-accent">
               {notification}
             </p>
           )}

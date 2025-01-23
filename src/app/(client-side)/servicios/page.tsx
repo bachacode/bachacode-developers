@@ -1,9 +1,9 @@
-import NavButton from "@/components/NavButton";
+import NavButton from "@/components/common/NavButton";
 import Image from "next/image";
 import React from "react";
 import ocOnTheLaptop from "../../../../public/images/oc-on-the-laptop.svg";
 import ocTakingNote from "../../../../public/images/oc-taking-note.svg";
-import ServiceCardAlt from "@/components/ServiceCardAlt";
+import ServiceCardAlt from "@/components/cards/ServiceCardAlt";
 import {
   faCheckCircle,
   faCode,
@@ -29,13 +29,13 @@ import {
   faVuejs,
   faWordpress,
 } from "@fortawesome/free-brands-svg-icons";
-import AdvantageCard from "@/components/AdvantageCard";
+import AdvantageCard from "@/components/cards/AdvantageCard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
-import PageSectionWrapper from "@/components/PageSectionWrapper";
+import PageSectionWrapper from "@/components/layout/PageSectionWrapper";
 import { Metadata } from "next";
 import generateTitle from "@/utils/generateTitle";
-import ContactSection from "@/components/ContactSection";
+import ContactSection from "@/components/sections/ContactSection";
 
 interface TechCardProps {
   icon: IconDefinition;

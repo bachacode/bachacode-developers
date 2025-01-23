@@ -23,12 +23,12 @@ function TechCarouselItem({
   className = "group-hover:text-primary",
 }: Readonly<{ icon: IconProp; title: string; className?: string }>) {
   return (
-    <CarouselItem className="group basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/5 flex flex-col items-center">
+    <CarouselItem className="group flex basis-1/2 flex-col items-center sm:basis-1/3 md:basis-1/4 lg:basis-1/5">
       <FontAwesomeIcon
-        className={`w-28 h-28 py-1.5 text-gray-500 transition-all duration-300 group-hover:scale-105 ${className}`}
+        className={`h-28 w-28 py-1.5 text-gray-500 transition-all duration-300 group-hover:scale-105 ${className}`}
         icon={icon}
       />
-      <span className="text-gray-500 transition-all duration-300 group-hover:text-accent group-hover:scale-105">
+      <span className="text-gray-500 transition-all duration-300 group-hover:scale-105 group-hover:text-accent">
         {title}
       </span>
     </CarouselItem>

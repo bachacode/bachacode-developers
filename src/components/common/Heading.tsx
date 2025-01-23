@@ -8,11 +8,11 @@ interface HeadingProps {
 
 export default function Heading({ title, subtitle, id }: HeadingProps) {
   return (
-    <div className="flex flex-col items-center space-y-2 text-center pb-6 px-8 md:px-6 lg:px-0">
-      <h2 id={id} className="uppercase font-semibold text-accent text-4xl">
+    <div className="flex flex-col items-center space-y-2 px-8 pb-6 text-center md:px-6 lg:px-0">
+      <h2 id={id} className="text-4xl font-semibold uppercase text-accent">
         {title}
       </h2>
-      {subtitle && <p className="font-extralight text-xl">{subtitle}</p>}
+      {subtitle && <p className="text-xl font-extralight">{subtitle}</p>}
       <div className="w-12 border-t-2 border-primary pb-4"></div>
     </div>
   );

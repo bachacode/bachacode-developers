@@ -23,25 +23,25 @@ export default function TeamCard({
   optionalIcon,
 }: TeamCardProps) {
   return (
-    <div className="p-3 lg:w-full flex">
-      <div className="h-full flex flex-col items-center sm:justify-start justify-center text-center sm:text-left flex-grow">
-        <div className="flex-grow bg-white border border-gray-500 rounded p-6 transition-shadow shadow-md hover:shadow-lg relative flex flex-col">
+    <div className="flex p-3 lg:w-full">
+      <div className="flex h-full flex-grow flex-col items-center justify-center text-center sm:justify-start sm:text-left">
+        <div className="relative flex flex-grow flex-col rounded border border-gray-500 bg-white p-6 shadow-md transition-shadow hover:shadow-lg">
           {optionalIcon && (
             <FontAwesomeIcon
               icon={optionalIcon}
-              className="absolute top-2 right-2 text-gray-500"
+              className="absolute right-2 top-2 text-gray-500"
             />
           )}
-          <div className="flex justify-center md:justify-between pb-3">
+          <div className="flex justify-center pb-3 md:justify-between">
             <div className="flex flex-col items-center md:items-start">
-              <span className="title-font font-medium text-lg text-gray-900">
+              <span className="title-font text-lg font-medium text-gray-900">
                 {memberName}
               </span>
-              <h3 className="text-gray-500 mb-3">{profession}</h3>
+              <h3 className="mb-3 text-gray-500">{profession}</h3>
             </div>
             {icon ? (
               <FontAwesomeIcon
-                className="hidden md:block w-12 h-12 text-primary"
+                className="hidden h-12 w-12 text-primary md:block"
                 icon={icon}
               />
             ) : (
@@ -53,33 +53,33 @@ export default function TeamCard({
             {linkedinUrl ? (
               <a
                 title={`Página de Linkedin de ${memberName}`}
-                className="text-gray-500 hover:text-primary transition-colors"
+                className="text-gray-500 transition-colors hover:text-primary"
                 href={linkedinUrl}
               >
-                <FontAwesomeIcon className="w-8 h-8" icon={faLinkedin} />
+                <FontAwesomeIcon className="h-8 w-8" icon={faLinkedin} />
               </a>
             ) : (
               <span
                 title="LinkedIn no disponible"
-                className="text-gray-300 cursor-not-allowed"
+                className="cursor-not-allowed text-gray-300"
               >
-                <FontAwesomeIcon className="w-8 h-8" icon={faLinkedin} />
+                <FontAwesomeIcon className="h-8 w-8" icon={faLinkedin} />
               </span>
             )}
             {githubUrl ? (
               <a
                 title={`Página de Github de ${memberName}`}
-                className="ml-2 text-gray-500 hover:text-primary transition-colors"
+                className="ml-2 text-gray-500 transition-colors hover:text-primary"
                 href={githubUrl}
               >
-                <FontAwesomeIcon className="w-8 h-8" icon={faGithub} />
+                <FontAwesomeIcon className="h-8 w-8" icon={faGithub} />
               </a>
             ) : (
               <span
                 title="GitHub no disponible"
-                className="ml-2 text-gray-300 cursor-not-allowed"
+                className="ml-2 cursor-not-allowed text-gray-300"
               >
-                <FontAwesomeIcon className="w-8 h-8" icon={faGithub} />
+                <FontAwesomeIcon className="h-8 w-8" icon={faGithub} />
               </span>
             )}
           </span>

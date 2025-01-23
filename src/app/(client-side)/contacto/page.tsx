@@ -1,4 +1,4 @@
-import ContactForm from "@/components/ContactForm";
+import ContactForm from "@/components/forms/ContactForm";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
@@ -8,7 +8,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import generateTitle from "@/utils/generateTitle";
-import GoogleCaptchaWrapper from "@/components/GoogleCaptchaWrapper";
+import GoogleCaptchaWrapper from "@/components/layout/GoogleCaptchaWrapper";
 
 export const metadata: Metadata = {
   title: generateTitle("Contacto"),
