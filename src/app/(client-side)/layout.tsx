@@ -3,6 +3,7 @@ import MenuLink from "@/components/MenuLink";
 import NavButton from "@/components/NavButton";
 import Image from "next/image";
 import bachacodeRemoveBg from "../../../public/images/bachacode-removebg.png";
+import MainFooter from "@/components/partials/MainFooter";
 export default function ClientSideLayout({
   children,
 }: Readonly<{
@@ -35,16 +36,7 @@ export default function ClientSideLayout({
       {children}
 
       {/* Footer */}
-      <footer className="h-2/4 w-full bg-zinc-900 text-white">
-        <div className="container mx-auto flex flex-col items-center px-5 py-8 sm:flex-row">
-          <Link href="/" className="flex items-center space-x-2">
-            <span>Bacha / Code;</span>
-          </Link>
-          <p className="mt-4 text-sm text-gray-400 sm:ml-4 sm:mt-0 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:pl-4">
-            Copyright © 2024 Bachacode
-          </p>
-        </div>
-      </footer>
+      <MainFooter></MainFooter>
     </div>
   );
 }
