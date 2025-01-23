@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
-import ProgressBarProvider from "@/components/ProgressBarProvider";
+import ProgressBarProvider from "@/components/layout/ProgressBarProvider";
 const roboto = Roboto({ weight: "500", subsets: ["latin"], display: "swap" });
 const baseUrl = process.env.NEXT_PUBLIC_FRONTEND_URL ?? "https://bachacode.com";
 export const metadata: Metadata = {

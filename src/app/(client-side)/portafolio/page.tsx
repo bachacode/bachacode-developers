@@ -1,12 +1,12 @@
 import React from "react";
 import generateTitle from "@/utils/generateTitle";
 import { Metadata } from "next";
-import PageSectionWrapper from "@/components/PageSectionWrapper";
+import PageSectionWrapper from "@/components/layout/PageSectionWrapper";
 import MesgoHome from "@/assets/images/mesgo-home.png";
 import TailorsheetHome from "@/assets/images/tailorsheet-home.png";
-import ProjectCard from "@/components/ProjectCard";
-import TestimonialCard from "@/components/TestimonialCard";
-import ContactSection from "@/components/ContactSection";
+import ProjectCard from "@/components/cards/ProjectCard";
+import TestimonialCard from "@/components/cards/TestimonialCard";
+import ContactSection from "@/components/sections/ContactSection";
 
 export const metadata: Metadata = {
   title: generateTitle("Portafolio"),

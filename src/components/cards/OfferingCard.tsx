@@ -14,15 +14,15 @@ export default function OfferingCard({
   icon,
 }: OfferingCardProps) {
   return (
-    <div className="p-4 md:w-1/2 flex">
-      <div className="w-12 h-12 inline-flex items-center justify-center rounded-full bg-teal-blue-accent-100 mb-4 flex-shrink-0">
-        <FontAwesomeIcon className="w-6 h-6 text-accent" icon={icon} />
+    <div className="flex p-4 md:w-1/2">
+      <div className="mb-4 inline-flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-teal-blue-accent-100">
+        <FontAwesomeIcon className="h-6 w-6 text-accent" icon={icon} />
       </div>
       <div className="flex-grow pl-6">
-        <h3 className="text-gray-900 text-lg title-font font-medium mb-2">
+        <h3 className="title-font mb-2 text-lg font-medium text-gray-900">
           {title}
         </h3>
-        <p className="leading-relaxed text-base">{description}</p>
+        <p className="text-base leading-relaxed">{description}</p>
       </div>
     </div>
   );

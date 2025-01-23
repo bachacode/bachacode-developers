@@ -15,17 +15,17 @@ export default function ServiceCardAlt({
   iconColor,
 }: ServiceCardProps) {
   return (
-    <div className="group w-full transition-transform duration-200 delay-75 hover:-translate-y-3">
-      <div className="border border-accent h-full bg-white transition-shadow duration-200 delay-75 shadow-md group-hover:shadow-xl p-6 rounded-lg">
+    <div className="group w-full transition-transform delay-75 duration-200 hover:-translate-y-3">
+      <div className="h-full rounded-lg border border-accent bg-white p-6 shadow-md transition-shadow delay-75 duration-200 group-hover:shadow-xl">
         <FontAwesomeIcon
           icon={icon}
-          className={`w-14 h-14 pb-3 ${iconColor}`}
+          className={`h-14 w-14 pb-3 ${iconColor}`}
         />
 
-        <h3 className="text-lg text-gray-900 font-medium title-font mb-2">
+        <h3 className="title-font mb-2 text-lg font-medium text-gray-900">
           {title}
         </h3>
-        <p className="leading-relaxed text-base">{children}</p>
+        <p className="text-base leading-relaxed">{children}</p>
       </div>
     </div>
   );

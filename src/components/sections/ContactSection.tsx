@@ -3,9 +3,9 @@ import Link from "next/link";
 
 export default function ContactSection() {
   return (
-    <div className="flex justify-center w-full bg-teal-blue-accent-950 py-6 md:py-20">
-      <div className="flex flex-col items-center md:items-start w-3/4 md:w-1/3 text-balance space-y-6 text-2xl">
-        <p className="text-white font-semi-bold">
+    <div className="flex w-full justify-center bg-teal-blue-accent-950 py-6 md:py-20">
+      <div className="flex w-3/4 flex-col items-center space-y-6 text-balance text-2xl md:w-1/3 md:items-start">
+        <p className="font-semi-bold text-white">
           Creemos en hacer posible cualquier proyecto que nuestros clientes
           tengan en mente, ¿estás interesado en construir tu presencia en línea?
           {"\n"}
@@ -15,7 +15,7 @@ export default function ContactSection() {
         <div>
           <Link
             href="/contacto"
-            className="text-white border-4 border-white rounded-md uppercase font-semibold z-10 transition-colors hover:bg-primary duration-300 text-base px-8 py-3.5"
+            className="z-10 rounded-md border-4 border-white px-8 py-3.5 text-base font-semibold uppercase text-white transition-colors duration-300 hover:bg-primary"
           >
             Contáctanos
           </Link>

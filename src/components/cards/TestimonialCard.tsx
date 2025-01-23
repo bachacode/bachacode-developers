@@ -14,17 +14,17 @@ export default function TestimonialCard({
   profession,
 }: TestimonialCardProps) {
   return (
-    <div className="p-4 md:w-1/2 w-full">
-      <div className="h-full bg-white p-8 rounded shadow-md">
+    <div className="w-full p-4 md:w-1/2">
+      <div className="h-full rounded bg-white p-8 shadow-md">
         <FontAwesomeIcon
-          className="w-8 h-8 pb-1.5 text-accent"
+          className="h-8 w-8 pb-1.5 text-accent"
           icon={faQuoteRight}
         />
-        <p className="leading-relaxed mb-6">{testimony}</p>
+        <p className="mb-6 leading-relaxed">{testimony}</p>
         <span className="inline-flex items-center">
-          <span className="flex-grow flex flex-col">
+          <span className="flex flex-grow flex-col">
             <span className="title-font font-medium text-gray-900">{name}</span>
-            <span className="text-gray-500 text-sm">{profession}</span>
+            <span className="text-sm text-gray-500">{profession}</span>
           </span>
         </span>
       </div>

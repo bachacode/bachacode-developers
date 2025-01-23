@@ -1,7 +1,7 @@
-import NavButton from "@/components/NavButton";
+import NavButton from "@/components/common/NavButton";
 import Image from "next/image";
-import ServiceCard from "@/components/ServiceCard";
-import TestimonialCard from "@/components/TestimonialCard";
+import ServiceCard from "@/components/cards/ServiceCard";
+import TestimonialCard from "@/components/cards/TestimonialCard";
 import { faWordpress } from "@fortawesome/free-brands-svg-icons";
 import {
   faCode,
@@ -12,14 +12,14 @@ import {
   faWind,
   faWindowRestore,
 } from "@fortawesome/free-solid-svg-icons";
-import TechCarousel from "@/components/TechCarousel";
-import Heading from "@/components/Heading";
-import TeamCard from "@/components/TeamCard";
-import OfferingCard from "@/components/OfferingCard";
+import TechCarousel from "@/components/sections/TechCarousel";
+import Heading from "@/components/common/Heading";
+import TeamCard from "@/components/cards/TeamCard";
+import OfferingCard from "@/components/cards/OfferingCard";
 import bachacodeBig from "../../../public/images/bachacode-big.png";
-import HomePageCounter from "@/components/HomePageCounter";
-import PageSectionWrapper from "@/components/PageSectionWrapper";
-import ContactSection from "@/components/ContactSection";
+import HomePageCounter from "@/components/sections/HomePageCounter";
+import PageSectionWrapper from "@/components/layout/PageSectionWrapper";
+import ContactSection from "@/components/sections/ContactSection";
 
 export default function Home() {
   return (
