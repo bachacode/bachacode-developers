@@ -5,6 +5,7 @@ import PageSectionWrapper from "@/components/PageSectionWrapper";
 import MesgoHome from "@/assets/images/mesgo-home.png";
 import TailorsheetHome from "@/assets/images/tailorsheet-home.png";
 import ProjectCard from "@/components/ProjectCard";
+import TestimonialCard from "@/components/TestimonialCard";
 
 export const metadata: Metadata = {
   title: generateTitle("Portafolio"),
@@ -56,6 +57,28 @@ export default function Portafolio() {
             buttonUrl="https://mesgo.bachacode.com/"
             inverted
             altColor
+          />
+        </div>
+      </PageSectionWrapper>
+
+      {/* Our clients */}
+      <PageSectionWrapper
+        titleId="testimonies"
+        titleName="Testimonios"
+        subtitle="Las palabras de nuestro clientes"
+        altBackground
+      >
+        <div className="container flex w-full flex-wrap">
+          <TestimonialCard
+            name="Guillermo Saez"
+            profession="CEO de TailorSheet"
+            testimony="Con Bachacode Developers encontré lo que muchos emprendedores buscan y nunca encuentran: La tranquilidad de poder dejar tu negocio en manos de personas que lo cuidan y ayudan a hacerlo crecer con soluciones que rozan la excelencia. Que aportan ideas y que se implican al 100% con cada proyecto."
+          />
+
+          <TestimonialCard
+            name="Luis Fernando Carbajal"
+            profession="CEO de MESGO"
+            testimony="Gracias a Bachacode Developers logramos cumplir con los requerimientos establecidos por la empresa CBI Group para obtener nuestro número de proveedor. El sitio web que desarrollaron no solo superó nuestras expectativas, sino que también facilitó el proceso y la presentación de nuestra empresa."
           />
         </div>
       </PageSectionWrapper>
