@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
 import ProgressBarProvider from "@/components/ProgressBarProvider";
-const roboto = Roboto({ weight: "500", subsets: ["latin"] });
+const roboto = Roboto({ weight: "500", subsets: ["latin"], display: "swap" });
 const baseUrl = process.env.NEXT_PUBLIC_FRONTEND_URL ?? "https://bachacode.com";
 export const metadata: Metadata = {
   title: "Bachacode Developers | Desarrollo & Consultoría Web",
@@ -61,7 +61,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`${roboto.className}`}>
-        <div className="min-h-screen flex flex-col items-center w-full">
+        <div className="flex min-h-screen w-full flex-col items-center">
           {/* Main Context */}
           <ProgressBarProvider>{children}</ProgressBarProvider>
         </div>
