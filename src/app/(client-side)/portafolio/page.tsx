@@ -1,8 +1,10 @@
 import React from "react";
-import Image from "next/image";
-import ncWomanTypingOnMachine from "../../../../public/images/nc-woman-typing-on-machine.png";
 import generateTitle from "@/utils/generateTitle";
 import { Metadata } from "next";
+import PageSectionWrapper from "@/components/PageSectionWrapper";
+import MesgoHome from "@/assets/images/mesgo-home.png";
+import TailorsheetHome from "@/assets/images/tailorsheet-home.png";
+import ProjectCard from "@/components/ProjectCard";
 
 export const metadata: Metadata = {
   title: generateTitle("Portafolio"),
@@ -30,6 +32,33 @@ export default function Portafolio() {
           </div>
         </div>
       </div>
+
+      {/* Galería de proyectos */}
+      <PageSectionWrapper
+        titleId="projects"
+        titleName="Nuestros proyectos"
+        subtitle="Los sitios web en lo que hemos trabajado"
+        fullWidth
+      >
+        <div className="flex w-full flex-col">
+          {/* Component */}
+          <ProjectCard
+            title="TailorSheet"
+            description="Cursos y diseño de Apps con AppSheet. Aprende desde cero con nuestros cursos y tutoriales en español. Diseñamos apps para tu negocio en tiempo récord."
+            image={TailorsheetHome}
+            buttonUrl="https://tailorsheet.com/"
+          />
+
+          <ProjectCard
+            title="Mesgo"
+            description="Landing Page de Mexican Engineering Supply Group, empresa especializada en la distribución de materiales industriales, con un enfoque en la ingeniería eléctrica, electrónica y mecánica."
+            image={MesgoHome}
+            buttonUrl="https://mesgo.bachacode.com/"
+            inverted
+            altColor
+          />
+        </div>
+      </PageSectionWrapper>
     </main>
   );
 }
