@@ -52,6 +52,7 @@ export default function ProjectCard({
 
           <Link
             href={buttonUrl}
+            target="_blank"
             className={`w-fit rounded-lg border-2 px-6 py-3 text-base font-semibold uppercase ${
               altColor
                 ? "border-white text-white md:border-black md:text-black"
