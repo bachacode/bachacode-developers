@@ -45,10 +45,10 @@ interface TechCardProps {
 
 function TechCard({ icon, className, title }: TechCardProps) {
   return (
-    <div className="group border border-accent rounded-md w-32 h-32 flex flex-col items-center justify-center shadow-md">
+    <div className="group flex h-32 w-32 flex-col items-center justify-center rounded-md border border-accent shadow-md">
       <FontAwesomeIcon
         icon={icon}
-        className={`text-gray-600 w-20 h-20 transition-all duration-300 group-hover:scale-105 group-hover:-translate-y-1 ${className}`}
+        className={`h-20 w-20 text-gray-600 transition-all duration-300 group-hover:-translate-y-1 group-hover:scale-105 ${className}`}
         title={title}
       ></FontAwesomeIcon>
     </div>
@@ -67,66 +67,66 @@ interface PriceCardProps {
 
 function PriceCard({ title, subtitle, price, benefits }: PriceCardProps) {
   return (
-    <div className="bg-white text-zinc-800 rounded-lg p-6 w-full md:w-1/3 shadow-lg border border-zinc-800">
-      <h3 className="text-xl font-semibold text-center mb-4">{title}</h3>
-      <p className="text-center text-zinc-800 mb-6">{subtitle}</p>
-      <div className="text-center mb-6">
+    <div className="w-full rounded-lg border border-zinc-800 bg-white p-6 text-zinc-800 shadow-lg md:w-1/3">
+      <h3 className="mb-4 text-center text-xl font-semibold">{title}</h3>
+      <p className="mb-6 text-center text-zinc-800">{subtitle}</p>
+      <div className="mb-6 text-center">
         <span className="text-4xl font-bold">{price}</span>
         <span className="text-lg font-medium">/mes</span>
       </div>
-      <h4 className="text-lg font-semibold pb-2">Especificaciones:</h4>
+      <h4 className="pb-2 text-lg font-semibold">Especificaciones:</h4>
       <ul className="mb-6 space-y-2">
         {benefits.map((benefit) => (
           <li key={benefit.text} className="flex items-center">
             <FontAwesomeIcon
               icon={benefit.icon}
-              className="w-full max-w-4 h-auto mr-2 text-accent"
+              className="mr-2 h-auto w-full max-w-4 text-accent"
             ></FontAwesomeIcon>
             {benefit.text}
           </li>
         ))}
       </ul>
-      <h4 className="text-lg font-semibold pb-2">Incluye:</h4>
+      <h4 className="pb-2 text-lg font-semibold">Incluye:</h4>
       <ul className="mb-6 space-y-2 pb-4">
         <li className="flex items-center">
           <FontAwesomeIcon
             icon={faCheckCircle}
-            className="w-full max-w-4 h-auto mr-2 text-accent"
+            className="mr-2 h-auto w-full max-w-4 text-accent"
           ></FontAwesomeIcon>
           Gestión profesional 24/7
         </li>
         <li className="flex items-center">
           <FontAwesomeIcon
             icon={faCheckCircle}
-            className="w-full max-w-4 h-auto mr-2 text-accent"
+            className="mr-2 h-auto w-full max-w-4 text-accent"
           ></FontAwesomeIcon>
           SSL Gratis sin coste añadido
         </li>
         <li className="flex items-center">
           <FontAwesomeIcon
             icon={faCheckCircle}
-            className="w-full max-w-4 h-auto mr-2 text-accent"
+            className="mr-2 h-auto w-full max-w-4 text-accent"
           ></FontAwesomeIcon>
           Integración con Cloudflare gratuita
         </li>
         <li className="flex items-center">
           <FontAwesomeIcon
             icon={faCheckCircle}
-            className="w-full max-w-4 h-auto mr-2 text-accent"
+            className="mr-2 h-auto w-full max-w-4 text-accent"
           ></FontAwesomeIcon>
           Dominio incluido en el precio
         </li>
         <li className="flex items-center">
           <FontAwesomeIcon
             icon={faCheckCircle}
-            className="w-full max-w-4 h-auto mr-2 text-accent"
+            className="mr-2 h-auto w-full max-w-4 text-accent"
           ></FontAwesomeIcon>
           Correos personalizados (con el dominio incluido)
         </li>
         <li className="flex items-center">
           <FontAwesomeIcon
             icon={faCheckCircle}
-            className="w-full max-w-4 h-auto mr-2 text-accent"
+            className="mr-2 h-auto w-full max-w-4 text-accent"
           ></FontAwesomeIcon>
           99.9% de uptime del servidor
         </li>
@@ -151,14 +151,14 @@ export default function Servicios() {
   return (
     <main className="w-full">
       {/* Hero section */}
-      <div className="w-full bg-orange-primary-50 flex flex-col items-center pt-36 px-8 pb-12">
-        <div className="container relative items-center flex md:space-x-8  lg:min-h-[600px]">
+      <div className="flex w-full flex-col items-center bg-orange-primary-50 px-8 pb-12 pt-36">
+        <div className="container relative flex items-center md:space-x-8 lg:min-h-[600px]">
           {/* Title & CTA */}
-          <div className="flex flex-col items-center text-center space-y-6 w-full md:w-1/2">
+          <div className="flex w-full flex-col items-center space-y-6 text-center md:w-1/2">
             <div className="px-6 md:px-3">
               <h1
                 id="hero"
-                className="font-bold text-4xl lg:text-5xl tracking-widest pb-3 text-zinc-900"
+                className="pb-3 text-4xl font-bold tracking-widest text-zinc-900 lg:text-5xl"
               >
                 Servicios de Desarrollo y Consultoría Web
               </h1>
@@ -170,11 +170,11 @@ export default function Servicios() {
           </div>
 
           {/* Image */}
-          <div className="absolute flex flex-col h-full items-center text-center w-full md:w-1/2 md:right-0 px-6 md:px-0 opacity-20 md:opacity-100">
+          <div className="absolute flex h-full w-full flex-col items-center px-6 text-center opacity-20 md:right-0 md:w-1/2 md:px-0 md:opacity-100">
             <Image
               src={ocOnTheLaptop}
               alt="OC on the laptop hero image"
-              className="max-w-full max-h-full object-contain"
+              className="max-h-full max-w-full object-contain"
               style={{ height: "auto", width: "100%" }}
             />
           </div>
@@ -188,7 +188,7 @@ export default function Servicios() {
         subtitle="Soluciones personalizadas que transforman tu negocio"
       >
         {/* Service cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 px-2">
+        <div className="grid gap-6 px-2 md:grid-cols-2 lg:grid-cols-4">
           <ServiceCardAlt
             title="Sitios Web Estaticos"
             icon={faWindowRestore}
@@ -246,9 +246,9 @@ export default function Servicios() {
         subtitle="Ventajas exclusivas de nuestros clientes"
         altBackground
       >
-        <div className="flex relative w-full">
+        <div className="relative flex w-full">
           {/* Image */}
-          <div className="absolute h-full lg:relative flex flex-col items-center justify-center w-full lg:w-1/2 lg:left-0 px-6 md:px-0 opacity-20 lg:opacity-100">
+          <div className="absolute flex h-full w-full flex-col items-center justify-center px-6 opacity-20 md:px-0 lg:relative lg:left-0 lg:w-1/2 lg:opacity-100">
             <Image
               src={ocTakingNote}
               height={152}
@@ -259,7 +259,7 @@ export default function Servicios() {
           </div>
 
           {/* Advantages List */}
-          <div className="flex flex-col justify-stretch gap-6 w-full px-2 md:px-12 lg:w-1/2 relative z-10">
+          <div className="relative z-10 flex w-full flex-col justify-stretch gap-6 px-2 md:px-12 lg:w-1/2">
             <AdvantageCard
               title="Hosting Profesional"
               icon={faServer}
@@ -309,7 +309,7 @@ export default function Servicios() {
         titleName="¿Qué tecnologías utilizamos?"
         subtitle="Trabajamos con las mejores tecnologías para tus proyectos"
       >
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
           {/* Tech Box */}
           <TechCard
             icon={faHtml5}
@@ -362,7 +362,7 @@ export default function Servicios() {
         altBackground
       >
         {/* Hosting plans */}
-        <div className="flex flex-col md:flex-row gap-4 px-2">
+        <div className="flex flex-col gap-4 px-2 md:flex-row">
           <PriceCard
             title="Plan Básico"
             subtitle="Ideal para proyectos personales y sitios web pequeños."

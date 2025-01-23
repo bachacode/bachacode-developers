@@ -23,24 +23,24 @@ export default function SobreNosotros() {
   return (
     <main className="w-full">
       {/* Hero section */}
-      <div className="w-full bg-white flex flex-col items-center pt-36 px-8 pb-12">
-        <div className="container relative items-center flex md:space-x-8  lg:min-h-[600px]">
+      <div className="flex w-full flex-col items-center bg-white px-8 pb-12 pt-36">
+        <div className="container relative flex items-center md:space-x-8 lg:min-h-[600px]">
           {/* Image */}
-          <div className="absolute md:relative flex flex-col h-full items-center text-center w-full md:w-1/2 md:right-0 px-6 md:px-0 opacity-20 md:opacity-100">
+          <div className="absolute flex h-full w-full flex-col items-center px-6 text-center opacity-20 md:relative md:right-0 md:w-1/2 md:px-0 md:opacity-100">
             <Image
               src={ncWomanTypingOnMachine}
               alt="Woman typing on a writing machine"
-              className="max-w-full max-h-full object-contain"
+              className="max-h-full max-w-full object-contain"
               style={{ height: "auto", width: "100%" }}
             />
           </div>
 
           {/* Title & CTA */}
-          <div className="flex flex-col items-center text-center space-y-6 w-full md:w-1/2">
+          <div className="flex w-full flex-col items-center space-y-6 text-center md:w-1/2">
             <div className="px-6 md:px-3">
               <h1
                 id="hero"
-                className="font-bold text-4xl lg:text-5xl tracking-widest pb-3 text-zinc-900"
+                className="pb-3 text-4xl font-bold tracking-widest text-zinc-900 lg:text-5xl"
               >
                 Sobre Nosotros - Bachacode Developers
               </h1>

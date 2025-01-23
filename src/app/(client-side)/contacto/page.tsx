@@ -20,8 +20,8 @@ function ContactCard({
   icon,
 }: Readonly<{ title: string; value: string; icon: IconProp }>) {
   return (
-    <div className="flex flex-col space-y-1.5 w-3/4 lg:w-64 text-center items-center p-6 bg-white border border-gray- shadow-md transition-shadow hover:shadow-lg">
-      <FontAwesomeIcon className="w-10 h-10 text-accent" icon={icon} />
+    <div className="border-gray- flex w-3/4 flex-col items-center space-y-1.5 border bg-white p-6 text-center shadow-md transition-shadow hover:shadow-lg lg:w-64">
+      <FontAwesomeIcon className="h-10 w-10 text-accent" icon={icon} />
       <h3>{title}</h3>
       <span className="text-accent transition-colors hover:text-primary">
         {value}
@@ -33,12 +33,12 @@ function ContactCard({
 export default function Contacto() {
   return (
     <GoogleCaptchaWrapper>
-      <main className="w-full min-h-screen flex flex-col items-center pb-12 bg-orange-primary-50">
+      <main className="flex min-h-screen w-full flex-col items-center bg-orange-primary-50 pb-12">
         <div className="mt-36">
-          <div className="flex flex-col items-center space-y-2 text-center pb-6">
+          <div className="flex flex-col items-center space-y-2 pb-6 text-center">
             <h1
               id="contacto"
-              className="uppercase font-semibold text-accent text-5xl"
+              className="text-5xl font-semibold uppercase text-accent"
             >
               Contacto
             </h1>
@@ -46,13 +46,13 @@ export default function Contacto() {
           </div>
         </div>
 
-        <div className="flex flex-col space-y-6 container items-center w-10/12">
+        <div className="container flex w-10/12 flex-col items-center space-y-6">
           <h2 className="text-center text-xl">
             ¿Necesitas una respuesta rapida?
           </h2>
 
           {/* Contact Cards */}
-          <div className="flex flex-col items-center space-y-6 lg:flex-row lg:space-x-6 lg:space-y-0 w-full justify-around">
+          <div className="flex w-full flex-col items-center justify-around space-y-6 lg:flex-row lg:space-x-6 lg:space-y-0">
             <ContactCard
               title="Correo Electrónico"
               value="support@bachacode.com"
@@ -65,9 +65,9 @@ export default function Contacto() {
               icon={faPhone}
             />
 
-            <div className="flex flex-col space-y-1.5 w-3/4 lg:w-64 text-center items-center p-6 bg-white border border-gray- shadow-md transition-shadow hover:shadow-lg">
+            <div className="border-gray- flex w-3/4 flex-col items-center space-y-1.5 border bg-white p-6 text-center shadow-md transition-shadow hover:shadow-lg lg:w-64">
               <FontAwesomeIcon
-                className="w-10 h-10 text-accent"
+                className="h-10 w-10 text-accent"
                 icon={faWhatsapp}
               />
               <h3>WhatsApp</h3>
@@ -80,8 +80,8 @@ export default function Contacto() {
             </div>
           </div>
 
-          <div className="w-full flex flex-col items-center space-y-6">
-            <div className="flex flex-col text-center ">
+          <div className="flex w-full flex-col items-center space-y-6">
+            <div className="flex flex-col text-center">
               <h2 className="pb-3 text-xl">
                 ¿Quieres sacar tu proyecto a flote?
               </h2>
@@ -90,11 +90,11 @@ export default function Contacto() {
               </span>
             </div>
             <div className="flex w-full justify-around">
-              <div className="w-full lg:w-7/12 bg-white rounded border-gray-500 p-6 shadow-lg pb-24 lg:pb-12">
+              <div className="w-full rounded border-gray-500 bg-white p-6 pb-24 shadow-lg lg:w-7/12 lg:pb-12">
                 <ContactForm />
               </div>
 
-              <div className="hidden lg:flex w-4/12 items-center">
+              <div className="hidden w-4/12 items-center lg:flex">
                 <Image
                   src="/images/bachacode-big.png"
                   className="relative z-10 rounded-r-xl rounded-tl-xl"
