@@ -67,7 +67,6 @@ export default function Portafolio() {
         titleId="testimonies"
         titleName="Testimonios"
         subtitle="Las palabras de nuestro clientes"
-        altBackground
       >
         <div className="container flex w-full flex-wrap">
           <TestimonialCard
