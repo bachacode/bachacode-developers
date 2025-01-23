@@ -70,6 +70,7 @@ export default function MainFooter() {
               <ul className="space-y-2 font-medium text-gray-500">
                 <li>
                   <a
+                    target="_blank"
                     href="mailto:support@bachacode.com"
                     className="flex items-center space-x-2 transition-colors hover:text-black"
                   >
@@ -107,7 +108,7 @@ export default function MainFooter() {
           </div>
         </div>
         <hr className="my-6 border-gray-300 sm:mx-auto lg:my-8" />
-        <div className="flex flex-col items-center md:flex-row md:justify-between">
+        <div className="flex flex-col items-center space-y-3 md:flex-row md:justify-between md:space-y-0">
           <div className="flex items-center space-x-3">
             <div className="block md:hidden">
               <Link href="/" className="flex items-center">
@@ -118,7 +119,7 @@ export default function MainFooter() {
                 />
               </Link>
             </div>
-            <span className="text-sm text-gray-500 dark:text-gray-400 sm:text-center">
+            <span className="text-sm text-gray-500 md:text-center">
               © 2025{" "}
               <Link href="/" className="hover:underline">
                 Bachacode Developers
@@ -126,7 +127,7 @@ export default function MainFooter() {
               . Todos los derechos reservados.
             </span>
           </div>
-          <div className="mt-4 flex sm:mt-0 sm:justify-center">
+          <div className="flex md:mt-0 md:justify-center">
             <a
               target="_blank"
               href="https://www.linkedin.com/company/bachacode-developers/"
@@ -134,7 +135,7 @@ export default function MainFooter() {
             >
               <FontAwesomeIcon
                 icon={faLinkedin}
-                className="h-8 w-8 md:h-5 md:w-5"
+                className="h-8 w-8"
               ></FontAwesomeIcon>
 
               <span className="sr-only">LinkedIn Page</span>
