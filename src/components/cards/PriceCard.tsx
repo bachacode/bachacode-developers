@@ -81,7 +81,7 @@ export default function PriceCard({
             icon={faCheckCircle}
             className="mr-2 h-auto w-full max-w-4 text-accent"
           ></FontAwesomeIcon>
-          99.9% de uptime del servidor
+          99,99% de uptime del servidor
         </li>
       </ul>
       {/* <div className="w-full text-center">

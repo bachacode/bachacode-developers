@@ -258,31 +258,7 @@ export default function Servicios() {
           <PriceCard
             title="Plan Básico"
             subtitle="Ideal para proyectos personales y sitios web pequeños."
-            price="$15"
-            benefits={[
-              {
-                icon: faMemory,
-                text: "1GB Ram",
-              },
-              {
-                icon: faMicrochip,
-                text: "1 Core CPU",
-              },
-              {
-                icon: faHardDrive,
-                text: "10GB de almacenamiento NVMe",
-              },
-              {
-                icon: faNetworkWired,
-                text: "1TB de ancho de banda",
-              },
-            ]}
-          />
-
-          <PriceCard
-            title="Plan Avanzado"
-            subtitle="Diseñado para negocios en crecimiento y sitios web dinámicos."
-            price="$25"
+            price="$9,99"
             benefits={[
               {
                 icon: faMemory,
@@ -298,6 +274,30 @@ export default function Servicios() {
               },
               {
                 icon: faNetworkWired,
+                text: "1TB de ancho de banda",
+              },
+            ]}
+          />
+
+          <PriceCard
+            title="Plan Avanzado"
+            subtitle="Diseñado para negocios en crecimiento y sitios web dinámicos."
+            price="$19,99"
+            benefits={[
+              {
+                icon: faMemory,
+                text: "2GB Ram",
+              },
+              {
+                icon: faMicrochip,
+                text: "2 Core CPU",
+              },
+              {
+                icon: faHardDrive,
+                text: "40GB de almacenamiento NVMe",
+              },
+              {
+                icon: faNetworkWired,
                 text: "2TB de ancho de banda",
               },
             ]}
@@ -306,7 +306,7 @@ export default function Servicios() {
           <PriceCard
             title="Plan Profesional"
             subtitle="La mejor opción para proyectos empresariales de alto rendimiento."
-            price="$51"
+            price="$29,99"
             benefits={[
               {
                 icon: faMemory,
@@ -318,7 +318,7 @@ export default function Servicios() {
               },
               {
                 icon: faHardDrive,
-                text: "50GB de almacenamiento NVMe",
+                text: "80GB de almacenamiento NVMe",
               },
               {
                 icon: faNetworkWired,
