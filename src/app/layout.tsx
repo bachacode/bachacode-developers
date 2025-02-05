@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
 import ProgressBarProvider from "@/components/layout/ProgressBarProvider";
+import { Analytics } from "@vercel/analytics/next";
+
 const roboto = Roboto({ weight: "500", subsets: ["latin"], display: "swap" });
 const baseUrl = process.env.NEXT_PUBLIC_FRONTEND_URL ?? "https://bachacode.com";
 export const metadata: Metadata = {
@@ -64,6 +66,7 @@ export default function RootLayout({
         <div className="flex min-h-screen w-full flex-col items-center">
           {/* Main Context */}
           <ProgressBarProvider>{children}</ProgressBarProvider>
+          <Analytics />
         </div>
       </body>
     </html>
