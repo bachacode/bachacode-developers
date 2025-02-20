@@ -3,6 +3,8 @@ import { Roboto } from "next/font/google";
 import "./globals.css";
 import ProgressBarProvider from "@/components/layout/ProgressBarProvider";
 import { Analytics } from "@vercel/analytics/next";
+import { NextIntlClientProvider } from "next-intl";
+import { getLocale, getMessages } from "next-intl/server";
 
 const roboto = Roboto({ weight: "500", subsets: ["latin"], display: "swap" });
 const baseUrl = process.env.NEXT_PUBLIC_FRONTEND_URL ?? "https://bachacode.com";
@@ -55,19 +57,27 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getLocale();
+
+  // Providing all messages to the client
+  // side is the easiest way to get started
+  const messages = await getMessages();
+
   return (
-    <html lang="es">
+    <html lang={locale}>
       <body className={`${roboto.className}`}>
-        <div className="flex min-h-screen w-full flex-col items-center">
-          {/* Main Context */}
-          <ProgressBarProvider>{children}</ProgressBarProvider>
-          <Analytics />
-        </div>
+        <NextIntlClientProvider messages={messages}>
+          <div className="flex min-h-screen w-full flex-col items-center">
+            {/* Main Context */}
+            <ProgressBarProvider>{children}</ProgressBarProvider>
+            <Analytics />
+          </div>
+        </NextIntlClientProvider>
       </body>
     </html>
   );
