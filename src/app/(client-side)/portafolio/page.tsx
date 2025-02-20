@@ -66,7 +66,7 @@ export default function Portafolio() {
       <PageSectionWrapper
         titleId="testimonies"
         titleName="Testimonios"
-        subtitle="Las palabras de nuestro clientes"
+        subtitle="Las palabras de nuestros clientes"
       >
         <div className="container flex w-full flex-wrap">
           <TestimonialCard
