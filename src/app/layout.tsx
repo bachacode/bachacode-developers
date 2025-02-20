@@ -53,7 +53,6 @@ export const metadata: Metadata = {
         sizes: "180x180",
       },
     ],
-    other: [{ rel: "manifest", url: "/site.webmanifest" }],
   },
 };
 
