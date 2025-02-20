@@ -1,5 +1,8 @@
-// starts a command line process to get the git hash
 import commit from "child_process";
+import createNextIntlPlugin from "next-intl/plugin";
+
+const withNextIntl = createNextIntlPlugin();
+
 const commitHash = commit
   .execSync('git log --pretty=format:"%h" -n1')
   .toString()
@@ -12,4 +15,4 @@ const nextConfig = {
   },
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);
