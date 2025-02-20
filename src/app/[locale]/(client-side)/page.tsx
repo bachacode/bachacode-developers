@@ -16,12 +16,15 @@ import TechCarousel from "@/components/sections/TechCarousel";
 import Heading from "@/components/common/Heading";
 import TeamCard from "@/components/cards/TeamCard";
 import OfferingCard from "@/components/cards/OfferingCard";
-import bachacodeBig from "../../../public/images/bachacode-big.png";
+import bachacodeBig from "../../../../public/images/bachacode-big.png";
 import HomePageCounter from "@/components/sections/HomePageCounter";
 import PageSectionWrapper from "@/components/layout/PageSectionWrapper";
 import ContactSection from "@/components/sections/ContactSection";
+import { useTranslations } from "next-intl";
 
 export default function Home() {
+  const t = useTranslations("Home");
+
   return (
     <main className="w-full">
       {/* Hero section */}

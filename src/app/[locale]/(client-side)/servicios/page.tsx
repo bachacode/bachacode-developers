@@ -1,8 +1,8 @@
 import NavButton from "@/components/common/NavButton";
 import Image from "next/image";
 import React from "react";
-import ocOnTheLaptop from "../../../../public/images/oc-on-the-laptop.svg";
-import ocTakingNote from "../../../../public/images/oc-taking-note.svg";
+import ocOnTheLaptop from "@/assets/images/oc-on-the-laptop.svg";
+import ocTakingNote from "@/assets/images/oc-taking-note.svg";
 import ServiceCardAlt from "@/components/cards/ServiceCardAlt";
 import {
   faCode,

@@ -1,7 +1,7 @@
 import React from "react";
 import PageSectionWrapper from "@/components/layout/PageSectionWrapper";
 import Image from "next/image";
-import ncWomanTypingOnMachine from "../../../../public/images/nc-woman-typing-on-machine.png";
+import ncWomanTypingOnMachine from "@/assets/images/nc-woman-typing-on-machine.png";
 import ServiceCard from "@/components/cards/ServiceCard";
 import {
   faLightbulb,
