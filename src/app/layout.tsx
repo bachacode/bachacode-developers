@@ -71,11 +71,13 @@ export default async function RootLayout({
     <html lang={locale}>
       <body className={`${roboto.className}`}>
         <NextIntlClientProvider messages={messages}>
-          <div className="flex min-h-screen w-full flex-col items-center">
-            {/* Main Context */}
-            <ProgressBarProvider>{children}</ProgressBarProvider>
-            <Analytics />
-          </div>
+          <ProgressBarProvider>
+            <div className="flex min-h-screen w-full flex-col items-center">
+              {/* Main Context */}
+              {children}
+              <Analytics />
+            </div>
+          </ProgressBarProvider>
         </NextIntlClientProvider>
       </body>
     </html>
