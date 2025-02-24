@@ -15,12 +15,14 @@ export default function TestimonialCard({
 }: TestimonialCardProps) {
   return (
     <div className="w-full p-4 md:w-1/2">
-      <div className="h-full rounded bg-white p-8 shadow-md">
+      <div className="flex h-full flex-col rounded bg-white p-8 shadow-md">
         <FontAwesomeIcon
           className="h-8 w-8 pb-1.5 text-accent"
           icon={faQuoteRight}
         />
-        <p className="mb-6 leading-relaxed">{testimony}</p>
+        <div className="mb-6 flex-grow">
+          <p className="leading-relaxed">{testimony}</p>
+        </div>
         <span className="inline-flex items-center">
           <span className="flex flex-grow flex-col">
             <span className="title-font font-medium text-gray-900">{name}</span>
