@@ -17,7 +17,6 @@ import {
   DropdownMenuTrigger,
   DropdownMenuCheckboxItem,
 } from "../ui/dropdown";
-import { useLocale } from "next-intl";
 
 const getLocaleText = (locale: string) => {
   const localesText: Record<string, string> = {
@@ -28,10 +27,10 @@ const getLocaleText = (locale: string) => {
   return localesText[locale] || "Unknown";
 };
 
-export default function MainHeader() {
+export default function MainHeader({ locale }: { locale: string }) {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
-  const locale = useLocale();
+
   const localeText = getLocaleText(locale);
 
   const handleClick = () => {
