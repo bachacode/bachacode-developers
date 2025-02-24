@@ -1,15 +1,37 @@
 "use client";
 import Image from "next/image";
-import Link from "next/link";
+import { Link, usePathname } from "@/i18n/routing";
 import React, { useState } from "react";
 import BachacodeLogoRemoveBg from "@/assets/images/bachacode-removebg.png";
 import MenuLink from "../common/MenuLink";
-import NavButton from "../common/NavButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faBurger, faX } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBars,
+  faChevronDown,
+  faGlobe,
+  faX,
+} from "@fortawesome/free-solid-svg-icons";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuTrigger,
+  DropdownMenuCheckboxItem,
+} from "../ui/dropdown";
 
-export default function MainHeader() {
+const getLocaleText = (locale: string) => {
+  const localesText: Record<string, string> = {
+    es: "Español",
+    en: "English",
+  };
+
+  return localesText[locale] || "Unknown";
+};
+
+export default function MainHeader({ locale }: { locale: string }) {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+
+  const localeText = getLocaleText(locale);
 
   const handleClick = () => {
     setIsOpen(!isOpen);
@@ -60,6 +82,37 @@ export default function MainHeader() {
             <MenuLink href="/contacto" label="Contacto" />
           </ul>
         </div>
+
+        <DropdownMenu modal={false}>
+          <DropdownMenuTrigger className="flex items-center space-x-1.5 p-1">
+            <FontAwesomeIcon icon={faGlobe}></FontAwesomeIcon>
+            <span>{localeText}</span>
+            <FontAwesomeIcon
+              icon={faChevronDown}
+              className="h-3 w-3 pl-1"
+            ></FontAwesomeIcon>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent className="bg-background">
+            <DropdownMenuCheckboxItem
+              checked={locale == "es"}
+              disabled={locale == "es"}
+              className="focus:bg-gray-200"
+            >
+              <Link href={pathname} locale="es">
+                Español
+              </Link>
+            </DropdownMenuCheckboxItem>
+            <DropdownMenuCheckboxItem
+              checked={locale == "en"}
+              disabled={locale == "en"}
+              className="focus:bg-gray-200"
+            >
+              <Link href={pathname} locale="en">
+                English
+              </Link>
+            </DropdownMenuCheckboxItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
       </nav>
     </header>
   );
