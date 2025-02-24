@@ -21,10 +21,13 @@ import HomePageCounter from "@/components/sections/HomePageCounter";
 import PageSectionWrapper from "@/components/layout/PageSectionWrapper";
 import ContactSection from "@/components/sections/ContactSection";
 import { useTranslations } from "next-intl";
+import useContactLocale from "@/hooks/useContactLocale";
+import useCounterLocale from "@/hooks/useCounterLocale";
 
 export default function Home() {
-  const t = useTranslations("Home");
-
+  const t = useTranslations("home");
+  const tContact = useContactLocale();
+  const tCounter = useCounterLocale();
   return (
     <main className="w-full">
       {/* Hero section */}
@@ -36,16 +39,16 @@ export default function Home() {
               id="hero"
               className="pb-3 text-6xl font-bold tracking-widest lg:text-6xl"
             >
-              Construye tu presencia en línea
+              {t("hero.title")}
             </h1>
             <p className="text-xl font-extralight text-gray-600">
-              con nosotros tu nuevo proyecto se hará realidad
+              {t("hero.subtitle")}
             </p>
           </div>
 
           {/* Contact Button */}
           <div className="">
-            <NavButton href="/contacto">Empieza tu proyecto</NavButton>
+            <NavButton href="/contacto"> {t("hero.button")}</NavButton>
           </div>
         </div>
       </div>
@@ -58,22 +61,11 @@ export default function Home() {
               id="about"
               className="pb-4 text-center text-4xl font-bold text-accent lg:pb-0 lg:text-left"
             >
-              Conectando el Futuro: Nuestra Historia en el Mundo de la
-              Tecnología.
+              {t("about.title")}
             </h2>
             <div className="mt-1.5 w-36 border-t-2 border-primary pb-6"></div>
-            <p className="pb-3 text-base lg:text-2xl">
-              Somos un equipo de expertos en desarrollo web dedicados a crear
-              soluciones digitales personalizadas que se ajusten a tus
-              necesidades, presupuesto y conocimientos técnicos. Nos
-              especializamos en ofrecer aplicaciones web accesibles y
-              funcionales, ya sea desarrollando sitios desde cero o mejorando
-              proyectos existentes.
-            </p>
-            <p className="text-base lg:text-2xl">
-              Nos encargamos de darle vida a tu próximo proyecto en línea,
-              asegurándonos de que cada detalle esté alineado con tus objetivos
-              y visión.
+            <p className="whitespace-pre-line pb-3 text-base lg:text-2xl">
+              {t("about.body")}
             </p>
 
             <div className="absolute top-24 h-48 w-full max-w-sm self-center lg:hidden">
@@ -102,65 +94,49 @@ export default function Home() {
       </div>
 
       {/* Counter */}
-      <HomePageCounter />
+      <HomePageCounter
+        projects={tCounter("projects")}
+        clients={tCounter("clients")}
+        experience={tCounter("experience")}
+      />
       {/* Services section */}
       <PageSectionWrapper
         titleId="services"
-        titleName="¿Qué te ofrecemos?"
-        subtitle="Los servicios accessibles a todos nuestros clientes"
+        titleName={t("services.title")}
+        subtitle={t("services.subtitle")}
         altBackground
       >
-        <div className="container flex flex-col flex-wrap items-center lg:flex-row">
+        <div className="flex flex-col flex-wrap items-stretch lg:flex-row">
           <ServiceCard
-            title="Sitios Web Estaticos"
+            title={t("services.cards.static.title")}
             icon={faWindowRestore}
             iconColor="text-primary"
           >
-            Desarrollo de sitios web personalizados con contenido estático,
-            ideal para proyectos pequeños que no requieren actualizaciones
-            frecuentes, como landing pages, portafolios o catálogos. Estos
-            sitios ofrecen rapidez, seguridad y eficiencia para contenido
-            estable.
+            {t("services.cards.static.body")}
           </ServiceCard>
 
           <ServiceCard
-            title="Sitios WordPress"
+            title={t("services.cards.wordpress.title")}
             icon={faWordpress}
             iconColor="text-primary"
           >
-            Desarrollo de sitios web con{" "}
-            <strong className="text-accent">WordPress</strong>, brindando
-            control total del contenido sin necesidad de tocar código. Ideal
-            para proyectos medianos como blogs, portafolios o sitios
-            corporativos, ofreciendo flexibilidad, escalabilidad y fácil
-            personalización.
+            {t("services.cards.wordpress.body")}
           </ServiceCard>
 
           <ServiceCard
-            title="Aplicaciones Web"
+            title={t("services.cards.web-apps.title")}
             icon={faCode}
             iconColor="text-primary"
           >
-            Desarrollo de aplicaciones web a medida con funcionalidades
-            avanzadas, como integración de pagos en línea, sistemas de
-            recomendación personalizados, chat en vivo, análisis de datos en
-            tiempo real y gestión de contenido. Perfecto para proyectos medianos
-            y grandes, como tiendas en línea, plataformas educativas, sistemas
-            de reservas en línea, portales de noticias, y sistemas de gestión
-            empresarial (ERP, CRM).
+            {t("services.cards.web-apps.body")}
           </ServiceCard>
 
           <ServiceCard
-            title="Consultoría y Soporte"
+            title={t("services.cards.support.title")}
             icon={faMessage}
             iconColor="text-primary"
           >
-            Si ya tienes un proyecto que deseas actualizar, agregar nuevas
-            funcionalidades o corregir errores, nosotros nos encargamos de
-            planificar todo el proceso por ti. Desde la estimación de tiempos
-            hasta la creación de presupuestos, te ofrecemos soluciones en las
-            tecnologías que mejor dominamos, garantizando un desarrollo
-            eficiente y acorde a tus necesidades.
+            {t("services.cards.support.body")}
           </ServiceCard>
         </div>
       </PageSectionWrapper>
@@ -169,8 +145,8 @@ export default function Home() {
       <div className="flex w-full flex-col items-center bg-white py-12">
         <Heading
           id="tech"
-          title="Nuestras tecnologías"
-          subtitle="Somos expertos en la tecnología mas vanguardista del desarrollo web"
+          title={t("technologies.title")}
+          subtitle={t("technologies.subtitle")}
         />
 
         <div className="flex w-full flex-col items-center">
@@ -186,21 +162,21 @@ export default function Home() {
       {/* Our clients */}
       <PageSectionWrapper
         titleId="clients"
-        titleName="Nuestros clientes"
-        subtitle="Los que han depositado su confianza en nosotros"
+        titleName={t("clients.title")}
+        subtitle={t("clients.subtitle")}
         altBackground
       >
-        <div className="container flex w-full flex-wrap">
+        <div className="flex w-full flex-wrap">
           <TestimonialCard
-            name="Guillermo Saez"
-            profession="CEO de TailorSheet"
-            testimony="Con Bachacode Developers encontré lo que muchos emprendedores buscan y nunca encuentran: La tranquilidad de poder dejar tu negocio en manos de personas que lo cuidan y ayudan a hacerlo crecer con soluciones que rozan la excelencia. Que aportan ideas y que se implican al 100% con cada proyecto."
+            name={t("clients.testimonies.tailor.name")}
+            profession={t("clients.testimonies.tailor.occupation")}
+            testimony={t("clients.testimonies.tailor.body")}
           />
 
           <TestimonialCard
-            name="Luis Fernando Carbajal"
-            profession="CEO de MESGO"
-            testimony="Gracias a Bachacode Developers logramos cumplir con los requerimientos establecidos por la empresa CBI Group para obtener nuestro número de proveedor. El sitio web que desarrollaron no solo superó nuestras expectativas, sino que también facilitó el proceso y la presentación de nuestra empresa."
+            name={t("clients.testimonies.mesgo.name")}
+            profession={t("clients.testimonies.mesgo.occupation")}
+            testimony={t("clients.testimonies.mesgo.body")}
           />
         </div>
       </PageSectionWrapper>
@@ -208,31 +184,31 @@ export default function Home() {
       {/* Our team */}
       <PageSectionWrapper
         titleId="team"
-        titleName="Nosotros garantizamos"
-        subtitle="Lo que obtendrás trabajando con nosotros"
+        titleName={t("team.title")}
+        subtitle={t("team.subtitle")}
       >
         <div className="-mx-4 -mb-10 -mt-4 flex flex-wrap space-y-6 pb-16 sm:-m-4 md:space-y-0">
           <OfferingCard
-            title="Desarrollo ágil"
-            description="Con nosotros, el desarrollo ágil significa adaptación rápida a tus necesidades y resultados constantes. Garantizamos eficiencia y ajuste preciso a lo que realmente necesitas en tu proyecto."
+            title={t("team.cards.development.title")}
+            description={t("team.cards.development.body")}
             icon={faWind}
           />
 
           <OfferingCard
-            title="Comunicación"
-            description="En nuestro enfoque, la comunicación es fundamental. Mantenemos canales abiertos para una interacción constante y clara contigo. Escuchamos tus necesidades y te mantenemos informado en todo momento, asegurando que tu visión se refleje fielmente en el proyecto final."
+            title={t("team.cards.communication.title")}
+            description={t("team.cards.communication.body")}
             icon={faComments}
           />
 
           <OfferingCard
-            title="Precios ajustables"
-            description="Ofrecemos precios flexibles para adaptarnos a tu presupuesto sin comprometer la calidad. Trabajamos juntos para encontrar la mejor solución que se ajuste a tus necesidades económicas."
+            title={t("team.cards.prices.title")}
+            description={t("team.cards.prices.body")}
             icon={faDollar}
           />
 
           <OfferingCard
-            title="Caracteristicas flexibles"
-            description="Nuestros proyectos se distinguen por su flexibilidad, ajustándose a tus necesidades en evolución. Cada característica es personalizable para asegurar tu plena satisfacción, permitiéndote modificar el proyecto según tus requerimientos cambiantes a lo largo del desarrollo hasta su puesta en línea."
+            title={t("team.cards.flexible.title")}
+            description={t("team.cards.flexible.body")}
             icon={faPuzzlePiece}
           />
         </div>
@@ -240,26 +216,26 @@ export default function Home() {
         <div className="flex w-full flex-col items-center justify-between lg:flex-row lg:items-start">
           <div className="flex w-full flex-col items-center space-y-2 self-start pb-12 lg:items-start">
             <p className="self-start text-2xl font-light">
-              Hecho posible por...
+              {t("team.members.prefix")}
             </p>
             <h3 className="text-center text-4xl font-semibold text-primary lg:text-left lg:text-6xl">
-              Desarrolladores experimentados.
+              {t("team.members.title")}
             </h3>
           </div>
 
           <div className="flex w-9/12 flex-col">
             <TeamCard
-              memberName="Cristhian Flores"
-              profession="Fullstack Developer"
-              description="Experimentado en el desarrollo de interfaces y APIs con conocimientos tanto en frontend como en backend."
+              memberName={t("team.members.cristhian.name")}
+              profession={t("team.members.cristhian.occupation")}
+              description={t("team.members.cristhian.body")}
               linkedinUrl="https://www.linkedin.com/in/cristhian-flo"
               githubUrl="https://github.com/bachacode"
             />
 
             <TeamCard
-              memberName="Josibel Farías"
-              profession="Diseñadora UX/UI"
-              description="Especializada en la creación de experiencias de usuario intuitivas y atractivas, con un enfoque en el diseño visual y la usabilidad para garantizar interfaces eficientes y agradables."
+              memberName={t("team.members.josibel.name")}
+              profession={t("team.members.josibel.occupation")}
+              description={t("team.members.josibel.body")}
               linkedinUrl="https://www.linkedin.com/in/josibel-far%C3%ADas-espa%C3%B1a-b36390254"
             />
           </div>
@@ -268,7 +244,11 @@ export default function Home() {
       {/* Steps */}
 
       {/* Contact Us */}
-      <ContactSection />
+      <ContactSection
+        body={tContact("body") + "\n"}
+        highlight={tContact("highlight")}
+        buttonText={tContact("button")}
+      />
     </main>
   );
 }

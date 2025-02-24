@@ -1,6 +1,101 @@
 {
-  "Home": {
-    "title": "Hello world!",
-    "about": "Go to the about page"
+  "home": {
+    "hero": {
+      "title": "Build your online presence",
+      "subtitle": "With us your new project will come true",
+      "button": "Start your project"
+    },
+    "about": {
+      "title": "Connecting the future: our history in the world of technology.",
+      "body": "We are a team of web development experts dedicated to creating customized digital solutions tailored to your needs, budget, and technical expertise. We specialize in delivering accessible and functional web applications, whether by building sites from scratch or enhancing existing projects. \n\nWe take charge of bringing your next online project to life, ensuring every detail aligns with your goals and vision."
+    },
+    "services": {
+      "title": "What do we offer you?",
+      "subtitle": "Accessible services to all our customers",
+      "cards": {
+        "static": {
+          "title": "Static websites",
+          "body": "Development of custom websites with static content, ideal for small projects that do not require frequent updates, such as landing pages, portfolios, or catalogs. These sites offer speed, security, and efficiency for stable content."
+        },
+        "wordpress": {
+          "title": "WordPress sites",
+          "body": "Development of websites with WordPress, providing full control over content without the need to touch code. Ideal for medium-sized projects such as blogs, portfolios, or corporate websites, offering flexibility, scalability, and easy customization."
+        },
+        "web-apps": {
+          "title": "Web applications",
+          "body": "Development of custom web applications with advanced functionalities, such as online payment integration, personalized recommendation systems, live chat, real-time data analysis, and content management. Perfect for medium and large projects, including online stores, educational platforms, online booking systems, news portals, and enterprise management systems (ERP, CRM)."
+        },
+        "support": {
+          "title": "Consulting and support",
+          "body": "If you already have a project that you want to update, add new features to, or fix errors, we take care of planning the entire process for you. From time estimation to budget creation, we offer solutions in the technologies we master best, ensuring efficient development tailored to your needs."
+        }
+      }
+    },
+    "technologies": {
+      "title": "Our technologies",
+      "subtitle": "We are experts in the most avant-garde web development technology"
+    },
+    "clients": {
+      "title": "Our Clients",
+      "subtitle": "Those who have placed their trust in us",
+      "testimonies": {
+        "tailor": {
+          "name": "Guillermo Saez",
+          "occupation": "CEO of TailorSheet",
+          "body": "With Bachacode Developers, I found what many entrepreneurs look for and never find: The peace of mind of being able to leave your business in the hands of people who care for it and help it grow with solutions that border on excellence. They contribute ideas and are 100% committed to each project."
+        },
+        "mesgo": {
+          "name": "Luis Fernando Carbajal",
+          "occupation": "CEO of MESGO",
+          "body": "Thanks to Bachacode Developers, we were able to meet the requirements set by CBI Group to obtain our supplier number. The website they developed not only exceeded our expectations but also streamlined the process and presentation of our company."
+        }
+      }
+    },
+    "team": {
+      "title": "We guarantee",
+      "subtitle": "What you'll get by working with us",
+      "cards": {
+        "development": {
+          "title": "Agile development",
+          "body": "With us, agile development means quick adaptation to your needs and consistent results. We guarantee efficiency and precise alignment with what your project truly requires."
+        },
+        "communication": {
+          "title": "Communication",
+          "body": "In our approach, communication is key. We maintain open channels for constant and clear interaction with you. We listen to your needs and keep you informed at all times, ensuring your vision is faithfully reflected in the final project."
+        },
+        "prices": {
+          "title": "Adjustable prices",
+          "body": "We offer flexible pricing to fit your budget without compromising quality. We work together to find the best solution that aligns with your financial needs."
+        },
+        "flexible": {
+          "title": "Flexible features",
+          "body": "Our projects stand out for their flexibility, adapting to your evolving needs. Every feature is customizable to ensure your complete satisfaction, allowing you to modify the project according to your changing requirements throughout development until its launch."
+        }
+      },
+      "members": {
+        "prefix": "Made possible by...",
+        "title": "Experienced developers.",
+        "cristhian": {
+          "name": "Cristhian Flores",
+          "occupation": "Fullstack Developer",
+          "body": "Experienced in developing interfaces and APIs with expertise in both frontend and backend."
+        },
+        "josibel": {
+          "name": "Josibel Farías",
+          "occupation": "UX/UI Designer",
+          "body": "Specialized in creating intuitive and engaging user experiences, with a focus on visual design and usability to ensure efficient and pleasant interfaces."
+        }
+      }
+    }
+  },
+  "useCounterLocale": {
+    "projects": "Completed projects",
+    "clients": "Satisfied customers",
+    "experience": "Years of experience"
+  },
+  "useContactLocale": {
+    "body": "We believe in making possible any project that our clients have in mind, are you interested in building your presence online?",
+    "highlight": "Work with us.",
+    "button": "Contact us"
   }
 }

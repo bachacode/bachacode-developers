@@ -1,6 +1,101 @@
 {
-  "Home": {
-    "title": "Hola mundo",
-    "about": "Go to the about page"
+  "home": {
+    "hero": {
+      "title": "Construye tu presencia en línea",
+      "subtitle": "con nosotros tu nuevo proyecto se hará realidad",
+      "button": "EMPIEZA TU PROYECTO"
+    },
+    "about": {
+      "title": "Conectando el Futuro: Nuestra Historia en el Mundo de la Tecnología.",
+      "body": "Somos un equipo de expertos en desarrollo web dedicados a crear soluciones digitales personalizadas que se ajusten a tus necesidades, presupuesto y conocimientos técnicos. Nos especializamos en ofrecer aplicaciones web accesibles y funcionales, ya sea desarrollando sitios desde cero o mejorando proyectos existentes. \n\nNos encargamos de darle vida a tu próximo proyecto en línea, asegurándonos de que cada detalle esté alineado con tus objetivos y visión."
+    },
+    "services": {
+      "title": "¿Qué te ofrecemos?",
+      "subtitle": "Los servicios accessibles a todos nuestros clientes",
+      "cards": {
+        "static": {
+          "title": "Sitios Web Estaticos",
+          "body": "Desarrollo de sitios web personalizados con contenido estático, ideal para proyectos pequeños que no requieren actualizaciones frecuentes, como landing pages, portafolios o catálogos. Estos sitios ofrecen rapidez, seguridad y eficiencia para contenido estable."
+        },
+        "wordpress": {
+          "title": "Sitios WordPress",
+          "body": "Desarrollo de sitios web con WordPress, brindando control total del contenido sin necesidad de tocar código. Ideal para proyectos medianos como blogs, portafolios o sitios corporativos, ofreciendo flexibilidad, escalabilidad y fácil personalización."
+        },
+        "web-apps": {
+          "title": "Aplicaciones Web",
+          "body": "Desarrollo de aplicaciones web a medida con funcionalidades avanzadas, como integración de pagos en línea, sistemas de recomendación personalizados, chat en vivo, análisis de datos en tiempo real y gestión de contenido. Perfecto para proyectos medianos y grandes, como tiendas en línea, plataformas educativas, sistemas de reservas en línea, portales de noticias, y sistemas de gestión empresarial (ERP, CRM)."
+        },
+        "support": {
+          "title": "Consultoría y Soporte",
+          "body": "Si ya tienes un proyecto que deseas actualizar, agregar nuevas funcionalidades o corregir errores, nosotros nos encargamos de planificar todo el proceso por ti. Desde la estimación de tiempos hasta la creación de presupuestos, te ofrecemos soluciones en las tecnologías que mejor dominamos, garantizando un desarrollo eficiente y acorde a tus necesidades."
+        }
+      }
+    },
+    "technologies": {
+      "title": "Nuestras tecnologías",
+      "subtitle": "Somos expertos en la tecnología mas vanguardista del desarrollo web"
+    },
+    "clients": {
+      "title": "Nuestros Clientes",
+      "subtitle": "Los que han depositado su confianza en nosotros",
+      "testimonies": {
+        "tailor": {
+          "name": "Guillermo Saez",
+          "occupation": "CEO de TailorSheet",
+          "body": "Con Bachacode Developers encontré lo que muchos emprendedores buscan y nunca encuentran: La tranquilidad de poder dejar tu negocio en manos de personas que lo cuidan y ayudan a hacerlo crecer con soluciones que rozan la excelencia. Que aportan ideas y que se implican al 100% con cada proyecto."
+        },
+        "mesgo": {
+          "name": "Luis Fernando Carbajal",
+          "occupation": "CEO de MESGO",
+          "body": "Gracias a Bachacode Developers logramos cumplir con los requerimientos establecidos por la empresa CBI Group para obtener nuestro número de proveedor. El sitio web que desarrollaron no solo superó nuestras expectativas, sino que también facilitó el proceso y la presentación de nuestra empresa."
+        }
+      }
+    },
+    "team": {
+      "title": "Nosotros garantizamos",
+      "subtitle": "Lo que obtendrás trabajando con nosotros",
+      "cards": {
+        "development": {
+          "title": "Desarrollo ágil",
+          "body": "Con nosotros, el desarrollo ágil significa adaptación rápida a tus necesidades y resultados constantes. Garantizamos eficiencia y ajuste preciso a lo que realmente necesitas en tu proyecto."
+        },
+        "communication": {
+          "title": "Comunicación",
+          "body": "En nuestro enfoque, la comunicación es fundamental. Mantenemos canales abiertos para una interacción constante y clara contigo. Escuchamos tus necesidades y te mantenemos informado en todo momento, asegurando que tu visión se refleje fielmente en el proyecto final."
+        },
+        "prices": {
+          "title": "Precios ajustables",
+          "body": "Ofrecemos precios flexibles para adaptarnos a tu presupuesto sin comprometer la calidad. Trabajamos juntos para encontrar la mejor solución que se ajuste a tus necesidades económicas."
+        },
+        "flexible": {
+          "title": "Caracteristicas flexibles",
+          "body": "Nuestros proyectos se distinguen por su flexibilidad, ajustándose a tus necesidades en evolución. Cada característica es personalizable para asegurar tu plena satisfacción, permitiéndote modificar el proyecto según tus requerimientos cambiantes a lo largo del desarrollo hasta su puesta en línea."
+        }
+      },
+      "members": {
+        "prefix": "Hecho posible por...",
+        "title": "Desarrolladores experimentados.",
+        "cristhian": {
+          "name": "Cristhian Flores",
+          "occupation": "Fullstack Developer",
+          "body": "Experimentado en el desarrollo de interfaces y APIs con conocimientos tanto en frontend como en backend."
+        },
+        "josibel": {
+          "name": "Josibel Farías",
+          "occupation": "Diseñadora UX/UI",
+          "body": "Especializada en la creación de experiencias de usuario intuitivas y atractivas, con un enfoque en el diseño visual y la usabilidad para garantizar interfaces eficientes y agradables."
+        }
+      }
+    }
+  },
+  "useCounterLocale": {
+    "projects": "Proyectos completados",
+    "clients": "Clientes satisfechos",
+    "experience": "Años de experiencía"
+  },
+  "useContactLocale": {
+    "body": "Creemos en hacer posible cualquier proyecto que nuestros clientes tengan en mente, ¿estás interesado en construir tu presencia en línea?",
+    "highlight": "Trabaja con nosotros.",
+    "button": "Contáctanos"
   }
 }
