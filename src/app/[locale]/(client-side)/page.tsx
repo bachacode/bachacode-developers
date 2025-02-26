@@ -47,8 +47,8 @@ export default function Home() {
           </div>
 
           {/* Contact Button */}
-          <div className="">
-            <NavButton href="/contacto"> {t("hero.button")}</NavButton>
+          <div>
+            <NavButton href="/contact"> {t("hero.button")}</NavButton>
           </div>
         </div>
       </div>

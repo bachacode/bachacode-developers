@@ -22,7 +22,7 @@ export default function ContactSection({
 
         <div>
           <Link
-            href="/contacto"
+            href="/contact"
             className="z-10 rounded-md border-4 border-white px-8 py-3.5 text-base font-semibold uppercase text-white transition-colors duration-300 hover:bg-primary"
           >
             {buttonText}
