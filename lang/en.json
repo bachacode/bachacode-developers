@@ -1,4 +1,11 @@
 {
+  "links": {
+    "home": "Home",
+    "about-us": "About us",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "contact": "Contact"
+  },
   "home": {
     "hero": {
       "title": "Build your online presence",

@@ -1,4 +1,11 @@
 {
+  "links": {
+    "home": "Inicio",
+    "about-us": "Sobre Nosotros",
+    "services": "Servicios",
+    "portfolio": "Portafolio",
+    "contact": "Contacto"
+  },
   "home": {
     "hero": {
       "title": "Construye tu presencia en línea",
