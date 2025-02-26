@@ -37,7 +37,7 @@ export default function MainFooter() {
                 </li>
                 <li>
                   <Link
-                    href="/sobre-nosotros"
+                    href="/about-us"
                     className="transition-colors hover:text-black"
                   >
                     Sobre Nosotros
@@ -45,7 +45,7 @@ export default function MainFooter() {
                 </li>
                 <li>
                   <Link
-                    href="/servicios"
+                    href="/services"
                     className="transition-colors hover:text-black"
                   >
                     Servicios
@@ -53,7 +53,7 @@ export default function MainFooter() {
                 </li>
                 <li>
                   <Link
-                    href="/portafolio"
+                    href="/portfolio"
                     className="transition-colors hover:text-black"
                   >
                     Portafolio
@@ -97,7 +97,7 @@ export default function MainFooter() {
 
                 <li className="py-3">
                   <Link
-                    href="/contacto"
+                    href="/contact"
                     className={`rounded-md border-2 border-gray-500 px-6 py-3 font-semibold uppercase text-gray-500 transition-colors hover:border-black hover:text-black`}
                   >
                     Contactar
