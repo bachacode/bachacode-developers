@@ -28,7 +28,7 @@ export default function MainHeader() {
 
           <NavMenu>
             <MenuLink href="/">{t("home")}</MenuLink>
-            <MenuLink href="/about-us">{t("about-us")}</MenuLink>
+            <MenuLink href="/about-us">{t("about_us")}</MenuLink>
             <MenuLink href="/services">{t("services")}</MenuLink>
             <MenuLink href="/portfolio">{t("portfolio")}</MenuLink>
             <MenuLink href="/contact">{t("contact")}</MenuLink>

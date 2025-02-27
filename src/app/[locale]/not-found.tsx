@@ -3,7 +3,7 @@ import { Link } from "@/i18n/routing";
 import React from "react";
 
 export default function LocaleNotFound() {
-  const t = useTranslations("NotFound");
+  const t = useTranslations("not_found");
   return (
     <main className="bg-background">
       <div className="mx-auto max-w-screen-xl px-4 py-8 lg:px-6 lg:py-36">

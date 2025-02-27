@@ -1,7 +1,7 @@
 {
   "navigation": {
     "home": "Home",
-    "about-us": "About Us",
+    "about_us": "About Us",
     "services": "Services",
     "portfolio": "Portfolio",
     "contact": "Contact"
@@ -9,10 +9,10 @@
   "footer": {
     "discover": "Discover",
     "contact": "Contact",
-    "contact-us": "Contact",
+    "contact_us": "Contact",
     "copyright": "All rights reserved."
   },
-  "NotFound": {
+  "not_found": {
     "title": "Page not found",
     "description": "Sorry, we can't find that page, please go to the home page to continue browsing!",
     "button": "Back to homepage"
@@ -26,6 +26,11 @@
     "about": {
       "title": "Connecting the Future: Our Story in the World of Technology.",
       "body": "We are a team of web development experts dedicated to creating custom digital solutions that fit your needs, budget and technical knowledge. We specialize in delivering accessible and functional web applications, either developing sites from scratch or improving existing projects.\n\nWe take care of bringing your next online project to life, making sure every detail is aligned with your goals and vision."
+    },
+    "counter": {
+      "projects": "Completed projects",
+      "clients": "Satisfied customers",
+      "experience": "Years of experience"
     },
     "services": {
       "title": "what do we offer you?",
@@ -106,12 +111,7 @@
       }
     }
   },
-  "useCounterLocale": {
-    "projects": "Completed projects",
-    "clients": "Satisfied customers",
-    "experience": "Years of experience"
-  },
-  "useContactLocale": {
+  "contact_section": {
     "body": "We believe in making possible any project our clients have in mind, are you interested in building your online presence?",
     "highlight": "Work with us.",
     "button": "Contact us"

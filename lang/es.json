@@ -1,7 +1,7 @@
 {
   "navigation": {
     "home": "Inicio",
-    "about-us": "Sobre Nosotros",
+    "about_us": "Sobre Nosotros",
     "services": "Servicios",
     "portfolio": "Portafolio",
     "contact": "Contacto"
@@ -9,10 +9,10 @@
   "footer": {
     "discover": "Descubre",
     "contact": "Contacto",
-    "contact-us": "Contactar",
+    "contact_us": "Contactar",
     "copyright": "Todos los derechos reservados."
   },
-  "NotFound": {
+  "not_found": {
     "title": "Página no encontrada",
     "description": "Disculpa, no podemos encontrar esa página, ¡dirigasé a la página de inicio para seguir navegando!",
     "button": "Regresar al Inicio"
@@ -26,6 +26,11 @@
     "about": {
       "title": "Conectando el Futuro: Nuestra Historia en el Mundo de la Tecnología.",
       "body": "Somos un equipo de expertos en desarrollo web dedicados a crear soluciones digitales personalizadas que se ajusten a tus necesidades, presupuesto y conocimientos técnicos. Nos especializamos en ofrecer aplicaciones web accesibles y funcionales, ya sea desarrollando sitios desde cero o mejorando proyectos existentes. \n\nNos encargamos de darle vida a tu próximo proyecto en línea, asegurándonos de que cada detalle esté alineado con tus objetivos y visión."
+    },
+    "counter": {
+      "projects": "Proyectos completados",
+      "clients": "Clientes satisfechos",
+      "experience": "Años de experiencía"
     },
     "services": {
       "title": "¿Qué te ofrecemos?",
@@ -106,12 +111,7 @@
       }
     }
   },
-  "useCounterLocale": {
-    "projects": "Proyectos completados",
-    "clients": "Clientes satisfechos",
-    "experience": "Años de experiencía"
-  },
-  "useContactLocale": {
+  "contact_section": {
     "body": "Creemos en hacer posible cualquier proyecto que nuestros clientes tengan en mente, ¿estás interesado en construir tu presencia en línea?",
     "highlight": "Trabaja con nosotros.",
     "button": "Contáctanos"

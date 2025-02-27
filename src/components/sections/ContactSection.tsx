@@ -2,18 +2,8 @@ import React from "react";
 import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 
-interface ContactSectionProps {
-  body?: string;
-  highlight?: string;
-  buttonText?: string;
-}
-
-export default function ContactSection({
-  body,
-  highlight,
-  buttonText,
-}: ContactSectionProps) {
-  const t = useTranslations("useContactLocale");
+export default function ContactSection() {
+  const t = useTranslations("contact_section");
   return (
     <div className="flex w-full justify-center bg-teal-blue-accent-950 py-6 md:py-20">
       <div className="flex w-3/4 flex-col items-center space-y-6 text-balance text-2xl md:w-1/3 md:items-start">

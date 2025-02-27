@@ -44,7 +44,7 @@ export default function MainFooter() {
                     href="/about-us"
                     className="transition-colors hover:text-black"
                   >
-                    {tNavigation("about-us")}
+                    {tNavigation("about_us")}
                   </Link>
                 </li>
                 <li>
@@ -104,7 +104,7 @@ export default function MainFooter() {
                     href="/contact"
                     className={`rounded-md border-2 border-gray-500 px-6 py-3 font-semibold uppercase text-gray-500 transition-colors hover:border-black hover:text-black`}
                   >
-                    {t("contact-us")}
+                    {t("contact_us")}
                   </Link>
                 </li>
               </ul>

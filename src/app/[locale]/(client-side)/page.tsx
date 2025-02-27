@@ -21,13 +21,10 @@ import HomePageCounter from "@/components/sections/HomePageCounter";
 import PageSectionWrapper from "@/components/layout/PageSectionWrapper";
 import ContactSection from "@/components/sections/ContactSection";
 import { useTranslations } from "next-intl";
-import useContactLocale from "@/hooks/useContactLocale";
-import useCounterLocale from "@/hooks/useCounterLocale";
 
 export default function Home() {
   const t = useTranslations("home");
-  const tContact = useContactLocale();
-  const tCounter = useCounterLocale();
+
   return (
     <main className="w-full">
       {/* Hero section */}
@@ -95,9 +92,9 @@ export default function Home() {
 
       {/* Counter */}
       <HomePageCounter
-        projects={tCounter("projects")}
-        clients={tCounter("clients")}
-        experience={tCounter("experience")}
+        projects={t("counter.projects")}
+        clients={t("counter.clients")}
+        experience={t("counter.experience")}
       />
       {/* Services section */}
       <PageSectionWrapper
@@ -244,11 +241,7 @@ export default function Home() {
       {/* Steps */}
 
       {/* Contact Us */}
-      <ContactSection
-        body={tContact("body") + "\n"}
-        highlight={tContact("highlight")}
-        buttonText={tContact("button")}
-      />
+      <ContactSection />
     </main>
   );
 }
