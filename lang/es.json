@@ -12,6 +12,11 @@
     "contact-us": "Contactar",
     "copyright": "Todos los derechos reservados."
   },
+  "NotFound": {
+    "title": "Página no encontrada",
+    "description": "Disculpa, no podemos encontrar esa página, ¡dirigasé a la página de inicio para seguir navegando!",
+    "button": "Regresar al Inicio"
+  },
   "home": {
     "hero": {
       "title": "Construye tu presencia en línea",

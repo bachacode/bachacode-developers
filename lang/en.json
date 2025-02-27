@@ -1,7 +1,7 @@
 {
   "navigation": {
     "home": "Home",
-    "about-us": "About us",
+    "about-us": "About Us",
     "services": "Services",
     "portfolio": "Portfolio",
     "contact": "Contact"
@@ -9,44 +9,49 @@
   "footer": {
     "discover": "Discover",
     "contact": "Contact",
-    "contact-us": "Contact us",
+    "contact-us": "Contact",
     "copyright": "All rights reserved."
+  },
+  "NotFound": {
+    "title": "Page not found",
+    "description": "Sorry, we can't find that page, please go to the home page to continue browsing!",
+    "button": "Back to homepage"
   },
   "home": {
     "hero": {
       "title": "Build your online presence",
-      "subtitle": "With us your new project will come true",
-      "button": "Start your project"
+      "subtitle": "with us your new project will become a reality",
+      "button": "START YOUR PROJECT"
     },
     "about": {
-      "title": "Connecting the future: our history in the world of technology.",
-      "body": "We are a team of web development experts dedicated to creating customized digital solutions tailored to your needs, budget, and technical expertise. We specialize in delivering accessible and functional web applications, whether by building sites from scratch or enhancing existing projects. \n\nWe take charge of bringing your next online project to life, ensuring every detail aligns with your goals and vision."
+      "title": "Connecting the Future: Our Story in the World of Technology.",
+      "body": "We are a team of web development experts dedicated to creating custom digital solutions that fit your needs, budget and technical knowledge. We specialize in delivering accessible and functional web applications, either developing sites from scratch or improving existing projects.\n\nWe take care of bringing your next online project to life, making sure every detail is aligned with your goals and vision."
     },
     "services": {
-      "title": "What do we offer you?",
-      "subtitle": "Accessible services to all our customers",
+      "title": "what do we offer you?",
+      "subtitle": "Services accessible to all our customers",
       "cards": {
         "static": {
-          "title": "Static websites",
-          "body": "Development of custom websites with static content, ideal for small projects that do not require frequent updates, such as landing pages, portfolios, or catalogs. These sites offer speed, security, and efficiency for stable content."
+          "title": "Static Web Sites",
+          "body": "Custom website development with static content, ideal for small projects that do not require frequent updates, such as landing pages, portfolios or catalogs. These sites offer speed, security and efficiency for stable content."
         },
         "wordpress": {
-          "title": "WordPress sites",
-          "body": "Development of websites with WordPress, providing full control over content without the need to touch code. Ideal for medium-sized projects such as blogs, portfolios, or corporate websites, offering flexibility, scalability, and easy customization."
+          "title": "Sitios WordPress",
+          "body": "Website development with WordPress, providing full control of the content without the need to touch code. Ideal for medium-sized projects such as blogs, portfolios or corporate sites, offering flexibility, scalability and easy customization."
         },
         "web-apps": {
-          "title": "Web applications",
-          "body": "Development of custom web applications with advanced functionalities, such as online payment integration, personalized recommendation systems, live chat, real-time data analysis, and content management. Perfect for medium and large projects, including online stores, educational platforms, online booking systems, news portals, and enterprise management systems (ERP, CRM)."
+          "title": "Web Applications",
+          "body": "Custom web application development with advanced functionalities, such as online payment integration, personalized recommendation systems, live chat, real-time data analysis and content management. Perfect for medium to large projects, such as online stores, educational platforms, online booking systems, news portals, and business management systems (ERP, CRM)."
         },
         "support": {
-          "title": "Consulting and support",
-          "body": "If you already have a project that you want to update, add new features to, or fix errors, we take care of planning the entire process for you. From time estimation to budget creation, we offer solutions in the technologies we master best, ensuring efficient development tailored to your needs."
+          "title": "Consulting and Support",
+          "body": "If you already have a project that you want to update, add new functionalities or correct errors, we take care of planning the whole process for you. From time estimation to budget creation, we offer you solutions in the technologies we know best, guaranteeing an efficient development according to your needs."
         }
       }
     },
     "technologies": {
       "title": "Our technologies",
-      "subtitle": "We are experts in the most avant-garde web development technology"
+      "subtitle": "We are experts in state-of-the-art web development technology"
     },
     "clients": {
       "title": "Our Clients",
@@ -55,34 +60,34 @@
         "tailor": {
           "name": "Guillermo Saez",
           "occupation": "CEO of TailorSheet",
-          "body": "With Bachacode Developers, I found what many entrepreneurs look for and never find: The peace of mind of being able to leave your business in the hands of people who care for it and help it grow with solutions that border on excellence. They contribute ideas and are 100% committed to each project."
+          "body": "With Bachacode Developers I found what many entrepreneurs are looking for and never find: The peace of mind of being able to leave your business in the hands of people who take care of it and help it grow with solutions that border on excellence. They provide ideas and are 100% involved with each project."
         },
         "mesgo": {
           "name": "Luis Fernando Carbajal",
           "occupation": "CEO of MESGO",
-          "body": "Thanks to Bachacode Developers, we were able to meet the requirements set by CBI Group to obtain our supplier number. The website they developed not only exceeded our expectations but also streamlined the process and presentation of our company."
+          "body": "Thanks to Bachacode Developers we were able to meet the requirements established by CBI Group to obtain our supplier number. The website they developed not only exceeded our expectations, but also facilitated the process and the presentation of our company."
         }
       }
     },
     "team": {
       "title": "We guarantee",
-      "subtitle": "What you'll get by working with us",
+      "subtitle": "What you will get by working with us",
       "cards": {
         "development": {
           "title": "Agile development",
-          "body": "With us, agile development means quick adaptation to your needs and consistent results. We guarantee efficiency and precise alignment with what your project truly requires."
+          "body": "With us, agile development means fast adaptation to your needs and constant results. We guarantee efficiency and precise adjustment to what you really need in your project."
         },
         "communication": {
           "title": "Communication",
-          "body": "In our approach, communication is key. We maintain open channels for constant and clear interaction with you. We listen to your needs and keep you informed at all times, ensuring your vision is faithfully reflected in the final project."
+          "body": "In our approach, communication is fundamental. We keep channels open for constant and clear interaction with you. We listen to your needs and keep you informed at all times, ensuring that your vision is faithfully reflected in the final project."
         },
         "prices": {
           "title": "Adjustable prices",
-          "body": "We offer flexible pricing to fit your budget without compromising quality. We work together to find the best solution that aligns with your financial needs."
+          "body": "We offer flexible pricing to fit your budget without compromising quality. We work together to find the best solution that fits your economic needs."
         },
         "flexible": {
           "title": "Flexible features",
-          "body": "Our projects stand out for their flexibility, adapting to your evolving needs. Every feature is customizable to ensure your complete satisfaction, allowing you to modify the project according to your changing requirements throughout development until its launch."
+          "body": "Our projects are distinguished by their flexibility, adjusting to your evolving needs. Each feature is customizable to ensure your full satisfaction, allowing you to modify the project according to your changing requirements throughout the development until it goes online."
         }
       },
       "members": {
@@ -91,12 +96,12 @@
         "cristhian": {
           "name": "Cristhian Flores",
           "occupation": "Fullstack Developer",
-          "body": "Experienced in developing interfaces and APIs with expertise in both frontend and backend."
+          "body": "Experienced in developing interfaces and APIs with both frontend and backend knowledge."
         },
         "josibel": {
-          "name": "Josibel Farías",
+          "name": "Josibel Farias",
           "occupation": "UX/UI Designer",
-          "body": "Specialized in creating intuitive and engaging user experiences, with a focus on visual design and usability to ensure efficient and pleasant interfaces."
+          "body": "Specializing in creating intuitive and engaging user experiences, with a focus on visual design and usability to ensure efficient and enjoyable interfaces."
         }
       }
     }
@@ -107,7 +112,7 @@
     "experience": "Years of experience"
   },
   "useContactLocale": {
-    "body": "We believe in making possible any project that our clients have in mind, are you interested in building your presence online?",
+    "body": "We believe in making possible any project our clients have in mind, are you interested in building your online presence?",
     "highlight": "Work with us.",
     "button": "Contact us"
   }
