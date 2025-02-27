@@ -2,51 +2,16 @@ import Image from "next/image";
 import { Link } from "@/i18n/routing";
 import React from "react";
 import BachacodeLogoRemoveBg from "@/assets/images/bachacode-removebg.png";
-
 import LanguageSwitcher from "../common/LanguageSwitcher";
-import { MessageKeys, useLocale, useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import NavMenu from "../common/NavMenu";
 import MenuLink from "../common/MenuLink";
 
 export default function MainHeader() {
   const locale = useLocale();
 
-  const t = useTranslations("links");
-  const routes: {
-    href: "/" | "/about-us" | "/services" | "/portfolio" | "/contact";
-    label: MessageKeys<
-      {
-        home: string;
-        "about-us": string;
-        services: string;
-        portfolio: string;
-        contact: string;
-      },
-      "home" | "about-us" | "services" | "portfolio" | "contact"
-    >;
-  }[] = [
-    {
-      href: "/",
-      label: "home",
-    },
-    {
-      href: "/about-us",
-      label: "about-us",
-    },
+  const t = useTranslations("navigation");
 
-    {
-      href: "/services",
-      label: "services",
-    },
-    {
-      href: "/portfolio",
-      label: "portfolio",
-    },
-    {
-      href: "/contact",
-      label: "contact",
-    },
-  ];
   return (
     <header className="fixed start-0 top-0 z-20 w-full border-b bg-white">
       <nav className="relative mx-auto flex w-full max-w-screen-xl flex-wrap items-center justify-between py-4 lg:flex-nowrap lg:px-6">
@@ -62,11 +27,11 @@ export default function MainHeader() {
           <LanguageSwitcher currentLocale={locale}></LanguageSwitcher>
 
           <NavMenu>
-            {routes.map((route) => (
-              <MenuLink key={route.href} href={route.href}>
-                {t(route.label)}
-              </MenuLink>
-            ))}
+            <MenuLink href="/">{t("home")}</MenuLink>
+            <MenuLink href="/about-us">{t("about-us")}</MenuLink>
+            <MenuLink href="/services">{t("services")}</MenuLink>
+            <MenuLink href="/portfolio">{t("portfolio")}</MenuLink>
+            <MenuLink href="/contact">{t("contact")}</MenuLink>
           </NavMenu>
         </div>
       </nav>
