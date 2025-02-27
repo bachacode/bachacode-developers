@@ -5,8 +5,8 @@ import React from "react";
 export default function LocaleNotFound() {
   const t = useTranslations("NotFound");
   return (
-    <section className="bg-background">
-      <div className="mx-auto max-w-screen-xl px-4 py-8 lg:px-6 lg:py-16">
+    <main className="bg-background">
+      <div className="mx-auto max-w-screen-xl px-4 py-8 lg:px-6 lg:py-36">
         <div className="mx-auto max-w-screen-sm text-center">
           <h1 className="mb-4 text-7xl font-extrabold tracking-tight text-orange-primary-600 lg:text-9xl">
             404
@@ -25,6 +25,6 @@ export default function LocaleNotFound() {
           </Link>
         </div>
       </div>
-    </section>
+    </main>
   );
 }
