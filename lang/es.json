@@ -1,4 +1,9 @@
 {
+  "metadata": {
+    "title": "Bachacode Developers | Desarrollo & Consultoría Web",
+    "description": "Bachacode Developers se especializa en desarrollo web a medida, ofreciendo sitios estáticos, aplicaciones web y WordPress, ajustados a tus necesidades.",
+    "keywords": "desarrollo, programación, wordpress, php, laravel, soporte"
+  },
   "navigation": {
     "home": "Inicio",
     "about_us": "Sobre Nosotros",

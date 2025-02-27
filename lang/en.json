@@ -1,4 +1,9 @@
 {
+  "metadata": {
+    "title": "Bachacode Developers | Web Development & Consulting",
+    "description": "Bachacode Developers specializes in custom web development, offering static sites, web applications and WordPress, tailored to your needs.",
+    "keywords": "development, programming, wordpress, php, laravel, support"
+  },
   "navigation": {
     "home": "Home",
     "about_us": "About Us",
