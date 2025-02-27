@@ -58,7 +58,7 @@ export default function Servicios() {
                 Soluciones digitales a medida para impulsar tu éxito
               </p>
             </div>
-            <NavButton href="/contacto">Agenda una reunión</NavButton>
+            <NavButton href="/contact">Agenda una reunión</NavButton>
           </div>
 
           {/* Image */}
