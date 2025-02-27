@@ -1,10 +1,16 @@
 {
-  "links": {
+  "navigation": {
     "home": "Inicio",
     "about-us": "Sobre Nosotros",
     "services": "Servicios",
     "portfolio": "Portafolio",
     "contact": "Contacto"
+  },
+  "footer": {
+    "discover": "Descubre",
+    "contact": "Contacto",
+    "contact-us": "Contactar",
+    "copyright": "Todos los derechos reservados."
   },
   "home": {
     "hero": {
