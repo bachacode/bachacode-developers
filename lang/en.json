@@ -116,6 +116,49 @@
       }
     }
   },
+  "about_us": {
+    "metadata": {
+      "title": "About Us"
+    },
+    "hero": {
+      "title": "About Us - Bachacode Developers",
+      "description": "At Bachacode Developers, we are dedicated to providing innovative and high quality web development solutions. Our team of experts works tirelessly to ensure the satisfaction of our clients, providing personalized services tailored to the specific needs of each project."
+    },
+    "our_values": {
+      "title": "Our values",
+      "subtitle": "Ethics that sets us apart from the competition",
+      "cards": {
+        "innovation": {
+          "title": "Innovation",
+          "description": "We strive to be at the forefront of technology, implementing innovative solutions that drive our customers' success."
+        },
+        "quality": {
+          "title": "Quality",
+          "description": "Quality is our priority. We are committed to delivering products and services that exceed our customers' expectations."
+        },
+        "commitment": {
+          "title": "Commitment",
+          "description": "We are dedicated to building lasting relationships with our clients, based on trust, transparency and mutual commitment."
+        }
+      }
+    },
+    "our_team": {
+      "title": "Our team",
+      "subtitle": "The professionals who will develop your idea",
+      "cards": {
+        "cristhian": {
+          "name": "Cristhian Flores",
+          "occupation": "Fullstack Developer",
+          "body": "Experienced in interface development and design with both frontend and backend knowledge."
+        },
+        "josibel": {
+          "name": "Josibel Farias",
+          "occupation": "UX/UI Designer",
+          "body": "Specializing in creating intuitive and engaging user experiences, with a focus on visual design and usability to ensure efficient and enjoyable interfaces."
+        }
+      }
+    }
+  },
   "contact_section": {
     "body": "We believe in making possible any project our clients have in mind, are you interested in building your online presence?",
     "highlight": "Work with us.",

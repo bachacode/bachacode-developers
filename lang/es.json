@@ -116,6 +116,49 @@
       }
     }
   },
+  "about_us": {
+    "metadata": {
+      "title": "Sobre Nosotros"
+    },
+    "hero": {
+      "title": "Sobre Nosotros - Bachacode Developers",
+      "description": "En Bachacode Developers, nos dedicamos a ofrecer soluciones innovadoras y de alta calidad en el desarrollo web. Nuestro equipo de expertos trabaja incansablemente para garantizar la satisfacción de nuestros clientes, brindando servicios personalizados y adaptados a las necesidades específicas de cada proyecto."
+    },
+    "our_values": {
+      "title": "Nuestros valores",
+      "subtitle": "La ética que nos destaca sobre la competencia",
+      "cards": {
+        "innovation": {
+          "title": "Innovación",
+          "description": "Nos esforzamos por estar a la vanguardia de la tecnología, implementando soluciones innovadoras que impulsen el éxito de nuestros clientes."
+        },
+        "quality": {
+          "title": "Calidad",
+          "description": "La calidad es nuestra prioridad. Nos comprometemos a entregar productos y servicios que superen las expectativas de nuestros clientes."
+        },
+        "commitment": {
+          "title": "Compromiso",
+          "description": "Estamos dedicados a construir relaciones duraderas con nuestros clientes, basadas en la confianza, la transparencia y el compromiso mutuo."
+        }
+      }
+    },
+    "our_team": {
+      "title": "Nuestro equipo",
+      "subtitle": "Los profesionales que desarrollarán tu idea",
+      "cards": {
+        "cristhian": {
+          "name": "Cristhian Flores",
+          "occupation": "Fullstack Developer",
+          "body": "Experimentado en el desarrollo de interfaces y diseño con conocimientos tanto en frontend como en backend."
+        },
+        "josibel": {
+          "name": "Josibel Farías",
+          "occupation": "Diseñadora UX/UI",
+          "body": "Especializada en la creación de experiencias de usuario intuitivas y atractivas, con un enfoque en el diseño visual y la usabilidad para garantizar interfaces eficientes y agradables."
+        }
+      }
+    }
+  },
   "contact_section": {
     "body": "Creemos en hacer posible cualquier proyecto que nuestros clientes tengan en mente, ¿estás interesado en construir tu presencia en línea?",
     "highlight": "Trabaja con nosotros.",
