@@ -235,6 +235,45 @@
       }
     }
   },
+  "portfolio": {
+    "metadata": {
+      "title": "Portfolio"
+    },
+    "hero": {
+      "title": "Our Portfolio",
+      "subtitle": "Discover a selection of our most outstanding projects, which reflect our commitment to innovation and quality in web development."
+    },
+    "projects": {
+      "title": "Our projects",
+      "subtitle": "Websites we have worked on",
+      "sites": {
+        "tailorsheet": {
+          "title": "TailorSheet",
+          "body": "Apps courses and design with AppSheet. Learn from scratch with our courses and tutorials in Spanish. We design apps for your business in record time."
+        },
+        "mesgo": {
+          "title": "Mesgo",
+          "body": "Landing Page of Mexican Engineering Supply Group, a company specialized in the distribution of industrial materials, with a focus on electrical, electronic and mechanical engineering."
+        }
+      }
+    },
+    "clients": {
+      "title": "Testimonials",
+      "subtitle": "The words of our customers",
+      "testimonies": {
+        "tailor": {
+          "name": "Guillermo Saez",
+          "occupation": "CEO of TailorSheet",
+          "body": "With Bachacode Developers I found what many entrepreneurs are looking for and never find: The peace of mind of being able to leave your business in the hands of people who take care of it and help it grow with solutions that border on excellence. They provide ideas and are 100% involved with each project."
+        },
+        "mesgo": {
+          "name": "Luis Fernando Carbajal",
+          "occupation": "CEO of MESGO",
+          "body": "Thanks to Bachacode Developers we were able to meet the requirements established by CBI Group to obtain our supplier number. The website they developed not only exceeded our expectations, but also facilitated the process and the presentation of our company."
+        }
+      }
+    }
+  },
   "price_card": {
     "month": "month",
     "specs": {
@@ -258,5 +297,8 @@
     "body": "We believe in making possible any project our clients have in mind, are you interested in building your online presence?",
     "highlight": "Work with us.",
     "button": "Contact us"
+  },
+  "project_card": {
+    "button": "View website"
   }
 }

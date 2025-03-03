@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 
@@ -16,10 +17,11 @@ export default function ProjectCard({
   description,
   image,
   buttonUrl,
-  buttonText = "Ver sitio web",
+  buttonText,
   inverted = false,
   altColor = false,
 }: ProjectCardProps) {
+  const t = useTranslations("project_card");
   return (
     <div className={`w-full ${altColor ? "bg-secondary" : "bg-primary"}`}>
       <div
@@ -59,7 +61,7 @@ export default function ProjectCard({
                 : "border-white text-white"
             }`}
           >
-            {buttonText}
+            {buttonText ?? t("button")}
           </Link>
         </div>
       </div>

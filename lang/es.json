@@ -235,6 +235,45 @@
       }
     }
   },
+  "portfolio": {
+    "metadata": {
+      "title": "Portafolio"
+    },
+    "hero": {
+      "title": "Nuestro Portafolio",
+      "subtitle": "Descubre una selección de nuestros proyectos más destacados, que reflejan nuestro compromiso con la innovación y la calidad en el desarrollo web."
+    },
+    "projects": {
+      "title": "Nuestros proyectos",
+      "subtitle": "Los sitios web en lo que hemos trabajado",
+      "sites": {
+        "tailorsheet": {
+          "title": "TailorSheet",
+          "body": "Cursos y diseño de Apps con AppSheet. Aprende desde cero con nuestros cursos y tutoriales en español. Diseñamos apps para tu negocio en tiempo récord."
+        },
+        "mesgo": {
+          "title": "Mesgo",
+          "body": "Landing Page de Mexican Engineering Supply Group, empresa especializada en la distribución de materiales industriales, con un enfoque en la ingeniería eléctrica, electrónica y mecánica."
+        }
+      }
+    },
+    "clients": {
+      "title": "Testimonios",
+      "subtitle": "Las palabras de nuestros clientes",
+      "testimonies": {
+        "tailor": {
+          "name": "Guillermo Saez",
+          "occupation": "CEO de TailorSheet",
+          "body": "Con Bachacode Developers encontré lo que muchos emprendedores buscan y nunca encuentran: La tranquilidad de poder dejar tu negocio en manos de personas que lo cuidan y ayudan a hacerlo crecer con soluciones que rozan la excelencia. Que aportan ideas y que se implican al 100% con cada proyecto."
+        },
+        "mesgo": {
+          "name": "Luis Fernando Carbajal",
+          "occupation": "CEO de MESGO",
+          "body": "Gracias a Bachacode Developers logramos cumplir con los requerimientos establecidos por la empresa CBI Group para obtener nuestro número de proveedor. El sitio web que desarrollaron no solo superó nuestras expectativas, sino que también facilitó el proceso y la presentación de nuestra empresa."
+        }
+      }
+    }
+  },
   "price_card": {
     "month": "mes",
     "specs": {
@@ -258,5 +297,8 @@
     "body": "Creemos en hacer posible cualquier proyecto que nuestros clientes tengan en mente, ¿estás interesado en construir tu presencia en línea?",
     "highlight": "Trabaja con nosotros.",
     "button": "Contáctanos"
+  },
+  "project_card": {
+    "button": "Ver sitio web"
   }
 }
