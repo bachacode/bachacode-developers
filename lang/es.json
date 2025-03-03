@@ -159,6 +159,101 @@
       }
     }
   },
+  "services": {
+    "metadata": {
+      "title": "Servicios"
+    },
+    "hero": {
+      "title": "Servicios de Desarrollo y Consultoría Web",
+      "subtitle": "Soluciones digitales a medida para impulsar tu éxito",
+      "button": "Agenda una reunión"
+    },
+    "services": {
+      "title": "Impulsa tu presencia digital",
+      "subtitle": "Soluciones personalizadas que transforman tu negocio",
+      "cards": {
+        "static": {
+          "title": "Sitios Web Estaticos",
+          "body": "Desarrollo de sitios web personalizados con contenido estático, ideal para proyectos pequeños que no requieren actualizaciones frecuentes, como landing pages, portafolios o catálogos. Estos sitios ofrecen rapidez, seguridad y eficiencia para contenido estable."
+        },
+        "wordpress": {
+          "title": "Sitios WordPress",
+          "body": "Desarrollo de sitios web con WordPress, brindando control total del contenido sin necesidad de tocar código. Ideal para proyectos medianos como blogs, portafolios o sitios corporativos, ofreciendo flexibilidad, escalabilidad y fácil personalización."
+        },
+        "web-apps": {
+          "title": "Aplicaciones Web",
+          "body": "Desarrollo de aplicaciones web a medida con funcionalidades avanzadas, como integración de pagos en línea, sistemas de recomendación personalizados, chat en vivo, análisis de datos en tiempo real y gestión de contenido. Perfecto para proyectos medianos y grandes, como tiendas en línea, plataformas educativas, sistemas de reservas en línea, portales de noticias, y sistemas de gestión empresarial (ERP, CRM)."
+        },
+        "support": {
+          "title": "Consultoría y Soporte",
+          "body": "Si ya tienes un proyecto que deseas actualizar, agregar nuevas funcionalidades o corregir errores, nosotros nos encargamos de planificar todo el proceso por ti. Desde la estimación de tiempos hasta la creación de presupuestos, te ofrecemos soluciones en las tecnologías que mejor dominamos, garantizando un desarrollo eficiente y acorde a tus necesidades."
+        }
+      }
+    },
+    "advantages": {
+      "title": "¿Qué te ofrecemos?",
+      "subtitle": "Ventajas exclusivas de nuestros clientes",
+      "cards": {
+        "hosting": {
+          "title": "Hosting Profesional",
+          "description": "No tendrás que preocuparte más por gestionar tu propio sitio web, nosotros lo haremos por ti. Te ofrecemos un servicio de hosting escalable que se adapta a tus necesidades."
+        },
+        "design": {
+          "title": "Diseños Modernos",
+          "description": "Nos encargamos de darle a tu sitio web un diseño atractivo que refleje lo que busca transmitir tu negocio. Si esta página te resulta atractiva, ¡obtendrás una calidad igual o superior en tu proyecto!"
+        },
+        "security": {
+          "title": "Seguridad Garantizada",
+          "description": "No corras riesgos innecesarios: nuestros desarrolladores se encargarán de integrar todas las medidas de seguridad necesarias para proteger tu sitio web."
+        },
+        "support": {
+          "title": "Soporte Eficaz",
+          "description": "Estamos preparados para atender cualquier urgencia que requiera soporte técnico. ¡Te garantizamos mantener tu sitio web activo las 24 horas!"
+        }
+      }
+    },
+    "technologies": {
+      "title": "¿Qué tecnologías utilizamos?",
+      "subtitle": "Trabajamos con las mejores tecnologías para tus proyectos"
+    },
+    "hosting": {
+      "title": "Planes de hosting",
+      "subtitle": "¡Aloja tu proyecto con uno de nuestros planes flexibles!",
+      "cards": {
+        "basic": {
+          "title": "Plan Básico",
+          "description": "Ideal para proyectos personales y sitios web pequeños."
+        },
+        "advanced": {
+          "title": "Plan Avanzado",
+          "description": "Diseñado para negocios en crecimiento y sitios web dinámicos."
+        },
+        "pro": {
+          "title": "Plan Profesional",
+          "description": "La mejor opción para proyectos empresariales de alto rendimiento."
+        }
+      }
+    }
+  },
+  "price_card": {
+    "month": "mes",
+    "specs": {
+      "title": "Especificaciones",
+      "ram": "{memory} de ram",
+      "cpu": "CPU de {cores} núcleos",
+      "storage": "{space} de almacenamiento NVMe",
+      "network": "{bandwith} de ancho de banda"
+    },
+    "includes": {
+      "title": "Incluye",
+      "management": "Gestión profesional 24/7",
+      "ssl": "SSL Gratis sin coste añadido",
+      "cloudflare": "Integración con Cloudflare gratuita",
+      "domain": "Dominio incluido en el precio",
+      "emails": "Correos personalizados (con el dominio incluido)",
+      "uptime": "99.99% de uptime del servidor"
+    }
+  },
   "contact_section": {
     "body": "Creemos en hacer posible cualquier proyecto que nuestros clientes tengan en mente, ¿estás interesado en construir tu presencia en línea?",
     "highlight": "Trabaja con nosotros.",

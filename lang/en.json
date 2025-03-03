@@ -42,11 +42,11 @@
       "subtitle": "Services accessible to all our customers",
       "cards": {
         "static": {
-          "title": "Static Web Sites",
+          "title": "Static Websites",
           "body": "Custom website development with static content, ideal for small projects that do not require frequent updates, such as landing pages, portfolios or catalogs. These sites offer speed, security and efficiency for stable content."
         },
         "wordpress": {
-          "title": "Sitios WordPress",
+          "title": "WordPress Websites",
           "body": "Website development with WordPress, providing full control of the content without the need to touch code. Ideal for medium-sized projects such as blogs, portfolios or corporate sites, offering flexibility, scalability and easy customization."
         },
         "web-apps": {
@@ -157,6 +157,101 @@
           "body": "Specializing in creating intuitive and engaging user experiences, with a focus on visual design and usability to ensure efficient and enjoyable interfaces."
         }
       }
+    }
+  },
+  "services": {
+    "metadata": {
+      "title": "Services"
+    },
+    "hero": {
+      "title": "Web Development and Consulting Services",
+      "subtitle": "Tailored digital solutions to drive your success",
+      "button": "Schedule a meeting"
+    },
+    "services": {
+      "title": "Boost your digital presence",
+      "subtitle": "Customized solutions that transform your business",
+      "cards": {
+        "static": {
+          "title": "Static Websites",
+          "body": "Development of customized websites with static content, ideal for small projects that do not require frequent updates, such as landing pages, portfolios or catalogs. These sites offer speed, security and efficiency for stable content."
+        },
+        "wordpress": {
+          "title": "WordPress Websites",
+          "body": "Website development with WordPress, providing full control of the content without the need to touch code. Ideal for medium-sized projects such as blogs, portfolios or corporate sites, offering flexibility, scalability and easy customization."
+        },
+        "web-apps": {
+          "title": "Web Applications",
+          "body": "Custom web application development with advanced functionalities, such as online payment integration, personalized recommendation systems, live chat, real-time data analysis and content management. Perfect for medium to large projects, such as online stores, educational platforms, online booking systems, news portals, and business management systems (ERP, CRM)."
+        },
+        "support": {
+          "title": "Consulting and Support",
+          "body": "If you already have a project that you want to update, add new functionalities or correct errors, we take care of planning the whole process for you. From time estimation to budget creation, we offer you solutions in the technologies we know best, guaranteeing an efficient development according to your needs."
+        }
+      }
+    },
+    "advantages": {
+      "title": "what do we offer you?",
+      "subtitle": "Exclusive advantages for our customers",
+      "cards": {
+        "hosting": {
+          "title": "Professional Hosting",
+          "description": "You will no longer have to worry about managing your own website, we will do it for you. We offer you a scalable hosting service that adapts to your needs."
+        },
+        "design": {
+          "title": "Modern Designs",
+          "description": "We take care of giving your website an attractive design that reflects what your business wants to convey. If you find this page attractive, you will get an equal or superior quality in your project!"
+        },
+        "security": {
+          "title": "Guaranteed Safety",
+          "description": "Don't take unnecessary risks: our developers will take care of integrating all the necessary security measures to protect your website."
+        },
+        "support": {
+          "title": "Effective Support",
+          "description": "We are ready to attend any emergency that requires technical support, we guarantee to keep your website up and running 24 hours a day!"
+        }
+      }
+    },
+    "technologies": {
+      "title": "what technologies do we use?",
+      "subtitle": "We work with the best technologies for your projects"
+    },
+    "hosting": {
+      "title": "Hosting plans",
+      "subtitle": "host your project with one of our flexible plans!",
+      "cards": {
+        "basic": {
+          "title": "Basic Plan",
+          "description": "Ideal for personal projects and small websites."
+        },
+        "advanced": {
+          "title": "Advanced Plan",
+          "description": "Designed for growing businesses and dynamic websites."
+        },
+        "pro": {
+          "title": "Professional Plan",
+          "description": "The best option for high-performance business projects."
+        }
+      }
+    }
+  },
+  "price_card": {
+    "month": "month",
+    "specs": {
+      "title": "Specifications",
+      "ram": "{memory} ram",
+      "cpu": "{cores} core CPU",
+      "storage": "{space} NVMe storage",
+      "network": "{bandwith} bandwidth"
+    },
+    "includes": {
+      "title": "Includes",
+      "management": "24/7 professional management",
+      "ssl": "Free SSL at no additional cost",
+      "cloudflare": "Free Cloudflare integration",
+      "domain": "Domain included in the price",
+      "emails": "Personalized mail domain",
+      "uptime": "99,99% server uptime"
     }
   },
   "contact_section": {

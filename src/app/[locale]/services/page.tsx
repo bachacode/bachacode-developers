@@ -34,12 +34,31 @@ import generateTitle from "@/utils/generateTitle";
 import ContactSection from "@/components/sections/ContactSection";
 import TechCard from "@/components/cards/TechCard";
 import PriceCard from "@/components/cards/PriceCard";
+import { getTranslations } from "next-intl/server";
+import { useFormatter, useTranslations } from "next-intl";
 
-export const metadata: Metadata = {
-  title: generateTitle("Servicios"),
-};
+export async function generateMetadata(
+  props: Omit<
+    {
+      children: React.ReactNode;
+      params: Promise<{ locale: string }>;
+    },
+    "children"
+  >,
+): Promise<Metadata> {
+  const { locale } = await props.params;
+
+  const t = await getTranslations({ locale, namespace: "services.metadata" });
+
+  return {
+    title: generateTitle(t("title")),
+  };
+}
 
 export default function Servicios() {
+  const t = useTranslations("services");
+  const format = useFormatter();
+
   return (
     <main className="w-full">
       {/* Hero section */}
@@ -52,13 +71,11 @@ export default function Servicios() {
                 id="hero"
                 className="pb-3 text-4xl font-bold tracking-widest text-zinc-900 lg:text-5xl"
               >
-                Servicios de Desarrollo y Consultoría Web
+                {t("hero.title")}
               </h1>
-              <p className="text-xl text-zinc-800">
-                Soluciones digitales a medida para impulsar tu éxito
-              </p>
+              <p className="text-xl text-zinc-800">{t("hero.subtitle")}</p>
             </div>
-            <NavButton href="/contact">Agenda una reunión</NavButton>
+            <NavButton href="/contact">{t("hero.button")}</NavButton>
           </div>
 
           {/* Image */}
@@ -76,57 +93,41 @@ export default function Servicios() {
       {/* Services Section */}
       <PageSectionWrapper
         titleId="services"
-        titleName="Impulsa tu presencia digital"
-        subtitle="Soluciones personalizadas que transforman tu negocio"
+        titleName={t("services.title")}
+        subtitle={t("services.subtitle")}
       >
         {/* Service cards */}
         <div className="grid gap-6 px-2 md:grid-cols-2 lg:grid-cols-4">
           <ServiceCardAlt
-            title="Sitios Web Estaticos"
+            title={t("services.cards.static.title")}
             icon={faWindowRestore}
             iconColor="text-primary"
           >
-            Desarrolla sitios web personalizados con contenido estático,
-            perfectos para proyectos pequeños que no requieren actualizaciones
-            constantes, como landing pages o catálogos. Estos sitios aseguran
-            rapidez, seguridad y eficiencia para contenido estable y atractivo.
+            {t("services.cards.static.body")}
           </ServiceCardAlt>
 
           <ServiceCardAlt
-            title="Sitios WordPress"
+            title={t("services.cards.wordpress.title")}
             icon={faWordpress}
             iconColor="text-primary"
           >
-            Desarrollo de sitios web con{" "}
-            <strong className="text-accent">WordPress</strong>, ofreciendo
-            control total del contenido sin necesidad de programación. Ideal
-            para proyectos medianos, como blogs o portafolios, brinda
-            flexibilidad, escalabilidad y fácil personalización para cualquier
-            necesidad.
+            {t("services.cards.wordpress.body")}
           </ServiceCardAlt>
 
           <ServiceCardAlt
-            title="Aplicaciones Web"
+            title={t("services.cards.web-apps.title")}
             icon={faCode}
             iconColor="text-primary"
           >
-            Creamos aplicaciones web a medida con funcionalidades avanzadas,
-            como pagos en línea, sistemas de recomendación, chat en vivo y
-            análisis de datos. Perfectas para proyectos medianos y grandes, como
-            tiendas en línea, plataformas educativas y sistemas de gestión
-            empresarial.
+            {t("services.cards.web-apps.body")}
           </ServiceCardAlt>
 
           <ServiceCardAlt
-            title="Consultoría y Soporte"
+            title={t("services.cards.support.title")}
             icon={faMessage}
             iconColor="text-primary"
           >
-            Si tienes un proyecto que deseas actualizar, nosotros planificamos
-            todo el proceso por ti. Desde la estimación de tiempos hasta la
-            elaboración de presupuestos, ofrecemos soluciones en las tecnologías
-            que dominamos, garantizando un desarrollo ágil y acorde a tus
-            necesidades.
+            {t("services.cards.support.body")}
           </ServiceCardAlt>
         </div>
       </PageSectionWrapper>
@@ -134,8 +135,8 @@ export default function Servicios() {
       {/* Advantages Section */}
       <PageSectionWrapper
         titleId="advantages"
-        titleName="¿Qué te ofrecemos?"
-        subtitle="Ventajas exclusivas de nuestros clientes"
+        titleName={t("advantages.title")}
+        subtitle={t("advantages.subtitle")}
         altBackground
       >
         <div className="relative flex w-full">
@@ -153,43 +154,34 @@ export default function Servicios() {
           {/* Advantages List */}
           <div className="relative z-10 flex w-full flex-col justify-stretch gap-6 px-2 md:px-12 lg:w-1/2">
             <AdvantageCard
-              title="Hosting Profesional"
+              title={t("advantages.cards.hosting.title")}
               icon={faServer}
               iconColor="text-accent"
             >
-              No tendrás que preocuparte más por gestionar tu propio sitio web,
-              nosotros lo haremos por ti. Te ofrecemos un servicio de hosting
-              escalable que se adapta a tus necesidades.
+              {t("advantages.cards.hosting.description")}
             </AdvantageCard>
             <AdvantageCard
-              title="Diseños Modernos"
+              title={t("advantages.cards.design.title")}
               icon={faPalette}
               iconColor="text-accent"
             >
-              Nos encargamos de darle a tu sitio web un diseño atractivo que
-              refleje lo que busca transmitir tu negocio. Si esta página te
-              resulta atractiva, ¡obtendrás una calidad igual o superior en tu
-              proyecto!
+              {t("advantages.cards.design.description")}
             </AdvantageCard>
 
             <AdvantageCard
-              title="Seguridad Garantizada"
+              title={t("advantages.cards.security.title")}
               icon={faShield}
               iconColor="text-accent"
             >
-              No corras riesgos innecesarios: nuestros desarrolladores se
-              encargarán de integrar todas las medidas de seguridad necesarias
-              para proteger tu sitio web.
+              {t("advantages.cards.security.description")}
             </AdvantageCard>
 
             <AdvantageCard
-              title="Soporte Eficaz"
+              title={t("advantages.cards.support.title")}
               icon={faHeadphones}
               iconColor="text-accent"
             >
-              Estamos preparados para atender cualquier urgencia que requiera
-              soporte técnico. ¡Te garantizamos mantener tu sitio web activo las
-              24 horas!
+              {t("advantages.cards.support.description")}
             </AdvantageCard>
           </div>
         </div>
@@ -198,8 +190,8 @@ export default function Servicios() {
       {/* Technologies section */}
       <PageSectionWrapper
         titleId="technology"
-        titleName="¿Qué tecnologías utilizamos?"
-        subtitle="Trabajamos con las mejores tecnologías para tus proyectos"
+        titleName={t("technologies.title")}
+        subtitle={t("technologies.subtitle")}
       >
         <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
           {/* Tech Box */}
@@ -249,82 +241,46 @@ export default function Servicios() {
       {/* Hosting section */}
       <PageSectionWrapper
         titleId="hosting"
-        titleName="Planes de hosting"
-        subtitle="¡Aloja tu proyecto con uno de nuestros planes flexibles!"
+        titleName={t("hosting.title")}
+        subtitle={t("hosting.subtitle")}
         altBackground
       >
         {/* Hosting plans */}
         <div className="flex flex-col gap-4 px-2 md:flex-row">
           <PriceCard
-            title="Plan Básico"
-            subtitle="Ideal para proyectos personales y sitios web pequeños."
-            price="$9,99"
-            benefits={[
-              {
-                icon: faMemory,
-                text: "2GB Ram",
-              },
-              {
-                icon: faMicrochip,
-                text: "1 Core CPU",
-              },
-              {
-                icon: faHardDrive,
-                text: "25GB de almacenamiento NVMe",
-              },
-              {
-                icon: faNetworkWired,
-                text: "1TB de ancho de banda",
-              },
-            ]}
+            title={t("hosting.cards.basic.title")}
+            subtitle={t("hosting.cards.basic.description")}
+            price={format.number(9.99, { style: "currency", currency: "USD" })}
+            specs={{
+              ram: "2GB",
+              cores: "1",
+              storage: "25GB",
+              bandwidth: "1TB",
+            }}
           />
 
           <PriceCard
-            title="Plan Avanzado"
-            subtitle="Diseñado para negocios en crecimiento y sitios web dinámicos."
-            price="$19,99"
-            benefits={[
-              {
-                icon: faMemory,
-                text: "2GB Ram",
-              },
-              {
-                icon: faMicrochip,
-                text: "2 Core CPU",
-              },
-              {
-                icon: faHardDrive,
-                text: "40GB de almacenamiento NVMe",
-              },
-              {
-                icon: faNetworkWired,
-                text: "2TB de ancho de banda",
-              },
-            ]}
+            title={t("hosting.cards.advanced.title")}
+            subtitle={t("hosting.cards.advanced.description")}
+            price={format.number(19.99, { style: "currency", currency: "USD" })}
+            specs={{
+              ram: "2GB",
+              cores: "2",
+              storage: "40GB",
+              bandwidth: "2TB",
+            }}
           />
 
           <PriceCard
-            title="Plan Profesional"
-            subtitle="La mejor opción para proyectos empresariales de alto rendimiento."
-            price="$29,99"
-            benefits={[
-              {
-                icon: faMemory,
-                text: "4GB Ram",
-              },
-              {
-                icon: faMicrochip,
-                text: "2 Core CPU",
-              },
-              {
-                icon: faHardDrive,
-                text: "80GB de almacenamiento NVMe",
-              },
-              {
-                icon: faNetworkWired,
-                text: "4TB de ancho de banda",
-              },
-            ]}
+            title={t("hosting.cards.pro.title")}
+            subtitle={t("hosting.cards.pro.description")}
+            price={format.number(29.99, { style: "currency", currency: "USD" })}
+            specs={{
+              ram: "4GB",
+              cores: "2",
+              storage: "80GB",
+              bandwidth: "4TB",
+            }}
           />
         </div>
       </PageSectionWrapper>
