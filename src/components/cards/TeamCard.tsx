@@ -68,7 +68,7 @@ export default function TeamCard({
             )}
             {githubUrl ? (
               <a
-                title={`Página de Github de ${memberName}`}
+                title={`${memberName}'s Github page`}
                 className="ml-2 text-gray-500 transition-colors hover:text-primary"
                 href={githubUrl}
               >
@@ -76,7 +76,7 @@ export default function TeamCard({
               </a>
             ) : (
               <span
-                title="GitHub no disponible"
+                title="Not available"
                 className="ml-2 cursor-not-allowed text-gray-300"
               >
                 <FontAwesomeIcon className="h-8 w-8" icon={faGithub} />

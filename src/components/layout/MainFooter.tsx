@@ -1,13 +1,17 @@
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import React from "react";
 import BachacodeLogoNoBg from "@/assets/images/bachacode-removebg.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 import BachacodeMiniLogo from "@/assets/images/bachacode-mini.png";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { useTranslations } from "next-intl";
 
 export default function MainFooter() {
+  const t = useTranslations("footer");
+  const tNavigation = useTranslations("navigation");
+
   return (
     <footer className="flex w-full justify-center bg-white">
       <div className="w-full max-w-screen-xl p-4 py-6 lg:py-8">
@@ -27,36 +31,36 @@ export default function MainFooter() {
             {/* Main Links */}
             <div className="text-center md:text-left">
               <h3 className="pb-3 font-semibold uppercase text-gray-900">
-                Descubre
+                {t("discover")}
               </h3>
               <ul className="space-y-2 font-medium text-gray-500">
                 <li>
                   <Link href="/" className="transition-colors hover:text-black">
-                    Inicio
+                    {tNavigation("home")}
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="/sobre-nosotros"
+                    href="/about-us"
                     className="transition-colors hover:text-black"
                   >
-                    Sobre Nosotros
+                    {tNavigation("about_us")}
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="/servicios"
+                    href="/services"
                     className="transition-colors hover:text-black"
                   >
-                    Servicios
+                    {tNavigation("services")}
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="/portafolio"
+                    href="/portfolio"
                     className="transition-colors hover:text-black"
                   >
-                    Portafolio
+                    {tNavigation("portfolio")}
                   </Link>
                 </li>
               </ul>
@@ -65,7 +69,7 @@ export default function MainFooter() {
             {/* Contact info */}
             <div className="text-center md:text-left">
               <h3 className="pb-3 font-semibold uppercase text-gray-900">
-                Contacto
+                {t("contact")}
               </h3>
               <ul className="space-y-2 font-medium text-gray-500">
                 <li>
@@ -97,10 +101,10 @@ export default function MainFooter() {
 
                 <li className="py-3">
                   <Link
-                    href="/contacto"
+                    href="/contact"
                     className={`rounded-md border-2 border-gray-500 px-6 py-3 font-semibold uppercase text-gray-500 transition-colors hover:border-black hover:text-black`}
                   >
-                    Contactar
+                    {t("contact_us")}
                   </Link>
                 </li>
               </ul>
@@ -122,9 +126,9 @@ export default function MainFooter() {
             <span className="text-sm text-gray-500 md:text-center">
               © 2025{" "}
               <Link href="/" className="hover:underline">
-                Bachacode Developers
+                Bachacode Developers.
               </Link>
-              . Todos los derechos reservados.
+              {t("copyright")}
             </span>
           </div>
           <div className="flex md:mt-0 md:justify-center">

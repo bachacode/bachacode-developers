@@ -1,7 +1,7 @@
 import React from "react";
 import PageSectionWrapper from "@/components/layout/PageSectionWrapper";
 import Image from "next/image";
-import ncWomanTypingOnMachine from "../../../../public/images/nc-woman-typing-on-machine.png";
+import ncWomanTypingOnMachine from "@/assets/images/nc-woman-typing-on-machine.png";
 import ServiceCard from "@/components/cards/ServiceCard";
 import {
   faLightbulb,
@@ -14,12 +14,30 @@ import ContactSection from "@/components/sections/ContactSection";
 import TeamCard from "@/components/cards/TeamCard";
 import generateTitle from "@/utils/generateTitle";
 import { Metadata } from "next";
+import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 
-export const metadata: Metadata = {
-  title: generateTitle("Sobre Nosotros"),
-};
+export async function generateMetadata(
+  props: Omit<
+    {
+      children: React.ReactNode;
+      params: Promise<{ locale: string }>;
+    },
+    "children"
+  >,
+): Promise<Metadata> {
+  const { locale } = await props.params;
+
+  const t = await getTranslations({ locale, namespace: "about_us.metadata" });
+
+  return {
+    title: generateTitle(t("title")),
+  };
+}
 
 export default function SobreNosotros() {
+  const t = useTranslations("about_us");
+
   return (
     <main className="w-full">
       {/* Hero section */}
@@ -42,16 +60,9 @@ export default function SobreNosotros() {
                 id="hero"
                 className="pb-3 text-4xl font-bold tracking-widest text-zinc-900 lg:text-5xl"
               >
-                Sobre Nosotros - Bachacode Developers
+                {t("hero.title")}
               </h1>
-              <p className="text-xl text-zinc-800">
-                En Bachacode Developers, nos dedicamos a ofrecer soluciones
-                innovadoras y de alta calidad en el desarrollo web. Nuestro
-                equipo de expertos trabaja incansablemente para garantizar la
-                satisfacción de nuestros clientes, brindando servicios
-                personalizados y adaptados a las necesidades específicas de cada
-                proyecto.
-              </p>
+              <p className="text-xl text-zinc-800">{t("hero.description")}</p>
             </div>
           </div>
         </div>
@@ -60,37 +71,31 @@ export default function SobreNosotros() {
       {/* Our values section */}
       <PageSectionWrapper
         titleId="our-values"
-        titleName="Nuestros Valores"
-        subtitle="La ética que nos destaca sobre la competencia"
+        titleName={t("our_values.title")}
+        subtitle={t("our_values.subtitle")}
         altBackground
       >
         <div className="flex flex-col md:flex-row md:space-x-8">
           <ServiceCard
             icon={faLightbulb}
-            title="Innovación"
+            title={t("our_values.cards.innovation.title")}
             iconColor="text-yellow-500"
           >
-            Nos esforzamos por estar a la vanguardia de la tecnología,
-            implementando soluciones innovadoras que impulsen el éxito de
-            nuestros clientes.
+            {t("our_values.cards.innovation.description")}
           </ServiceCard>
           <ServiceCard
             icon={faCheckCircle}
-            title="Calidad"
+            title={t("our_values.cards.quality.title")}
             iconColor="text-green-500"
           >
-            La calidad es nuestra prioridad. Nos comprometemos a entregar
-            productos y servicios que superen las expectativas de nuestros
-            clientes.
+            {t("our_values.cards.quality.description")}
           </ServiceCard>
           <ServiceCard
             icon={faHandshake}
-            title="Compromiso"
+            title={t("our_values.cards.commitment.title")}
             iconColor="text-blue-500"
           >
-            Estamos dedicados a construir relaciones duraderas con nuestros
-            clientes, basadas en la confianza, la transparencia y el compromiso
-            mutuo.
+            {t("our_values.cards.commitment.description")}
           </ServiceCard>
         </div>
       </PageSectionWrapper>
@@ -98,23 +103,23 @@ export default function SobreNosotros() {
       {/* Our team */}
       <PageSectionWrapper
         titleId="team"
-        titleName="Nuestro equipo"
-        subtitle="Los profesionales que desarrollarán tu idea"
+        titleName={t("our_team.title")}
+        subtitle={t("our_team.subtitle")}
       >
         <div className="grid grid-cols-2">
           <TeamCard
-            memberName="Cristhian Flores"
-            profession="Fullstack Developer"
-            description="Experimentado en el desarrollo de interfaces y diseño con conocimientos tanto en frontend como en backend."
+            memberName={t("our_team.cards.cristhian.name")}
+            profession={t("our_team.cards.cristhian.occupation")}
+            description={t("our_team.cards.cristhian.body")}
             linkedinUrl="https://www.linkedin.com/in/cristhian-flo"
             githubUrl="https://github.com/bachacode"
             icon={faCode}
           />
 
           <TeamCard
-            memberName="Josibel Farías"
-            profession="Diseñadora UX/UI"
-            description="Especializada en la creación de experiencias de usuario intuitivas y atractivas, con un enfoque en el diseño visual y la usabilidad para garantizar interfaces eficientes y agradables."
+            memberName={t("our_team.cards.josibel.name")}
+            profession={t("our_team.cards.josibel.occupation")}
+            description={t("our_team.cards.josibel.body")}
             linkedinUrl="https://www.linkedin.com/in/josibel-far%C3%ADas-espa%C3%B1a-b36390254"
             icon={faPalette}
           />

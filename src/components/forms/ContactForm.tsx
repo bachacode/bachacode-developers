@@ -17,41 +17,66 @@ import { Textarea } from "../ui/textarea";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
-
-const formSchema = z.object({
-  name: z
-    .string({ required_error: "El nombre es obligatorio." })
-    .min(2, { message: "El nombre debe de poseer al menos 2 caracteres." })
-    .max(50, {
-      message: "El nombre debe de ser de un maximo de 50 caracteres.",
-    }),
-  company: z.optional(z.string().max(50)),
-  email: z
-    .string({ required_error: "El correo electrónico es obligatorio." })
-    .email({
-      message:
-        "Este campo debe de tener formato de correo,  e.j: example@mail.com",
-    })
-    .max(50, {
-      message:
-        "El correo electrónico debe de ser de un maximo de 50 caracteres.",
-    }),
-  subject: z
-    .string({ required_error: "El asunto es obligatorio." })
-    .min(2, {
-      message: "El asunto debe de poseer al menos 2 caracteres.",
-    })
-    .max(50, {
-      message: "El asunto debe de ser de un maximo de 50 caracteres.",
-    }),
-  message: z.optional(
-    z.string().max(250, {
-      message: "El mensaje debe de ser de un maximo de 250 caracteres.",
-    }),
-  ),
-});
+import { useTranslations } from "next-intl";
 
 export default function ContactForm() {
+  const t = useTranslations("contact.form_section.form");
+
+  const formSchema = z.object({
+    name: z
+      .string()
+      .min(1, {
+        message: t("errors.required", { field_name: t("name.label") }),
+      })
+      .max(50, {
+        message: t("errors.max", {
+          field_name: t("name.label"),
+          amount: 50,
+        }),
+      }),
+    company: z.optional(
+      z.string().max(50, {
+        message: t("errors.max", {
+          field_name: t("company_name.label"),
+          amount: 50,
+        }),
+      }),
+    ),
+    email: z
+      .string()
+      .min(1, {
+        message: t("errors.required", { field_name: t("email.label") }),
+      })
+      .email({
+        message: t("errors.email"),
+      })
+      .max(50, {
+        message: t("errors.max", {
+          field_name: t("email.label"),
+          amount: 50,
+        }),
+      }),
+    subject: z
+      .string()
+      .min(1, {
+        message: t("errors.required", { field_name: t("subject.label") }),
+      })
+      .max(50, {
+        message: t("errors.max", {
+          field_name: t("subject.label"),
+          amount: 50,
+        }),
+      }),
+    message: z.optional(
+      z.string().max(250, {
+        message: t("errors.max", {
+          field_name: t("message.label"),
+          amount: 250,
+        }),
+      }),
+    ),
+  });
+
   // 1. Define your form.
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -71,9 +96,7 @@ export default function ContactForm() {
   function onSubmit(data: z.infer<typeof formSchema>) {
     setLoading(true);
     if (!executeRecaptcha) {
-      setNotification(
-        "Algo ha fallado con la llave del reCAPTCHA, pongase en contacto con la administración por otros medios.",
-      );
+      setNotification(t("errors.recaptcha"));
       setLoading(false);
       return;
     }
@@ -112,9 +135,11 @@ export default function ContactForm() {
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Tu nombre</FormLabel>
+              <FormLabel>
+                {t("name.label")} <span className="text-red-600">*</span>
+              </FormLabel>
               <FormControl>
-                <Input placeholder="Ingrese su nombre completo" {...field} />
+                <Input placeholder={t("name.placeholder")} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -126,12 +151,9 @@ export default function ContactForm() {
           name="company"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Nombre de la compañia (opcional)</FormLabel>
+              <FormLabel>{t("company_name.label")}</FormLabel>
               <FormControl>
-                <Input
-                  placeholder="Ingrese el nombre de su compañia"
-                  {...field}
-                />
+                <Input placeholder={t("company_name.placeholder")} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -144,9 +166,11 @@ export default function ContactForm() {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Correo electrónico</FormLabel>
+              <FormLabel>
+                {t("email.label")} <span className="text-red-600">*</span>
+              </FormLabel>
               <FormControl>
-                <Input placeholder="Ingrese su correo eléctronico" {...field} />
+                <Input placeholder={t("email.placeholder")} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -159,9 +183,11 @@ export default function ContactForm() {
           name="subject"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Asunto</FormLabel>
+              <FormLabel>
+                {t("subject.label")} <span className="text-red-600">*</span>
+              </FormLabel>
               <FormControl>
-                <Input placeholder="Ingrese su asunto" {...field} />
+                <Input placeholder={t("subject.placeholder")} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -174,10 +200,10 @@ export default function ContactForm() {
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Tu mensaje (opcional)</FormLabel>
+              <FormLabel>{t("message.label")}</FormLabel>
               <FormControl>
                 <Textarea
-                  placeholder="Escribenos un mensaje"
+                  placeholder={t("message.placeholder")}
                   className="h-48 resize-none"
                   {...field}
                 />
@@ -203,7 +229,7 @@ export default function ContactForm() {
               type="submit"
               className="w-full bg-primary hover:bg-orange-primary-400"
             >
-              Enviar
+              {t("button")}
             </Button>
           )}
           {notification && (

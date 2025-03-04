@@ -1,7 +1,7 @@
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 
 interface NavLinkProps {
-  href: string;
+  href: "/" | "/about-us" | "/services" | "/portfolio" | "/contact";
   label: string;
 }
 

@@ -1,11 +1,10 @@
-import Link from "next/link";
-import React from "react";
+import { Link } from "@/i18n/routing";
+import React, { ComponentProps } from "react";
 
-interface NavButtonProps {
-  href: string;
+type NavButtonProps = ComponentProps<typeof Link> & {
   children: React.ReactNode;
   className?: string;
-}
+};
 
 export default function NavButton({
   href,

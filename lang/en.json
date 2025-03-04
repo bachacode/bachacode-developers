@@ -1,0 +1,352 @@
+{
+  "metadata": {
+    "title": "Bachacode Developers | Web Development & Consulting",
+    "description": "Bachacode Developers specializes in custom web development, offering static sites, web applications and WordPress, tailored to your needs.",
+    "keywords": "development, programming, wordpress, php, laravel, support"
+  },
+  "navigation": {
+    "home": "Home",
+    "about_us": "About Us",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "contact": "Contact"
+  },
+  "footer": {
+    "discover": "Discover",
+    "contact": "Contact",
+    "contact_us": "Contact us",
+    "copyright": "All rights reserved."
+  },
+  "not_found": {
+    "title": "Page not found",
+    "description": "Sorry, we can't find that page, please go to the home page to continue browsing!",
+    "button": "Back to homepage"
+  },
+  "home": {
+    "hero": {
+      "title": "Build your online presence",
+      "subtitle": "with us your new project will become a reality",
+      "button": "START YOUR PROJECT"
+    },
+    "about": {
+      "title": "Connecting the Future: Our Story in the World of Technology.",
+      "body": "We are a team of web development experts dedicated to creating custom digital solutions that fit your needs, budget and technical knowledge. We specialize in delivering accessible and functional web applications, either developing sites from scratch or improving existing projects.\n\nWe take care of bringing your next online project to life, making sure every detail is aligned with your goals and vision."
+    },
+    "counter": {
+      "projects": "Completed projects",
+      "clients": "Satisfied customers",
+      "experience": "Years of experience"
+    },
+    "services": {
+      "title": "what do we offer you?",
+      "subtitle": "Services accessible to all our customers",
+      "cards": {
+        "static": {
+          "title": "Static Websites",
+          "body": "Custom website development with static content, ideal for small projects that do not require frequent updates, such as landing pages, portfolios or catalogs. These sites offer speed, security and efficiency for stable content."
+        },
+        "wordpress": {
+          "title": "WordPress Websites",
+          "body": "Website development with WordPress, providing full control of the content without the need to touch code. Ideal for medium-sized projects such as blogs, portfolios or corporate sites, offering flexibility, scalability and easy customization."
+        },
+        "web-apps": {
+          "title": "Web Applications",
+          "body": "Custom web application development with advanced functionalities, such as online payment integration, personalized recommendation systems, live chat, real-time data analysis and content management. Perfect for medium to large projects, such as online stores, educational platforms, online booking systems, news portals, and business management systems (ERP, CRM)."
+        },
+        "support": {
+          "title": "Consulting and Support",
+          "body": "If you already have a project that you want to update, add new functionalities or correct errors, we take care of planning the whole process for you. From time estimation to budget creation, we offer you solutions in the technologies we know best, guaranteeing an efficient development according to your needs."
+        }
+      }
+    },
+    "technologies": {
+      "title": "Our technologies",
+      "subtitle": "We are experts in state-of-the-art web development technology"
+    },
+    "clients": {
+      "title": "Our Clients",
+      "subtitle": "Those who have placed their trust in us",
+      "testimonies": {
+        "tailor": {
+          "name": "Guillermo Saez",
+          "occupation": "CEO of TailorSheet",
+          "body": "With Bachacode Developers I found what many entrepreneurs are looking for and never find: The peace of mind of being able to leave your business in the hands of people who take care of it and help it grow with solutions that border on excellence. They provide ideas and are 100% involved with each project."
+        },
+        "mesgo": {
+          "name": "Luis Fernando Carbajal",
+          "occupation": "CEO of MESGO",
+          "body": "Thanks to Bachacode Developers we were able to meet the requirements established by CBI Group to obtain our supplier number. The website they developed not only exceeded our expectations, but also facilitated the process and the presentation of our company."
+        }
+      }
+    },
+    "team": {
+      "title": "We guarantee",
+      "subtitle": "What you will get by working with us",
+      "cards": {
+        "development": {
+          "title": "Agile development",
+          "body": "With us, agile development means fast adaptation to your needs and constant results. We guarantee efficiency and precise adjustment to what you really need in your project."
+        },
+        "communication": {
+          "title": "Communication",
+          "body": "In our approach, communication is fundamental. We keep channels open for constant and clear interaction with you. We listen to your needs and keep you informed at all times, ensuring that your vision is faithfully reflected in the final project."
+        },
+        "prices": {
+          "title": "Adjustable prices",
+          "body": "We offer flexible pricing to fit your budget without compromising quality. We work together to find the best solution that fits your economic needs."
+        },
+        "flexible": {
+          "title": "Flexible features",
+          "body": "Our projects are distinguished by their flexibility, adjusting to your evolving needs. Each feature is customizable to ensure your full satisfaction, allowing you to modify the project according to your changing requirements throughout the development until it goes online."
+        }
+      },
+      "members": {
+        "prefix": "Made possible by...",
+        "title": "Experienced developers.",
+        "cristhian": {
+          "name": "Cristhian Flores",
+          "occupation": "Fullstack Developer",
+          "body": "Experienced in developing interfaces and APIs with both frontend and backend knowledge."
+        },
+        "josibel": {
+          "name": "Josibel Farias",
+          "occupation": "UX/UI Designer",
+          "body": "Specializing in creating intuitive and engaging user experiences, with a focus on visual design and usability to ensure efficient and enjoyable interfaces."
+        }
+      }
+    }
+  },
+  "about_us": {
+    "metadata": {
+      "title": "About Us"
+    },
+    "hero": {
+      "title": "About Us - Bachacode Developers",
+      "description": "At Bachacode Developers, we are dedicated to providing innovative and high quality web development solutions. Our team of experts works tirelessly to ensure the satisfaction of our clients, providing personalized services tailored to the specific needs of each project."
+    },
+    "our_values": {
+      "title": "Our values",
+      "subtitle": "Ethics that sets us apart from the competition",
+      "cards": {
+        "innovation": {
+          "title": "Innovation",
+          "description": "We strive to be at the forefront of technology, implementing innovative solutions that drive our customers' success."
+        },
+        "quality": {
+          "title": "Quality",
+          "description": "Quality is our priority. We are committed to delivering products and services that exceed our customers' expectations."
+        },
+        "commitment": {
+          "title": "Commitment",
+          "description": "We are dedicated to building lasting relationships with our clients, based on trust, transparency and mutual commitment."
+        }
+      }
+    },
+    "our_team": {
+      "title": "Our team",
+      "subtitle": "The professionals who will develop your idea",
+      "cards": {
+        "cristhian": {
+          "name": "Cristhian Flores",
+          "occupation": "Fullstack Developer",
+          "body": "Experienced in interface development and design with both frontend and backend knowledge."
+        },
+        "josibel": {
+          "name": "Josibel Farias",
+          "occupation": "UX/UI Designer",
+          "body": "Specializing in creating intuitive and engaging user experiences, with a focus on visual design and usability to ensure efficient and enjoyable interfaces."
+        }
+      }
+    }
+  },
+  "services": {
+    "metadata": {
+      "title": "Services"
+    },
+    "hero": {
+      "title": "Web Development and Consulting Services",
+      "subtitle": "Tailored digital solutions to drive your success",
+      "button": "Schedule a meeting"
+    },
+    "services": {
+      "title": "Boost your digital presence",
+      "subtitle": "Customized solutions that transform your business",
+      "cards": {
+        "static": {
+          "title": "Static Websites",
+          "body": "Development of customized websites with static content, ideal for small projects that do not require frequent updates, such as landing pages, portfolios or catalogs. These sites offer speed, security and efficiency for stable content."
+        },
+        "wordpress": {
+          "title": "WordPress Websites",
+          "body": "Website development with WordPress, providing full control of the content without the need to touch code. Ideal for medium-sized projects such as blogs, portfolios or corporate sites, offering flexibility, scalability and easy customization."
+        },
+        "web-apps": {
+          "title": "Web Applications",
+          "body": "Custom web application development with advanced functionalities, such as online payment integration, personalized recommendation systems, live chat, real-time data analysis and content management. Perfect for medium to large projects, such as online stores, educational platforms, online booking systems, news portals, and business management systems (ERP, CRM)."
+        },
+        "support": {
+          "title": "Consulting and Support",
+          "body": "If you already have a project that you want to update, add new functionalities or correct errors, we take care of planning the whole process for you. From time estimation to budget creation, we offer you solutions in the technologies we know best, guaranteeing an efficient development according to your needs."
+        }
+      }
+    },
+    "advantages": {
+      "title": "what do we offer you?",
+      "subtitle": "Exclusive advantages for our customers",
+      "cards": {
+        "hosting": {
+          "title": "Professional Hosting",
+          "description": "You will no longer have to worry about managing your own website, we will do it for you. We offer you a scalable hosting service that adapts to your needs."
+        },
+        "design": {
+          "title": "Modern Designs",
+          "description": "We take care of giving your website an attractive design that reflects what your business wants to convey. If you find this page attractive, you will get an equal or superior quality in your project!"
+        },
+        "security": {
+          "title": "Guaranteed Safety",
+          "description": "Don't take unnecessary risks: our developers will take care of integrating all the necessary security measures to protect your website."
+        },
+        "support": {
+          "title": "Effective Support",
+          "description": "We are ready to attend any emergency that requires technical support, we guarantee to keep your website up and running 24 hours a day!"
+        }
+      }
+    },
+    "technologies": {
+      "title": "what technologies do we use?",
+      "subtitle": "We work with the best technologies for your projects"
+    },
+    "hosting": {
+      "title": "Hosting plans",
+      "subtitle": "host your project with one of our flexible plans!",
+      "cards": {
+        "basic": {
+          "title": "Basic Plan",
+          "description": "Ideal for personal projects and small websites."
+        },
+        "advanced": {
+          "title": "Advanced Plan",
+          "description": "Designed for growing businesses and dynamic websites."
+        },
+        "pro": {
+          "title": "Professional Plan",
+          "description": "The best option for high-performance business projects."
+        }
+      }
+    }
+  },
+  "portfolio": {
+    "metadata": {
+      "title": "Portfolio"
+    },
+    "hero": {
+      "title": "Our Portfolio",
+      "subtitle": "Discover a selection of our most outstanding projects, which reflect our commitment to innovation and quality in web development."
+    },
+    "projects": {
+      "title": "Our projects",
+      "subtitle": "Websites we have worked on",
+      "sites": {
+        "tailorsheet": {
+          "title": "TailorSheet",
+          "body": "Apps courses and design with AppSheet. Learn from scratch with our courses and tutorials in Spanish. We design apps for your business in record time."
+        },
+        "mesgo": {
+          "title": "Mesgo",
+          "body": "Landing Page of Mexican Engineering Supply Group, a company specialized in the distribution of industrial materials, with a focus on electrical, electronic and mechanical engineering."
+        }
+      }
+    },
+    "clients": {
+      "title": "Testimonials",
+      "subtitle": "The words of our customers",
+      "testimonies": {
+        "tailor": {
+          "name": "Guillermo Saez",
+          "occupation": "CEO of TailorSheet",
+          "body": "With Bachacode Developers I found what many entrepreneurs are looking for and never find: The peace of mind of being able to leave your business in the hands of people who take care of it and help it grow with solutions that border on excellence. They provide ideas and are 100% involved with each project."
+        },
+        "mesgo": {
+          "name": "Luis Fernando Carbajal",
+          "occupation": "CEO of MESGO",
+          "body": "Thanks to Bachacode Developers we were able to meet the requirements established by CBI Group to obtain our supplier number. The website they developed not only exceeded our expectations, but also facilitated the process and the presentation of our company."
+        }
+      }
+    }
+  },
+  "contact": {
+    "metadata": {
+      "title": "Contact"
+    },
+    "hero": {
+      "title": "Contact",
+      "subtitle": "need a quick answer?",
+      "cards": {
+        "email": "E-mail address",
+        "phone": "Phone number",
+        "whatsapp": "Click Here"
+      }
+    },
+    "form_section": {
+      "title": "do you want to get your project started?",
+      "subtitle": "send us a message with your proposal!",
+      "form": {
+        "name": {
+          "label": "Full name",
+          "placeholder": "Enter your full name"
+        },
+        "company_name": {
+          "label": "Company name",
+          "placeholder": "Enter your company name"
+        },
+        "email": {
+          "label": "E-mail address",
+          "placeholder": "Enter your email address"
+        },
+        "subject": {
+          "label": "Subject",
+          "placeholder": "Enter the subject of the message"
+        },
+        "message": {
+          "label": "Your message",
+          "placeholder": "Write us your message"
+        },
+        "errors": {
+          "required": "{field_name} is mandatory.",
+          "min": "{field_name} must have at least {amount} characters.",
+          "max": "{field_name} must have at most {amount} characters.",
+          "email": "This field must be in the format of an email,  e.g: example@email.com",
+          "recaptcha": "Something has failed with the reCAPTCHA key, get in touch with the administration by other communication options."
+        },
+        "button": "Send message"
+      }
+    }
+  },
+  "price_card": {
+    "month": "month",
+    "specs": {
+      "title": "Specifications",
+      "ram": "{memory} ram",
+      "cpu": "{cores} core CPU",
+      "storage": "{space} NVMe storage",
+      "network": "{bandwith} bandwidth"
+    },
+    "includes": {
+      "title": "Includes",
+      "management": "24/7 professional management",
+      "ssl": "Free SSL at no additional cost",
+      "cloudflare": "Free Cloudflare integration",
+      "domain": "Domain included in the price",
+      "emails": "Personalized mail domain",
+      "uptime": "99,99% server uptime"
+    }
+  },
+  "contact_section": {
+    "body": "We believe in making possible any project our clients have in mind, are you interested in building your online presence?",
+    "highlight": "Work with us.",
+    "button": "Contact us"
+  },
+  "project_card": {
+    "button": "View website"
+  }
+}

@@ -1,0 +1,352 @@
+{
+  "metadata": {
+    "title": "Bachacode Developers | Desarrollo & Consultoría Web",
+    "description": "Bachacode Developers se especializa en desarrollo web a medida, ofreciendo sitios estáticos, aplicaciones web y WordPress, ajustados a tus necesidades.",
+    "keywords": "desarrollo, programación, wordpress, php, laravel, soporte"
+  },
+  "navigation": {
+    "home": "Inicio",
+    "about_us": "Sobre Nosotros",
+    "services": "Servicios",
+    "portfolio": "Portafolio",
+    "contact": "Contacto"
+  },
+  "footer": {
+    "discover": "Descubre",
+    "contact": "Contacto",
+    "contact_us": "Contactar",
+    "copyright": "Todos los derechos reservados."
+  },
+  "not_found": {
+    "title": "Página no encontrada",
+    "description": "Disculpa, no podemos encontrar esa página, ¡dirigasé a la página de inicio para seguir navegando!",
+    "button": "Regresar al Inicio"
+  },
+  "home": {
+    "hero": {
+      "title": "Construye tu presencia en línea",
+      "subtitle": "con nosotros tu nuevo proyecto se hará realidad",
+      "button": "EMPIEZA TU PROYECTO"
+    },
+    "about": {
+      "title": "Conectando el Futuro: Nuestra Historia en el Mundo de la Tecnología.",
+      "body": "Somos un equipo de expertos en desarrollo web dedicados a crear soluciones digitales personalizadas que se ajusten a tus necesidades, presupuesto y conocimientos técnicos. Nos especializamos en ofrecer aplicaciones web accesibles y funcionales, ya sea desarrollando sitios desde cero o mejorando proyectos existentes. \n\nNos encargamos de darle vida a tu próximo proyecto en línea, asegurándonos de que cada detalle esté alineado con tus objetivos y visión."
+    },
+    "counter": {
+      "projects": "Proyectos completados",
+      "clients": "Clientes satisfechos",
+      "experience": "Años de experiencía"
+    },
+    "services": {
+      "title": "¿Qué te ofrecemos?",
+      "subtitle": "Los servicios accessibles a todos nuestros clientes",
+      "cards": {
+        "static": {
+          "title": "Sitios Web Estaticos",
+          "body": "Desarrollo de sitios web personalizados con contenido estático, ideal para proyectos pequeños que no requieren actualizaciones frecuentes, como landing pages, portafolios o catálogos. Estos sitios ofrecen rapidez, seguridad y eficiencia para contenido estable."
+        },
+        "wordpress": {
+          "title": "Sitios WordPress",
+          "body": "Desarrollo de sitios web con WordPress, brindando control total del contenido sin necesidad de tocar código. Ideal para proyectos medianos como blogs, portafolios o sitios corporativos, ofreciendo flexibilidad, escalabilidad y fácil personalización."
+        },
+        "web-apps": {
+          "title": "Aplicaciones Web",
+          "body": "Desarrollo de aplicaciones web a medida con funcionalidades avanzadas, como integración de pagos en línea, sistemas de recomendación personalizados, chat en vivo, análisis de datos en tiempo real y gestión de contenido. Perfecto para proyectos medianos y grandes, como tiendas en línea, plataformas educativas, sistemas de reservas en línea, portales de noticias, y sistemas de gestión empresarial (ERP, CRM)."
+        },
+        "support": {
+          "title": "Consultoría y Soporte",
+          "body": "Si ya tienes un proyecto que deseas actualizar, agregar nuevas funcionalidades o corregir errores, nosotros nos encargamos de planificar todo el proceso por ti. Desde la estimación de tiempos hasta la creación de presupuestos, te ofrecemos soluciones en las tecnologías que mejor dominamos, garantizando un desarrollo eficiente y acorde a tus necesidades."
+        }
+      }
+    },
+    "technologies": {
+      "title": "Nuestras tecnologías",
+      "subtitle": "Somos expertos en la tecnología mas vanguardista del desarrollo web"
+    },
+    "clients": {
+      "title": "Nuestros Clientes",
+      "subtitle": "Los que han depositado su confianza en nosotros",
+      "testimonies": {
+        "tailor": {
+          "name": "Guillermo Saez",
+          "occupation": "CEO de TailorSheet",
+          "body": "Con Bachacode Developers encontré lo que muchos emprendedores buscan y nunca encuentran: La tranquilidad de poder dejar tu negocio en manos de personas que lo cuidan y ayudan a hacerlo crecer con soluciones que rozan la excelencia. Que aportan ideas y que se implican al 100% con cada proyecto."
+        },
+        "mesgo": {
+          "name": "Luis Fernando Carbajal",
+          "occupation": "CEO de MESGO",
+          "body": "Gracias a Bachacode Developers logramos cumplir con los requerimientos establecidos por la empresa CBI Group para obtener nuestro número de proveedor. El sitio web que desarrollaron no solo superó nuestras expectativas, sino que también facilitó el proceso y la presentación de nuestra empresa."
+        }
+      }
+    },
+    "team": {
+      "title": "Nosotros garantizamos",
+      "subtitle": "Lo que obtendrás trabajando con nosotros",
+      "cards": {
+        "development": {
+          "title": "Desarrollo ágil",
+          "body": "Con nosotros, el desarrollo ágil significa adaptación rápida a tus necesidades y resultados constantes. Garantizamos eficiencia y ajuste preciso a lo que realmente necesitas en tu proyecto."
+        },
+        "communication": {
+          "title": "Comunicación",
+          "body": "En nuestro enfoque, la comunicación es fundamental. Mantenemos canales abiertos para una interacción constante y clara contigo. Escuchamos tus necesidades y te mantenemos informado en todo momento, asegurando que tu visión se refleje fielmente en el proyecto final."
+        },
+        "prices": {
+          "title": "Precios ajustables",
+          "body": "Ofrecemos precios flexibles para adaptarnos a tu presupuesto sin comprometer la calidad. Trabajamos juntos para encontrar la mejor solución que se ajuste a tus necesidades económicas."
+        },
+        "flexible": {
+          "title": "Caracteristicas flexibles",
+          "body": "Nuestros proyectos se distinguen por su flexibilidad, ajustándose a tus necesidades en evolución. Cada característica es personalizable para asegurar tu plena satisfacción, permitiéndote modificar el proyecto según tus requerimientos cambiantes a lo largo del desarrollo hasta su puesta en línea."
+        }
+      },
+      "members": {
+        "prefix": "Hecho posible por...",
+        "title": "Desarrolladores experimentados.",
+        "cristhian": {
+          "name": "Cristhian Flores",
+          "occupation": "Fullstack Developer",
+          "body": "Experimentado en el desarrollo de interfaces y APIs con conocimientos tanto en frontend como en backend."
+        },
+        "josibel": {
+          "name": "Josibel Farías",
+          "occupation": "Diseñadora UX/UI",
+          "body": "Especializada en la creación de experiencias de usuario intuitivas y atractivas, con un enfoque en el diseño visual y la usabilidad para garantizar interfaces eficientes y agradables."
+        }
+      }
+    }
+  },
+  "about_us": {
+    "metadata": {
+      "title": "Sobre Nosotros"
+    },
+    "hero": {
+      "title": "Sobre Nosotros - Bachacode Developers",
+      "description": "En Bachacode Developers, nos dedicamos a ofrecer soluciones innovadoras y de alta calidad en el desarrollo web. Nuestro equipo de expertos trabaja incansablemente para garantizar la satisfacción de nuestros clientes, brindando servicios personalizados y adaptados a las necesidades específicas de cada proyecto."
+    },
+    "our_values": {
+      "title": "Nuestros valores",
+      "subtitle": "La ética que nos destaca sobre la competencia",
+      "cards": {
+        "innovation": {
+          "title": "Innovación",
+          "description": "Nos esforzamos por estar a la vanguardia de la tecnología, implementando soluciones innovadoras que impulsen el éxito de nuestros clientes."
+        },
+        "quality": {
+          "title": "Calidad",
+          "description": "La calidad es nuestra prioridad. Nos comprometemos a entregar productos y servicios que superen las expectativas de nuestros clientes."
+        },
+        "commitment": {
+          "title": "Compromiso",
+          "description": "Estamos dedicados a construir relaciones duraderas con nuestros clientes, basadas en la confianza, la transparencia y el compromiso mutuo."
+        }
+      }
+    },
+    "our_team": {
+      "title": "Nuestro equipo",
+      "subtitle": "Los profesionales que desarrollarán tu idea",
+      "cards": {
+        "cristhian": {
+          "name": "Cristhian Flores",
+          "occupation": "Fullstack Developer",
+          "body": "Experimentado en el desarrollo de interfaces y diseño con conocimientos tanto en frontend como en backend."
+        },
+        "josibel": {
+          "name": "Josibel Farías",
+          "occupation": "Diseñadora UX/UI",
+          "body": "Especializada en la creación de experiencias de usuario intuitivas y atractivas, con un enfoque en el diseño visual y la usabilidad para garantizar interfaces eficientes y agradables."
+        }
+      }
+    }
+  },
+  "services": {
+    "metadata": {
+      "title": "Servicios"
+    },
+    "hero": {
+      "title": "Servicios de Desarrollo y Consultoría Web",
+      "subtitle": "Soluciones digitales a medida para impulsar tu éxito",
+      "button": "Agenda una reunión"
+    },
+    "services": {
+      "title": "Impulsa tu presencia digital",
+      "subtitle": "Soluciones personalizadas que transforman tu negocio",
+      "cards": {
+        "static": {
+          "title": "Sitios Web Estaticos",
+          "body": "Desarrollo de sitios web personalizados con contenido estático, ideal para proyectos pequeños que no requieren actualizaciones frecuentes, como landing pages, portafolios o catálogos. Estos sitios ofrecen rapidez, seguridad y eficiencia para contenido estable."
+        },
+        "wordpress": {
+          "title": "Sitios WordPress",
+          "body": "Desarrollo de sitios web con WordPress, brindando control total del contenido sin necesidad de tocar código. Ideal para proyectos medianos como blogs, portafolios o sitios corporativos, ofreciendo flexibilidad, escalabilidad y fácil personalización."
+        },
+        "web-apps": {
+          "title": "Aplicaciones Web",
+          "body": "Desarrollo de aplicaciones web a medida con funcionalidades avanzadas, como integración de pagos en línea, sistemas de recomendación personalizados, chat en vivo, análisis de datos en tiempo real y gestión de contenido. Perfecto para proyectos medianos y grandes, como tiendas en línea, plataformas educativas, sistemas de reservas en línea, portales de noticias, y sistemas de gestión empresarial (ERP, CRM)."
+        },
+        "support": {
+          "title": "Consultoría y Soporte",
+          "body": "Si ya tienes un proyecto que deseas actualizar, agregar nuevas funcionalidades o corregir errores, nosotros nos encargamos de planificar todo el proceso por ti. Desde la estimación de tiempos hasta la creación de presupuestos, te ofrecemos soluciones en las tecnologías que mejor dominamos, garantizando un desarrollo eficiente y acorde a tus necesidades."
+        }
+      }
+    },
+    "advantages": {
+      "title": "¿Qué te ofrecemos?",
+      "subtitle": "Ventajas exclusivas de nuestros clientes",
+      "cards": {
+        "hosting": {
+          "title": "Hosting Profesional",
+          "description": "No tendrás que preocuparte más por gestionar tu propio sitio web, nosotros lo haremos por ti. Te ofrecemos un servicio de hosting escalable que se adapta a tus necesidades."
+        },
+        "design": {
+          "title": "Diseños Modernos",
+          "description": "Nos encargamos de darle a tu sitio web un diseño atractivo que refleje lo que busca transmitir tu negocio. Si esta página te resulta atractiva, ¡obtendrás una calidad igual o superior en tu proyecto!"
+        },
+        "security": {
+          "title": "Seguridad Garantizada",
+          "description": "No corras riesgos innecesarios: nuestros desarrolladores se encargarán de integrar todas las medidas de seguridad necesarias para proteger tu sitio web."
+        },
+        "support": {
+          "title": "Soporte Eficaz",
+          "description": "Estamos preparados para atender cualquier urgencia que requiera soporte técnico. ¡Te garantizamos mantener tu sitio web activo las 24 horas!"
+        }
+      }
+    },
+    "technologies": {
+      "title": "¿Qué tecnologías utilizamos?",
+      "subtitle": "Trabajamos con las mejores tecnologías para tus proyectos"
+    },
+    "hosting": {
+      "title": "Planes de hosting",
+      "subtitle": "¡Aloja tu proyecto con uno de nuestros planes flexibles!",
+      "cards": {
+        "basic": {
+          "title": "Plan Básico",
+          "description": "Ideal para proyectos personales y sitios web pequeños."
+        },
+        "advanced": {
+          "title": "Plan Avanzado",
+          "description": "Diseñado para negocios en crecimiento y sitios web dinámicos."
+        },
+        "pro": {
+          "title": "Plan Profesional",
+          "description": "La mejor opción para proyectos empresariales de alto rendimiento."
+        }
+      }
+    }
+  },
+  "portfolio": {
+    "metadata": {
+      "title": "Portafolio"
+    },
+    "hero": {
+      "title": "Nuestro Portafolio",
+      "subtitle": "Descubre una selección de nuestros proyectos más destacados, que reflejan nuestro compromiso con la innovación y la calidad en el desarrollo web."
+    },
+    "projects": {
+      "title": "Nuestros proyectos",
+      "subtitle": "Los sitios web en lo que hemos trabajado",
+      "sites": {
+        "tailorsheet": {
+          "title": "TailorSheet",
+          "body": "Cursos y diseño de Apps con AppSheet. Aprende desde cero con nuestros cursos y tutoriales en español. Diseñamos apps para tu negocio en tiempo récord."
+        },
+        "mesgo": {
+          "title": "Mesgo",
+          "body": "Landing Page de Mexican Engineering Supply Group, empresa especializada en la distribución de materiales industriales, con un enfoque en la ingeniería eléctrica, electrónica y mecánica."
+        }
+      }
+    },
+    "clients": {
+      "title": "Testimonios",
+      "subtitle": "Las palabras de nuestros clientes",
+      "testimonies": {
+        "tailor": {
+          "name": "Guillermo Saez",
+          "occupation": "CEO de TailorSheet",
+          "body": "Con Bachacode Developers encontré lo que muchos emprendedores buscan y nunca encuentran: La tranquilidad de poder dejar tu negocio en manos de personas que lo cuidan y ayudan a hacerlo crecer con soluciones que rozan la excelencia. Que aportan ideas y que se implican al 100% con cada proyecto."
+        },
+        "mesgo": {
+          "name": "Luis Fernando Carbajal",
+          "occupation": "CEO de MESGO",
+          "body": "Gracias a Bachacode Developers logramos cumplir con los requerimientos establecidos por la empresa CBI Group para obtener nuestro número de proveedor. El sitio web que desarrollaron no solo superó nuestras expectativas, sino que también facilitó el proceso y la presentación de nuestra empresa."
+        }
+      }
+    }
+  },
+  "contact": {
+    "metadata": {
+      "title": "Contacto"
+    },
+    "hero": {
+      "title": "Contacto",
+      "subtitle": "¿Necesitas una respuesta rapida?",
+      "cards": {
+        "email": "Correo Electrónico",
+        "phone": "Teléfono",
+        "whatsapp": "Click Aquí"
+      }
+    },
+    "form_section": {
+      "title": "¿Quieres sacar tu proyecto a flote?",
+      "subtitle": "¡Envianos un mensaje con tu propuesta!",
+      "form": {
+        "name": {
+          "label": "Tu nombre",
+          "placeholder": "Ingrese su nombre completo"
+        },
+        "company_name": {
+          "label": "Nombre de la compañía",
+          "placeholder": "Ingrese el nombre de su compañía"
+        },
+        "email": {
+          "label": "Correo electrónico",
+          "placeholder": "Ingrese su correo electrónico"
+        },
+        "subject": {
+          "label": "Asunto",
+          "placeholder": "Ingrese el asunto del mensaje"
+        },
+        "message": {
+          "label": "Tu mensaje",
+          "placeholder": "Escribenos tu mensaje"
+        },
+        "errors": {
+          "required": "{field_name} es obligatorio.",
+          "min": "{field_name} debe de poseer al menos {amount} caracteres.",
+          "max": "{field_name} debe de ser de un maximo de {amount} caracteres.",
+          "email": "Este campo debe de tener formato de correo,  e.j: ejemplo@correo.com",
+          "recaptcha": "Algo ha fallado con la llave del reCAPTCHA, pongase en contacto con la administración por otros medios."
+        },
+        "button": "Enviar mensaje"
+      }
+    }
+  },
+  "price_card": {
+    "month": "mes",
+    "specs": {
+      "title": "Especificaciones",
+      "ram": "{memory} de ram",
+      "cpu": "CPU de {cores} núcleos",
+      "storage": "{space} de almacenamiento NVMe",
+      "network": "{bandwith} de ancho de banda"
+    },
+    "includes": {
+      "title": "Incluye",
+      "management": "Gestión profesional 24/7",
+      "ssl": "SSL Gratis sin coste añadido",
+      "cloudflare": "Integración con Cloudflare gratuita",
+      "domain": "Dominio incluido en el precio",
+      "emails": "Correos personalizados (con el dominio incluido)",
+      "uptime": "99.99% de uptime del servidor"
+    }
+  },
+  "contact_section": {
+    "body": "Creemos en hacer posible cualquier proyecto que nuestros clientes tengan en mente, ¿estás interesado en construir tu presencia en línea?",
+    "highlight": "Trabaja con nosotros.",
+    "button": "Contáctanos"
+  },
+  "project_card": {
+    "button": "Ver sitio web"
+  }
+}
