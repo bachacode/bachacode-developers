@@ -9,10 +9,26 @@ import Link from "next/link";
 import React from "react";
 import generateTitle from "@/utils/generateTitle";
 import GoogleCaptchaWrapper from "@/components/layout/GoogleCaptchaWrapper";
+import { getTranslations } from "next-intl/server";
+import { useTranslations } from "next-intl";
 
-export const metadata: Metadata = {
-  title: generateTitle("Contacto"),
-};
+export async function generateMetadata(
+  props: Omit<
+    {
+      children: React.ReactNode;
+      params: Promise<{ locale: string }>;
+    },
+    "children"
+  >,
+): Promise<Metadata> {
+  const { locale } = await props.params;
+
+  const t = await getTranslations({ locale, namespace: "contact.metadata" });
+
+  return {
+    title: generateTitle(t("title")),
+  };
+}
 
 function ContactCard({
   title,
@@ -31,6 +47,7 @@ function ContactCard({
 }
 
 export default function Contacto() {
+  const t = useTranslations("contact");
   return (
     <GoogleCaptchaWrapper>
       <main className="flex min-h-screen w-full flex-col items-center bg-orange-primary-50 pb-12">
@@ -40,27 +57,25 @@ export default function Contacto() {
               id="contacto"
               className="text-5xl font-semibold uppercase text-accent"
             >
-              Contacto
+              {t("hero.title")}
             </h1>
             <div className="w-12 border-t-2 border-primary pb-4"></div>
           </div>
         </div>
 
         <div className="container flex w-10/12 flex-col items-center space-y-6">
-          <h2 className="text-center text-xl">
-            ¿Necesitas una respuesta rapida?
-          </h2>
+          <h2 className="text-center text-xl">{t("hero.subtitle")}</h2>
 
           {/* Contact Cards */}
           <div className="flex w-full flex-col items-center justify-around space-y-6 lg:flex-row lg:space-x-6 lg:space-y-0">
             <ContactCard
-              title="Correo Electrónico"
+              title={t("hero.cards.email")}
               value="support@bachacode.com"
               icon={faEnvelope}
             />
 
             <ContactCard
-              title="Teléfono"
+              title={t("hero.cards.phone")}
               value="+(58) 412-1163349"
               icon={faPhone}
             />
@@ -75,18 +90,16 @@ export default function Contacto() {
                 className="text-accent transition-colors hover:text-primary"
                 href="https://wa.me/584121163349?text=Estoy%20interesado%20en%20crear%20un%20sitio%20web%20con%20ustedes"
               >
-                Click Aquí
+                {t("hero.cards.whatsapp")}
               </Link>
             </div>
           </div>
 
           <div className="flex w-full flex-col items-center space-y-6">
             <div className="flex flex-col text-center">
-              <h2 className="pb-3 text-xl">
-                ¿Quieres sacar tu proyecto a flote?
-              </h2>
+              <h2 className="pb-3 text-xl">{t("form_section.title")}</h2>
               <span className="text-gray-500">
-                ¡Envianos un mensaje con tu propuesta!
+                {t("form_section.subtitle")}
               </span>
             </div>
             <div className="flex w-full justify-around">

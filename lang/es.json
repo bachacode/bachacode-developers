@@ -274,6 +274,54 @@
       }
     }
   },
+  "contact": {
+    "metadata": {
+      "title": "Contacto"
+    },
+    "hero": {
+      "title": "Contacto",
+      "subtitle": "¿Necesitas una respuesta rapida?",
+      "cards": {
+        "email": "Correo Electrónico",
+        "phone": "Teléfono",
+        "whatsapp": "Click Aquí"
+      }
+    },
+    "form_section": {
+      "title": "¿Quieres sacar tu proyecto a flote?",
+      "subtitle": "¡Envianos un mensaje con tu propuesta!",
+      "form": {
+        "name": {
+          "label": "Tu nombre",
+          "placeholder": "Ingrese su nombre completo"
+        },
+        "company_name": {
+          "label": "Nombre de la compañía",
+          "placeholder": "Ingrese el nombre de su compañía"
+        },
+        "email": {
+          "label": "Correo electrónico",
+          "placeholder": "Ingrese su correo electrónico"
+        },
+        "subject": {
+          "label": "Asunto",
+          "placeholder": "Ingrese el asunto del mensaje"
+        },
+        "message": {
+          "label": "Tu mensaje",
+          "placeholder": "Escribenos tu mensaje"
+        },
+        "errors": {
+          "required": "{field_name} es obligatorio.",
+          "min": "{field_name} debe de poseer al menos {amount} caracteres.",
+          "max": "{field_name} debe de ser de un maximo de {amount} caracteres.",
+          "email": "Este campo debe de tener formato de correo,  e.j: ejemplo@correo.com",
+          "recaptcha": "Algo ha fallado con la llave del reCAPTCHA, pongase en contacto con la administración por otros medios."
+        },
+        "button": "Enviar mensaje"
+      }
+    }
+  },
   "price_card": {
     "month": "mes",
     "specs": {
