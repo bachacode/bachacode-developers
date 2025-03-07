@@ -17,7 +17,8 @@ export default function TestimonialCard({
     <div className="w-full p-4 md:w-1/2">
       <div className="flex h-full flex-col rounded bg-white p-8 shadow-md">
         <FontAwesomeIcon
-          className="h-8 w-8 pb-1.5 text-accent"
+          fixedWidth
+          className="text-accent pb-1.5 text-3xl"
           icon={faQuoteRight}
         />
         <div className="mb-6 grow">

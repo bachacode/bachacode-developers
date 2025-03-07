@@ -20,7 +20,8 @@ export default function AdvantageCard({
     <div className="flex min-h-40 w-full flex-col items-center space-y-3 rounded-md border-2 border-black bg-white px-3 py-6 shadow-md transition-all duration-200 hover:-translate-y-2 hover:scale-105 hover:shadow-lg md:flex-row md:space-y-0">
       <FontAwesomeIcon
         icon={icon}
-        className={`h-auto w-full max-w-14 pr-3 ${iconColor}`}
+        fixedWidth
+        className={`pr-3 text-4xl ${iconColor}`}
       />
       <div className="grow px-1.5">
         <h3 className="title-font text-lg font-medium text-gray-900">

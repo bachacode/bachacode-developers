@@ -29,7 +29,7 @@ export default function TeamCard({
           {optionalIcon && (
             <FontAwesomeIcon
               icon={optionalIcon}
-              className="absolute right-2 top-2 text-gray-500"
+              className="absolute top-2 right-2 text-gray-500"
             />
           )}
           <div className="flex justify-center pb-3 md:justify-between">
@@ -41,7 +41,7 @@ export default function TeamCard({
             </div>
             {icon ? (
               <FontAwesomeIcon
-                className="hidden h-12 w-12 text-primary md:block"
+                className="text-primary hidden text-4xl md:block"
                 icon={icon}
               />
             ) : (
@@ -49,37 +49,37 @@ export default function TeamCard({
             )}
           </div>
           <p className="mb-4 grow">{description}</p>
-          <span className="inline-flex">
+          <span className="inline-flex space-x-1">
             {linkedinUrl ? (
               <a
                 title={`Página de Linkedin de ${memberName}`}
-                className="text-gray-500 transition-colors hover:text-primary"
+                className="hover:text-primary text-gray-500 transition-colors"
                 href={linkedinUrl}
               >
-                <FontAwesomeIcon className="h-8 w-8" icon={faLinkedin} />
+                <FontAwesomeIcon className="text-3xl" icon={faLinkedin} />
               </a>
             ) : (
               <span
                 title="LinkedIn no disponible"
                 className="cursor-not-allowed text-gray-300"
               >
-                <FontAwesomeIcon className="h-8 w-8" icon={faLinkedin} />
+                <FontAwesomeIcon className="text-3xl" icon={faLinkedin} />
               </span>
             )}
             {githubUrl ? (
               <a
                 title={`${memberName}'s Github page`}
-                className="ml-2 text-gray-500 transition-colors hover:text-primary"
+                className="hover:text-primary ml-2 text-gray-500 transition-colors"
                 href={githubUrl}
               >
-                <FontAwesomeIcon className="h-8 w-8" icon={faGithub} />
+                <FontAwesomeIcon className="text-3xl" icon={faGithub} />
               </a>
             ) : (
               <span
                 title="Not available"
                 className="ml-2 cursor-not-allowed text-gray-300"
               >
-                <FontAwesomeIcon className="h-8 w-8" icon={faGithub} />
+                <FontAwesomeIcon className="text-3xl" icon={faGithub} />
               </span>
             )}
           </span>

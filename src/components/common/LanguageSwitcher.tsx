@@ -37,12 +37,13 @@ export default function LanguageSwitcher({
 
   return (
     <DropdownMenu modal={false}>
-      <DropdownMenuTrigger className="flex items-center space-x-1.5 p-1">
-        <FontAwesomeIcon icon={faGlobe}></FontAwesomeIcon>
+      <DropdownMenuTrigger className="flex cursor-pointer items-center space-x-1 p-1">
+        <FontAwesomeIcon icon={faGlobe} className="pr-0.5"></FontAwesomeIcon>
         <span>{currentLocale.toUpperCase()}</span>
         <FontAwesomeIcon
           icon={faChevronDown}
-          className="h-3 w-3 pl-1"
+          fixedWidth
+          className="text-xs"
         ></FontAwesomeIcon>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="bg-background">

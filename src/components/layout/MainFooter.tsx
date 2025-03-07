@@ -80,7 +80,7 @@ export default function MainFooter() {
                   >
                     <FontAwesomeIcon
                       icon={faEnvelope}
-                      className="h-5 w-5"
+                      className="text-xl"
                     ></FontAwesomeIcon>
                     <span>support@bachacode.com</span>
                   </a>
@@ -93,7 +93,7 @@ export default function MainFooter() {
                   >
                     <FontAwesomeIcon
                       icon={faPhone}
-                      className="h-5 w-5"
+                      className="text-xl"
                     ></FontAwesomeIcon>
                     <span>+58 412-1163349</span>
                   </a>
@@ -139,7 +139,7 @@ export default function MainFooter() {
             >
               <FontAwesomeIcon
                 icon={faLinkedin}
-                className="h-8 w-8"
+                className="text-3xl"
               ></FontAwesomeIcon>
 
               <span className="sr-only">LinkedIn Page</span>
