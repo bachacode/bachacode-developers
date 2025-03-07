@@ -16,7 +16,7 @@ export default function NavMenu({ children }: { children: React.ReactNode }) {
         onClick={handleClick}
         data-collapse-toggle="navbar-default"
         type="button"
-        className="mr-8 inline-flex h-10 w-10 items-center justify-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-hidden focus:ring-2 focus:ring-gray-200 lg:mr-0 lg:hidden"
+        className="mr-8 inline-flex h-10 w-10 items-center justify-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:ring-2 focus:ring-gray-200 focus:outline-hidden lg:mr-0 lg:hidden"
         aria-controls="navbar-default"
         aria-expanded="false"
       >
@@ -29,10 +29,10 @@ export default function NavMenu({ children }: { children: React.ReactNode }) {
       </button>
 
       <div
-        className={`${isOpen ? "" : "hidden"} absolute left-0 top-16 w-full lg:static lg:block lg:w-auto`}
+        className={`${isOpen ? "" : "hidden"} absolute top-16 left-0 w-full lg:static lg:block lg:w-auto`}
         id="navbar-default"
       >
-        <ul className="flex w-full flex-col items-center space-y-6 bg-white py-6 font-medium shadow-md lg:mt-0 lg:flex-row lg:space-x-8 lg:space-y-0 lg:p-0 lg:shadow-none">
+        <ul className="flex w-full flex-col items-center space-y-6 bg-white py-6 font-medium shadow-md lg:mt-0 lg:flex-row lg:space-y-0 lg:space-x-8 lg:p-0 lg:shadow-none">
           {children}
         </ul>
       </div>

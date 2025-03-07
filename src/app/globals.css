@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -76,7 +76,7 @@
   html {
     scroll-behavior: smooth;
   }
-  
+
   body {
     @apply bg-background text-text;
   }

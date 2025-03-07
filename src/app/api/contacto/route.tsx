@@ -60,7 +60,7 @@ export async function POST(request: NextRequest) {
   } catch (err) {
     return NextResponse.json(
       { message: "¡Ha ocurrido un error enviado el correo!", error: err },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

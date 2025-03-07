@@ -32,14 +32,12 @@ export default function ContactForm() {
         message: t("errors.max", { field_name: t("name.label"), amount: 50 }),
       }),
     company: z.optional(
-      z
-        .string()
-        .max(50, {
-          message: t("errors.max", {
-            field_name: t("company_name.label"),
-            amount: 50,
-          }),
+      z.string().max(50, {
+        message: t("errors.max", {
+          field_name: t("company_name.label"),
+          amount: 50,
         }),
+      }),
     ),
     email: z
       .string()
@@ -62,14 +60,12 @@ export default function ContactForm() {
         }),
       }),
     message: z.optional(
-      z
-        .string()
-        .max(250, {
-          message: t("errors.max", {
-            field_name: t("message.label"),
-            amount: 250,
-          }),
+      z.string().max(250, {
+        message: t("errors.max", {
+          field_name: t("message.label"),
+          amount: 250,
         }),
+      }),
     ),
   });
 

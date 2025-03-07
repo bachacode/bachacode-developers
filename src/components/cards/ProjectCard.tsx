@@ -25,7 +25,7 @@ export default function ProjectCard({
   return (
     <div className={`w-full ${altColor ? "bg-secondary" : "bg-primary"}`}>
       <div
-        className={`container relative mx-auto flex ${
+        className={`relative container mx-auto flex ${
           inverted ? "flex-row-reverse" : "flex-row"
         } items-center justify-around px-6`}
       >

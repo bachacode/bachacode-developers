@@ -41,8 +41,8 @@ export default function SobreNosotros() {
   return (
     <main className="w-full">
       {/* Hero section */}
-      <div className="flex w-full flex-col items-center bg-white px-8 pb-12 pt-36">
-        <div className="container relative flex items-center md:space-x-8 lg:min-h-[600px]">
+      <div className="flex w-full flex-col items-center bg-white px-8 pt-36 pb-12">
+        <div className="relative container flex items-center md:space-x-8 lg:min-h-[600px]">
           {/* Image */}
           <div className="absolute flex h-full w-full flex-col items-center px-6 text-center opacity-20 md:relative md:right-0 md:w-1/2 md:px-0 md:opacity-100">
             <Image

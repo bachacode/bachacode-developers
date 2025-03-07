@@ -23,7 +23,7 @@ export default function MenuLink({
       aria-current={isActive ? "page" : undefined}
       href={href}
       className={clsx(
-        "uppercase tracking-widest ease-out after:block after:h-0.5 after:w-full after:origin-bottom-right after:scale-x-0 after:bg-text after:transition-transform after:duration-500 hover:after:origin-bottom-left hover:after:scale-x-100",
+        "after:bg-text tracking-widest uppercase ease-out after:block after:h-0.5 after:w-full after:origin-bottom-right after:scale-x-0 after:transition-transform after:duration-500 hover:after:origin-bottom-left hover:after:scale-x-100",
         isActive ? "font-bold" : "",
         className,
       )}
