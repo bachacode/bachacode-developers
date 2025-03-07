@@ -17,15 +17,16 @@ export default function ServiceCard({
 }: ServiceCardProps) {
   return (
     <div className="group flex w-full p-4 transition-transform delay-75 duration-200 hover:-translate-y-3 lg:w-1/2">
-      <div className="flex flex-grow flex-col rounded-lg border border-accent bg-white p-6 shadow-md transition-shadow delay-75 duration-200 group-hover:shadow-xl">
+      <div className="border-accent flex grow flex-col rounded-lg border bg-white p-6 shadow-md transition-shadow delay-75 duration-200 group-hover:shadow-xl">
         <FontAwesomeIcon
           icon={icon}
-          className={`h-12 w-12 pb-3 ${iconColor}`}
+          fixedWidth
+          className={`pb-3 text-4xl ${iconColor}`}
         />
         <h3 className="title-font mb-2 text-lg font-medium text-gray-900">
           {title}
         </h3>
-        <p className="flex-grow text-base leading-relaxed">{children}</p>
+        <p className="grow text-base leading-relaxed">{children}</p>
       </div>
     </div>
   );

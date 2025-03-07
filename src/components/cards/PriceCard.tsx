@@ -14,12 +14,7 @@ interface PriceCardProps {
   title: string;
   subtitle: string;
   price: string;
-  specs: {
-    ram: string;
-    cores: string;
-    storage: string;
-    bandwidth: string;
-  };
+  specs: { ram: string; cores: string; storage: string; bandwidth: string };
 }
 
 export default function PriceCard({
@@ -43,7 +38,7 @@ export default function PriceCard({
         <li className="flex items-center">
           <FontAwesomeIcon
             icon={faMemory}
-            className="mr-2 h-auto w-full max-w-4 text-accent"
+            className="text-accent mr-2"
           ></FontAwesomeIcon>
           {t("specs.ram", { memory: specs.ram })}
         </li>
@@ -52,7 +47,7 @@ export default function PriceCard({
         <li className="flex items-center">
           <FontAwesomeIcon
             icon={faMicrochip}
-            className="mr-2 h-auto w-full max-w-4 text-accent"
+            className="text-accent mr-2"
           ></FontAwesomeIcon>
           {t("specs.cpu", { cores: specs.cores })}
         </li>
@@ -61,7 +56,7 @@ export default function PriceCard({
         <li className="flex items-center">
           <FontAwesomeIcon
             icon={faHardDrive}
-            className="mr-2 h-auto w-full max-w-4 text-accent"
+            className="text-accent mr-2"
           ></FontAwesomeIcon>
           {t("specs.storage", { space: specs.storage })}
         </li>
@@ -70,7 +65,7 @@ export default function PriceCard({
         <li className="flex items-center">
           <FontAwesomeIcon
             icon={faNetworkWired}
-            className="mr-2 h-auto w-full max-w-4 text-accent"
+            className="text-accent mr-2"
           ></FontAwesomeIcon>
           {t("specs.network", { bandwith: specs.bandwidth })}
         </li>
@@ -80,42 +75,42 @@ export default function PriceCard({
         <li className="flex items-center">
           <FontAwesomeIcon
             icon={faCheckCircle}
-            className="mr-2 h-auto w-full max-w-4 text-accent"
+            className="text-accent mr-2"
           ></FontAwesomeIcon>
           {t("includes.management")}
         </li>
         <li className="flex items-center">
           <FontAwesomeIcon
             icon={faCheckCircle}
-            className="mr-2 h-auto w-full max-w-4 text-accent"
+            className="text-accent mr-2"
           ></FontAwesomeIcon>
           {t("includes.ssl")}
         </li>
         <li className="flex items-center">
           <FontAwesomeIcon
             icon={faCheckCircle}
-            className="mr-2 h-auto w-full max-w-4 text-accent"
+            className="text-accent mr-2"
           ></FontAwesomeIcon>
           {t("includes.cloudflare")}
         </li>
         <li className="flex items-center">
           <FontAwesomeIcon
             icon={faCheckCircle}
-            className="mr-2 h-auto w-full max-w-4 text-accent"
+            className="text-accent mr-2"
           ></FontAwesomeIcon>
           {t("includes.domain")}
         </li>
         <li className="flex items-center">
           <FontAwesomeIcon
             icon={faCheckCircle}
-            className="mr-2 h-auto w-full max-w-4 text-accent"
+            className="text-accent mr-2"
           ></FontAwesomeIcon>
           {t("includes.emails")}
         </li>
         <li className="flex items-center">
           <FontAwesomeIcon
             icon={faCheckCircle}
-            className="mr-2 h-auto w-full max-w-4 text-accent"
+            className="text-accent mr-2"
           ></FontAwesomeIcon>
           {t("includes.uptime")}
         </li>

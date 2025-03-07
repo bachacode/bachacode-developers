@@ -25,7 +25,7 @@ export default function ProjectCard({
   return (
     <div className={`w-full ${altColor ? "bg-secondary" : "bg-primary"}`}>
       <div
-        className={`container relative mx-auto flex ${
+        className={`relative container mx-auto flex ${
           inverted ? "flex-row-reverse" : "flex-row"
         } items-center justify-around px-6`}
       >
@@ -34,7 +34,7 @@ export default function ProjectCard({
             src={image}
             alt="Project Image"
             placeholder="blur"
-            className="object-cover blur-sm md:blur-none"
+            className="object-cover blur-xs md:blur-none"
           />
           <div className="absolute inset-0 bg-black opacity-75 md:hidden"></div>
         </div>

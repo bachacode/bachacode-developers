@@ -14,7 +14,7 @@ export default function NavButton({
   return (
     <Link
       href={href}
-      className={`z-10 rounded-md border-4 border-black px-8 py-3.5 text-base font-semibold uppercase text-black transition-colors duration-700 hover:bg-black hover:text-white ${className}`}
+      className={`z-10 rounded-md border-4 border-black px-8 py-3.5 text-base font-semibold text-black uppercase transition-colors duration-700 hover:bg-black hover:text-white ${className}`}
     >
       {children}
     </Link>

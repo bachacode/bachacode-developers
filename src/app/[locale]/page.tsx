@@ -28,7 +28,7 @@ export default function Home() {
   return (
     <main className="w-full">
       {/* Hero section */}
-      <div className="flex w-full flex-col items-center bg-orange-primary-50">
+      <div className="bg-orange-primary-50 flex w-full flex-col items-center">
         <div className="container flex min-h-screen flex-col items-center justify-center space-y-8">
           {/* Title */}
           <div className="flex flex-col items-center text-center lg:w-1/2">
@@ -56,19 +56,19 @@ export default function Home() {
           <div className="relative flex flex-col items-center lg:w-7/12 lg:items-start lg:pr-6">
             <h2
               id="about"
-              className="pb-4 text-center text-4xl font-bold text-accent lg:pb-0 lg:text-left"
+              className="text-accent pb-4 text-center text-4xl font-bold lg:pb-0 lg:text-left"
             >
               {t("about.title")}
             </h2>
-            <div className="mt-1.5 w-36 border-t-2 border-primary pb-6"></div>
-            <p className="whitespace-pre-line pb-3 text-base lg:text-2xl">
+            <div className="border-primary mt-1.5 w-36 border-t-2 pb-6"></div>
+            <p className="pb-3 text-base whitespace-pre-line lg:text-2xl">
               {t("about.body")}
             </p>
 
             <div className="absolute top-24 h-48 w-full max-w-sm self-center lg:hidden">
               <Image
                 src="/images/bachacode-big.png"
-                className="relative z-10 rounded-r-xl rounded-tl-xl opacity-20"
+                className="relative z-10 rounded-tl-xl rounded-r-xl opacity-20"
                 alt="Bachacode logo"
                 fill={true}
                 style={{ objectFit: "contain" }}
@@ -80,7 +80,7 @@ export default function Home() {
           <div className="relative hidden h-48 w-full max-w-sm self-center lg:block">
             <Image
               src={bachacodeBig}
-              className="relative z-10 rounded-r-xl rounded-tl-xl"
+              className="relative z-10 rounded-tl-xl rounded-r-xl"
               alt="Bachacode logo"
               fill={true}
               style={{ objectFit: "contain" }}
@@ -184,7 +184,7 @@ export default function Home() {
         titleName={t("team.title")}
         subtitle={t("team.subtitle")}
       >
-        <div className="-mx-4 -mb-10 -mt-4 flex flex-wrap space-y-6 pb-16 sm:-m-4 md:space-y-0">
+        <div className="-mx-4 -mt-4 -mb-10 flex flex-wrap space-y-6 pb-16 sm:-m-4 md:space-y-0">
           <OfferingCard
             title={t("team.cards.development.title")}
             description={t("team.cards.development.body")}
@@ -215,7 +215,7 @@ export default function Home() {
             <p className="self-start text-2xl font-light">
               {t("team.members.prefix")}
             </p>
-            <h3 className="text-center text-4xl font-semibold text-primary lg:text-left lg:text-6xl">
+            <h3 className="text-primary text-center text-4xl font-semibold lg:text-left lg:text-6xl">
               {t("team.members.title")}
             </h3>
           </div>

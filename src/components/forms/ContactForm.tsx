@@ -29,10 +29,7 @@ export default function ContactForm() {
         message: t("errors.required", { field_name: t("name.label") }),
       })
       .max(50, {
-        message: t("errors.max", {
-          field_name: t("name.label"),
-          amount: 50,
-        }),
+        message: t("errors.max", { field_name: t("name.label"), amount: 50 }),
       }),
     company: z.optional(
       z.string().max(50, {
@@ -47,14 +44,9 @@ export default function ContactForm() {
       .min(1, {
         message: t("errors.required", { field_name: t("email.label") }),
       })
-      .email({
-        message: t("errors.email"),
-      })
+      .email({ message: t("errors.email") })
       .max(50, {
-        message: t("errors.max", {
-          field_name: t("email.label"),
-          amount: 50,
-        }),
+        message: t("errors.max", { field_name: t("email.label"), amount: 50 }),
       }),
     subject: z
       .string()
@@ -216,7 +208,7 @@ export default function ContactForm() {
           {loading ? (
             <Button
               type="submit"
-              className="w-full bg-orange-primary-400"
+              className="bg-orange-primary-400 w-full"
               disabled
             >
               <FontAwesomeIcon
@@ -227,13 +219,13 @@ export default function ContactForm() {
           ) : (
             <Button
               type="submit"
-              className="w-full bg-primary hover:bg-orange-primary-400"
+              className="bg-primary hover:bg-orange-primary-400 w-full cursor-pointer"
             >
               {t("button")}
             </Button>
           )}
           {notification && (
-            <p className="absolute mt-3 w-full text-center text-accent">
+            <p className="text-accent absolute mt-3 w-full text-center">
               {notification}
             </p>
           )}

@@ -34,7 +34,7 @@ export default function Portafolio() {
   return (
     <main className="w-full">
       {/* Hero section */}
-      <div className="flex w-full flex-col items-center bg-orange-primary-50 px-8 pb-12 pt-36">
+      <div className="bg-orange-primary-50 flex w-full flex-col items-center px-8 pt-36 pb-12">
         <div className="container flex items-center justify-center md:space-x-8 lg:min-h-[300px]">
           {/* Title & CTA */}
           <div className="flex w-3/4 flex-col space-y-6 text-center">

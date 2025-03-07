@@ -24,12 +24,12 @@ export default function TeamCard({
 }: TeamCardProps) {
   return (
     <div className="flex p-3 lg:w-full">
-      <div className="flex h-full flex-grow flex-col items-center justify-center text-center sm:justify-start sm:text-left">
-        <div className="relative flex flex-grow flex-col rounded border border-gray-500 bg-white p-6 shadow-md transition-shadow hover:shadow-lg">
+      <div className="flex h-full grow flex-col items-center justify-center text-center sm:justify-start sm:text-left">
+        <div className="relative flex grow flex-col rounded border border-gray-500 bg-white p-6 shadow-md transition-shadow hover:shadow-lg">
           {optionalIcon && (
             <FontAwesomeIcon
               icon={optionalIcon}
-              className="absolute right-2 top-2 text-gray-500"
+              className="absolute top-2 right-2 text-gray-500"
             />
           )}
           <div className="flex justify-center pb-3 md:justify-between">
@@ -41,45 +41,45 @@ export default function TeamCard({
             </div>
             {icon ? (
               <FontAwesomeIcon
-                className="hidden h-12 w-12 text-primary md:block"
+                className="text-primary hidden text-4xl md:block"
                 icon={icon}
               />
             ) : (
               <div className="hidden"></div>
             )}
           </div>
-          <p className="mb-4 flex-grow">{description}</p>
-          <span className="inline-flex">
+          <p className="mb-4 grow">{description}</p>
+          <span className="inline-flex space-x-1">
             {linkedinUrl ? (
               <a
                 title={`Página de Linkedin de ${memberName}`}
-                className="text-gray-500 transition-colors hover:text-primary"
+                className="hover:text-primary text-gray-500 transition-colors"
                 href={linkedinUrl}
               >
-                <FontAwesomeIcon className="h-8 w-8" icon={faLinkedin} />
+                <FontAwesomeIcon className="text-3xl" icon={faLinkedin} />
               </a>
             ) : (
               <span
                 title="LinkedIn no disponible"
                 className="cursor-not-allowed text-gray-300"
               >
-                <FontAwesomeIcon className="h-8 w-8" icon={faLinkedin} />
+                <FontAwesomeIcon className="text-3xl" icon={faLinkedin} />
               </span>
             )}
             {githubUrl ? (
               <a
                 title={`${memberName}'s Github page`}
-                className="ml-2 text-gray-500 transition-colors hover:text-primary"
+                className="hover:text-primary ml-2 text-gray-500 transition-colors"
                 href={githubUrl}
               >
-                <FontAwesomeIcon className="h-8 w-8" icon={faGithub} />
+                <FontAwesomeIcon className="text-3xl" icon={faGithub} />
               </a>
             ) : (
               <span
                 title="Not available"
                 className="ml-2 cursor-not-allowed text-gray-300"
               >
-                <FontAwesomeIcon className="h-8 w-8" icon={faGithub} />
+                <FontAwesomeIcon className="text-3xl" icon={faGithub} />
               </span>
             )}
           </span>

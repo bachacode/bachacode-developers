@@ -17,14 +17,15 @@ export default function TestimonialCard({
     <div className="w-full p-4 md:w-1/2">
       <div className="flex h-full flex-col rounded bg-white p-8 shadow-md">
         <FontAwesomeIcon
-          className="h-8 w-8 pb-1.5 text-accent"
+          fixedWidth
+          className="text-accent pb-1.5 text-3xl"
           icon={faQuoteRight}
         />
-        <div className="mb-6 flex-grow">
+        <div className="mb-6 grow">
           <p className="leading-relaxed">{testimony}</p>
         </div>
         <span className="inline-flex items-center">
-          <span className="flex flex-grow flex-col">
+          <span className="flex grow flex-col">
             <span className="title-font font-medium text-gray-900">{name}</span>
             <span className="text-sm text-gray-500">{profession}</span>
           </span>

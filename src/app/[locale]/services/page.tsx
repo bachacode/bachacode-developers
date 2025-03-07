@@ -62,8 +62,8 @@ export default function Servicios() {
   return (
     <main className="w-full">
       {/* Hero section */}
-      <div className="flex w-full flex-col items-center bg-orange-primary-50 px-8 pb-12 pt-36">
-        <div className="container relative flex items-center md:space-x-8 lg:min-h-[600px]">
+      <div className="bg-orange-primary-50 flex w-full flex-col items-center px-8 pt-36 pb-12">
+        <div className="relative container flex items-center md:space-x-8 lg:min-h-[600px]">
           {/* Title & CTA */}
           <div className="flex w-full flex-col items-center space-y-6 text-center md:w-1/2">
             <div className="px-6 md:px-3">
