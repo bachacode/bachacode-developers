@@ -22,7 +22,7 @@ export default function AdvantageCard({
         icon={icon}
         className={`h-auto w-full max-w-14 pr-3 ${iconColor}`}
       />
-      <div className="flex-grow px-1.5">
+      <div className="grow px-1.5">
         <h3 className="title-font text-lg font-medium text-gray-900">
           {title}
         </h3>

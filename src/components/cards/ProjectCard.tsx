@@ -34,7 +34,7 @@ export default function ProjectCard({
             src={image}
             alt="Project Image"
             placeholder="blur"
-            className="object-cover blur-sm md:blur-none"
+            className="object-cover blur-xs md:blur-none"
           />
           <div className="absolute inset-0 bg-black opacity-75 md:hidden"></div>
         </div>

@@ -24,8 +24,8 @@ export default function TeamCard({
 }: TeamCardProps) {
   return (
     <div className="flex p-3 lg:w-full">
-      <div className="flex h-full flex-grow flex-col items-center justify-center text-center sm:justify-start sm:text-left">
-        <div className="relative flex flex-grow flex-col rounded border border-gray-500 bg-white p-6 shadow-md transition-shadow hover:shadow-lg">
+      <div className="flex h-full grow flex-col items-center justify-center text-center sm:justify-start sm:text-left">
+        <div className="relative flex grow flex-col rounded border border-gray-500 bg-white p-6 shadow-md transition-shadow hover:shadow-lg">
           {optionalIcon && (
             <FontAwesomeIcon
               icon={optionalIcon}
@@ -48,7 +48,7 @@ export default function TeamCard({
               <div className="hidden"></div>
             )}
           </div>
-          <p className="mb-4 flex-grow">{description}</p>
+          <p className="mb-4 grow">{description}</p>
           <span className="inline-flex">
             {linkedinUrl ? (
               <a

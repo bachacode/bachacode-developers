@@ -14,7 +14,7 @@ export default function MainFooter() {
 
   return (
     <footer className="flex w-full justify-center bg-white">
-      <div className="w-full max-w-screen-xl p-4 py-6 lg:py-8">
+      <div className="w-full max-w-7xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between md:px-3">
           {/* Logo */}
           <div className="mb-6 hidden md:mb-0 md:block">
@@ -30,7 +30,7 @@ export default function MainFooter() {
           <div className="flex flex-col items-center gap-8 px-6 md:grid md:grid-cols-2 md:px-0">
             {/* Main Links */}
             <div className="text-center md:text-left">
-              <h3 className="pb-3 font-semibold uppercase text-gray-900">
+              <h3 className="pb-3 font-semibold text-gray-900 uppercase">
                 {t("discover")}
               </h3>
               <ul className="space-y-2 font-medium text-gray-500">
@@ -68,7 +68,7 @@ export default function MainFooter() {
 
             {/* Contact info */}
             <div className="text-center md:text-left">
-              <h3 className="pb-3 font-semibold uppercase text-gray-900">
+              <h3 className="pb-3 font-semibold text-gray-900 uppercase">
                 {t("contact")}
               </h3>
               <ul className="space-y-2 font-medium text-gray-500">
@@ -102,7 +102,7 @@ export default function MainFooter() {
                 <li className="py-3">
                   <Link
                     href="/contact"
-                    className={`rounded-md border-2 border-gray-500 px-6 py-3 font-semibold uppercase text-gray-500 transition-colors hover:border-black hover:text-black`}
+                    className={`rounded-md border-2 border-gray-500 px-6 py-3 font-semibold text-gray-500 uppercase transition-colors hover:border-black hover:text-black`}
                   >
                     {t("contact_us")}
                   </Link>
