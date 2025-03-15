@@ -2,8 +2,8 @@ import React from "react";
 import generateTitle from "@/utils/generateTitle";
 import { Metadata } from "next";
 import PageSectionWrapper from "@/components/layout/PageSectionWrapper";
-import MesgoHome from "@/assets/images/mesgo-home.png";
 import TailorsheetHome from "@/assets/images/tailorsheet-home.png";
+import jaimeMoralesHome from "@/assets/images/jaimemoralesdotes-home.png";
 import ProjectCard from "@/components/cards/ProjectCard";
 import TestimonialCard from "@/components/cards/TestimonialCard";
 import ContactSection from "@/components/sections/ContactSection";
@@ -66,10 +66,10 @@ export default function Portafolio() {
           />
 
           <ProjectCard
-            title={t("projects.sites.mesgo.title")}
-            description={t("projects.sites.mesgo.body")}
-            image={MesgoHome}
-            buttonUrl="https://mesgo.bachacode.com/"
+            title={t("projects.sites.jaimemorales.title")}
+            description={t("projects.sites.jaimemorales.body")}
+            image={jaimeMoralesHome}
+            buttonUrl="https://jaimemorales.es/"
             inverted
             altColor
           />
