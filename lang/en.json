@@ -317,8 +317,9 @@
           "max": "{field_name} must have at most {amount} characters.",
           "email": "This field must be in the format of an email,  e.g: example@email.com",
           "captchaError": "Security check failed. Please try again.",
+          "captchaVerify": "Please verify you are not a robot.",
           "captchaFailed": "Security check expired. Please verify again.",
-          "captchaTokenError": "Invalid Token"
+          "captchaTokenError": "Invalid Token."
         },
         "success": "The email has been sent successfully!",
         "button": "Send message"

@@ -317,6 +317,7 @@
           "max": "{field_name} debe de ser de un maximo de {amount} caracteres.",
           "email": "Este campo debe de tener formato de correo,  e.j: ejemplo@correo.com",
           "captchaError": "El control de seguridad falló. Por favor, inténtalo de nuevo.",
+          "captchaVerify": "Por favor confirma que no eres un robot.",
           "captchaFailed": "El control de seguridad caducó. Por favor, verifícalo de nuevo.",
           "captchaTokenError": "Token inválido"
         },
