@@ -110,7 +110,7 @@ export default function ContactForm() {
     turnstileToken: string,
     data: z.infer<typeof formSchema>,
   ) {
-    const apiEndpoint = "/api/contacto";
+    const apiEndpoint = "/api/contact";
 
     fetch(apiEndpoint, {
       method: "POST",
