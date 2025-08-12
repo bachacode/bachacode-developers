@@ -16,12 +16,13 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Textarea } from "../ui/textarea";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Turnstile } from "next-turnstile";
 import axios from "axios";
 
 export default function ContactForm() {
   const t = useTranslations("contact.form_section.form");
+  const locale = useLocale();
 
   const formSchema = z.object({
     name: z
@@ -106,7 +107,7 @@ export default function ContactForm() {
     data: z.infer<typeof formSchema>,
   ) {
     try {
-      const response = await axios.post("/api/contact", {
+      const response = await axios.post(`/api/contact?locale=${locale}`, {
         ...data,
         turnstileToken,
       });

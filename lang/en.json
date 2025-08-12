@@ -323,8 +323,9 @@
           "captchaError": "Security check failed. Please try again.",
           "captchaVerify": "Please verify you are not a robot.",
           "captchaFailed": "Security check expired. Please verify again.",
-          "captchaTokenError": "Invalid Token."
+          "captchaTokenError": "Verification failed. Please refresh the page and try again."
         },
+        "serverError": "Something went wrong on our end. Please try again in a few minutes. If this continues, reach out to our support team.",
         "success": "The email has been sent successfully!",
         "button": "Send message"
       }

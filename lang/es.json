@@ -323,8 +323,9 @@
           "captchaError": "El control de seguridad falló. Por favor, inténtalo de nuevo.",
           "captchaVerify": "Por favor confirma que no eres un robot.",
           "captchaFailed": "El control de seguridad caducó. Por favor, verifícalo de nuevo.",
-          "captchaTokenError": "Token inválido"
+          "captchaTokenError": "No se pudo verificar. Recarga la página e inténtalo nuevamente."
         },
+        "serverError": "Algo ha salido mal por nuestra parte. Por favor intenta nuevamente en unos minutos. Si el error persiste, ponte en contacto con nuestro equipo de soporte.",
         "success": "¡El correo electrónico ha sido enviado exitosamente!",
         "button": "Enviar mensaje"
       }
