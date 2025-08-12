@@ -80,7 +80,9 @@ export default function ContactForm() {
       message: "",
     },
   });
-  const [turnstileStatus, setTurnstileStatus] = useState<"success" | "error" | "expired" | "required">("required");
+  const [turnstileStatus, setTurnstileStatus] = useState<
+    "success" | "error" | "expired" | "required"
+  >("required");
   const [notification, setNotification] = useState("");
   const [loading, setLoading] = useState(false);
   const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
@@ -106,10 +108,7 @@ export default function ContactForm() {
     sendEmail(turnstileToken, data);
   }
 
-  function sendEmail(
-    turnstileToken: string,
-    data: z.infer<typeof formSchema>,
-  ) {
+  function sendEmail(turnstileToken: string, data: z.infer<typeof formSchema>) {
     const apiEndpoint = "/api/contact";
 
     fetch(apiEndpoint, {
@@ -227,22 +226,22 @@ export default function ContactForm() {
             setError(true);
             setTurnstileStatus("error");
             setNotification("Security check failed. Please try again.");
-            setTurnstileToken(null)
+            setTurnstileToken(null);
           }}
           onExpire={() => {
             setError(true);
             setTurnstileStatus("expired");
             setNotification("Security check expired. Please verify again.");
-            setTurnstileToken(null)
+            setTurnstileToken(null);
           }}
           onLoad={() => {
             setError(true);
             setTurnstileStatus("required");
-            setTurnstileToken(null)
+            setTurnstileToken(null);
           }}
           onVerify={(token) => {
             setTurnstileStatus("success");
-            setTurnstileToken(token)
+            setTurnstileToken(token);
           }}
         />
         <div className="relative">
@@ -266,7 +265,9 @@ export default function ContactForm() {
             </Button>
           )}
           {notification && (
-            <p className={`${error ? "text-red-500" : "text-accent"} absolute mt-3 w-full text-center`}>
+            <p
+              className={`${error ? "text-red-500" : "text-accent"} absolute mt-3 w-full text-center`}
+            >
               {notification}
             </p>
           )}
