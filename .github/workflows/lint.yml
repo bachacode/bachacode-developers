@@ -1,0 +1,41 @@
+name: Lint & Prettier Auto-Fix
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  lint-autofix:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run ESLint (auto-fix)
+        run: npm run lint:fix
+
+      - name: Run Prettier (auto-fix)
+        run: npm run prettier:fix
+
+      - name: Commit & push changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add .
+          git commit -m "chore: lint & format fixes" || echo "No changes to commit"
+          git push
