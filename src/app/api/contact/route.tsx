@@ -9,11 +9,9 @@ export async function POST(request: NextRequest) {
   const { turnstileToken, name, company, email, subject, message } =
     await request.json();
 
-  return NextResponse.json({
-    success: true,
-    message:
-      "This form is disabled at the moment, contact us from other sources!",
-  });
+  const turnstileSecretKey = process.env.TURNSTILE_SECRET_KEY;
+  const smtpUsername = process.env.SMTP_USERNAME;
+  const smtpPassword = process.env.SMTP_PASSWORD;
 
   const locale = await getLocale();
   const t = await getTranslations({
@@ -21,14 +19,24 @@ export async function POST(request: NextRequest) {
     namespace: "contact.form_section.form",
   });
 
+  if (!turnstileSecretKey) {
+    return NextResponse.json(
+      {
+        success: false,
+        message: t("errors.captchaTokenError"),
+      },
+      { status: 400 },
+    );
+  }
+
   const validationResponse = await validateTurnstileToken({
     token: turnstileToken,
-    secretKey: process.env.TURNSTILE_SECRET_KEY!,
+    secretKey: turnstileSecretKey,
     idempotencyKey: v4(),
     sandbox: process.env.NODE_ENV === "development",
   });
 
-  if (!validationResponse.success) {
+  if (!validationResponse.success || !smtpUsername || !smtpPassword) {
     return NextResponse.json(
       {
         success: false,
@@ -39,11 +47,11 @@ export async function POST(request: NextRequest) {
   }
 
   const transporter = nodemailer.createTransport({
-    host: "smtp.sendgrid.net",
-    port: 587,
+    host: "mail.smtp2go.com",
+    port: 2525,
     auth: {
-      user: "apikey",
-      pass: process.env.SEND_GRID_API_KEY,
+      user: smtpUsername,
+      pass: smtpPassword,
     },
   });
 
