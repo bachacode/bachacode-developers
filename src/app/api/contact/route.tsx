@@ -8,6 +8,11 @@ import { getLocale, getTranslations } from "next-intl/server";
 export async function POST(request: NextRequest) {
   const { turnstileToken, name, company, email, subject, message } = await request.json();
 
+  return NextResponse.json({
+    success: true,
+    message: "This form is disabled at the moment, contact us from other sources!",
+  });
+
   const locale = await getLocale();
   const t = await getTranslations({ locale, namespace: "contact.form_section.form" });
 
