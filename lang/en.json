@@ -316,8 +316,11 @@
           "min": "{field_name} must have at least {amount} characters.",
           "max": "{field_name} must have at most {amount} characters.",
           "email": "This field must be in the format of an email,  e.g: example@email.com",
-          "recaptcha": "Something has failed with the reCAPTCHA key, get in touch with the administration by other communication options."
+          "captchaError": "Security check failed. Please try again.",
+          "captchaFailed": "Security check expired. Please verify again.",
+          "captchaTokenError": "Invalid Token"
         },
+        "success": "The email has been sent successfully!",
         "button": "Send message"
       }
     }
