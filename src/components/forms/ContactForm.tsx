@@ -101,7 +101,10 @@ export default function ContactForm() {
     await sendEmail(turnstileToken, data);
   }
 
-  async function sendEmail(turnstileToken: string, data: z.infer<typeof formSchema>) {
+  async function sendEmail(
+    turnstileToken: string,
+    data: z.infer<typeof formSchema>,
+  ) {
     try {
       const response = await axios.post("/api/contact", {
         ...data,
