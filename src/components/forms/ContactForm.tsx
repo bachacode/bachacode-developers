@@ -18,6 +18,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { useTranslations } from "next-intl";
 import { Turnstile } from "next-turnstile";
+import axios from "axios";
 
 export default function ContactForm() {
   const t = useTranslations("contact.form_section.form");
@@ -69,7 +70,6 @@ export default function ContactForm() {
     ),
   });
 
-  // 1. Define your form.
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -88,44 +88,38 @@ export default function ContactForm() {
   const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
   const [error, setError] = useState(false);
 
-  function onSubmit(data: z.infer<typeof formSchema>) {
+  async function onSubmit(data: z.infer<typeof formSchema>) {
     setLoading(true);
 
-    if (turnstileStatus !== "success") {
+    if (turnstileStatus !== "success" || turnstileToken === null) {
       setError(true);
       setNotification(t("errors.captchaVerify"));
       setLoading(false);
       return;
     }
 
-    if (turnstileToken === null) {
-      setError(true);
-      setNotification(t("errors.captchaVerify"));
-      setLoading(false);
-      return;
-    }
-
-    sendEmail(turnstileToken, data);
+    await sendEmail(turnstileToken, data);
   }
 
-  function sendEmail(turnstileToken: string, data: z.infer<typeof formSchema>) {
-    const apiEndpoint = "/api/contact";
-
-    fetch(apiEndpoint, {
-      method: "POST",
-      body: JSON.stringify({ ...data, turnstileToken }),
-    })
-      .then((res) => res.json())
-      .then((response) => {
-        setError(false);
-        setNotification(response.message);
-        setLoading(false);
-      })
-      .catch((err) => {
-        setError(true);
-        setNotification(err.message);
-        setLoading(false);
+  async function sendEmail(turnstileToken: string, data: z.infer<typeof formSchema>) {
+    try {
+      const response = await axios.post("/api/contact", {
+        ...data,
+        turnstileToken,
       });
+
+      setError(false);
+      setNotification(response.data.message);
+    } catch (err) {
+      if (axios.isAxiosError(err) && err.response) {
+        setNotification(err.response.data?.message || err.message);
+      } else {
+        setNotification("Something went wrong while sending your message.");
+      }
+      setError(true);
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
