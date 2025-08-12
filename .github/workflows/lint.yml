@@ -1,35 +1,41 @@
-name: Lint
+name: Lint & Prettier Auto-Fix
 
 on:
-  # Trigger the workflow on push or pull request,
-  # but only for the main branch
   push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+    branches: [main]
 
 jobs:
-  run-linters:
-    name: Run linters
+  lint-autofix:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
-      - name: Check out Git repository
+      - name: Checkout code
         uses: actions/checkout@v4
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v1
         with:
-          node-version: 12
+          ref: ${{ github.head_ref }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-      # ESLint and Prettier must be in `package.json`
-      - name: Install Node.js dependencies
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
         run: npm ci
 
-      - name: Run linters
-        uses: wearerequired/lint-action@v2
-        with:
-          eslint: true
-          prettier: true
+      - name: Run ESLint (auto-fix)
+        run: npm run lint:fix
+
+      - name: Run Prettier (auto-fix)
+        run: npm run prettier:fix
+
+      - name: Commit & push changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add .
+          git commit -m "chore: lint & format fixes" || echo "No changes to commit"
+          git push
