@@ -1,3 +1,4 @@
+# .github/workflow/lint-autofix.yml
 name: Lint & Prettier Auto-Fix
 
 on:
@@ -32,10 +33,5 @@ jobs:
       - name: Run Prettier (auto-fix)
         run: npm run prettier:fix
 
-      - name: Commit & push changes
-        run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add .
-          git commit -m "chore: lint & format fixes" || echo "No changes to commit"
-          git push
+      - name: Commit linted files
+        uses: stefanzweifel/git-auto-commit-action@v5
