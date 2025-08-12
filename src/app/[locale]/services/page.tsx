@@ -6,12 +6,8 @@ import ocTakingNote from "@/assets/images/oc-taking-note.svg";
 import ServiceCardAlt from "@/components/cards/ServiceCardAlt";
 import {
   faCode,
-  faHardDrive,
   faHeadphones,
-  faMemory,
   faMessage,
-  faMicrochip,
-  faNetworkWired,
   faPalette,
   faServer,
   faShield,

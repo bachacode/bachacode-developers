@@ -1,4 +1,3 @@
-import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import {
   faCheckCircle,
   faHardDrive,
