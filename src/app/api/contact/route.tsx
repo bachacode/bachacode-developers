@@ -2,32 +2,40 @@ import { NextResponse, NextRequest } from "next/server";
 import nodemailer from "nodemailer";
 import generateContactEmail from "@/utils/emailTemplate";
 import { validateTurnstileToken } from "next-turnstile";
-import { v4 } from "uuid"
+import { v4 } from "uuid";
 import { getLocale, getTranslations } from "next-intl/server";
 
 export async function POST(request: NextRequest) {
-  const { turnstileToken, name, company, email, subject, message } = await request.json();
+  const { turnstileToken, name, company, email, subject, message } =
+    await request.json();
 
   return NextResponse.json({
     success: true,
-    message: "This form is disabled at the moment, contact us from other sources!",
+    message:
+      "This form is disabled at the moment, contact us from other sources!",
   });
 
   const locale = await getLocale();
-  const t = await getTranslations({ locale, namespace: "contact.form_section.form" });
+  const t = await getTranslations({
+    locale,
+    namespace: "contact.form_section.form",
+  });
 
   const validationResponse = await validateTurnstileToken({
     token: turnstileToken,
     secretKey: process.env.TURNSTILE_SECRET_KEY!,
     idempotencyKey: v4(),
     sandbox: process.env.NODE_ENV === "development",
-  })
+  });
 
   if (!validationResponse.success) {
-    return NextResponse.json({
-      success: false,
-      message: t("errors.captchaTokenError"),
-    }, { status: 400 });
+    return NextResponse.json(
+      {
+        success: false,
+        message: t("errors.captchaTokenError"),
+      },
+      { status: 400 },
+    );
   }
 
   const transporter = nodemailer.createTransport({
@@ -60,4 +68,3 @@ export async function POST(request: NextRequest) {
     message: t("success"),
   });
 }
-
