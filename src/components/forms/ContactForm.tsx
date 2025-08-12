@@ -14,10 +14,10 @@ import { Button } from "../ui/button";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Textarea } from "../ui/textarea";
-import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { useTranslations } from "next-intl";
+import { Turnstile } from "next-turnstile";
 
 export default function ContactForm() {
   const t = useTranslations("contact.form_section.form");
@@ -80,39 +80,50 @@ export default function ContactForm() {
       message: "",
     },
   });
+  const [turnstileStatus, setTurnstileStatus] = useState<"success" | "error" | "expired" | "required">("required");
   const [notification, setNotification] = useState("");
   const [loading, setLoading] = useState(false);
-  const { executeRecaptcha } = useGoogleReCaptcha();
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const [error, setError] = useState(false);
 
-  // 2. Define a submit handler.
   function onSubmit(data: z.infer<typeof formSchema>) {
     setLoading(true);
-    if (!executeRecaptcha) {
-      setNotification(t("errors.recaptcha"));
+
+    if (turnstileStatus !== "success") {
+      setError(true);
+      setNotification(t("errors.captchaVerify"));
       setLoading(false);
       return;
     }
-    executeRecaptcha("enquiryFormSubmit").then((gReCaptchaToken) => {
-      sendEmail(gReCaptchaToken, data);
-    });
+
+    if (turnstileToken === null) {
+      setError(true);
+      setNotification(t("errors.captchaVerify"));
+      setLoading(false);
+      return;
+    }
+
+    sendEmail(turnstileToken, data);
   }
 
   function sendEmail(
-    gReCaptchaToken: string,
+    turnstileToken: string,
     data: z.infer<typeof formSchema>,
   ) {
-    const apiEndpoint = "/api/contacto";
+    const apiEndpoint = "/api/contact";
 
     fetch(apiEndpoint, {
       method: "POST",
-      body: JSON.stringify({ ...data, gReCaptchaToken }),
+      body: JSON.stringify({ ...data, turnstileToken }),
     })
       .then((res) => res.json())
       .then((response) => {
+        setError(false);
         setNotification(response.message);
         setLoading(false);
       })
       .catch((err) => {
+        setError(true);
         setNotification(err.message);
         setLoading(false);
       });
@@ -204,6 +215,36 @@ export default function ContactForm() {
             </FormItem>
           )}
         />
+
+        {/* Captcha/Turnstile */}
+        <Turnstile
+          siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+          theme="light"
+          retry="auto"
+          refreshExpired="auto"
+          sandbox={process.env.NODE_ENV === "development"}
+          onError={() => {
+            setError(true);
+            setTurnstileStatus("error");
+            setNotification("Security check failed. Please try again.");
+            setTurnstileToken(null)
+          }}
+          onExpire={() => {
+            setError(true);
+            setTurnstileStatus("expired");
+            setNotification("Security check expired. Please verify again.");
+            setTurnstileToken(null)
+          }}
+          onLoad={() => {
+            setError(true);
+            setTurnstileStatus("required");
+            setTurnstileToken(null)
+          }}
+          onVerify={(token) => {
+            setTurnstileStatus("success");
+            setTurnstileToken(token)
+          }}
+        />
         <div className="relative">
           {loading ? (
             <Button
@@ -225,7 +266,7 @@ export default function ContactForm() {
             </Button>
           )}
           {notification && (
-            <p className="text-accent absolute mt-3 w-full text-center">
+            <p className={`${error ? "text-red-500" : "text-accent"} absolute mt-3 w-full text-center`}>
               {notification}
             </p>
           )}
