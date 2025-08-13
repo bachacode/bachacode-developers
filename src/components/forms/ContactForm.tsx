@@ -19,6 +19,7 @@ import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { useLocale, useTranslations } from "next-intl";
 import { Turnstile } from "next-turnstile";
 import axios from "axios";
+import { ContactForm as ContactFormType } from "@/lib/schemas/contactFormSchema";
 
 export default function ContactForm() {
   const t = useTranslations("contact.form_section.form");
@@ -27,59 +28,33 @@ export default function ContactForm() {
   const formSchema = z.object({
     name: z
       .string()
-      .min(1, {
-        message: t("errors.required", { field_name: t("name.label") }),
-      })
-      .max(50, {
-        message: t("errors.max", { field_name: t("name.label"), amount: 50 }),
-      }),
-    company: z.optional(
-      z.string().max(50, {
-        message: t("errors.max", {
-          field_name: t("company_name.label"),
-          amount: 50,
-        }),
-      }),
-    ),
-    email: z
+      .min(1, t("errors.required", { field_name: t("name.label") }))
+      .max(50, t("errors.max", { field_name: t("name.label"), amount: 50 })),
+    company: z
       .string()
-      .min(1, {
-        message: t("errors.required", { field_name: t("email.label") }),
-      })
-      .email({ message: t("errors.email") })
-      .max(50, {
-        message: t("errors.max", { field_name: t("email.label"), amount: 50 }),
-      }),
+      .max(50, t("errors.max", { field_name: t("company_name.label"), amount: 50 })),
+    email: z
+      .email(t("errors.email"))
+      .min(1, t("errors.required", { field_name: t("email.label") }))
+      .max(50, t("errors.max", { field_name: t("email.label"), amount: 50 })),
     subject: z
       .string()
-      .min(1, {
-        message: t("errors.required", { field_name: t("subject.label") }),
-      })
-      .max(50, {
-        message: t("errors.max", {
-          field_name: t("subject.label"),
-          amount: 50,
-        }),
-      }),
-    message: z.optional(
-      z.string().max(250, {
-        message: t("errors.max", {
-          field_name: t("message.label"),
-          amount: 250,
-        }),
-      }),
-    ),
+      .min(1, t("errors.required", { field_name: t("subject.label") }))
+      .max(50, t("errors.max", { field_name: t("subject.label"), amount: 50 })),
+    message: z
+      .string()
+      .max(250, t("errors.max", { field_name: t("message.label"), amount: 250, })),
   });
 
-  const form = useForm<z.infer<typeof formSchema>>({
+  const form = useForm<ContactFormType>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
       company: "",
       email: "",
       subject: "",
-      message: "",
-    },
+      message: ""
+    }
   });
   const [turnstileStatus, setTurnstileStatus] = useState<
     "success" | "error" | "expired" | "required"
@@ -89,7 +64,7 @@ export default function ContactForm() {
   const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
   const [error, setError] = useState(false);
 
-  async function onSubmit(data: z.infer<typeof formSchema>) {
+  async function onSubmit(data: ContactFormType) {
     setLoading(true);
 
     if (turnstileStatus !== "success" || turnstileToken === null) {
@@ -233,7 +208,7 @@ export default function ContactForm() {
             setTurnstileToken(null);
           }}
           onLoad={() => {
-            setError(true);
+            setError(false);
             setTurnstileStatus("required");
             setTurnstileToken(null);
           }}
