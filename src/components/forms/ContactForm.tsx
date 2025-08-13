@@ -32,7 +32,10 @@ export default function ContactForm() {
       .max(50, t("errors.max", { field_name: t("name.label"), amount: 50 })),
     company: z
       .string()
-      .max(50, t("errors.max", { field_name: t("company_name.label"), amount: 50 })),
+      .max(
+        50,
+        t("errors.max", { field_name: t("company_name.label"), amount: 50 }),
+      ),
     email: z
       .email(t("errors.email"))
       .min(1, t("errors.required", { field_name: t("email.label") }))
@@ -43,7 +46,10 @@ export default function ContactForm() {
       .max(50, t("errors.max", { field_name: t("subject.label"), amount: 50 })),
     message: z
       .string()
-      .max(250, t("errors.max", { field_name: t("message.label"), amount: 250, })),
+      .max(
+        250,
+        t("errors.max", { field_name: t("message.label"), amount: 250 }),
+      ),
   });
 
   const form = useForm<ContactFormType>({
@@ -53,8 +59,8 @@ export default function ContactForm() {
       company: "",
       email: "",
       subject: "",
-      message: ""
-    }
+      message: "",
+    },
   });
   const [turnstileStatus, setTurnstileStatus] = useState<
     "success" | "error" | "expired" | "required"

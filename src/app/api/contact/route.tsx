@@ -8,15 +8,23 @@ import { contactFormSchema } from "@/lib/schemas/contactFormSchema";
 
 export async function POST(request: NextRequest) {
   const { turnstileToken, ...body } = await request.json();
-  const result = contactFormSchema.safeParse(body)
-  const locale = request.nextUrl.searchParams.get('locale') || 'en';
-  const t = await getTranslations({ locale, namespace: "contact.form_section.form" });
+  const result = contactFormSchema.safeParse(body);
+  const locale = request.nextUrl.searchParams.get("locale") || "en";
+  const t = await getTranslations({
+    locale,
+    namespace: "contact.form_section.form",
+  });
 
   const turnstileSecretKey = process.env.TURNSTILE_SECRET_KEY;
   const smtpUsername = process.env.SMTP_USERNAME;
   const smtpPassword = process.env.SMTP_PASSWORD;
 
-  if (!turnstileSecretKey || !smtpUsername || !smtpPassword || !result.success) {
+  if (
+    !turnstileSecretKey ||
+    !smtpUsername ||
+    !smtpPassword ||
+    !result.success
+  ) {
     return NextResponse.json(
       {
         success: false,
@@ -26,7 +34,7 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  const { name, company, email, subject, message } = result.data
+  const { name, company, email, subject, message } = result.data;
 
   const validationResponse = await validateTurnstileToken({
     token: turnstileToken,
@@ -63,7 +71,6 @@ export async function POST(request: NextRequest) {
   });
 
   try {
-
     await transporter.sendMail({
       from: "support@bachacode.com", // verified sender email
       to: "support@bachacode.com", // recipient email
@@ -76,12 +83,13 @@ export async function POST(request: NextRequest) {
       success: true,
       message: t("success"),
     });
-
   } catch {
-    return NextResponse.json({
-      success: false,
-      message: t("serverError")
-    },
-      { status: 500 },)
+    return NextResponse.json(
+      {
+        success: false,
+        message: t("serverError"),
+      },
+      { status: 500 },
+    );
   }
 }
