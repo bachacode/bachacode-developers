@@ -4,19 +4,19 @@ import generateContactEmail from "@/utils/emailTemplate";
 import { validateTurnstileToken } from "next-turnstile";
 import { v4 } from "uuid";
 import { getTranslations } from "next-intl/server";
+import { contactFormSchema } from "@/lib/schemas/contactFormSchema";
 
 export async function POST(request: NextRequest) {
-  const { turnstileToken, name, company, email, subject, message } =
-    await request.json();
+  const { turnstileToken, ...body } = await request.json();
+  const result = contactFormSchema.safeParse(body)
   const locale = request.nextUrl.searchParams.get('locale') || 'en';
+  const t = await getTranslations({ locale, namespace: "contact.form_section.form" });
 
   const turnstileSecretKey = process.env.TURNSTILE_SECRET_KEY;
   const smtpUsername = process.env.SMTP_USERNAME;
   const smtpPassword = process.env.SMTP_PASSWORD;
 
-  const t = await getTranslations({ locale, namespace: "contact.form_section.form" });
-
-  if (!turnstileSecretKey || !smtpUsername || !smtpPassword) {
+  if (!turnstileSecretKey || !smtpUsername || !smtpPassword || !result.success) {
     return NextResponse.json(
       {
         success: false,
@@ -25,6 +25,8 @@ export async function POST(request: NextRequest) {
       { status: 500 },
     );
   }
+
+  const { name, company, email, subject, message } = result.data
 
   const validationResponse = await validateTurnstileToken({
     token: turnstileToken,
@@ -82,6 +84,4 @@ export async function POST(request: NextRequest) {
     },
       { status: 500 },)
   }
-
-
 }
