@@ -3,31 +3,38 @@ import nodemailer from "nodemailer";
 import generateContactEmail from "@/utils/emailTemplate";
 import { validateTurnstileToken } from "next-turnstile";
 import { v4 } from "uuid";
-import { getLocale, getTranslations } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
+import { contactFormSchema } from "@/lib/schemas/contactFormSchema";
 
 export async function POST(request: NextRequest) {
-  const { turnstileToken, name, company, email, subject, message } =
-    await request.json();
-
-  const turnstileSecretKey = process.env.TURNSTILE_SECRET_KEY;
-  const smtpUsername = process.env.SMTP_USERNAME;
-  const smtpPassword = process.env.SMTP_PASSWORD;
-
-  const locale = await getLocale();
+  const { turnstileToken, ...body } = await request.json();
+  const result = contactFormSchema.safeParse(body);
+  const locale = request.nextUrl.searchParams.get("locale") || "en";
   const t = await getTranslations({
     locale,
     namespace: "contact.form_section.form",
   });
 
-  if (!turnstileSecretKey) {
+  const turnstileSecretKey = process.env.TURNSTILE_SECRET_KEY;
+  const smtpUsername = process.env.SMTP_USERNAME;
+  const smtpPassword = process.env.SMTP_PASSWORD;
+
+  if (
+    !turnstileSecretKey ||
+    !smtpUsername ||
+    !smtpPassword ||
+    !result.success
+  ) {
     return NextResponse.json(
       {
         success: false,
-        message: t("errors.captchaTokenError"),
+        message: t("serverError"),
       },
-      { status: 400 },
+      { status: 500 },
     );
   }
+
+  const { name, company, email, subject, message } = result.data;
 
   const validationResponse = await validateTurnstileToken({
     token: turnstileToken,
@@ -36,7 +43,7 @@ export async function POST(request: NextRequest) {
     sandbox: process.env.NODE_ENV === "development",
   });
 
-  if (!validationResponse.success || !smtpUsername || !smtpPassword) {
+  if (!validationResponse.success) {
     return NextResponse.json(
       {
         success: false,
@@ -63,16 +70,26 @@ export async function POST(request: NextRequest) {
     message,
   });
 
-  await transporter.sendMail({
-    from: "support@bachacode.com", // verified sender email
-    to: "support@bachacode.com", // recipient email
-    replyTo: email,
-    subject: `${subject} - ${company ?? "Sin compañia"} - ${name}`, // Subject line
-    html, // html body
-  });
+  try {
+    await transporter.sendMail({
+      from: "support@bachacode.com", // verified sender email
+      to: "support@bachacode.com", // recipient email
+      replyTo: email,
+      subject: `${subject} - ${company ?? "Sin compañia"} - ${name}`, // Subject line
+      html, // html body
+    });
 
-  return NextResponse.json({
-    success: true,
-    message: t("success"),
-  });
+    return NextResponse.json({
+      success: true,
+      message: t("success"),
+    });
+  } catch {
+    return NextResponse.json(
+      {
+        success: false,
+        message: t("serverError"),
+      },
+      { status: 500 },
+    );
+  }
 }
