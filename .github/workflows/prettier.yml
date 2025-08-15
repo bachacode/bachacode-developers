@@ -10,7 +10,7 @@ permissions:
   contents: write
 
 jobs:
-  lint-autofix:
+  prettier-autofix:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: true
