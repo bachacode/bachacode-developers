@@ -1,6 +1,5 @@
 import { useTranslations } from "next-intl";
 import Image, { StaticImageData } from "next/image";
-import Link from "next/link";
 
 interface ProjectCardProps {
   title: string;
@@ -25,9 +24,8 @@ export default function ProjectCard({
   return (
     <div className={`w-full ${altColor ? "bg-secondary" : "bg-primary"}`}>
       <div
-        className={`relative container mx-auto flex ${
-          inverted ? "flex-row-reverse" : "flex-row"
-        } items-center justify-around px-6`}
+        className={`relative container mx-auto flex ${inverted ? "flex-row-reverse" : "flex-row"
+          } items-center justify-around px-6`}
       >
         <div className="relative h-full w-full md:w-1/2">
           <Image
@@ -52,17 +50,16 @@ export default function ProjectCard({
             {description}
           </p>
 
-          <Link
+          <a
             href={buttonUrl}
             target="_blank"
-            className={`w-fit rounded-lg border-2 px-6 py-3 text-base font-semibold uppercase ${
-              altColor
+            className={`w-fit rounded-lg border-2 px-6 py-3 text-base font-semibold uppercase ${altColor
                 ? "border-white text-white md:border-black md:text-black"
                 : "border-white text-white"
-            }`}
+              }`}
           >
             {buttonText ?? t("button")}
-          </Link>
+          </a>
         </div>
       </div>
     </div>

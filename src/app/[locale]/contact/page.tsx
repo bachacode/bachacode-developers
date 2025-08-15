@@ -5,7 +5,6 @@ import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 import generateTitle from "@/utils/generateTitle";
 import GoogleCaptchaWrapper from "@/components/layout/GoogleCaptchaWrapper";
@@ -82,12 +81,13 @@ export default function Contacto() {
                 icon={faWhatsapp}
               />
               <h3>WhatsApp</h3>
-              <Link
+              <a
                 className="text-accent hover:text-primary transition-colors"
                 href="https://wa.me/584121163349?text=Estoy%20interesado%20en%20crear%20un%20sitio%20web%20con%20ustedes"
+                target="_blank"
               >
                 {t("hero.cards.whatsapp")}
-              </Link>
+              </a>
             </div>
           </div>
 
