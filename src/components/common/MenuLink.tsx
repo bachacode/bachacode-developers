@@ -1,6 +1,6 @@
 "use client";
 import { ComponentProps } from "react";
-import { Link } from "@/i18n/routing";
+import { Link } from "@/i18n/navigation";
 import { useSelectedLayoutSegment } from "next/navigation";
 import clsx from "clsx";
 type MenuLinkProps = ComponentProps<typeof Link> & {

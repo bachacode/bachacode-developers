@@ -1,4 +1,4 @@
-import { Link } from "@/i18n/routing";
+import { Link } from "@/i18n/navigation";
 
 interface NavLinkProps {
   href: "/" | "/about-us" | "/services" | "/portfolio" | "/contact";
