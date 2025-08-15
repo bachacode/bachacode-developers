@@ -14,20 +14,19 @@ import ContactSection from "@/components/sections/ContactSection";
 import TeamCard from "@/components/cards/TeamCard";
 import generateTitle from "@/utils/generateTitle";
 import { Metadata } from "next";
-import { useTranslations } from "next-intl";
+import { hasLocale, useTranslations } from "next-intl";
 import { getTranslations } from "next-intl/server";
+import { routing } from "@/i18n/routing";
 
-export async function generateMetadata(
-  props: Omit<
-    {
-      children: React.ReactNode;
-      params: Promise<{ locale: string }>;
-    },
-    "children"
-  >,
-): Promise<Metadata> {
-  const { locale } = await props.params;
+export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
+  const { locale } = await params;
 
+  if (!hasLocale(routing.locales, locale)) {
+    return {
+      title: "Bachacode Developers",
+      description: "Bachacode Developers"
+    }
+  }
   const t = await getTranslations({ locale, namespace: "about_us.metadata" });
 
   return {

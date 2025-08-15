@@ -10,19 +10,23 @@ import React from "react";
 import generateTitle from "@/utils/generateTitle";
 import GoogleCaptchaWrapper from "@/components/layout/GoogleCaptchaWrapper";
 import { getTranslations } from "next-intl/server";
-import { useTranslations } from "next-intl";
+import { hasLocale, useTranslations } from "next-intl";
+import { routing } from "@/i18n/routing";
 
-export async function generateMetadata(
-  props: Omit<
-    { children: React.ReactNode; params: Promise<{ locale: string }> },
-    "children"
-  >,
-): Promise<Metadata> {
-  const { locale } = await props.params;
+export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
+  const { locale } = await params;
 
+  if (!hasLocale(routing.locales, locale)) {
+    return {
+      title: "Bachacode Developers",
+      description: "Bachacode Developers"
+    }
+  }
   const t = await getTranslations({ locale, namespace: "contact.metadata" });
 
-  return { title: generateTitle(t("title")) };
+  return {
+    title: generateTitle(t("title")),
+  };
 }
 
 function ContactCard({
