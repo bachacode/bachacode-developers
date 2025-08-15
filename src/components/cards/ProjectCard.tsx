@@ -1,6 +1,5 @@
 import { useTranslations } from "next-intl";
 import Image, { StaticImageData } from "next/image";
-import Link from "next/link";
 
 interface ProjectCardProps {
   title: string;
@@ -52,7 +51,7 @@ export default function ProjectCard({
             {description}
           </p>
 
-          <Link
+          <a
             href={buttonUrl}
             target="_blank"
             className={`w-fit rounded-lg border-2 px-6 py-3 text-base font-semibold uppercase ${
@@ -62,7 +61,7 @@ export default function ProjectCard({
             }`}
           >
             {buttonText ?? t("button")}
-          </Link>
+          </a>
         </div>
       </div>
     </div>

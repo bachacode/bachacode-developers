@@ -5,24 +5,28 @@ import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 import generateTitle from "@/utils/generateTitle";
 import GoogleCaptchaWrapper from "@/components/layout/GoogleCaptchaWrapper";
 import { getTranslations } from "next-intl/server";
-import { useTranslations } from "next-intl";
+import { hasLocale, useTranslations } from "next-intl";
+import { routing } from "@/i18n/routing";
 
-export async function generateMetadata(
-  props: Omit<
-    { children: React.ReactNode; params: Promise<{ locale: string }> },
-    "children"
-  >,
-): Promise<Metadata> {
-  const { locale } = await props.params;
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: string };
+}): Promise<Metadata> {
+  const { locale } = await params;
 
-  const t = await getTranslations({ locale, namespace: "contact.metadata" });
+  const t = await getTranslations({
+    locale: hasLocale(routing.locales, locale) ? locale : routing.defaultLocale,
+    namespace: "contact.metadata",
+  });
 
-  return { title: generateTitle(t("title")) };
+  return {
+    title: generateTitle(t("title")),
+  };
 }
 
 function ContactCard({
@@ -81,12 +85,13 @@ export default function Contacto() {
                 icon={faWhatsapp}
               />
               <h3>WhatsApp</h3>
-              <Link
+              <a
                 className="text-accent hover:text-primary transition-colors"
                 href="https://wa.me/584121163349?text=Estoy%20interesado%20en%20crear%20un%20sitio%20web%20con%20ustedes"
+                target="_blank"
               >
                 {t("hero.cards.whatsapp")}
-              </Link>
+              </a>
             </div>
           </div>
 

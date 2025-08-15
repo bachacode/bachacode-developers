@@ -8,7 +8,7 @@ import {
   DropdownMenuContent,
 } from "../ui/dropdown";
 import { faChevronDown, faGlobe } from "@fortawesome/free-solid-svg-icons";
-import { usePathname, useRouter } from "@/i18n/routing";
+import { usePathname, useRouter } from "@/i18n/navigation";
 import { useParams } from "next/navigation";
 
 export default function LanguageSwitcher({

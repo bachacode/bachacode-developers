@@ -31,20 +31,20 @@ import ContactSection from "@/components/sections/ContactSection";
 import TechCard from "@/components/cards/TechCard";
 import PriceCard from "@/components/cards/PriceCard";
 import { getTranslations } from "next-intl/server";
-import { useFormatter, useTranslations } from "next-intl";
+import { hasLocale, useFormatter, useTranslations } from "next-intl";
+import { routing } from "@/i18n/routing";
 
-export async function generateMetadata(
-  props: Omit<
-    {
-      children: React.ReactNode;
-      params: Promise<{ locale: string }>;
-    },
-    "children"
-  >,
-): Promise<Metadata> {
-  const { locale } = await props.params;
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: string };
+}): Promise<Metadata> {
+  const { locale } = await params;
 
-  const t = await getTranslations({ locale, namespace: "services.metadata" });
+  const t = await getTranslations({
+    locale: hasLocale(routing.locales, locale) ? locale : routing.defaultLocale,
+    namespace: "services.metadata",
+  });
 
   return {
     title: generateTitle(t("title")),

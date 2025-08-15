@@ -7,21 +7,21 @@ import jaimeMoralesHome from "@/assets/images/jaimemoralesdotes-home.png";
 import ProjectCard from "@/components/cards/ProjectCard";
 import TestimonialCard from "@/components/cards/TestimonialCard";
 import ContactSection from "@/components/sections/ContactSection";
-import { useTranslations } from "next-intl";
+import { hasLocale, useTranslations } from "next-intl";
 import { getTranslations } from "next-intl/server";
+import { routing } from "@/i18n/routing";
 
-export async function generateMetadata(
-  props: Omit<
-    {
-      children: React.ReactNode;
-      params: Promise<{ locale: string }>;
-    },
-    "children"
-  >,
-): Promise<Metadata> {
-  const { locale } = await props.params;
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: string };
+}): Promise<Metadata> {
+  const { locale } = await params;
 
-  const t = await getTranslations({ locale, namespace: "portfolio.metadata" });
+  const t = await getTranslations({
+    locale: hasLocale(routing.locales, locale) ? locale : routing.defaultLocale,
+    namespace: "portfolio.metadata",
+  });
 
   return {
     title: generateTitle(t("title")),

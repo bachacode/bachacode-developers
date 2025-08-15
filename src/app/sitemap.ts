@@ -1,12 +1,14 @@
-import { getPathname, Locale, routing } from "@/i18n/routing";
 import { MetadataRoute } from "next";
+import { Locale } from "next-intl";
+import { getPathname } from "@/i18n/navigation";
+import { routing } from "@/i18n/routing";
 
 type Href = Parameters<typeof getPathname>[0]["href"];
-const baseUrl = process.env.NEXT_PUBLIC_FRONTEND_URL ?? "https://bachacode.com";
+const host = process.env.NEXT_PUBLIC_FRONTEND_URL ?? "https://bachacode.com";
 
 function getUrl(href: Href, locale: Locale) {
   const pathname = getPathname({ locale, href });
-  return baseUrl + pathname;
+  return host + pathname;
 }
 
 function getEntries(href: Href): MetadataRoute.Sitemap {
@@ -17,9 +19,9 @@ function getEntries(href: Href): MetadataRoute.Sitemap {
         routing.locales.map((cur) => [cur, getUrl(href, cur)]),
       ),
     },
-    changeFrequency: "monthly", // Optional, adjust based on expected changes
+    changeFrequency: "monthly",
     lastModified: new Date().toISOString(),
-    priority: href === "/" ? 1.0 : 0.8, // Homepage gets higher priority
+    priority: href === "/" ? 1.0 : 0.8,
   }));
 }
 
