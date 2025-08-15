@@ -5,13 +5,16 @@ import { validateTurnstileToken } from "next-turnstile";
 import { v4 } from "uuid";
 import { getTranslations } from "next-intl/server";
 import { contactFormSchema } from "@/lib/schemas/contactFormSchema";
+import { hasLocale } from "next-intl";
+import { routing } from "@/i18n/routing";
 
 export async function POST(request: NextRequest) {
   const { turnstileToken, ...body } = await request.json();
   const result = contactFormSchema.safeParse(body);
   const locale = request.nextUrl.searchParams.get("locale") || "en";
+
   const t = await getTranslations({
-    locale,
+    locale: hasLocale(routing.locales, locale) ? locale : routing.defaultLocale,
     namespace: "contact.form_section.form",
   });
 

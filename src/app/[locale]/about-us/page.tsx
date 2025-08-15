@@ -21,13 +21,10 @@ import { routing } from "@/i18n/routing";
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
   const { locale } = await params;
 
-  if (!hasLocale(routing.locales, locale)) {
-    return {
-      title: "Bachacode Developers",
-      description: "Bachacode Developers"
-    }
-  }
-  const t = await getTranslations({ locale, namespace: "about_us.metadata" });
+  const t = await getTranslations({
+    locale: hasLocale(routing.locales, locale) ? locale : routing.defaultLocale,
+    namespace: "about_us.metadata"
+  });
 
   return {
     title: generateTitle(t("title")),
