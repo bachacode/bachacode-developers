@@ -48,6 +48,7 @@
     "zod": "^4.0.17"
   },
   "devDependencies": {
+    "@lingual/i18n-check": "^0.8.5",
     "@tailwindcss/postcss": "^4.0.12",
     "@types/lodash": "^4.17.16",
     "@types/node": "^22.0.0",
