@@ -88,7 +88,7 @@ export default function Home() {
           <div className="relative flex flex-col items-center lg:w-7/12 lg:items-start lg:pr-6">
             <h2
               id="about"
-              className="text-accent pb-4 text-center text-4xl font-bold lg:pb-0 lg:text-left"
+              className="pb-4 text-center text-4xl font-bold lg:pb-0 lg:text-left"
             >
               {t("about.title")}
             </h2>
