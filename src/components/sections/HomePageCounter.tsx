@@ -14,11 +14,11 @@ export default function HomePageCounter({
   experience,
 }: HomePageCounterProps) {
   return (
-    <div className="body-font bg-accent text-white">
-      <div className="container mx-auto px-5 py-12">
-        <div className="-m-4 flex w-full flex-wrap justify-center text-center">
+    <div className="bg-gradient-to-br from-primary/5 to-secondary/5 border-2 border-primary/20 text-foreground w-full">
+      <div className="container mx-auto px-5 py-6 flex justify-center">
+        <div className="flex w-3/4 flex-wrap justify-between text-center">
           <div className="w-1/2 p-4 sm:w-1/3">
-            <span className="title-font text-3xl font-medium text-white sm:text-4xl">
+            <span className="text-3xl font-medium sm:text-4xl text-primary">
               <CountUp
                 suffix=" +"
                 start={0}
@@ -33,7 +33,7 @@ export default function HomePageCounter({
             <p className="leading-relaxed">{projects}</p>
           </div>
           <div className="w-1/2 p-4 sm:w-1/3">
-            <span className="title-font text-3xl font-medium text-white sm:text-4xl">
+            <span className="text-3xl font-medium sm:text-4xl text-primary">
               <CountUp
                 suffix=" +"
                 start={0}
@@ -48,7 +48,7 @@ export default function HomePageCounter({
             <p className="leading-relaxed">{clients}</p>
           </div>
           <div className="w-1/2 p-4 sm:w-1/3">
-            <span className="title-font text-3xl font-medium text-white sm:text-4xl">
+            <span className="text-3xl font-medium sm:text-4xl text-primary">
               <CountUp
                 suffix=" +"
                 start={0}
