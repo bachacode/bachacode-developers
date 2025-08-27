@@ -39,24 +39,62 @@
       "experience": "Years of experience"
     },
     "services": {
-      "title": "what do we offer you?",
+      "title": "what do we <keyword>offer</keyword> you?",
       "subtitle": "Services accessible to all our customers",
       "cards": {
         "static": {
           "title": "Static Websites",
-          "body": "Custom website development with static content, ideal for small projects that do not require frequent updates, such as landing pages, portfolios or catalogs. These sites offer speed, security and efficiency for stable content."
+          "body": "Custom website development with static content, ideal for small projects that do not require frequent updates, such as landing pages, portfolios or catalogs. These sites offer speed, security and efficiency for stable content.",
+          "features": {
+            "affordable": "Affordable",
+            "lightning_fast": "Lightning Fast",
+            "short_delivery": "Short Delivery Time"
+          }
         },
         "wordpress": {
           "title": "WordPress Websites",
-          "body": "Website development with WordPress, providing full control of the content without the need to touch code. Ideal for medium-sized projects such as blogs, portfolios or corporate sites, offering flexibility, scalability and easy customization."
+          "body": "Website development with WordPress, providing full control of the content without the need to touch code. Ideal for medium-sized projects such as blogs, portfolios or corporate sites, offering flexibility, scalability and easy customization.",
+          "features": {
+            "custom_themes": "Custom Themes",
+            "custom_plugins": "Custom Plugins",
+            "seo_ready": "SEO Ready"
+          }
         },
         "web-apps": {
           "title": "Web Applications",
-          "body": "Custom web application development with advanced functionalities, such as online payment integration, personalized recommendation systems, live chat, real-time data analysis and content management. Perfect for medium to large projects, such as online stores, educational platforms, online booking systems, news portals, and business management systems (ERP, CRM)."
+          "body": "Custom web application development with advanced functionalities, such as online payment integration, personalized recommendation systems, live chat, real-time data analysis and content management. Perfect for medium to large projects, such as online stores, educational platforms, online booking systems, news portals, and business management systems (ERP, CRM).",
+          "features": {
+            "custom_features": "Custom Features",
+            "scalable": "Scalable",
+            "modern_tech": "Modern Tech"
+          }
+        },
+        "consulting": {
+          "title": "Web Consulting",
+          "body": "If you want to add new functionalities or update your current project, we'll take care of planning the entire process for you. From time estimation to budget creation, we'll offer solutions using the technologies we know best, guaranteeing an efficient development according to your needs.",
+          "features": {
+            "strategic": "Strategic",
+            "best_practices": "Best Practices",
+            "growth_focus": "Growth Focus"
+          }
         },
         "support": {
-          "title": "Consulting and Support",
-          "body": "If you already have a project that you want to update, add new functionalities or correct errors, we take care of planning the whole process for you. From time estimation to budget creation, we offer you solutions in the technologies we know best, guaranteeing an efficient development according to your needs."
+          "title": "Web Support",
+          "body": "When it comes to your existing project, we can help you with web support and correct any errors you find. We'll plan out the whole process, offering solutions in the technologies we know best to ensure the development is efficient and meets your specific needs.",
+          "features": {
+            "support_time": "24/7 Support",
+            "regular_updates": "Regular Updates",
+            "bug_fixes": "Bug Fixes"
+          }
+        },
+        "optimization": {
+          "title": "Website Optimization",
+          "body": "When it comes to your existing project, we can help you with web support and correct any errors you find. We'll plan out the whole process, offering solutions in the technologies we know best to ensure the development is efficient and meets your specific needs.",
+          "features": {
+            "speed_boost": "Speed Boost",
+            "seo_improvement": "SEO Improvement",
+            "user_experience": "User Experience"
+          }
         }
       }
     },

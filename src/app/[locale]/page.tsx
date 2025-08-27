@@ -1,13 +1,15 @@
 import Image from "next/image";
-import ServiceCard from "@/components/cards/ServiceCard";
+import ServiceCard, { Service } from "@/components/cards/ServiceCard";
 import TestimonialCard from "@/components/cards/TestimonialCard";
 import { faWordpress } from "@fortawesome/free-brands-svg-icons";
 import {
   faCode,
   faComments,
   faDollar,
+  faHeadphones,
   faMessage,
   faPuzzlePiece,
+  faRocket,
   faWind,
   faWindowRestore,
 } from "@fortawesome/free-solid-svg-icons";
@@ -26,6 +28,93 @@ import UnderlinedText from "@/components/common/UnderlinedText";
 
 export default function Home() {
   const t = useTranslations("home");
+
+  const services: Service[] = [
+    {
+      title: t("services.cards.static.title"),
+      description: t("services.cards.static.body"),
+      icon: faWindowRestore,
+      iconColor: "text-selective-yellow-secondary-600",
+      borderColor: "border-selective-yellow-secondary-600",
+      accent: "bg-primary",
+      color: "bg-selective-yellow-secondary-100",
+      features: [
+        t("services.cards.static.features.affordable"),
+        t("services.cards.static.features.lightning_fast"),
+        t("services.cards.static.features.short_delivery"),
+      ]
+    },
+    {
+      title: t("services.cards.wordpress.title"),
+      description: t("services.cards.wordpress.body"),
+      icon: faWordpress,
+      iconColor: "text-accent",
+      borderColor: "border-accent",
+      accent: "bg-secondary",
+      color: "bg-teal-blue-accent-100",
+      features: [
+        t("services.cards.wordpress.features.custom_plugins"),
+        t("services.cards.wordpress.features.custom_themes"),
+        t("services.cards.wordpress.features.seo_ready"),
+      ]
+    },
+    {
+      title: t("services.cards.web-apps.title"),
+      description: t("services.cards.web-apps.body"),
+      icon: faCode,
+      iconColor: "text-primary",
+      borderColor: "border-primary",
+      accent: "bg-accent",
+      color: "bg-orange-primary-100",
+      features: [
+        t("services.cards.web-apps.features.custom_features"),
+        t("services.cards.web-apps.features.modern_tech"),
+        t("services.cards.web-apps.features.scalable")
+      ]
+    },
+    {
+      title: t("services.cards.consulting.title"),
+      description: t("services.cards.consulting.body"),
+      icon: faMessage,
+      iconColor: "text-selective-yellow-secondary-600",
+      borderColor: "border-selective-yellow-secondary-600",
+      accent: "bg-primary",
+      color: "bg-selective-yellow-secondary-100",
+      features: [
+        t("services.cards.consulting.features.best_practices"),
+        t("services.cards.consulting.features.growth_focus"),
+        t("services.cards.consulting.features.strategic")
+      ]
+    },
+    {
+      title: t("services.cards.support.title"),
+      description: t("services.cards.support.body"),
+      icon: faHeadphones,
+      iconColor: "text-accent",
+      borderColor: "border-accent",
+      accent: "bg-secondary",
+      color: "bg-teal-blue-accent-100",
+      features: [
+        t("services.cards.support.features.bug_fixes"),
+        t("services.cards.support.features.regular_updates"),
+        t("services.cards.support.features.support_time")
+      ]
+    },
+    {
+      title: t("services.cards.optimization.title"),
+      description: t("services.cards.optimization.body"),
+      icon: faRocket,
+      iconColor: "text-primary",
+      borderColor: "border-primary",
+      accent: "bg-accent",
+      color: "bg-orange-primary-100",
+      features: [
+        t("services.cards.optimization.features.seo_improvement"),
+        t("services.cards.optimization.features.speed_boost"),
+        t("services.cards.optimization.features.user_experience")
+      ]
+    }
+  ]
 
   return (
     <main className="w-full">
@@ -125,42 +214,25 @@ export default function Home() {
       {/* Services section */}
       <PageSectionWrapper
         titleId="services"
-        titleName={t("services.title")}
+        titleName={t.rich("services.title", { keyword: (chunks) => <UnderlinedText>{chunks}</UnderlinedText> })}
         subtitle={t("services.subtitle")}
         altBackground
       >
         <div className="flex flex-col flex-wrap items-stretch lg:flex-row">
-          <ServiceCard
-            title={t("services.cards.static.title")}
-            icon={faWindowRestore}
-            iconColor="text-primary"
-          >
-            {t("services.cards.static.body")}
-          </ServiceCard>
-
-          <ServiceCard
-            title={t("services.cards.wordpress.title")}
-            icon={faWordpress}
-            iconColor="text-primary"
-          >
-            {t("services.cards.wordpress.body")}
-          </ServiceCard>
-
-          <ServiceCard
-            title={t("services.cards.web-apps.title")}
-            icon={faCode}
-            iconColor="text-primary"
-          >
-            {t("services.cards.web-apps.body")}
-          </ServiceCard>
-
-          <ServiceCard
-            title={t("services.cards.support.title")}
-            icon={faMessage}
-            iconColor="text-primary"
-          >
-            {t("services.cards.support.body")}
-          </ServiceCard>
+          {services.map((service, index) => (
+            <div
+              key={index}
+              className={`
+                w-full p-2 lg:w-1/2
+                ${index % 2 === 1 ? 'lg:mt-8' : ''} 
+              `}
+            >
+              <ServiceCard
+                index={index}
+                service={service}
+              />
+            </div>
+          ))}
         </div>
       </PageSectionWrapper>
 
