@@ -13,6 +13,7 @@ import {
   faReact,
   faVuejs,
   faWordpress,
+  faGolang,
 } from "@fortawesome/free-brands-svg-icons";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import Autoscroll from "embla-carousel-auto-scroll";
@@ -95,6 +96,11 @@ export default function TechCarousel({
           icon={faPhp}
           title="PHP"
           className="group-hover:text-indigo-500"
+        />
+        <TechCarouselItem
+          icon={faGolang}
+          title="Golang"
+          className="group-hover:text-teal-blue-accent-500"
         />
       </CarouselContent>
     </Carousel>
