@@ -24,9 +24,10 @@
   },
   "home": {
     "hero": {
-      "title": "Construye tu presencia en línea",
+      "title": "Construimos <websites>sitios web</websites> increibles para negocios pequeños",
       "subtitle": "con nosotros tu nuevo proyecto se hará realidad",
-      "button": "EMPIEZA TU PROYECTO"
+      "primary_button": "Comienza tu proyecto",
+      "secondary_button": "Mira nuestro trabajo"
     },
     "about": {
       "title": "Conectando el Futuro: Nuestra Historia en el Mundo de la Tecnología.",

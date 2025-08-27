@@ -1,4 +1,3 @@
-import NavButton from "@/components/common/NavButton";
 import Image from "next/image";
 import ServiceCard from "@/components/cards/ServiceCard";
 import TestimonialCard from "@/components/cards/TestimonialCard";
@@ -21,6 +20,9 @@ import HomePageCounter from "@/components/sections/HomePageCounter";
 import PageSectionWrapper from "@/components/layout/PageSectionWrapper";
 import ContactSection from "@/components/sections/ContactSection";
 import { useTranslations } from "next-intl";
+import { Button } from "@/components/ui/button";
+import { Link } from "@/i18n/navigation";
+import UnderlinedText from "@/components/common/UnderlinedText";
 
 export default function Home() {
   const t = useTranslations("home");
@@ -28,25 +30,55 @@ export default function Home() {
   return (
     <main className="w-full">
       {/* Hero section */}
-      <div className="bg-orange-primary-50 flex w-full flex-col items-center">
-        <div className="container flex min-h-screen flex-col items-center justify-center space-y-8">
+      <div className="flex w-full flex-col items-center">
+        <div className="container flex pt-28 flex-col items-center justify-center space-y-8 pb-8">
           {/* Title */}
           <div className="flex flex-col items-center text-center lg:w-1/2">
-            <h1
-              id="hero"
-              className="pb-3 text-6xl font-bold tracking-widest lg:text-6xl"
-            >
-              {t("hero.title")}
+            <h1 id="hero" className="text-4xl md:text-6xl font-bold text-balance mb-6 leading-tight">
+              {t.rich("hero.title", {
+                websites: (chunks) => (
+                  <UnderlinedText>
+                    {chunks}
+                  </UnderlinedText>
+                )
+              })}
             </h1>
-            <p className="text-xl font-extralight text-gray-600">
+            <p className="text-xl font-extralight text-muted-foreground">
               {t("hero.subtitle")}
             </p>
+
           </div>
 
           {/* Contact Button */}
-          <div>
-            <NavButton href="/contact"> {t("hero.button")}</NavButton>
+          <div className="flex space-x-3">
+            <Button size="lg" className="px-8 py-6 rounded-sm text-lg uppercase" asChild>
+              <Link href="/contact">{t("hero.primary_button")}</Link>
+            </Button>
+            <Button size="lg" variant="outline" className="rounded-sm px-8 py-6 bg-transparent uppercase text-lg" asChild>
+              <Link href="/portfolio">{t("hero.secondary_button")}</Link>
+            </Button>
           </div>
+        </div>
+
+
+        {/* Counter */}
+        <HomePageCounter
+          projects={t("counter.projects")}
+          clients={t("counter.clients")}
+          experience={t("counter.experience")}
+        />
+      </div>
+
+      {/* Floating Elements */}
+      <div className="relative mt-16">
+        <div className="animate-float">
+          <div className="w-16 h-16 bg-secondary rounded-full absolute top-10 left-1/4 opacity-40"></div>
+        </div>
+        <div className="animate-float" style={{ animationDelay: "1s" }}>
+          <div className="w-12 h-12 bg-accent rounded-full absolute top-20 right-1/3 opacity-35"></div>
+        </div>
+        <div className="animate-float" style={{ animationDelay: "2s" }}>
+          <div className="w-8 h-8 bg-primary rounded-full absolute top-5 right-1/4 opacity-20"></div>
         </div>
       </div>
 
@@ -90,12 +122,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Counter */}
-      <HomePageCounter
-        projects={t("counter.projects")}
-        clients={t("counter.clients")}
-        experience={t("counter.experience")}
-      />
       {/* Services section */}
       <PageSectionWrapper
         titleId="services"
