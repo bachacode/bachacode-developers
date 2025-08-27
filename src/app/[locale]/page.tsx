@@ -240,7 +240,7 @@ export default function Home() {
       <div className="flex w-full flex-col items-center bg-white py-12">
         <Heading
           id="tech"
-          title={t("technologies.title")}
+          title={t.rich("technologies.title", { keyword: (chunks) => <UnderlinedText>{chunks}</UnderlinedText> })}
           subtitle={t("technologies.subtitle")}
         />
 
