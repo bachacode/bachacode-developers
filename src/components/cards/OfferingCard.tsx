@@ -23,7 +23,7 @@ export default function OfferingCard({
         />
       </div>
       <div className="grow pl-6">
-        <h3 className="title-font mb-2 text-lg font-medium text-gray-900">
+        <h3 className="title-font mb-2 text-lg font-medium text-accent">
           {title}
         </h3>
         <p className="text-base leading-relaxed">{description}</p>
