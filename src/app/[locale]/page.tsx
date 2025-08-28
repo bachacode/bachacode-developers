@@ -237,7 +237,7 @@ export default function Home() {
       </PageSectionWrapper>
 
       {/* Tech Stack */}
-      <div className="flex w-full flex-col items-center bg-white py-12">
+      <div className="flex w-full flex-col items-center py-12">
         <Heading
           id="tech"
           title={t.rich("technologies.title", { keyword: (chunks) => <UnderlinedText>{chunks}</UnderlinedText> })}
