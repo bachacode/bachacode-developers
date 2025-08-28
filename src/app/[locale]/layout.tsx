@@ -53,7 +53,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
-      <body className={`${roboto.className} bg-background`}>
+      <body className={`${roboto.className} bg-background/10`}>
         <NextIntlClientProvider>
           <ProgressBarProvider>
             <div className="flex min-h-screen w-full flex-col items-center">
