@@ -257,7 +257,7 @@ export default function Home() {
       {/* Our clients */}
       <PageSectionWrapper
         titleId="clients"
-        titleName={t("clients.title")}
+        titleName={t.rich("clients.title", { keyword: (chunks) => <UnderlinedText>{chunks}</UnderlinedText> })}
         subtitle={t("clients.subtitle")}
         altBackground
       >
