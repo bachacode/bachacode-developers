@@ -139,7 +139,7 @@ export default function Home() {
           </div>
 
           {/* Contact Button */}
-          <div className="flex space-x-3">
+          <div className="flex flex-col md:flex-row gap-3">
             <Button size="lg" className="px-8 py-6 rounded-sm text-lg uppercase" asChild>
               <Link href="/contact">{t("hero.primary_button")}</Link>
             </Button>
