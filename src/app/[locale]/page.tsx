@@ -279,7 +279,7 @@ export default function Home() {
       {/* Our team */}
       <PageSectionWrapper
         titleId="team"
-        titleName={t("team.title")}
+        titleName={t.rich("team.title", { keyword: (chunks) => <UnderlinedText>{chunks}</UnderlinedText> })}
         subtitle={t("team.subtitle")}
       >
         <div className="-mx-4 -mt-4 -mb-10 flex flex-wrap space-y-6 pb-16 sm:-m-4 md:space-y-0">
@@ -318,7 +318,7 @@ export default function Home() {
             </h3>
           </div>
 
-          <div className="flex w-9/12 flex-col">
+          <div className="flex w-9/12 flex-col space-y-4">
             <TeamCard
               memberName={t("team.members.cristhian.name")}
               profession={t("team.members.cristhian.occupation")}

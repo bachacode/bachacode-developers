@@ -119,7 +119,7 @@
       }
     },
     "team": {
-      "title": "Nosotros garantizamos",
+      "title": "Nosotros <keyword>garantizamos</keyword>",
       "subtitle": "Lo que obtendrás trabajando con nosotros",
       "cards": {
         "development": {
