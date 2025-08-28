@@ -8,8 +8,9 @@ export default function ContactSection() {
   const t = useTranslations("contact_section");
   return (
     <div className="bg-orange-primary-50 flex w-full justify-center py-6 md:py-20 border-y border-primary">
-      <div className="flex w-3/4 flex-col items-center space-y-6 text-2xl text-balance md:w-1/3 md:items-start">
-        <p className="font-semi-bold">
+      <div className="flex container px-12 mx-auto max-w-3xl flex-col items-center space-y-6 text-2xl text-pretty md:items-start">
+
+        <p className="font-semi-bold text-center md:text-start">
           {t.rich("body", { keyword: (chunks) => <UnderlinedText>{chunks}</UnderlinedText> })}
         </p>
 
