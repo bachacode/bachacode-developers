@@ -7,10 +7,24 @@ import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 import BachacodeMiniLogo from "@/assets/images/bachacode-mini.png";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { useTranslations } from "next-intl";
+import { Pathname } from "@/i18n/routing";
+import { Button } from "../ui/button";
+
+interface FooterLink {
+  href: Pathname;
+  label: string;
+}
 
 export default function MainFooter() {
   const t = useTranslations("footer");
   const tNavigation = useTranslations("navigation");
+
+  const discoverLinks: FooterLink[] = [
+    { href: "/", label: tNavigation("home") },
+    { href: "/about-us", label: tNavigation("about_us") },
+    { href: "/services", label: tNavigation("services") },
+    { href: "/portfolio", label: tNavigation("portfolio") },
+  ];
 
   return (
     <footer className="flex w-full justify-center bg-white">
@@ -30,53 +44,30 @@ export default function MainFooter() {
           <div className="flex flex-col items-center gap-8 px-6 md:grid md:grid-cols-2 md:px-0">
             {/* Main Links */}
             <div className="text-center md:text-left">
-              <h3 className="pb-3 font-semibold text-gray-900 uppercase">
-                {t("discover")}
-              </h3>
-              <ul className="space-y-2 font-medium text-gray-500">
-                <li>
-                  <Link href="/" className="transition-colors hover:text-black">
-                    {tNavigation("home")}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/about-us"
-                    className="transition-colors hover:text-black"
-                  >
-                    {tNavigation("about_us")}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/services"
-                    className="transition-colors hover:text-black"
-                  >
-                    {tNavigation("services")}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/portfolio"
-                    className="transition-colors hover:text-black"
-                  >
-                    {tNavigation("portfolio")}
-                  </Link>
-                </li>
+              <h3 className="pb-3 font-semibold uppercase">{t("discover")}</h3>
+              <ul className="text-muted-foreground space-y-2 font-medium">
+                {discoverLinks.map((link, index) => (
+                  <li key={index}>
+                    <Link
+                      href={link.href}
+                      className="hover:text-primary transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
 
             {/* Contact info */}
             <div className="text-center md:text-left">
-              <h3 className="pb-3 font-semibold text-gray-900 uppercase">
-                {t("contact")}
-              </h3>
-              <ul className="space-y-2 font-medium text-gray-500">
+              <h3 className="pb-3 font-semibold uppercase">{t("contact")}</h3>
+              <ul className="text-muted-foreground space-y-2 font-medium">
                 <li>
                   <a
                     target="_blank"
                     href="mailto:support@bachacode.com"
-                    className="flex items-center space-x-2 transition-colors hover:text-black"
+                    className="hover:text-primary flex items-center space-x-2 transition-colors"
                   >
                     <FontAwesomeIcon
                       icon={faEnvelope}
@@ -89,7 +80,7 @@ export default function MainFooter() {
                 <li>
                   <a
                     href="tel:+584121163349"
-                    className="flex items-center space-x-2 transition-colors hover:text-black"
+                    className="hover:text-primary flex items-center space-x-2 transition-colors"
                   >
                     <FontAwesomeIcon
                       icon={faPhone}
@@ -100,12 +91,13 @@ export default function MainFooter() {
                 </li>
 
                 <li className="py-3">
-                  <Link
-                    href="/contact"
-                    className={`rounded-md border-2 border-gray-500 px-6 py-3 font-semibold text-gray-500 uppercase transition-colors hover:border-black hover:text-black`}
+                  <Button
+                    size="lg"
+                    className="rounded px-6 py-3 uppercase"
+                    asChild
                   >
-                    {t("contact_us")}
-                  </Link>
+                    <Link href="/contact">{t("contact_us")}</Link>
+                  </Button>
                 </li>
               </ul>
             </div>
@@ -135,14 +127,13 @@ export default function MainFooter() {
             <a
               target="_blank"
               href="https://www.linkedin.com/company/bachacode-developers/"
-              className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+              className="text-muted-foreground hover:text-primary transition-colors"
             >
               <FontAwesomeIcon
                 icon={faLinkedin}
                 className="text-3xl"
               ></FontAwesomeIcon>
-
-              <span className="sr-only">LinkedIn Page</span>
+              <span className="sr-only">LinkedIn</span>
             </a>
           </div>
         </div>

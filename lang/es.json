@@ -24,9 +24,10 @@
   },
   "home": {
     "hero": {
-      "title": "Construye tu presencia en línea",
+      "title": "Construimos <websites>sitios web</websites> increibles para negocios pequeños",
       "subtitle": "con nosotros tu nuevo proyecto se hará realidad",
-      "button": "EMPIEZA TU PROYECTO"
+      "primary_button": "Comienza tu proyecto",
+      "secondary_button": "Mira nuestro trabajo"
     },
     "about": {
       "title": "Conectando el Futuro: Nuestra Historia en el Mundo de la Tecnología.",
@@ -38,33 +39,71 @@
       "experience": "Años de experiencía"
     },
     "services": {
-      "title": "¿Qué te ofrecemos?",
+      "title": "¿Qué te <keyword>ofrecemos</keyword>?",
       "subtitle": "Los servicios accessibles a todos nuestros clientes",
       "cards": {
         "static": {
-          "title": "Sitios Web Estaticos",
-          "body": "Desarrollo de sitios web personalizados con contenido estático, ideal para proyectos pequeños que no requieren actualizaciones frecuentes, como landing pages, portafolios o catálogos. Estos sitios ofrecen rapidez, seguridad y eficiencia para contenido estable."
+          "title": "Sitios Web Estáticos",
+          "body": "Desarrollo de sitios web a medida con contenido estático, ideal para proyectos pequeños que no requieren actualizaciones frecuentes, como landing pages, portafolios o catálogos. Estos sitios ofrecen velocidad, seguridad y eficiencia para contenido estable.",
+          "features": {
+            "affordable": "Asequible",
+            "lightning_fast": "Extremadamente Rápido",
+            "short_delivery": "Tiempo de Entrega Corto"
+          }
         },
         "wordpress": {
-          "title": "Sitios WordPress",
-          "body": "Desarrollo de sitios web con WordPress, brindando control total del contenido sin necesidad de tocar código. Ideal para proyectos medianos como blogs, portafolios o sitios corporativos, ofreciendo flexibilidad, escalabilidad y fácil personalización."
+          "title": "Sitios Web con WordPress",
+          "body": "Desarrollo de sitios web con WordPress, brindando control total del contenido sin necesidad de tocar código. Ideal para proyectos medianos como blogs, portafolios o sitios corporativos, ofreciendo flexibilidad, escalabilidad y fácil personalización.",
+          "features": {
+            "custom_themes": "Temas Personalizados",
+            "custom_plugins": "Plugins Personalizados",
+            "seo_ready": "Optimizado para SEO"
+          }
         },
         "web-apps": {
           "title": "Aplicaciones Web",
-          "body": "Desarrollo de aplicaciones web a medida con funcionalidades avanzadas, como integración de pagos en línea, sistemas de recomendación personalizados, chat en vivo, análisis de datos en tiempo real y gestión de contenido. Perfecto para proyectos medianos y grandes, como tiendas en línea, plataformas educativas, sistemas de reservas en línea, portales de noticias, y sistemas de gestión empresarial (ERP, CRM)."
+          "body": "Desarrollo de aplicaciones web a medida con funcionalidades avanzadas, como integración de pagos en línea, sistemas de recomendación personalizados, chat en vivo, análisis de datos en tiempo real y gestión de contenido. Perfecto para proyectos medianos y grandes, como tiendas en línea, plataformas educativas, sistemas de reserva en línea, portales de noticias y sistemas de gestión empresarial (ERP, CRM).",
+          "features": {
+            "custom_features": "Funcionalidades Personalizadas",
+            "scalable": "Escalable",
+            "modern_tech": "Tecnología Moderna"
+          }
+        },
+        "consulting": {
+          "title": "Consultoría Web",
+          "body": "Si quieres agregar nuevas funcionalidades o actualizar tu proyecto actual, nos encargamos de planificar todo el proceso por ti. Desde la estimación de tiempo hasta la creación del presupuesto, te ofreceremos soluciones utilizando las tecnologías que mejor conocemos, garantizando un desarrollo eficiente según tus necesidades.",
+          "features": {
+            "strategic": "Estratégico",
+            "best_practices": "Mejores Prácticas",
+            "growth_focus": "Enfoque en el Crecimiento"
+          }
         },
         "support": {
-          "title": "Consultoría y Soporte",
-          "body": "Si ya tienes un proyecto que deseas actualizar, agregar nuevas funcionalidades o corregir errores, nosotros nos encargamos de planificar todo el proceso por ti. Desde la estimación de tiempos hasta la creación de presupuestos, te ofrecemos soluciones en las tecnologías que mejor dominamos, garantizando un desarrollo eficiente y acorde a tus necesidades."
+          "title": "Soporte Web",
+          "body": "Cuando se trata de tu proyecto existente, podemos ayudarte con el soporte web y corregir cualquier error que encuentres. Planificaremos todo el proceso, ofreciendo soluciones en las tecnologías que mejor conocemos para garantizar que el desarrollo sea eficiente y satisfaga tus necesidades específicas.",
+          "features": {
+            "support_time": "Soporte 24/7",
+            "regular_updates": "Actualizaciones Regulares",
+            "bug_fixes": "Corrección de Errores"
+          }
+        },
+        "optimization": {
+          "title": "Optimización de Sitios Web",
+          "body": "Cuando se trata de tu proyecto existente, podemos ayudarte con el soporte web y corregir cualquier error que encuentres. Planificaremos todo el proceso, ofreciendo soluciones en las tecnologías que mejor conocemos para garantizar que el desarrollo sea eficiente y satisfaga tus necesidades específicas.",
+          "features": {
+            "speed_boost": "Aumento de Velocidad",
+            "seo_improvement": "Mejora de SEO",
+            "user_experience": "Experiencia de Usuario"
+          }
         }
       }
     },
     "technologies": {
-      "title": "Nuestras tecnologías",
+      "title": "Nuestras <keyword>tecnologías</keyword>",
       "subtitle": "Somos expertos en la tecnología mas vanguardista del desarrollo web"
     },
     "clients": {
-      "title": "Nuestros Clientes",
+      "title": "Nuestros <keyword>Clientes</keyword>",
       "subtitle": "Los que han depositado su confianza en nosotros",
       "testimonies": {
         "tailor": {
@@ -80,7 +119,7 @@
       }
     },
     "team": {
-      "title": "Nosotros garantizamos",
+      "title": "Nosotros <keyword>garantizamos</keyword>",
       "subtitle": "Lo que obtendrás trabajando con nosotros",
       "cards": {
         "development": {
@@ -155,7 +194,10 @@
           "name": "Josibel Farías",
           "occupation": "Diseñadora UX/UI",
           "body": "Especializada en la creación de experiencias de usuario intuitivas y atractivas, con un enfoque en el diseño visual y la usabilidad para garantizar interfaces eficientes y agradables."
-        }
+        },
+        "linkedin": "Perfil de LinkedIn de {name}",
+        "github": "Perfil de Github de {name}",
+        "not_available": "No disponible"
       }
     }
   },
@@ -351,8 +393,7 @@
     }
   },
   "contact_section": {
-    "body": "Creemos en hacer posible cualquier proyecto que nuestros clientes tengan en mente, ¿estás interesado en construir tu presencia en línea?",
-    "highlight": "Trabaja con nosotros.",
+    "body": "Creemos en hacer posible cualquier proyecto que nuestros clientes tengan en mente, ¿estás interesado en construir tu presencia en línea? <keyword>Trabaja con nosotros.</keyword>",
     "button": "Contáctanos"
   },
   "project_card": {

@@ -3,7 +3,7 @@ import Heading from "../common/Heading";
 
 interface PageSectionWrapperProps {
   titleId: string;
-  titleName: string;
+  titleName: string | React.ReactNode;
   subtitle: string;
   altBackground?: boolean;
   fullWidth?: boolean;
@@ -21,7 +21,7 @@ export default function PageSectionWrapper({
   return (
     <div
       className={`flex w-full justify-center ${
-        altBackground ? "bg-orange-primary-50" : "bg-white"
+        altBackground ? "bg-orange-primary-50" : ""
       }`}
     >
       <div

@@ -2,7 +2,7 @@ import React from "react";
 import PageSectionWrapper from "@/components/layout/PageSectionWrapper";
 import Image from "next/image";
 import ncWomanTypingOnMachine from "@/assets/images/nc-woman-typing-on-machine.png";
-import ServiceCard from "@/components/cards/ServiceCard";
+import ServiceCard, { Service } from "@/components/cards/ServiceCard";
 import {
   faLightbulb,
   faCheckCircle,
@@ -37,6 +37,36 @@ export async function generateMetadata({
 
 export default function SobreNosotros() {
   const t = useTranslations("about_us");
+
+  const services: Service[] = [
+    {
+      title: t("our_values.cards.innovation.title"),
+      description: t("our_values.cards.innovation.description"),
+      icon: faLightbulb,
+      iconColor: "text-selective-yellow-secondary-600",
+      borderColor: "border-selective-yellow-secondary-600",
+      accent: "bg-primary",
+      color: "bg-selective-yellow-secondary-100",
+    },
+    {
+      title: t("our_values.cards.quality.title"),
+      description: t("our_values.cards.quality.description"),
+      icon: faCheckCircle,
+      iconColor: "text-accent",
+      borderColor: "border-accent",
+      accent: "bg-secondary",
+      color: "bg-teal-blue-accent-100",
+    },
+    {
+      title: t("our_values.cards.commitment.title"),
+      description: t("our_values.cards.commitment.description"),
+      icon: faHandshake,
+      iconColor: "text-primary",
+      borderColor: "border-primary",
+      accent: "bg-accent",
+      color: "bg-orange-primary-100",
+    },
+  ];
 
   return (
     <main className="w-full">
@@ -75,28 +105,10 @@ export default function SobreNosotros() {
         subtitle={t("our_values.subtitle")}
         altBackground
       >
-        <div className="flex flex-col md:flex-row md:space-x-8">
-          <ServiceCard
-            icon={faLightbulb}
-            title={t("our_values.cards.innovation.title")}
-            iconColor="text-yellow-500"
-          >
-            {t("our_values.cards.innovation.description")}
-          </ServiceCard>
-          <ServiceCard
-            icon={faCheckCircle}
-            title={t("our_values.cards.quality.title")}
-            iconColor="text-green-500"
-          >
-            {t("our_values.cards.quality.description")}
-          </ServiceCard>
-          <ServiceCard
-            icon={faHandshake}
-            title={t("our_values.cards.commitment.title")}
-            iconColor="text-blue-500"
-          >
-            {t("our_values.cards.commitment.description")}
-          </ServiceCard>
+        <div className="grid w-full grid-cols-1 gap-6 md:grid-cols-3">
+          {services.map((service, index) => (
+            <ServiceCard key={index} index={index} service={service} />
+          ))}
         </div>
       </PageSectionWrapper>
 

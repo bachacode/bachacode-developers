@@ -46,13 +46,13 @@ export default function LanguageSwitcher({
           className="text-xs"
         ></FontAwesomeIcon>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="bg-background">
+      <DropdownMenuContent>
         {locales.map((locale) => (
           <DropdownMenuCheckboxItem
             key={locale.locale}
             checked={currentLocale == locale.locale}
             disabled={currentLocale == locale.locale}
-            className="cursor-pointer focus:bg-gray-200"
+            className="cursor-pointer"
             onClick={() => {
               changeLanguage(locale.locale);
             }}

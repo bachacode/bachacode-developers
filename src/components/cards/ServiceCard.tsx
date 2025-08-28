@@ -1,33 +1,81 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "../ui/card";
+import { Badge } from "../ui/badge";
+
+export type Service = {
+  accent: string;
+  color: string;
+  icon: IconProp;
+  iconColor: string;
+  borderColor: string;
+  title: string;
+  description: string;
+  features?: string[];
+};
 
 interface ServiceCardProps {
-  icon: IconProp;
-  title: string;
-  children: React.ReactNode;
-  iconColor: string;
+  index: React.Key;
+  service: Service;
 }
 
-export default function ServiceCard({
-  icon,
-  title,
-  children,
-  iconColor,
-}: ServiceCardProps) {
+export default function ServiceCard({ index, service }: ServiceCardProps) {
   return (
-    <div className="group flex w-full p-4 transition-transform delay-75 duration-200 hover:-translate-y-3 lg:w-1/2">
-      <div className="border-accent flex grow flex-col rounded-lg border bg-white p-6 shadow-md transition-shadow delay-75 duration-200 group-hover:shadow-xl">
-        <FontAwesomeIcon
-          icon={icon}
-          fixedWidth
-          className={`pb-3 text-4xl ${iconColor}`}
-        />
-        <h3 className="title-font mb-2 text-lg font-medium text-gray-900">
-          {title}
-        </h3>
-        <p className="grow text-base leading-relaxed">{children}</p>
-      </div>
-    </div>
+    <Card
+      key={index}
+      className="group from-background to-muted/30 relative overflow-hidden rounded bg-gradient-to-br shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
+    >
+      {/* Decorative corner element */}
+      <div
+        className={`absolute top-0 right-0 h-20 w-20 ${service.accent} rounded-bl-3xl opacity-50`}
+      ></div>
+
+      <CardHeader className="relative z-10 pt-8 pb-6 text-center">
+        <div
+          className={`h-20 w-20 rounded-2xl border-2 ${service.borderColor} ${service.color} mx-auto mb-6 flex items-center justify-center text-3xl text-white shadow-lg transition-transform duration-300 group-hover:scale-110`}
+        >
+          <FontAwesomeIcon
+            icon={service.icon}
+            fixedWidth
+            className={`text-4xl ${service.iconColor}`}
+          />
+        </div>
+        <CardTitle className="group-hover:text-primary mb-3 text-2xl font-bold text-balance transition-colors">
+          <h3>{service.title}</h3>
+        </CardTitle>
+        <CardDescription className="text-muted-foreground text-base leading-relaxed">
+          {service.description}
+        </CardDescription>
+      </CardHeader>
+
+      <CardContent className="px-6 pb-8">
+        {/* Feature tags */}
+        <div className="mb-6 flex flex-wrap justify-center gap-2">
+          {service.features &&
+            service.features.map((feature, featureIndex) => (
+              <Badge key={featureIndex} variant="outline">
+                {feature}
+              </Badge>
+            ))}
+        </div>
+
+        {/* Call to action */}
+        {/* <div className="text-center">
+          <Button
+            variant="ghost"
+            className="rounded-full px-6 py-2 text-sm font-medium hover:bg-primary hover:text-primary-foreground transition-all group-hover:bg-primary/10"
+          >
+            Learn More →
+          </Button>
+        </div> */}
+      </CardContent>
+    </Card>
   );
 }

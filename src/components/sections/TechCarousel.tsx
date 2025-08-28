@@ -13,6 +13,7 @@ import {
   faReact,
   faVuejs,
   faWordpress,
+  faGolang,
 } from "@fortawesome/free-brands-svg-icons";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import Autoscroll from "embla-carousel-auto-scroll";
@@ -26,10 +27,10 @@ function TechCarouselItem({
     <CarouselItem className="group flex basis-1/2 flex-col items-center sm:basis-1/3 md:basis-1/4 lg:basis-1/5">
       <FontAwesomeIcon
         fixedWidth
-        className={`py-1.5 text-8xl text-gray-500 transition-all duration-300 group-hover:scale-105 ${className}`}
+        className={`text-muted-foreground py-1.5 text-8xl transition-all duration-300 group-hover:scale-105 ${className}`}
         icon={icon}
       />
-      <span className="group-hover:text-accent text-gray-500 transition-all duration-300 group-hover:scale-105">
+      <span className="group-hover:text-foreground text-muted-foreground transition-all duration-300 group-hover:scale-105">
         {title}
       </span>
     </CarouselItem>
@@ -95,6 +96,11 @@ export default function TechCarousel({
           icon={faPhp}
           title="PHP"
           className="group-hover:text-indigo-500"
+        />
+        <TechCarouselItem
+          icon={faGolang}
+          title="Golang"
+          className="group-hover:text-teal-blue-accent-500"
         />
       </CarouselContent>
     </Carousel>

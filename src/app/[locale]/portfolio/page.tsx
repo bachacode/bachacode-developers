@@ -82,7 +82,7 @@ export default function Portafolio() {
         titleName={t("clients.title")}
         subtitle={t("clients.subtitle")}
       >
-        <div className="container flex w-full flex-wrap">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           <TestimonialCard
             name={t("clients.testimonies.tailor.name")}
             profession={t("clients.testimonies.tailor.occupation")}

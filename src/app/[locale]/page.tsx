@@ -1,14 +1,15 @@
-import NavButton from "@/components/common/NavButton";
 import Image from "next/image";
-import ServiceCard from "@/components/cards/ServiceCard";
+import ServiceCard, { Service } from "@/components/cards/ServiceCard";
 import TestimonialCard from "@/components/cards/TestimonialCard";
 import { faWordpress } from "@fortawesome/free-brands-svg-icons";
 import {
   faCode,
   faComments,
   faDollar,
+  faHeadphones,
   faMessage,
   faPuzzlePiece,
+  faRocket,
   faWind,
   faWindowRestore,
 } from "@fortawesome/free-solid-svg-icons";
@@ -21,32 +22,158 @@ import HomePageCounter from "@/components/sections/HomePageCounter";
 import PageSectionWrapper from "@/components/layout/PageSectionWrapper";
 import ContactSection from "@/components/sections/ContactSection";
 import { useTranslations } from "next-intl";
+import { Button } from "@/components/ui/button";
+import { Link } from "@/i18n/navigation";
+import UnderlinedText from "@/components/common/UnderlinedText";
 
 export default function Home() {
   const t = useTranslations("home");
 
+  const services: Service[] = [
+    {
+      title: t("services.cards.static.title"),
+      description: t("services.cards.static.body"),
+      icon: faWindowRestore,
+      iconColor: "text-selective-yellow-secondary-600",
+      borderColor: "border-selective-yellow-secondary-600",
+      accent: "bg-primary",
+      color: "bg-selective-yellow-secondary-100",
+      features: [
+        t("services.cards.static.features.affordable"),
+        t("services.cards.static.features.lightning_fast"),
+        t("services.cards.static.features.short_delivery"),
+      ],
+    },
+    {
+      title: t("services.cards.wordpress.title"),
+      description: t("services.cards.wordpress.body"),
+      icon: faWordpress,
+      iconColor: "text-accent",
+      borderColor: "border-accent",
+      accent: "bg-secondary",
+      color: "bg-teal-blue-accent-100",
+      features: [
+        t("services.cards.wordpress.features.custom_plugins"),
+        t("services.cards.wordpress.features.custom_themes"),
+        t("services.cards.wordpress.features.seo_ready"),
+      ],
+    },
+    {
+      title: t("services.cards.web-apps.title"),
+      description: t("services.cards.web-apps.body"),
+      icon: faCode,
+      iconColor: "text-primary",
+      borderColor: "border-primary",
+      accent: "bg-accent",
+      color: "bg-orange-primary-100",
+      features: [
+        t("services.cards.web-apps.features.custom_features"),
+        t("services.cards.web-apps.features.modern_tech"),
+        t("services.cards.web-apps.features.scalable"),
+      ],
+    },
+    {
+      title: t("services.cards.consulting.title"),
+      description: t("services.cards.consulting.body"),
+      icon: faMessage,
+      iconColor: "text-selective-yellow-secondary-600",
+      borderColor: "border-selective-yellow-secondary-600",
+      accent: "bg-primary",
+      color: "bg-selective-yellow-secondary-100",
+      features: [
+        t("services.cards.consulting.features.best_practices"),
+        t("services.cards.consulting.features.growth_focus"),
+        t("services.cards.consulting.features.strategic"),
+      ],
+    },
+    {
+      title: t("services.cards.support.title"),
+      description: t("services.cards.support.body"),
+      icon: faHeadphones,
+      iconColor: "text-accent",
+      borderColor: "border-accent",
+      accent: "bg-secondary",
+      color: "bg-teal-blue-accent-100",
+      features: [
+        t("services.cards.support.features.bug_fixes"),
+        t("services.cards.support.features.regular_updates"),
+        t("services.cards.support.features.support_time"),
+      ],
+    },
+    {
+      title: t("services.cards.optimization.title"),
+      description: t("services.cards.optimization.body"),
+      icon: faRocket,
+      iconColor: "text-primary",
+      borderColor: "border-primary",
+      accent: "bg-accent",
+      color: "bg-orange-primary-100",
+      features: [
+        t("services.cards.optimization.features.seo_improvement"),
+        t("services.cards.optimization.features.speed_boost"),
+        t("services.cards.optimization.features.user_experience"),
+      ],
+    },
+  ];
+
   return (
     <main className="w-full">
       {/* Hero section */}
-      <div className="bg-orange-primary-50 flex w-full flex-col items-center">
-        <div className="container flex min-h-screen flex-col items-center justify-center space-y-8">
+      <div className="flex w-full flex-col items-center">
+        <div className="container flex flex-col items-center justify-center space-y-8 pt-28 pb-8">
           {/* Title */}
           <div className="flex flex-col items-center text-center lg:w-1/2">
             <h1
               id="hero"
-              className="pb-3 text-6xl font-bold tracking-widest lg:text-6xl"
+              className="mb-6 text-4xl leading-tight font-bold text-balance md:text-6xl"
             >
-              {t("hero.title")}
+              {t.rich("hero.title", {
+                websites: (chunks) => <UnderlinedText>{chunks}</UnderlinedText>,
+              })}
             </h1>
-            <p className="text-xl font-extralight text-gray-600">
+            <p className="text-muted-foreground text-xl font-extralight">
               {t("hero.subtitle")}
             </p>
           </div>
 
           {/* Contact Button */}
-          <div>
-            <NavButton href="/contact"> {t("hero.button")}</NavButton>
+          <div className="flex flex-col gap-3 md:flex-row">
+            <Button
+              size="lg"
+              className="rounded-sm px-8 py-6 text-lg uppercase"
+              asChild
+            >
+              <Link href="/contact">{t("hero.primary_button")}</Link>
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="rounded-sm bg-transparent px-8 py-6 text-lg uppercase"
+              asChild
+            >
+              <Link href="/portfolio">{t("hero.secondary_button")}</Link>
+            </Button>
           </div>
+        </div>
+
+        {/* Counter */}
+        <HomePageCounter
+          projects={t("counter.projects")}
+          clients={t("counter.clients")}
+          experience={t("counter.experience")}
+        />
+      </div>
+
+      {/* Floating Elements */}
+      <div className="relative mt-16">
+        <div className="animate-float">
+          <div className="bg-secondary absolute top-10 left-1/4 h-16 w-16 rounded-full opacity-40"></div>
+        </div>
+        <div className="animate-float" style={{ animationDelay: "1s" }}>
+          <div className="bg-accent absolute top-20 right-1/3 h-12 w-12 rounded-full opacity-35"></div>
+        </div>
+        <div className="animate-float" style={{ animationDelay: "2s" }}>
+          <div className="bg-primary absolute top-5 right-1/4 h-8 w-8 rounded-full opacity-20"></div>
         </div>
       </div>
 
@@ -56,7 +183,7 @@ export default function Home() {
           <div className="relative flex flex-col items-center lg:w-7/12 lg:items-start lg:pr-6">
             <h2
               id="about"
-              className="text-accent pb-4 text-center text-4xl font-bold lg:pb-0 lg:text-left"
+              className="pb-4 text-center text-4xl font-bold lg:pb-0 lg:text-left"
             >
               {t("about.title")}
             </h2>
@@ -90,59 +217,34 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Counter */}
-      <HomePageCounter
-        projects={t("counter.projects")}
-        clients={t("counter.clients")}
-        experience={t("counter.experience")}
-      />
       {/* Services section */}
       <PageSectionWrapper
         titleId="services"
-        titleName={t("services.title")}
+        titleName={t.rich("services.title", {
+          keyword: (chunks) => <UnderlinedText>{chunks}</UnderlinedText>,
+        })}
         subtitle={t("services.subtitle")}
         altBackground
       >
         <div className="flex flex-col flex-wrap items-stretch lg:flex-row">
-          <ServiceCard
-            title={t("services.cards.static.title")}
-            icon={faWindowRestore}
-            iconColor="text-primary"
-          >
-            {t("services.cards.static.body")}
-          </ServiceCard>
-
-          <ServiceCard
-            title={t("services.cards.wordpress.title")}
-            icon={faWordpress}
-            iconColor="text-primary"
-          >
-            {t("services.cards.wordpress.body")}
-          </ServiceCard>
-
-          <ServiceCard
-            title={t("services.cards.web-apps.title")}
-            icon={faCode}
-            iconColor="text-primary"
-          >
-            {t("services.cards.web-apps.body")}
-          </ServiceCard>
-
-          <ServiceCard
-            title={t("services.cards.support.title")}
-            icon={faMessage}
-            iconColor="text-primary"
-          >
-            {t("services.cards.support.body")}
-          </ServiceCard>
+          {services.map((service, index) => (
+            <div
+              key={index}
+              className={`w-full p-2 lg:w-1/2 ${index % 2 === 1 ? "lg:mt-8" : ""} `}
+            >
+              <ServiceCard index={index} service={service} />
+            </div>
+          ))}
         </div>
       </PageSectionWrapper>
 
       {/* Tech Stack */}
-      <div className="flex w-full flex-col items-center bg-white py-12">
+      <div className="flex w-full flex-col items-center py-12">
         <Heading
           id="tech"
-          title={t("technologies.title")}
+          title={t.rich("technologies.title", {
+            keyword: (chunks) => <UnderlinedText>{chunks}</UnderlinedText>,
+          })}
           subtitle={t("technologies.subtitle")}
         />
 
@@ -159,11 +261,13 @@ export default function Home() {
       {/* Our clients */}
       <PageSectionWrapper
         titleId="clients"
-        titleName={t("clients.title")}
+        titleName={t.rich("clients.title", {
+          keyword: (chunks) => <UnderlinedText>{chunks}</UnderlinedText>,
+        })}
         subtitle={t("clients.subtitle")}
         altBackground
       >
-        <div className="flex w-full flex-wrap">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           <TestimonialCard
             name={t("clients.testimonies.tailor.name")}
             profession={t("clients.testimonies.tailor.occupation")}
@@ -181,7 +285,9 @@ export default function Home() {
       {/* Our team */}
       <PageSectionWrapper
         titleId="team"
-        titleName={t("team.title")}
+        titleName={t.rich("team.title", {
+          keyword: (chunks) => <UnderlinedText>{chunks}</UnderlinedText>,
+        })}
         subtitle={t("team.subtitle")}
       >
         <div className="-mx-4 -mt-4 -mb-10 flex flex-wrap space-y-6 pb-16 sm:-m-4 md:space-y-0">
@@ -220,7 +326,7 @@ export default function Home() {
             </h3>
           </div>
 
-          <div className="flex w-9/12 flex-col">
+          <div className="flex w-9/12 flex-col space-y-4">
             <TeamCard
               memberName={t("team.members.cristhian.name")}
               profession={t("team.members.cristhian.occupation")}
