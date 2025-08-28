@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import React from "react";
 import { Card, CardContent, CardFooter, CardHeader } from "../ui/card";
+import { useTranslations } from "next-intl";
 
 interface TeamCardProps {
   memberName: string;
@@ -23,6 +24,7 @@ export default function TeamCard({
   icon,
   optionalIcon,
 }: TeamCardProps) {
+  const t = useTranslations("about_us.our_team.cards");
   return (
     <Card className="bg-white shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 rounded gap-3">
 
@@ -55,7 +57,7 @@ export default function TeamCard({
       <CardFooter>
         {linkedinUrl ? (
           <a
-            title={`${memberName}`}
+            title={t("linkedin", { name: memberName })}
             className="hover:text-primary text-muted-foreground transition-colors"
             href={linkedinUrl}
           >
@@ -63,7 +65,7 @@ export default function TeamCard({
           </a>
         ) : (
           <span
-            title="Not available"
+            title={t("not_available")}
             className="cursor-not-allowed text-muted-foreground/30"
           >
             <FontAwesomeIcon className="text-3xl" icon={faLinkedin} />
@@ -71,7 +73,7 @@ export default function TeamCard({
         )}
         {githubUrl ? (
           <a
-            title={`${memberName}`}
+            title={t("github", { name: memberName })}
             className="hover:text-primary ml-2 text-muted-foreground transition-colors"
             href={githubUrl}
           >
@@ -79,7 +81,7 @@ export default function TeamCard({
           </a>
         ) : (
           <span
-            title="Not available"
+            title={t("not_available")}
             className="ml-2 cursor-not-allowed text-muted-foreground/40"
           >
             <FontAwesomeIcon className="text-3xl" icon={faGithub} />

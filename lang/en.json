@@ -194,7 +194,10 @@
           "name": "Josibel Farias",
           "occupation": "UX/UI Designer",
           "body": "Specializing in creating intuitive and engaging user experiences, with a focus on visual design and usability to ensure efficient and enjoyable interfaces."
-        }
+        },
+        "linkedin": "LinkedIn page of {name}",
+        "github": "Github page of {name}",
+        "not_available": "Not available"
       }
     }
   },

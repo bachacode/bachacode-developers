@@ -194,7 +194,10 @@
           "name": "Josibel Farías",
           "occupation": "Diseñadora UX/UI",
           "body": "Especializada en la creación de experiencias de usuario intuitivas y atractivas, con un enfoque en el diseño visual y la usabilidad para garantizar interfaces eficientes y agradables."
-        }
+        },
+        "linkedin": "Perfil de LinkedIn de {name}",
+        "github": "Perfil de Github de {name}",
+        "not_available": "No disponible"
       }
     }
   },
