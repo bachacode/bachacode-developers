@@ -12,7 +12,7 @@ export type Service = {
   borderColor: string;
   title: string;
   description: string;
-  features: string[];
+  features?: string[];
 }
 
 interface ServiceCardProps {
@@ -55,11 +55,10 @@ export default function ServiceCard({
       <CardContent className="px-6 pb-8">
         {/* Feature tags */}
         <div className="flex flex-wrap gap-2 justify-center mb-6">
-          {service.features.map((feature, featureIndex) => (
+          {service.features && service.features.map((feature, featureIndex) => (
             <Badge
               key={featureIndex}
-              variant="secondary"
-              className="rounded-full px-3 py-1 text-xs font-medium bg-muted/50 hover:bg-muted transition-colors"
+              variant="outline"
             >
               {feature}
             </Badge>
