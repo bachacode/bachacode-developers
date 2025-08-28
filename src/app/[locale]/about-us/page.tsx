@@ -66,7 +66,7 @@ export default function SobreNosotros() {
       accent: "bg-accent",
       color: "bg-orange-primary-100",
     },
-  ]
+  ];
 
   return (
     <main className="w-full">

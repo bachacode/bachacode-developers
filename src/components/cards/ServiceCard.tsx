@@ -1,7 +1,13 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "../ui/card";
 import { Badge } from "../ui/badge";
 
 export type Service = {
@@ -13,28 +19,27 @@ export type Service = {
   title: string;
   description: string;
   features?: string[];
-}
+};
 
 interface ServiceCardProps {
   index: React.Key;
-  service: Service
+  service: Service;
 }
 
-export default function ServiceCard({
-  index,
-  service,
-}: ServiceCardProps) {
+export default function ServiceCard({ index, service }: ServiceCardProps) {
   return (
     <Card
       key={index}
-      className="rounded shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group overflow-hidden relative bg-gradient-to-br from-background to-muted/30"
+      className="group from-background to-muted/30 relative overflow-hidden rounded bg-gradient-to-br shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
     >
       {/* Decorative corner element */}
-      <div className={`absolute top-0 right-0 w-20 h-20 ${service.accent} rounded-bl-3xl opacity-50`}></div>
+      <div
+        className={`absolute top-0 right-0 h-20 w-20 ${service.accent} rounded-bl-3xl opacity-50`}
+      ></div>
 
-      <CardHeader className="text-center pb-6 pt-8 relative z-10">
+      <CardHeader className="relative z-10 pt-8 pb-6 text-center">
         <div
-          className={`w-20 h-20 rounded-2xl border-2 ${service.borderColor} ${service.color} flex items-center justify-center text-3xl mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300 text-white`}
+          className={`h-20 w-20 rounded-2xl border-2 ${service.borderColor} ${service.color} mx-auto mb-6 flex items-center justify-center text-3xl text-white shadow-lg transition-transform duration-300 group-hover:scale-110`}
         >
           <FontAwesomeIcon
             icon={service.icon}
@@ -42,27 +47,23 @@ export default function ServiceCard({
             className={`text-4xl ${service.iconColor}`}
           />
         </div>
-        <CardTitle className="text-2xl font-bold text-balance mb-3 group-hover:text-primary transition-colors">
-          <h3>
-            {service.title}
-          </h3>
+        <CardTitle className="group-hover:text-primary mb-3 text-2xl font-bold text-balance transition-colors">
+          <h3>{service.title}</h3>
         </CardTitle>
-        <CardDescription className="text-base leading-relaxed text-muted-foreground">
+        <CardDescription className="text-muted-foreground text-base leading-relaxed">
           {service.description}
         </CardDescription>
       </CardHeader>
 
       <CardContent className="px-6 pb-8">
         {/* Feature tags */}
-        <div className="flex flex-wrap gap-2 justify-center mb-6">
-          {service.features && service.features.map((feature, featureIndex) => (
-            <Badge
-              key={featureIndex}
-              variant="outline"
-            >
-              {feature}
-            </Badge>
-          ))}
+        <div className="mb-6 flex flex-wrap justify-center gap-2">
+          {service.features &&
+            service.features.map((feature, featureIndex) => (
+              <Badge key={featureIndex} variant="outline">
+                {feature}
+              </Badge>
+            ))}
         </div>
 
         {/* Call to action */}

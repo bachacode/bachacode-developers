@@ -27,7 +27,7 @@ function TechCarouselItem({
     <CarouselItem className="group flex basis-1/2 flex-col items-center sm:basis-1/3 md:basis-1/4 lg:basis-1/5">
       <FontAwesomeIcon
         fixedWidth
-        className={`py-1.5 text-8xl text-muted-foreground transition-all duration-300 group-hover:scale-105 ${className}`}
+        className={`text-muted-foreground py-1.5 text-8xl transition-all duration-300 group-hover:scale-105 ${className}`}
         icon={icon}
       />
       <span className="group-hover:text-foreground text-muted-foreground transition-all duration-300 group-hover:scale-105">

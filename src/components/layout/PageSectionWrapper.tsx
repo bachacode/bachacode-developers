@@ -20,8 +20,9 @@ export default function PageSectionWrapper({
 }: PageSectionWrapperProps) {
   return (
     <div
-      className={`flex w-full justify-center ${altBackground ? "bg-orange-primary-50" : ""
-        }`}
+      className={`flex w-full justify-center ${
+        altBackground ? "bg-orange-primary-50" : ""
+      }`}
     >
       <div
         className={`${fullWidth ? "w-full" : "container px-4"} flex flex-col items-center space-y-3 py-6`}

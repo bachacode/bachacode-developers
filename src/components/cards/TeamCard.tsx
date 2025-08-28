@@ -26,20 +26,17 @@ export default function TeamCard({
 }: TeamCardProps) {
   const t = useTranslations("about_us.our_team.cards");
   return (
-    <Card className="bg-white shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 rounded gap-3">
-
+    <Card className="gap-3 rounded bg-white shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
       <CardHeader>
         {optionalIcon && (
           <FontAwesomeIcon
             icon={optionalIcon}
-            className="absolute top-2 right-2 text-muted-foreground"
+            className="text-muted-foreground absolute top-2 right-2"
           />
         )}
         <div className="flex justify-center md:justify-between">
           <div className="flex flex-col items-center md:items-start">
-            <span className="title-font text-lg font-medium">
-              {memberName}
-            </span>
+            <span className="title-font text-lg font-medium">{memberName}</span>
             <h3 className="text-muted-foreground">{profession}</h3>
           </div>
           {icon && (
@@ -50,9 +47,7 @@ export default function TeamCard({
           )}
         </div>
       </CardHeader>
-      <CardContent className="pb-2">
-        {description}
-      </CardContent>
+      <CardContent className="pb-2">{description}</CardContent>
 
       <CardFooter>
         {linkedinUrl ? (
@@ -66,7 +61,7 @@ export default function TeamCard({
         ) : (
           <span
             title={t("not_available")}
-            className="cursor-not-allowed text-muted-foreground/30"
+            className="text-muted-foreground/30 cursor-not-allowed"
           >
             <FontAwesomeIcon className="text-3xl" icon={faLinkedin} />
           </span>
@@ -74,7 +69,7 @@ export default function TeamCard({
         {githubUrl ? (
           <a
             title={t("github", { name: memberName })}
-            className="hover:text-primary ml-2 text-muted-foreground transition-colors"
+            className="hover:text-primary text-muted-foreground ml-2 transition-colors"
             href={githubUrl}
           >
             <FontAwesomeIcon className="text-3xl" icon={faGithub} />
@@ -82,13 +77,12 @@ export default function TeamCard({
         ) : (
           <span
             title={t("not_available")}
-            className="ml-2 cursor-not-allowed text-muted-foreground/40"
+            className="text-muted-foreground/40 ml-2 cursor-not-allowed"
           >
             <FontAwesomeIcon className="text-3xl" icon={faGithub} />
           </span>
         )}
       </CardFooter>
-
     </Card>
   );
 }

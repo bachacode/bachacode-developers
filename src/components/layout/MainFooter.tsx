@@ -44,13 +44,14 @@ export default function MainFooter() {
           <div className="flex flex-col items-center gap-8 px-6 md:grid md:grid-cols-2 md:px-0">
             {/* Main Links */}
             <div className="text-center md:text-left">
-              <h3 className="pb-3 font-semibold uppercase">
-                {t("discover")}
-              </h3>
-              <ul className="space-y-2 font-medium text-muted-foreground">
+              <h3 className="pb-3 font-semibold uppercase">{t("discover")}</h3>
+              <ul className="text-muted-foreground space-y-2 font-medium">
                 {discoverLinks.map((link, index) => (
                   <li key={index}>
-                    <Link href={link.href} className="transition-colors hover:text-primary">
+                    <Link
+                      href={link.href}
+                      className="hover:text-primary transition-colors"
+                    >
                       {link.label}
                     </Link>
                   </li>
@@ -60,15 +61,13 @@ export default function MainFooter() {
 
             {/* Contact info */}
             <div className="text-center md:text-left">
-              <h3 className="pb-3 font-semibold uppercase">
-                {t("contact")}
-              </h3>
-              <ul className="space-y-2 font-medium text-muted-foreground">
+              <h3 className="pb-3 font-semibold uppercase">{t("contact")}</h3>
+              <ul className="text-muted-foreground space-y-2 font-medium">
                 <li>
                   <a
                     target="_blank"
                     href="mailto:support@bachacode.com"
-                    className="flex items-center space-x-2 transition-colors hover:text-primary"
+                    className="hover:text-primary flex items-center space-x-2 transition-colors"
                   >
                     <FontAwesomeIcon
                       icon={faEnvelope}
@@ -81,7 +80,7 @@ export default function MainFooter() {
                 <li>
                   <a
                     href="tel:+584121163349"
-                    className="flex items-center space-x-2 transition-colors hover:text-primary"
+                    className="hover:text-primary flex items-center space-x-2 transition-colors"
                   >
                     <FontAwesomeIcon
                       icon={faPhone}
@@ -92,7 +91,11 @@ export default function MainFooter() {
                 </li>
 
                 <li className="py-3">
-                  <Button size="lg" className="px-6 py-3 rounded uppercase" asChild>
+                  <Button
+                    size="lg"
+                    className="rounded px-6 py-3 uppercase"
+                    asChild
+                  >
                     <Link href="/contact">{t("contact_us")}</Link>
                   </Button>
                 </li>

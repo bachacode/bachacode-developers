@@ -42,7 +42,7 @@ export default function Home() {
         t("services.cards.static.features.affordable"),
         t("services.cards.static.features.lightning_fast"),
         t("services.cards.static.features.short_delivery"),
-      ]
+      ],
     },
     {
       title: t("services.cards.wordpress.title"),
@@ -56,7 +56,7 @@ export default function Home() {
         t("services.cards.wordpress.features.custom_plugins"),
         t("services.cards.wordpress.features.custom_themes"),
         t("services.cards.wordpress.features.seo_ready"),
-      ]
+      ],
     },
     {
       title: t("services.cards.web-apps.title"),
@@ -69,8 +69,8 @@ export default function Home() {
       features: [
         t("services.cards.web-apps.features.custom_features"),
         t("services.cards.web-apps.features.modern_tech"),
-        t("services.cards.web-apps.features.scalable")
-      ]
+        t("services.cards.web-apps.features.scalable"),
+      ],
     },
     {
       title: t("services.cards.consulting.title"),
@@ -83,8 +83,8 @@ export default function Home() {
       features: [
         t("services.cards.consulting.features.best_practices"),
         t("services.cards.consulting.features.growth_focus"),
-        t("services.cards.consulting.features.strategic")
-      ]
+        t("services.cards.consulting.features.strategic"),
+      ],
     },
     {
       title: t("services.cards.support.title"),
@@ -97,8 +97,8 @@ export default function Home() {
       features: [
         t("services.cards.support.features.bug_fixes"),
         t("services.cards.support.features.regular_updates"),
-        t("services.cards.support.features.support_time")
-      ]
+        t("services.cards.support.features.support_time"),
+      ],
     },
     {
       title: t("services.cards.optimization.title"),
@@ -111,44 +111,50 @@ export default function Home() {
       features: [
         t("services.cards.optimization.features.seo_improvement"),
         t("services.cards.optimization.features.speed_boost"),
-        t("services.cards.optimization.features.user_experience")
-      ]
-    }
-  ]
+        t("services.cards.optimization.features.user_experience"),
+      ],
+    },
+  ];
 
   return (
     <main className="w-full">
       {/* Hero section */}
       <div className="flex w-full flex-col items-center">
-        <div className="container flex pt-28 flex-col items-center justify-center space-y-8 pb-8">
+        <div className="container flex flex-col items-center justify-center space-y-8 pt-28 pb-8">
           {/* Title */}
           <div className="flex flex-col items-center text-center lg:w-1/2">
-            <h1 id="hero" className="text-4xl md:text-6xl font-bold text-balance mb-6 leading-tight">
+            <h1
+              id="hero"
+              className="mb-6 text-4xl leading-tight font-bold text-balance md:text-6xl"
+            >
               {t.rich("hero.title", {
-                websites: (chunks) => (
-                  <UnderlinedText>
-                    {chunks}
-                  </UnderlinedText>
-                )
+                websites: (chunks) => <UnderlinedText>{chunks}</UnderlinedText>,
               })}
             </h1>
-            <p className="text-xl font-extralight text-muted-foreground">
+            <p className="text-muted-foreground text-xl font-extralight">
               {t("hero.subtitle")}
             </p>
-
           </div>
 
           {/* Contact Button */}
-          <div className="flex flex-col md:flex-row gap-3">
-            <Button size="lg" className="px-8 py-6 rounded-sm text-lg uppercase" asChild>
+          <div className="flex flex-col gap-3 md:flex-row">
+            <Button
+              size="lg"
+              className="rounded-sm px-8 py-6 text-lg uppercase"
+              asChild
+            >
               <Link href="/contact">{t("hero.primary_button")}</Link>
             </Button>
-            <Button size="lg" variant="outline" className="rounded-sm px-8 py-6 bg-transparent uppercase text-lg" asChild>
+            <Button
+              size="lg"
+              variant="outline"
+              className="rounded-sm bg-transparent px-8 py-6 text-lg uppercase"
+              asChild
+            >
               <Link href="/portfolio">{t("hero.secondary_button")}</Link>
             </Button>
           </div>
         </div>
-
 
         {/* Counter */}
         <HomePageCounter
@@ -161,13 +167,13 @@ export default function Home() {
       {/* Floating Elements */}
       <div className="relative mt-16">
         <div className="animate-float">
-          <div className="w-16 h-16 bg-secondary rounded-full absolute top-10 left-1/4 opacity-40"></div>
+          <div className="bg-secondary absolute top-10 left-1/4 h-16 w-16 rounded-full opacity-40"></div>
         </div>
         <div className="animate-float" style={{ animationDelay: "1s" }}>
-          <div className="w-12 h-12 bg-accent rounded-full absolute top-20 right-1/3 opacity-35"></div>
+          <div className="bg-accent absolute top-20 right-1/3 h-12 w-12 rounded-full opacity-35"></div>
         </div>
         <div className="animate-float" style={{ animationDelay: "2s" }}>
-          <div className="w-8 h-8 bg-primary rounded-full absolute top-5 right-1/4 opacity-20"></div>
+          <div className="bg-primary absolute top-5 right-1/4 h-8 w-8 rounded-full opacity-20"></div>
         </div>
       </div>
 
@@ -214,7 +220,9 @@ export default function Home() {
       {/* Services section */}
       <PageSectionWrapper
         titleId="services"
-        titleName={t.rich("services.title", { keyword: (chunks) => <UnderlinedText>{chunks}</UnderlinedText> })}
+        titleName={t.rich("services.title", {
+          keyword: (chunks) => <UnderlinedText>{chunks}</UnderlinedText>,
+        })}
         subtitle={t("services.subtitle")}
         altBackground
       >
@@ -222,15 +230,9 @@ export default function Home() {
           {services.map((service, index) => (
             <div
               key={index}
-              className={`
-                w-full p-2 lg:w-1/2
-                ${index % 2 === 1 ? 'lg:mt-8' : ''} 
-              `}
+              className={`w-full p-2 lg:w-1/2 ${index % 2 === 1 ? "lg:mt-8" : ""} `}
             >
-              <ServiceCard
-                index={index}
-                service={service}
-              />
+              <ServiceCard index={index} service={service} />
             </div>
           ))}
         </div>
@@ -240,7 +242,9 @@ export default function Home() {
       <div className="flex w-full flex-col items-center py-12">
         <Heading
           id="tech"
-          title={t.rich("technologies.title", { keyword: (chunks) => <UnderlinedText>{chunks}</UnderlinedText> })}
+          title={t.rich("technologies.title", {
+            keyword: (chunks) => <UnderlinedText>{chunks}</UnderlinedText>,
+          })}
           subtitle={t("technologies.subtitle")}
         />
 
@@ -257,7 +261,9 @@ export default function Home() {
       {/* Our clients */}
       <PageSectionWrapper
         titleId="clients"
-        titleName={t.rich("clients.title", { keyword: (chunks) => <UnderlinedText>{chunks}</UnderlinedText> })}
+        titleName={t.rich("clients.title", {
+          keyword: (chunks) => <UnderlinedText>{chunks}</UnderlinedText>,
+        })}
         subtitle={t("clients.subtitle")}
         altBackground
       >
@@ -279,7 +285,9 @@ export default function Home() {
       {/* Our team */}
       <PageSectionWrapper
         titleId="team"
-        titleName={t.rich("team.title", { keyword: (chunks) => <UnderlinedText>{chunks}</UnderlinedText> })}
+        titleName={t.rich("team.title", {
+          keyword: (chunks) => <UnderlinedText>{chunks}</UnderlinedText>,
+        })}
         subtitle={t("team.subtitle")}
       >
         <div className="-mx-4 -mt-4 -mb-10 flex flex-wrap space-y-6 pb-16 sm:-m-4 md:space-y-0">

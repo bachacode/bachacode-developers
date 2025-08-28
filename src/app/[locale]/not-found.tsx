@@ -12,16 +12,14 @@ export default function LocaleNotFound() {
           <h1 className="text-primary mb-4 text-7xl font-extrabold tracking-tight lg:text-9xl">
             404
           </h1>
-          <p className="mb-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
+          <p className="text-foreground mb-4 text-3xl font-bold tracking-tight md:text-4xl">
             {t("title")}
           </p>
-          <p className="mb-4 text-lg font-light text-muted-foreground">
+          <p className="text-muted-foreground mb-4 text-lg font-light">
             {t("description")}
           </p>
-          <Button asChild className="px-8 py-6 rounded-sm text-lg uppercase">
-            <Link href="/">
-              {t("button")}
-            </Link>
+          <Button asChild className="rounded-sm px-8 py-6 text-lg uppercase">
+            <Link href="/">{t("button")}</Link>
           </Button>
         </div>
       </div>
