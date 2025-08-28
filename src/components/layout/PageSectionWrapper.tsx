@@ -20,7 +20,7 @@ export default function PageSectionWrapper({
 }: PageSectionWrapperProps) {
   return (
     <div
-      className={`flex w-full justify-center ${altBackground ? "bg-orange-primary-50" : "bg-white"
+      className={`flex w-full justify-center ${altBackground ? "bg-orange-primary-50" : ""
         }`}
     >
       <div
