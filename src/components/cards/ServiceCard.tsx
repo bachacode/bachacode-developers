@@ -27,10 +27,7 @@ export default function ServiceCard({
   return (
     <Card
       key={index}
-      className={
-        `rounded-3xl border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group overflow-hidden relative bg-gradient-to-br from-background to-muted/30
-        `
-      }
+      className="rounded shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group overflow-hidden relative bg-gradient-to-br from-background to-muted/30"
     >
       {/* Decorative corner element */}
       <div className={`absolute top-0 right-0 w-20 h-20 ${service.accent} rounded-bl-3xl opacity-50`}></div>
