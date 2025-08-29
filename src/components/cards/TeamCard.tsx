@@ -26,18 +26,16 @@ export default function TeamCard({
   return (
     <Card className="gap-3 rounded bg-white shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
       <CardHeader className="relative">
-        <div className="flex justify-center md:justify-between">
-          <div className="flex flex-col items-center md:items-start">
-            <span className="title-font text-lg font-medium">{memberName}</span>
-            <h3 className="text-muted-foreground">{profession}</h3>
-          </div>
-          {icon && (
-            <FontAwesomeIcon
-              className="text-primary opacity-60 absolute top-0 right-2 z-10 -translate-y-4 hidden text-6xl md:block"
-              icon={icon}
-            />
-          )}
+        <div className="flex flex-col items-start">
+          <span className="title-font text-lg font-medium">{memberName}</span>
+          <h3 className="text-muted-foreground">{profession}</h3>
         </div>
+        {icon && (
+          <FontAwesomeIcon
+            className="text-primary opacity-60 absolute top-0 right-2 z-10 -translate-y-4 hidden text-6xl md:block"
+            icon={icon}
+          />
+        )}
       </CardHeader>
       <CardContent className="pb-2">{description}</CardContent>
 

@@ -151,7 +151,7 @@ export default function SobreNosotros() {
         titleName={t.rich("our_team.title", { keyword: (chunks) => <UnderlinedText>{chunks}</UnderlinedText> })}
         subtitle={t("our_team.subtitle")}
       >
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <TeamCard
             memberName={t("our_team.cards.cristhian.name")}
             profession={t("our_team.cards.cristhian.occupation")}
