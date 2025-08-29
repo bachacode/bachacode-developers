@@ -17,6 +17,8 @@ import { Metadata } from "next";
 import { hasLocale, useTranslations } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { routing } from "@/i18n/routing";
+import UnderlinedText from "@/components/common/UnderlinedText";
+import { Badge } from "@/components/ui/badge";
 
 export async function generateMetadata({
   params,
@@ -71,29 +73,60 @@ export default function SobreNosotros() {
   return (
     <main className="w-full">
       {/* Hero section */}
-      <div className="flex w-full flex-col items-center bg-white px-8 pt-36 pb-12">
-        <div className="relative container flex items-center md:space-x-8 lg:min-h-[600px]">
-          {/* Image */}
-          <div className="absolute flex h-full w-full flex-col items-center px-6 text-center opacity-20 md:relative md:right-0 md:w-1/2 md:px-0 md:opacity-100">
-            <Image
-              src={ncWomanTypingOnMachine}
-              alt="Woman typing on a writing machine"
-              className="max-h-full max-w-full object-contain"
-              style={{ height: "auto", width: "100%" }}
-            />
+      <div className="w-full flex flex-col items-center pt-28 pb-8">
+        <div className="container">
+          {/* Floating Elements */}
+          <div className="relative">
+            <div className="animate-float">
+              <div className="bg-secondary absolute top-0 left-2/12 h-24 w-24 rounded-full opacity-40"></div>
+            </div>
+            <div className="animate-float" style={{ animationDelay: "1s" }}>
+              <div className="bg-accent absolute top-20 right-4/12 h-16 w-16 rounded-full opacity-35"></div>
+            </div>
+            <div className="animate-float" style={{ animationDelay: "2s" }}>
+              <div className="bg-primary absolute top-5 right-2/12 h-12 w-12 rounded-full opacity-20"></div>
+            </div>
+          </div>
+          <div className="relative flex justify-center items-center md:space-x-8">
+            {/* Image */}
+            <div className="absolute flex h-full w-full flex-col items-center px-6 text-center opacity-20 md:relative md:right-0 md:w-1/2 md:px-0 md:opacity-100">
+              <Image
+                src={ncWomanTypingOnMachine}
+                alt="Woman typing on a writing machine"
+                className="max-h-full max-w-full object-contain"
+                style={{ height: "auto", width: "100%" }}
+              />
+            </div>
+
+            {/* Title & CTA */}
+            <div className="flex w-full flex-col items-center space-y-6 text-center md:w-1/2">
+              <div className="px-6 md:px-3">
+                <h1
+                  id="hero"
+                  className="pb-3 text-4xl font-bold tracking-widest lg:text-5xl"
+                >
+                  {t.rich("hero.title", { keyword: (chunks) => <UnderlinedText>{chunks}</UnderlinedText> })}
+                </h1>
+                <p className="text-xl text-muted-foreground">{t("hero.description")}</p>
+              </div>
+            </div>
           </div>
 
-          {/* Title & CTA */}
-          <div className="flex w-full flex-col items-center space-y-6 text-center md:w-1/2">
-            <div className="px-6 md:px-3">
-              <h1
-                id="hero"
-                className="pb-3 text-4xl font-bold tracking-widest text-zinc-900 lg:text-5xl"
-              >
-                {t("hero.title")}
-              </h1>
-              <p className="text-xl text-zinc-800">{t("hero.description")}</p>
-            </div>
+          <div className="flex justify-center flex-col md:flex-row items-center gap-4 mt-12">
+            <Badge variant="outline" className="px-4 py-2 rounded-full border-primary/60">
+              <div className="w-3 h-3 bg-primary rounded-full"></div>
+              <span className="text-sm font-medium text-foreground">{t("hero.badges.custom_solutions")}</span>
+            </Badge>
+            <div className="w-8 h-0.5 bg-gradient-to-r from-primary to-secondary"></div>
+            <Badge variant="outline" className="px-4 py-2 rounded-full border-secondary/80">
+              <div className="w-3 h-3 bg-secondary rounded-full"></div>
+              <span className="text-sm font-medium text-foreground">{t("hero.badges.customer_focus")}</span>
+            </Badge>
+            <div className="w-8 h-0.5 bg-gradient-to-r from-secondary to-accent"></div>
+            <Badge variant="outline" className="px-4 py-2 rounded-full border-accent/60">
+              <div className="w-3 h-3 bg-accent rounded-full"></div>
+              <span className="text-sm font-medium text-foreground">{t("hero.badges.since")}</span>
+            </Badge>
           </div>
         </div>
       </div>

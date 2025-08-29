@@ -160,8 +160,13 @@
       "title": "Sobre Nosotros"
     },
     "hero": {
-      "title": "Sobre Nosotros - Bachacode Developers",
-      "description": "En Bachacode Developers, nos dedicamos a ofrecer soluciones innovadoras y de alta calidad en el desarrollo web. Nuestro equipo de expertos trabaja incansablemente para garantizar la satisfacción de nuestros clientes, brindando servicios personalizados y adaptados a las necesidades específicas de cada proyecto."
+      "title": "Sobre <keyword>Bachacode Developers</keyword>",
+      "description": "En Bachacode Developers, nos dedicamos a ofrecer soluciones innovadoras y de alta calidad en el desarrollo web. Nuestro equipo de expertos trabaja incansablemente para garantizar la satisfacción de nuestros clientes, brindando servicios personalizados y adaptados a las necesidades específicas de cada proyecto.",
+      "badges": {
+        "custom_solutions": "Soluciones personalizadas",
+        "since": "Desde 2021",
+        "customer_focus": "Enfoque al cliente"
+      }
     },
     "our_values": {
       "title": "Nuestros valores",
