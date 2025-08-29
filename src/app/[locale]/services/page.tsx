@@ -8,6 +8,7 @@ import {
   faHeadphones,
   faMessage,
   faPalette,
+  faRocket,
   faServer,
   faShield,
   faWindowRestore,
@@ -34,6 +35,7 @@ import { hasLocale, useFormatter, useTranslations } from "next-intl";
 import { routing } from "@/i18n/routing";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
+import UnderlinedText from "@/components/common/UnderlinedText";
 
 export async function generateMetadata({
   params,
@@ -55,6 +57,46 @@ export async function generateMetadata({
 export default function Servicios() {
   const t = useTranslations("services");
   const format = useFormatter();
+
+  const services = [
+    {
+      title: t("services.cards.static.title"),
+      description: t("services.cards.static.body"),
+      icon: faWindowRestore,
+      iconColor: "text-primary",
+    },
+    {
+      title: t("services.cards.wordpress.title"),
+      description: t("services.cards.wordpress.body"),
+      icon: faWordpress,
+      iconColor: "text-accent",
+    },
+    {
+      title: t("services.cards.web-apps.title"),
+      description: t("services.cards.web-apps.body"),
+      icon: faCode,
+      iconColor: "text-selective-yellow-secondary-500",
+    },
+    {
+      title: t("services.cards.consulting.title"),
+      description: t("services.cards.consulting.body"),
+      icon: faMessage,
+      iconColor: "text-primary",
+    },
+    {
+      title: t("services.cards.support.title"),
+      description: t("services.cards.support.body"),
+      icon: faHeadphones,
+      iconColor: "text-accent",
+    },
+    {
+      title: t("services.cards.optimization.title"),
+      description: t("services.cards.optimization.body"),
+      icon: faRocket,
+      iconColor: "text-selective-yellow-secondary-500",
+    },
+  ];
+
 
   return (
     <main className="w-full">
@@ -81,7 +123,7 @@ export default function Servicios() {
                   id="hero"
                   className="pb-3 text-4xl font-bold tracking-widest lg:text-5xl"
                 >
-                  {t.rich("hero.title", { keyword: (children) => <span className="text-primary">{children}</span> })}
+                  {t.rich("hero.title", { keyword: (chunks) => <UnderlinedText>{chunks}</UnderlinedText> })}
                 </h1>
                 <p className="text-xl text-muted-foreground">{t("hero.subtitle")}</p>
               </div>
@@ -109,42 +151,21 @@ export default function Servicios() {
       {/* Services Section */}
       <PageSectionWrapper
         titleId="services"
-        titleName={t("services.title")}
+        titleName={t.rich("services.title", { keyword: (chunks) => <UnderlinedText>{chunks}</UnderlinedText> })}
         subtitle={t("services.subtitle")}
       >
         {/* Service cards */}
-        <div className="grid gap-6 px-2 md:grid-cols-2 lg:grid-cols-4">
-          <ServiceCardAlt
-            title={t("services.cards.static.title")}
-            icon={faWindowRestore}
-            iconColor="text-primary"
-          >
-            {t("services.cards.static.body")}
-          </ServiceCardAlt>
-
-          <ServiceCardAlt
-            title={t("services.cards.wordpress.title")}
-            icon={faWordpress}
-            iconColor="text-primary"
-          >
-            {t("services.cards.wordpress.body")}
-          </ServiceCardAlt>
-
-          <ServiceCardAlt
-            title={t("services.cards.web-apps.title")}
-            icon={faCode}
-            iconColor="text-primary"
-          >
-            {t("services.cards.web-apps.body")}
-          </ServiceCardAlt>
-
-          <ServiceCardAlt
-            title={t("services.cards.support.title")}
-            icon={faMessage}
-            iconColor="text-primary"
-          >
-            {t("services.cards.support.body")}
-          </ServiceCardAlt>
+        <div className="w-full grid gap-6 px-2 md:grid-cols-2 lg:grid-cols-3">
+          {services.map((service, index) => (
+            <ServiceCardAlt
+              key={index}
+              title={service.title}
+              icon={service.icon}
+              iconColor={service.iconColor}
+            >
+              {service.description}
+            </ServiceCardAlt>
+          ))}
         </div>
       </PageSectionWrapper>
 

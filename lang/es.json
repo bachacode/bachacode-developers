@@ -216,24 +216,32 @@
       "button": "Agenda una reunión"
     },
     "services": {
-      "title": "Impulsa tu presencia digital",
+      "title": "<keyword>Soluciones Web</keyword> a Medida para Impulsar tu Negocio",
       "subtitle": "Soluciones personalizadas que transforman tu negocio",
       "cards": {
         "static": {
-          "title": "Sitios Web Estaticos",
-          "body": "Desarrollo de sitios web personalizados con contenido estático, ideal para proyectos pequeños que no requieren actualizaciones frecuentes, como landing pages, portafolios o catálogos. Estos sitios ofrecen rapidez, seguridad y eficiencia para contenido estable."
+          "title": "Sitios Web Estáticos",
+          "body": "Desarrollo de sitios web a medida con contenido estático, ideal para proyectos pequeños que no requieren actualizaciones frecuentes, como landing pages, portafolios o catálogos. Estos sitios ofrecen velocidad, seguridad y eficiencia para contenido estable."
         },
         "wordpress": {
-          "title": "Sitios WordPress",
+          "title": "Sitios Web con WordPress",
           "body": "Desarrollo de sitios web con WordPress, brindando control total del contenido sin necesidad de tocar código. Ideal para proyectos medianos como blogs, portafolios o sitios corporativos, ofreciendo flexibilidad, escalabilidad y fácil personalización."
         },
         "web-apps": {
           "title": "Aplicaciones Web",
-          "body": "Desarrollo de aplicaciones web a medida con funcionalidades avanzadas, como integración de pagos en línea, sistemas de recomendación personalizados, chat en vivo, análisis de datos en tiempo real y gestión de contenido. Perfecto para proyectos medianos y grandes, como tiendas en línea, plataformas educativas, sistemas de reservas en línea, portales de noticias, y sistemas de gestión empresarial (ERP, CRM)."
+          "body": "Desarrollo de aplicaciones web a medida con funcionalidades avanzadas, como integración de pagos en línea, sistemas de recomendación personalizados, chat en vivo, análisis de datos en tiempo real y gestión de contenido. Perfecto para proyectos medianos y grandes, como tiendas en línea, plataformas educativas, sistemas de reserva en línea, portales de noticias y sistemas de gestión empresarial (ERP, CRM)."
+        },
+        "consulting": {
+          "title": "Consultoría Web",
+          "body": "Si quieres agregar nuevas funcionalidades o actualizar tu proyecto actual, nos encargamos de planificar todo el proceso por ti. Desde la estimación de tiempo hasta la creación del presupuesto, te ofreceremos soluciones utilizando las tecnologías que mejor conocemos, garantizando un desarrollo eficiente según tus necesidades."
         },
         "support": {
-          "title": "Consultoría y Soporte",
-          "body": "Si ya tienes un proyecto que deseas actualizar, agregar nuevas funcionalidades o corregir errores, nosotros nos encargamos de planificar todo el proceso por ti. Desde la estimación de tiempos hasta la creación de presupuestos, te ofrecemos soluciones en las tecnologías que mejor dominamos, garantizando un desarrollo eficiente y acorde a tus necesidades."
+          "title": "Soporte Web",
+          "body": "Cuando se trata de tu proyecto existente, podemos ayudarte con el soporte web y corregir cualquier error que encuentres. Planificaremos todo el proceso, ofreciendo soluciones en las tecnologías que mejor conocemos para garantizar que el desarrollo sea eficiente y satisfaga tus necesidades específicas."
+        },
+        "optimization": {
+          "title": "Optimización de Sitios Web",
+          "body": "Cuando se trata de tu proyecto existente, podemos ayudarte con el soporte web y corregir cualquier error que encuentres. Planificaremos todo el proceso, ofreciendo soluciones en las tecnologías que mejor conocemos para garantizar que el desarrollo sea eficiente y satisfaga tus necesidades específicas."
         }
       }
     },

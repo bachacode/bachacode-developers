@@ -216,12 +216,12 @@
       "button": "Schedule a meeting"
     },
     "services": {
-      "title": "Boost your digital presence",
+      "title": "Custom <keyword>Web Solutions</keyword> to Grow Your Business Online",
       "subtitle": "Customized solutions that transform your business",
       "cards": {
         "static": {
           "title": "Static Websites",
-          "body": "Development of customized websites with static content, ideal for small projects that do not require frequent updates, such as landing pages, portfolios or catalogs. These sites offer speed, security and efficiency for stable content."
+          "body": "Custom website development with static content, ideal for small projects that do not require frequent updates, such as landing pages, portfolios or catalogs. These sites offer speed, security and efficiency for stable content."
         },
         "wordpress": {
           "title": "WordPress Websites",
@@ -231,9 +231,17 @@
           "title": "Web Applications",
           "body": "Custom web application development with advanced functionalities, such as online payment integration, personalized recommendation systems, live chat, real-time data analysis and content management. Perfect for medium to large projects, such as online stores, educational platforms, online booking systems, news portals, and business management systems (ERP, CRM)."
         },
+        "consulting": {
+          "title": "Web Consulting",
+          "body": "If you want to add new functionalities or update your current project, we'll take care of planning the entire process for you. From time estimation to budget creation, we'll offer solutions using the technologies we know best, guaranteeing an efficient development according to your needs."
+        },
         "support": {
-          "title": "Consulting and Support",
-          "body": "If you already have a project that you want to update, add new functionalities or correct errors, we take care of planning the whole process for you. From time estimation to budget creation, we offer you solutions in the technologies we know best, guaranteeing an efficient development according to your needs."
+          "title": "Web Support",
+          "body": "When it comes to your existing project, we can help you with web support and correct any errors you find. We'll plan out the whole process, offering solutions in the technologies we know best to ensure the development is efficient and meets your specific needs."
+        },
+        "optimization": {
+          "title": "Website Optimization",
+          "body": "When it comes to your existing project, we can help you with web support and correct any errors you find. We'll plan out the whole process, offering solutions in the technologies we know best to ensure the development is efficient and meets your specific needs."
         }
       }
     },
