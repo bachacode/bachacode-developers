@@ -32,7 +32,7 @@ export default function TeamCard({
         </div>
         {icon && (
           <FontAwesomeIcon
-            className="text-primary opacity-60 absolute top-0 right-2 z-10 -translate-y-4 hidden text-6xl md:block"
+            className="text-primary absolute top-0 right-2 z-10 hidden -translate-y-4 text-6xl opacity-60 md:block"
             icon={icon}
           />
         )}

@@ -73,7 +73,7 @@ export default function SobreNosotros() {
   return (
     <main className="w-full">
       {/* Hero section */}
-      <div className="w-full flex flex-col items-center pt-28 pb-8">
+      <div className="flex w-full flex-col items-center pt-28 pb-8">
         <div className="container">
           {/* Floating Elements */}
           <div className="relative">
@@ -87,7 +87,7 @@ export default function SobreNosotros() {
               <div className="bg-primary absolute top-5 right-2/12 h-12 w-12 rounded-full opacity-20"></div>
             </div>
           </div>
-          <div className="relative flex justify-center items-center md:space-x-8">
+          <div className="relative flex items-center justify-center md:space-x-8">
             {/* Image */}
             <div className="absolute flex h-full w-full flex-col items-center px-6 text-center opacity-20 md:relative md:right-0 md:w-1/2 md:px-0 md:opacity-100">
               <Image
@@ -105,27 +105,48 @@ export default function SobreNosotros() {
                   id="hero"
                   className="pb-3 text-4xl font-bold tracking-widest lg:text-5xl"
                 >
-                  {t.rich("hero.title", { keyword: (chunks) => <UnderlinedText>{chunks}</UnderlinedText> })}
+                  {t.rich("hero.title", {
+                    keyword: (chunks) => (
+                      <UnderlinedText>{chunks}</UnderlinedText>
+                    ),
+                  })}
                 </h1>
-                <p className="text-xl text-muted-foreground">{t("hero.description")}</p>
+                <p className="text-muted-foreground text-xl">
+                  {t("hero.description")}
+                </p>
               </div>
             </div>
           </div>
 
-          <div className="flex justify-center flex-col md:flex-row items-center gap-4 mt-12">
-            <Badge variant="outline" className="px-4 py-2 rounded-full border-primary/60">
-              <div className="w-3 h-3 bg-primary rounded-full"></div>
-              <span className="text-sm font-medium text-foreground">{t("hero.badges.custom_solutions")}</span>
+          <div className="mt-12 flex flex-col items-center justify-center gap-4 md:flex-row">
+            <Badge
+              variant="outline"
+              className="border-primary/60 rounded-full px-4 py-2"
+            >
+              <div className="bg-primary h-3 w-3 rounded-full"></div>
+              <span className="text-foreground text-sm font-medium">
+                {t("hero.badges.custom_solutions")}
+              </span>
             </Badge>
-            <div className="w-8 h-0.5 bg-gradient-to-r from-primary to-secondary"></div>
-            <Badge variant="outline" className="px-4 py-2 rounded-full border-secondary/80">
-              <div className="w-3 h-3 bg-secondary rounded-full"></div>
-              <span className="text-sm font-medium text-foreground">{t("hero.badges.customer_focus")}</span>
+            <div className="from-primary to-secondary h-0.5 w-8 bg-gradient-to-r"></div>
+            <Badge
+              variant="outline"
+              className="border-secondary/80 rounded-full px-4 py-2"
+            >
+              <div className="bg-secondary h-3 w-3 rounded-full"></div>
+              <span className="text-foreground text-sm font-medium">
+                {t("hero.badges.customer_focus")}
+              </span>
             </Badge>
-            <div className="w-8 h-0.5 bg-gradient-to-r from-secondary to-accent"></div>
-            <Badge variant="outline" className="px-4 py-2 rounded-full border-accent/60">
-              <div className="w-3 h-3 bg-accent rounded-full"></div>
-              <span className="text-sm font-medium text-foreground">{t("hero.badges.since")}</span>
+            <div className="from-secondary to-accent h-0.5 w-8 bg-gradient-to-r"></div>
+            <Badge
+              variant="outline"
+              className="border-accent/60 rounded-full px-4 py-2"
+            >
+              <div className="bg-accent h-3 w-3 rounded-full"></div>
+              <span className="text-foreground text-sm font-medium">
+                {t("hero.badges.since")}
+              </span>
             </Badge>
           </div>
         </div>
@@ -134,7 +155,9 @@ export default function SobreNosotros() {
       {/* Our values section */}
       <PageSectionWrapper
         titleId="our-values"
-        titleName={t.rich("our_values.title", { keyword: (chunks) => <UnderlinedText>{chunks}</UnderlinedText> })}
+        titleName={t.rich("our_values.title", {
+          keyword: (chunks) => <UnderlinedText>{chunks}</UnderlinedText>,
+        })}
         subtitle={t("our_values.subtitle")}
         altBackground
       >
@@ -148,10 +171,12 @@ export default function SobreNosotros() {
       {/* Our team */}
       <PageSectionWrapper
         titleId="team"
-        titleName={t.rich("our_team.title", { keyword: (chunks) => <UnderlinedText>{chunks}</UnderlinedText> })}
+        titleName={t.rich("our_team.title", {
+          keyword: (chunks) => <UnderlinedText>{chunks}</UnderlinedText>,
+        })}
         subtitle={t("our_team.subtitle")}
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <TeamCard
             memberName={t("our_team.cards.cristhian.name")}
             profession={t("our_team.cards.cristhian.occupation")}

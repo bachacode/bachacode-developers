@@ -30,7 +30,7 @@ export default function ServiceCard({ index, service }: ServiceCardProps) {
   return (
     <Card
       key={index}
-      className="gap-3 rounded group relative bg-white shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
+      className="group relative gap-3 rounded bg-white shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
     >
       {/* Decorative corner element */}
       <div
@@ -64,7 +64,6 @@ export default function ServiceCard({ index, service }: ServiceCardProps) {
                 {feature}
               </Badge>
             ))}
-
           </div>
 
           {/* Call to action */}
