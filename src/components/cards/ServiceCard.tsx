@@ -30,7 +30,7 @@ export default function ServiceCard({ index, service }: ServiceCardProps) {
   return (
     <Card
       key={index}
-      className="group from-background to-muted/30 relative overflow-hidden rounded bg-gradient-to-br shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
+      className="gap-3 rounded group relative bg-white shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
     >
       {/* Decorative corner element */}
       <div
