@@ -134,7 +134,7 @@ export default function SobreNosotros() {
       {/* Our values section */}
       <PageSectionWrapper
         titleId="our-values"
-        titleName={t("our_values.title")}
+        titleName={t.rich("our_values.title", { keyword: (chunks) => <UnderlinedText>{chunks}</UnderlinedText> })}
         subtitle={t("our_values.subtitle")}
         altBackground
       >

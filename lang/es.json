@@ -169,7 +169,7 @@
       }
     },
     "our_values": {
-      "title": "Nuestros valores",
+      "title": "Nuestros <keyword>valores</keyword>",
       "subtitle": "La ética que nos destaca sobre la competencia",
       "cards": {
         "innovation": {
