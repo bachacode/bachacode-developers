@@ -12,7 +12,6 @@ interface TeamCardProps {
   linkedinUrl?: string;
   githubUrl?: string;
   icon?: IconProp;
-  optionalIcon?: IconProp;
 }
 
 export default function TeamCard({
@@ -22,18 +21,11 @@ export default function TeamCard({
   linkedinUrl,
   githubUrl,
   icon,
-  optionalIcon,
 }: TeamCardProps) {
   const t = useTranslations("about_us.our_team.cards");
   return (
     <Card className="gap-3 rounded bg-white shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
-      <CardHeader>
-        {optionalIcon && (
-          <FontAwesomeIcon
-            icon={optionalIcon}
-            className="text-muted-foreground absolute top-2 right-2"
-          />
-        )}
+      <CardHeader className="relative">
         <div className="flex justify-center md:justify-between">
           <div className="flex flex-col items-center md:items-start">
             <span className="title-font text-lg font-medium">{memberName}</span>
@@ -41,7 +33,7 @@ export default function TeamCard({
           </div>
           {icon && (
             <FontAwesomeIcon
-              className="text-primary hidden text-4xl md:block"
+              className="text-primary opacity-60 absolute top-0 right-2 z-10 -translate-y-4 hidden text-6xl md:block"
               icon={icon}
             />
           )}
