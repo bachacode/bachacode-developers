@@ -1,4 +1,3 @@
-import NavButton from "@/components/common/NavButton";
 import Image from "next/image";
 import React from "react";
 import ocOnTheLaptop from "@/assets/images/oc-on-the-laptop.svg";
@@ -33,6 +32,8 @@ import PriceCard from "@/components/cards/PriceCard";
 import { getTranslations } from "next-intl/server";
 import { hasLocale, useFormatter, useTranslations } from "next-intl";
 import { routing } from "@/i18n/routing";
+import { Button } from "@/components/ui/button";
+import { Link } from "@/i18n/navigation";
 
 export async function generateMetadata({
   params,
@@ -58,30 +59,49 @@ export default function Servicios() {
   return (
     <main className="w-full">
       {/* Hero section */}
-      <div className="bg-orange-primary-50 flex w-full flex-col items-center px-8 pt-36 pb-12">
-        <div className="relative container flex items-center md:space-x-8 lg:min-h-[600px]">
-          {/* Title & CTA */}
-          <div className="flex w-full flex-col items-center space-y-6 text-center md:w-1/2">
-            <div className="px-6 md:px-3">
-              <h1
-                id="hero"
-                className="pb-3 text-4xl font-bold tracking-widest text-zinc-900 lg:text-5xl"
-              >
-                {t("hero.title")}
-              </h1>
-              <p className="text-xl text-zinc-800">{t("hero.subtitle")}</p>
+      <div className="flex w-full flex-col items-center pt-28 pb-8">
+        <div className="container">
+          {/* Floating Elements */}
+          <div className="relative hidden md:block">
+            <div className="animate-float">
+              <div className="bg-secondary absolute top-15 left-3/12 h-12 w-12 rounded-full opacity-40"></div>
             </div>
-            <NavButton href="/contact">{t("hero.button")}</NavButton>
+            <div className="animate-float" style={{ animationDelay: "1s" }}>
+              <div className="bg-accent absolute top-25 right-3/12 h-24 w-24 rounded-full opacity-35"></div>
+            </div>
+            <div className="animate-float" style={{ animationDelay: "2s" }}>
+              <div className="bg-primary absolute top-5 right-5/12 h-16 w-16 rounded-full opacity-20"></div>
+            </div>
           </div>
-
-          {/* Image */}
-          <div className="absolute flex h-full w-full flex-col items-center px-6 text-center opacity-20 md:right-0 md:w-1/2 md:px-0 md:opacity-100">
-            <Image
-              src={ocOnTheLaptop}
-              alt="OC on the laptop hero image"
-              className="max-h-full max-w-full object-contain"
-              style={{ height: "auto", width: "100%" }}
-            />
+          <div className="relative flex items-center justify-center md:space-x-8">
+            {/* Title & CTA */}
+            <div className="flex w-full z-10 flex-col items-center space-y-6 text-center md:w-1/2">
+              <div className="px-6 md:px-3">
+                <h1
+                  id="hero"
+                  className="pb-3 text-4xl font-bold tracking-widest lg:text-5xl"
+                >
+                  {t.rich("hero.title", { keyword: (children) => <span className="text-primary">{children}</span> })}
+                </h1>
+                <p className="text-xl text-muted-foreground">{t("hero.subtitle")}</p>
+              </div>
+              <Button
+                size="lg"
+                className="rounded-sm px-8 py-6 text-lg uppercase"
+                asChild
+              >
+                <Link href="/contact">{t("hero.button")}</Link>
+              </Button>
+            </div>
+            {/* Image */}
+            <div className="absolute z-0 flex h-full w-full flex-col items-center px-6 text-center opacity-20 md:relative md:right-0 md:w-1/2 md:px-0 md:opacity-100">
+              <Image
+                src={ocOnTheLaptop}
+                alt="OC on the laptop hero image"
+                className="max-h-full max-w-full object-contain"
+                style={{ height: "auto", width: "80%" }}
+              />
+            </div>
           </div>
         </div>
       </div>
