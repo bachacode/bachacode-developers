@@ -13,7 +13,6 @@ export default function Heading({ title, subtitle, id }: HeadingProps) {
         {title}
       </h2>
       {subtitle && <p className="text-xl font-extralight">{subtitle}</p>}
-      <div className="border-primary w-12 border-t-2 pb-4"></div>
     </div>
   );
 }

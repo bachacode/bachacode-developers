@@ -30,7 +30,7 @@ export default function ServiceCard({ index, service }: ServiceCardProps) {
   return (
     <Card
       key={index}
-      className="group from-background to-muted/30 relative overflow-hidden rounded bg-gradient-to-br shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
+      className="group relative gap-3 rounded bg-white shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
     >
       {/* Decorative corner element */}
       <div
@@ -55,19 +55,19 @@ export default function ServiceCard({ index, service }: ServiceCardProps) {
         </CardDescription>
       </CardHeader>
 
-      <CardContent className="px-6 pb-8">
-        {/* Feature tags */}
-        <div className="mb-6 flex flex-wrap justify-center gap-2">
-          {service.features &&
-            service.features.map((feature, featureIndex) => (
+      {service.features && (
+        <CardContent className="px-6 pb-8">
+          {/* Feature tags */}
+          <div className="mb-6 flex flex-wrap justify-center gap-2">
+            {service.features.map((feature, featureIndex) => (
               <Badge key={featureIndex} variant="outline">
                 {feature}
               </Badge>
             ))}
-        </div>
+          </div>
 
-        {/* Call to action */}
-        {/* <div className="text-center">
+          {/* Call to action */}
+          {/* <div className="text-center">
           <Button
             variant="ghost"
             className="rounded-full px-6 py-2 text-sm font-medium hover:bg-primary hover:text-primary-foreground transition-all group-hover:bg-primary/10"
@@ -75,7 +75,8 @@ export default function ServiceCard({ index, service }: ServiceCardProps) {
             Learn More →
           </Button>
         </div> */}
-      </CardContent>
+        </CardContent>
+      )}
     </Card>
   );
 }

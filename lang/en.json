@@ -160,11 +160,16 @@
       "title": "About Us"
     },
     "hero": {
-      "title": "About Us - Bachacode Developers",
-      "description": "At Bachacode Developers, we are dedicated to providing innovative and high quality web development solutions. Our team of experts works tirelessly to ensure the satisfaction of our clients, providing personalized services tailored to the specific needs of each project."
+      "title": "About <keyword>Bachacode Developers</keyword>",
+      "description": "At Bachacode Developers, we are dedicated to providing innovative and high quality web development solutions. Our team of experts works tirelessly to ensure the satisfaction of our clients, providing personalized services tailored to the specific needs of each project.",
+      "badges": {
+        "custom_solutions": "Custom Solutions",
+        "since": "Since 2021",
+        "customer_focus": "Customer Focus"
+      }
     },
     "our_values": {
-      "title": "Our values",
+      "title": "Our <keyword>values</keyword>",
       "subtitle": "Ethics that sets us apart from the competition",
       "cards": {
         "innovation": {
@@ -182,7 +187,7 @@
       }
     },
     "our_team": {
-      "title": "Our team",
+      "title": "Our <keyword>team</keyword>",
       "subtitle": "The professionals who will develop your idea",
       "cards": {
         "cristhian": {

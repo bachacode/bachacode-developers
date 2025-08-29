@@ -12,7 +12,6 @@ interface TeamCardProps {
   linkedinUrl?: string;
   githubUrl?: string;
   icon?: IconProp;
-  optionalIcon?: IconProp;
 }
 
 export default function TeamCard({
@@ -22,30 +21,21 @@ export default function TeamCard({
   linkedinUrl,
   githubUrl,
   icon,
-  optionalIcon,
 }: TeamCardProps) {
   const t = useTranslations("about_us.our_team.cards");
   return (
     <Card className="gap-3 rounded bg-white shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
-      <CardHeader>
-        {optionalIcon && (
+      <CardHeader className="relative">
+        <div className="flex flex-col items-start">
+          <span className="title-font text-lg font-medium">{memberName}</span>
+          <h3 className="text-muted-foreground">{profession}</h3>
+        </div>
+        {icon && (
           <FontAwesomeIcon
-            icon={optionalIcon}
-            className="text-muted-foreground absolute top-2 right-2"
+            className="text-primary absolute top-0 right-2 z-10 hidden -translate-y-4 text-6xl opacity-60 md:block"
+            icon={icon}
           />
         )}
-        <div className="flex justify-center md:justify-between">
-          <div className="flex flex-col items-center md:items-start">
-            <span className="title-font text-lg font-medium">{memberName}</span>
-            <h3 className="text-muted-foreground">{profession}</h3>
-          </div>
-          {icon && (
-            <FontAwesomeIcon
-              className="text-primary hidden text-4xl md:block"
-              icon={icon}
-            />
-          )}
-        </div>
       </CardHeader>
       <CardContent className="pb-2">{description}</CardContent>
 
