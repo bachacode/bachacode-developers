@@ -246,7 +246,7 @@
       }
     },
     "advantages": {
-      "title": "¿Qué te ofrecemos?",
+      "title": "¿Qué te <keyword>ofrecemos</keyword>?",
       "subtitle": "Ventajas exclusivas de nuestros clientes",
       "cards": {
         "hosting": {

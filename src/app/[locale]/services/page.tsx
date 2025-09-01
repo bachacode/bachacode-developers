@@ -153,6 +153,7 @@ export default function Servicios() {
         titleId="services"
         titleName={t.rich("services.title", { keyword: (chunks) => <UnderlinedText>{chunks}</UnderlinedText> })}
         subtitle={t("services.subtitle")}
+        altBackground
       >
         {/* Service cards */}
         <div className="w-full grid gap-6 px-2 md:grid-cols-2 lg:grid-cols-3">
@@ -172,11 +173,24 @@ export default function Servicios() {
       {/* Advantages Section */}
       <PageSectionWrapper
         titleId="advantages"
-        titleName={t("advantages.title")}
+        titleName={t.rich("advantages.title", { keyword: (chunks) => <UnderlinedText>{chunks}</UnderlinedText> })}
         subtitle={t("advantages.subtitle")}
-        altBackground
       >
+        {/* Floating Elements */}
+        <div className="relative hidden md:block w-full">
+          <div className="animate-float">
+            <div className="bg-secondary absolute top-25 left-2/12 h-12 w-12 rounded-full opacity-40"></div>
+          </div>
+          <div className="animate-float" style={{ animationDelay: "1s" }}>
+            <div className="bg-accent absolute top-20 left-5/12 h-24 w-24 rounded-full opacity-35"></div>
+          </div>
+          <div className="animate-float" style={{ animationDelay: "2s" }}>
+            <div className="bg-primary absolute top-35 left-4/12 h-16 w-16 rounded-full opacity-45"></div>
+          </div>
+        </div>
+
         <div className="relative flex w-full">
+
           {/* Image */}
           <div className="absolute flex h-full w-full flex-col items-center justify-center px-6 opacity-20 md:px-0 lg:relative lg:left-0 lg:w-1/2 lg:opacity-100">
             <Image

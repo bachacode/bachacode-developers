@@ -2,6 +2,7 @@ import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import { Card, CardContent, CardHeader } from "../ui/card";
 
 interface AdvantageCardProps {
   icon: IconProp;
@@ -17,22 +18,24 @@ export default function AdvantageCard({
   iconColor,
 }: AdvantageCardProps) {
   return (
-    <div className="flex min-h-40 w-full flex-col items-center space-y-3 rounded-md border-2 border-black bg-white px-3 py-6 shadow-md transition-all duration-200 hover:-translate-y-2 hover:scale-105 hover:shadow-lg md:flex-row md:space-y-0">
-      <FontAwesomeIcon
-        icon={icon}
-        fixedWidth
-        className={`pr-3 text-4xl ${iconColor}`}
-      />
-      <div className="grow px-1.5">
-        <h3 className="title-font text-lg font-medium text-gray-900">
-          {title}
-        </h3>
-        <p className="text-base leading-relaxed">{children}</p>
-      </div>
-      <FontAwesomeIcon
-        icon={faCheck}
-        className="hidden h-auto w-full max-w-8 text-green-600 md:block"
-      />
-    </div>
+    <Card className="group border-accent relative justify-center gap-3 rounded bg-white shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+      <CardHeader className="flex">
+        <FontAwesomeIcon
+          icon={icon}
+          fixedWidth
+          className={`pr-1.5 text-2xl ${iconColor}`}
+        />
+        <h3 className="title-font text-2xl font-medium">{title}</h3>
+      </CardHeader>
+      <CardContent>
+        <p className="text-muted-foreground text-base leading-relaxed">
+          {children}
+        </p>
+        {/*<FontAwesomeIcon
+          icon={faCheck}
+          className="hidden md:block relative text-9xl -right-4 bottom-0 text-green-600 opacity-35"
+        />*/}
+      </CardContent>
+    </Card>
   );
 }
