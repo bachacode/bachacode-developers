@@ -14,13 +14,6 @@ import {
   faWindowRestore,
 } from "@fortawesome/free-solid-svg-icons";
 import {
-  faCss3Alt,
-  faHtml5,
-  faJsSquare,
-  faLaravel,
-  faPhp,
-  faReact,
-  faVuejs,
   faWordpress,
 } from "@fortawesome/free-brands-svg-icons";
 import AdvantageCard from "@/components/cards/AdvantageCard";
@@ -28,7 +21,6 @@ import PageSectionWrapper from "@/components/layout/PageSectionWrapper";
 import { Metadata } from "next";
 import generateTitle from "@/utils/generateTitle";
 import ContactSection from "@/components/sections/ContactSection";
-import TechCard from "@/components/cards/TechCard";
 import PriceCard from "@/components/cards/PriceCard";
 import { getTranslations } from "next-intl/server";
 import { hasLocale, useFormatter, useTranslations } from "next-intl";
@@ -36,6 +28,7 @@ import { routing } from "@/i18n/routing";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 import UnderlinedText from "@/components/common/UnderlinedText";
+import TechCarouselAlt from "@/components/sections/TechCarouselAlt";
 
 export async function generateMetadata({
   params,
@@ -239,13 +232,24 @@ export default function Servicios() {
       </PageSectionWrapper>
 
       {/* Technologies section */}
-      <PageSectionWrapper
+      <div className="w-full flex justify-center bg-orange-primary-50 border-primary border-y">
+        <div className="container flex flex-col lg:flex-row items-center min-h-[160px] px-4 py-2 gap-6">
+          <div className="lg:w-5/12">
+            <h2 id="technology" className="text-3xl font-semibold uppercase">{t("technologies.title")}</h2>
+            <p className="text-xl font-extralight">{t("technologies.subtitle")}</p>
+          </div>
+
+          <div className="lg:w-7/12">
+            <TechCarouselAlt></TechCarouselAlt>
+          </div>
+        </div>
+      </div>
+      {/* <PageSectionWrapper
         titleId="technology"
         titleName={t("technologies.title")}
         subtitle={t("technologies.subtitle")}
       >
         <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
-          {/* Tech Box */}
           <TechCard
             icon={faHtml5}
             className="group-hover:text-orange-600"
@@ -287,7 +291,8 @@ export default function Servicios() {
             className="group-hover:text-indigo-500"
           ></TechCard>
         </div>
-      </PageSectionWrapper>
+      </PageSectionWrapper> 
+      */}
 
       {/* Hosting section */}
       <PageSectionWrapper
