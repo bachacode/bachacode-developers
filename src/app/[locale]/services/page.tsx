@@ -21,14 +21,14 @@ import PageSectionWrapper from "@/components/layout/PageSectionWrapper";
 import { Metadata } from "next";
 import generateTitle from "@/utils/generateTitle";
 import ContactSection from "@/components/sections/ContactSection";
-import PriceCard from "@/components/cards/PriceCard";
 import { getTranslations } from "next-intl/server";
-import { hasLocale, useFormatter, useTranslations } from "next-intl";
+import { hasLocale, useTranslations } from "next-intl";
 import { routing } from "@/i18n/routing";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 import UnderlinedText from "@/components/common/UnderlinedText";
 import TechCarouselAlt from "@/components/sections/TechCarouselAlt";
+import { HostingServiceCard } from "./HostingServiceCard";
 
 export async function generateMetadata({
   params,
@@ -49,7 +49,6 @@ export async function generateMetadata({
 
 export default function Servicios() {
   const t = useTranslations("services");
-  const format = useFormatter();
 
   const services = [
     {
@@ -297,47 +296,65 @@ export default function Servicios() {
       {/* Hosting section */}
       <PageSectionWrapper
         titleId="hosting"
-        titleName={t("hosting.title")}
+        titleName={t.rich("hosting.title", { keyword: (chunks) => <UnderlinedText>{chunks}</UnderlinedText> })}
         subtitle={t("hosting.subtitle")}
-        altBackground
       >
         {/* Hosting plans */}
-        <div className="flex flex-col gap-4 px-2 md:flex-row">
-          <PriceCard
-            title={t("hosting.cards.basic.title")}
-            subtitle={t("hosting.cards.basic.description")}
-            price={format.number(9.99, { style: "currency", currency: "USD" })}
-            specs={{
-              ram: "2GB",
-              cores: "1",
-              storage: "25GB",
-              bandwidth: "1TB",
-            }}
-          />
-
-          <PriceCard
-            title={t("hosting.cards.advanced.title")}
-            subtitle={t("hosting.cards.advanced.description")}
-            price={format.number(19.99, { style: "currency", currency: "USD" })}
-            specs={{
-              ram: "2GB",
-              cores: "2",
-              storage: "40GB",
-              bandwidth: "2TB",
-            }}
-          />
-
-          <PriceCard
-            title={t("hosting.cards.pro.title")}
-            subtitle={t("hosting.cards.pro.description")}
-            price={format.number(29.99, { style: "currency", currency: "USD" })}
-            specs={{
-              ram: "4GB",
-              cores: "2",
-              storage: "80GB",
-              bandwidth: "4TB",
-            }}
-          />
+        <div className="grid grid-cols-1 gap-4 w-full">
+          {[
+            {
+              title: t("hosting.cards.web.title"),
+              description: t("hosting.cards.web.description"),
+              features: [
+                {
+                  title: t("hosting.cards.web.features.multiple_websites.title"),
+                  description: t("hosting.cards.web.features.multiple_websites.description")
+                },
+                {
+                  title: t("hosting.cards.web.features.professional_email.title"),
+                  description: t("hosting.cards.web.features.professional_email.description")
+                },
+                {
+                  title: t("hosting.cards.web.features.custom_php.title"),
+                  description: t("hosting.cards.web.features.custom_php.description")
+                },
+                {
+                  title: t("hosting.cards.web.features.team_access.title"),
+                  description: t("hosting.cards.web.features.team_access.description")
+                },
+              ]
+            },
+            {
+              title: t("hosting.cards.cloud.title"),
+              description: t("hosting.cards.cloud.description"),
+              features: [
+                {
+                  title: t("hosting.cards.cloud.features.dedicated_resources.title"),
+                  description: t("hosting.cards.cloud.features.dedicated_resources.description")
+                },
+                {
+                  title: t("hosting.cards.cloud.features.auto_scaling.title"),
+                  description: t("hosting.cards.cloud.features.auto_scaling.description")
+                },
+                {
+                  title: t("hosting.cards.cloud.features.high_concurrency.title"),
+                  description: t("hosting.cards.cloud.features.high_concurrency.description")
+                },
+                {
+                  title: t("hosting.cards.cloud.features.flexible_stack.title"),
+                  description: t("hosting.cards.cloud.features.flexible_stack.description")
+                },
+              ]
+            }
+          ].map((service, index) => (
+            <HostingServiceCard
+              key={index}
+              title={service.title}
+              description={service.description}
+              features={service.features}
+              reversed={index % 2 == 1}
+            />
+          ))}
         </div>
       </PageSectionWrapper>
 

@@ -272,20 +272,52 @@
       "subtitle": "We work with the best technologies for your projects"
     },
     "hosting": {
-      "title": "Hosting plans",
-      "subtitle": "host your project with one of our flexible plans!",
+      "title": "Let us handle the <keyword>hosting</keyword> of your project",
+      "subtitle": "Host your project with us and forget about technical problems",
       "cards": {
-        "basic": {
-          "title": "Basic Plan",
-          "description": "Ideal for personal projects and small websites."
+        "web": {
+          "title": "Web Hosting",
+          "description": "Professional hosting designed for business owners who want secure, reliable, and optimized websites without the technical headaches.",
+          "features": {
+            "multiple_websites": {
+              "title": "Host up to 5 websites",
+              "description": "Host up to 5 websites under one plan — ideal for a main site, landing pages, or an online store."
+            },
+            "professional_email": {
+              "title": "Custom business email",
+              "description": "Get a custom email address with your domain name (you@yourbusiness.com) to look professional and trustworthy."
+            },
+            "custom_php": {
+              "title": "PHP & HTML Support",
+              "description": "Support for HTML static websites and PHP applications, including WordPress"
+            },
+            "team_access": {
+              "title": "Secure team access",
+              "description": "Grant secure access to employees or partners without sharing sensitive login details."
+            }
+          }
         },
-        "advanced": {
-          "title": "Advanced Plan",
-          "description": "Designed for growing businesses and dynamic websites."
-        },
-        "pro": {
-          "title": "Professional Plan",
-          "description": "The best option for high-performance business projects."
+        "cloud": {
+          "title": "Cloud Hosting",
+          "description": "Flexible and scalable hosting that combines the power of dedicated resources with the reliability of the cloud. Ideal for businesses that need consistent performance.",
+          "features": {
+            "dedicated_resources": {
+              "title": "Dedicated resources",
+              "description": "Guaranteed CPU, RAM, and storage reserved for your websites without sharing with other users."
+            },
+            "auto_scaling": {
+              "title": "Automatic scaling",
+              "description": "Your hosting resources automatically scale up or down to handle traffic spikes or business growth."
+            },
+            "flexible_stack": {
+              "title": "Flexible app stack",
+              "description": "Run different applications and frameworks beyond WordPress, including custom stacks tailored to your project."
+            },
+            "high_concurrency": {
+              "title": "Handles high traffic",
+              "description": "Serve large numbers of visitors and transactions at the same time without losing performance."
+            }
+          }
         }
       }
     }
