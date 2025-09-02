@@ -13,9 +13,7 @@ import {
   faShield,
   faWindowRestore,
 } from "@fortawesome/free-solid-svg-icons";
-import {
-  faWordpress,
-} from "@fortawesome/free-brands-svg-icons";
+import { faWordpress } from "@fortawesome/free-brands-svg-icons";
 import AdvantageCard from "@/components/cards/AdvantageCard";
 import PageSectionWrapper from "@/components/layout/PageSectionWrapper";
 import { Metadata } from "next";
@@ -89,7 +87,6 @@ export default function Servicios() {
     },
   ];
 
-
   return (
     <main className="w-full">
       {/* Hero section */}
@@ -109,15 +106,21 @@ export default function Servicios() {
           </div>
           <div className="relative flex items-center justify-center md:space-x-8">
             {/* Title & CTA */}
-            <div className="flex w-full z-10 flex-col items-center space-y-6 text-center md:w-1/2">
+            <div className="z-10 flex w-full flex-col items-center space-y-6 text-center md:w-1/2">
               <div className="px-6 md:px-3">
                 <h1
                   id="hero"
                   className="pb-3 text-4xl font-bold tracking-widest lg:text-5xl"
                 >
-                  {t.rich("hero.title", { keyword: (chunks) => <UnderlinedText>{chunks}</UnderlinedText> })}
+                  {t.rich("hero.title", {
+                    keyword: (chunks) => (
+                      <UnderlinedText>{chunks}</UnderlinedText>
+                    ),
+                  })}
                 </h1>
-                <p className="text-xl text-muted-foreground">{t("hero.subtitle")}</p>
+                <p className="text-muted-foreground text-xl">
+                  {t("hero.subtitle")}
+                </p>
               </div>
               <Button
                 size="lg"
@@ -143,12 +146,14 @@ export default function Servicios() {
       {/* Services Section */}
       <PageSectionWrapper
         titleId="services"
-        titleName={t.rich("services.title", { keyword: (chunks) => <UnderlinedText>{chunks}</UnderlinedText> })}
+        titleName={t.rich("services.title", {
+          keyword: (chunks) => <UnderlinedText>{chunks}</UnderlinedText>,
+        })}
         subtitle={t("services.subtitle")}
         altBackground
       >
         {/* Service cards */}
-        <div className="w-full grid gap-6 px-2 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid w-full gap-6 px-2 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
             <ServiceCardAlt
               key={index}
@@ -165,11 +170,13 @@ export default function Servicios() {
       {/* Advantages Section */}
       <PageSectionWrapper
         titleId="advantages"
-        titleName={t.rich("advantages.title", { keyword: (chunks) => <UnderlinedText>{chunks}</UnderlinedText> })}
+        titleName={t.rich("advantages.title", {
+          keyword: (chunks) => <UnderlinedText>{chunks}</UnderlinedText>,
+        })}
         subtitle={t("advantages.subtitle")}
       >
         {/* Floating Elements */}
-        <div className="relative hidden md:block w-full">
+        <div className="relative hidden w-full md:block">
           <div className="animate-float">
             <div className="bg-secondary absolute top-25 left-2/12 h-12 w-12 rounded-full opacity-40"></div>
           </div>
@@ -182,7 +189,6 @@ export default function Servicios() {
         </div>
 
         <div className="relative flex w-full">
-
           {/* Image */}
           <div className="absolute flex h-full w-full flex-col items-center justify-center px-6 opacity-20 md:px-0 lg:relative lg:left-0 lg:w-1/2 lg:opacity-100">
             <Image
@@ -231,11 +237,15 @@ export default function Servicios() {
       </PageSectionWrapper>
 
       {/* Technologies section */}
-      <div className="w-full flex justify-center bg-primary border-primary border-y">
-        <div className="container flex flex-col lg:flex-row items-center min-h-[160px] px-4 py-2 gap-6">
-          <div className="lg:w-5/12 text-primary-foreground">
-            <h2 id="technology" className="text-3xl font-semibold uppercase">{t("technologies.title")}</h2>
-            <p className="text-xl font-extralight">{t("technologies.subtitle")}</p>
+      <div className="bg-primary border-primary flex w-full justify-center border-y">
+        <div className="container flex min-h-[160px] flex-col items-center gap-6 px-4 py-2 lg:flex-row">
+          <div className="text-primary-foreground lg:w-5/12">
+            <h2 id="technology" className="text-3xl font-semibold uppercase">
+              {t("technologies.title")}
+            </h2>
+            <p className="text-xl font-extralight">
+              {t("technologies.subtitle")}
+            </p>
           </div>
 
           <div className="lg:w-7/12">
@@ -296,56 +306,82 @@ export default function Servicios() {
       {/* Hosting section */}
       <PageSectionWrapper
         titleId="hosting"
-        titleName={t.rich("hosting.title", { keyword: (chunks) => <UnderlinedText>{chunks}</UnderlinedText> })}
+        titleName={t.rich("hosting.title", {
+          keyword: (chunks) => <UnderlinedText>{chunks}</UnderlinedText>,
+        })}
         subtitle={t("hosting.subtitle")}
       >
         {/* Hosting plans */}
-        <div className="grid grid-cols-1 gap-4 w-full">
+        <div className="grid w-full grid-cols-1 gap-4">
           {[
             {
               title: t("hosting.cards.web.title"),
               description: t("hosting.cards.web.description"),
               features: [
                 {
-                  title: t("hosting.cards.web.features.multiple_websites.title"),
-                  description: t("hosting.cards.web.features.multiple_websites.description")
+                  title: t(
+                    "hosting.cards.web.features.multiple_websites.title",
+                  ),
+                  description: t(
+                    "hosting.cards.web.features.multiple_websites.description",
+                  ),
                 },
                 {
-                  title: t("hosting.cards.web.features.professional_email.title"),
-                  description: t("hosting.cards.web.features.professional_email.description")
+                  title: t(
+                    "hosting.cards.web.features.professional_email.title",
+                  ),
+                  description: t(
+                    "hosting.cards.web.features.professional_email.description",
+                  ),
                 },
                 {
                   title: t("hosting.cards.web.features.custom_php.title"),
-                  description: t("hosting.cards.web.features.custom_php.description")
+                  description: t(
+                    "hosting.cards.web.features.custom_php.description",
+                  ),
                 },
                 {
                   title: t("hosting.cards.web.features.team_access.title"),
-                  description: t("hosting.cards.web.features.team_access.description")
+                  description: t(
+                    "hosting.cards.web.features.team_access.description",
+                  ),
                 },
-              ]
+              ],
             },
             {
               title: t("hosting.cards.cloud.title"),
               description: t("hosting.cards.cloud.description"),
               features: [
                 {
-                  title: t("hosting.cards.cloud.features.dedicated_resources.title"),
-                  description: t("hosting.cards.cloud.features.dedicated_resources.description")
+                  title: t(
+                    "hosting.cards.cloud.features.dedicated_resources.title",
+                  ),
+                  description: t(
+                    "hosting.cards.cloud.features.dedicated_resources.description",
+                  ),
                 },
                 {
                   title: t("hosting.cards.cloud.features.auto_scaling.title"),
-                  description: t("hosting.cards.cloud.features.auto_scaling.description")
+                  description: t(
+                    "hosting.cards.cloud.features.auto_scaling.description",
+                  ),
                 },
                 {
-                  title: t("hosting.cards.cloud.features.high_concurrency.title"),
-                  description: t("hosting.cards.cloud.features.high_concurrency.description")
+                  title: t(
+                    "hosting.cards.cloud.features.high_concurrency.title",
+                  ),
+                  description: t(
+                    "hosting.cards.cloud.features.high_concurrency.description",
+                  ),
                 },
                 {
                   title: t("hosting.cards.cloud.features.flexible_stack.title"),
-                  description: t("hosting.cards.cloud.features.flexible_stack.description")
+                  description: t(
+                    "hosting.cards.cloud.features.flexible_stack.description",
+                  ),
                 },
-              ]
-            }
+              ],
+            },
           ].map((service, index) => (
             <HostingServiceCard
               key={index}

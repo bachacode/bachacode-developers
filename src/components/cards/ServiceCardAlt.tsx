@@ -18,15 +18,9 @@ export default function ServiceCardAlt({
   iconColor,
 }: ServiceCardProps) {
   return (
-    <Card
-      className="group"
-      hoverable
-    >
+    <Card className="group" hoverable>
       <CardHeader className="py-2">
-        <FontAwesomeIcon
-          icon={icon}
-          className={`pb-3 text-6xl ${iconColor}`}
-        />
+        <FontAwesomeIcon icon={icon} className={`pb-3 text-6xl ${iconColor}`} />
 
         <CardTitle className="text-2xl font-bold text-balance">
           <h3>{title}</h3>
@@ -34,7 +28,9 @@ export default function ServiceCardAlt({
       </CardHeader>
 
       <CardContent>
-        <p className="text-base leading-relaxed text-muted-foreground">{children}</p>
+        <p className="text-muted-foreground text-base leading-relaxed">
+          {children}
+        </p>
       </CardContent>
     </Card>
   );

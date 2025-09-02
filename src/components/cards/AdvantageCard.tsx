@@ -17,16 +17,10 @@ export default function AdvantageCard({
   iconColor,
 }: AdvantageCardProps) {
   return (
-    <Card
-      className="group relative justify-center"
-      hoverable
-    >
+    <Card className="group relative justify-center" hoverable>
       <CardHeader className="flex items-start space-x-1.5 text-2xl">
         <div>
-          <FontAwesomeIcon
-            icon={icon}
-            className={iconColor}
-          />
+          <FontAwesomeIcon icon={icon} className={iconColor} />
         </div>
         <h3 className="title-font font-medium">{title}</h3>
       </CardHeader>

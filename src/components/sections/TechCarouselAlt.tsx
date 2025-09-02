@@ -18,14 +18,14 @@ import {
   faGolang,
 } from "@fortawesome/free-brands-svg-icons";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
-import Autoplay from "embla-carousel-autoplay"
+import Autoplay from "embla-carousel-autoplay";
 
 function TechCarouselItem({
   icon,
   title,
 }: Readonly<{ icon: IconProp; title: string; className?: string }>) {
   return (
-    <CarouselItem className="group flex basis-1/2 md:basis-1/3 flex-col items-center text-primary-foreground">
+    <CarouselItem className="group text-primary-foreground flex basis-1/2 flex-col items-center md:basis-1/3">
       <FontAwesomeIcon
         fixedWidth
         className="py-1.5 text-6xl transition-transform duration-300 group-hover:scale-105"
@@ -50,8 +50,8 @@ export default function TechCarouselAlt() {
         Autoplay({
           delay: 2000,
           stopOnInteraction: false,
-          stopOnMouseEnter: true
-        })
+          stopOnMouseEnter: true,
+        }),
       ]}
     >
       <CarouselContent>
@@ -64,11 +64,7 @@ export default function TechCarouselAlt() {
           { icon: faPhp, title: "PHP" },
           { icon: faGolang, title: "Golang" },
         ].map((tech, index) => (
-          <TechCarouselItem
-            key={index}
-            icon={tech.icon}
-            title={tech.title}
-          />
+          <TechCarouselItem key={index} icon={tech.icon} title={tech.title} />
         ))}
       </CarouselContent>
       <CarouselPrevious className="left-4" />

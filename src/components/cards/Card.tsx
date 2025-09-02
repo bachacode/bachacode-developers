@@ -15,9 +15,9 @@ export function Card({
   return (
     <ShadcnCard
       className={cn(
-        "border-accent rounded-sm bg-white shadow-lg gap-3 duration-300", // your base styles
+        "border-accent gap-3 rounded-sm bg-white shadow-lg duration-300", // your base styles
         hoverable && "transition-all hover:-translate-y-2 hover:shadow-xl",
-        className
+        className,
       )}
       {...props}
     >
