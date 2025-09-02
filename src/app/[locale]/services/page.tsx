@@ -1,4 +1,3 @@
-import NavButton from "@/components/common/NavButton";
 import Image from "next/image";
 import React from "react";
 import ocOnTheLaptop from "@/assets/images/oc-on-the-laptop.svg";
@@ -9,30 +8,25 @@ import {
   faHeadphones,
   faMessage,
   faPalette,
+  faRocket,
   faServer,
   faShield,
   faWindowRestore,
 } from "@fortawesome/free-solid-svg-icons";
-import {
-  faCss3Alt,
-  faHtml5,
-  faJsSquare,
-  faLaravel,
-  faPhp,
-  faReact,
-  faVuejs,
-  faWordpress,
-} from "@fortawesome/free-brands-svg-icons";
+import { faWordpress } from "@fortawesome/free-brands-svg-icons";
 import AdvantageCard from "@/components/cards/AdvantageCard";
 import PageSectionWrapper from "@/components/layout/PageSectionWrapper";
 import { Metadata } from "next";
 import generateTitle from "@/utils/generateTitle";
 import ContactSection from "@/components/sections/ContactSection";
-import TechCard from "@/components/cards/TechCard";
-import PriceCard from "@/components/cards/PriceCard";
 import { getTranslations } from "next-intl/server";
-import { hasLocale, useFormatter, useTranslations } from "next-intl";
+import { hasLocale, useTranslations } from "next-intl";
 import { routing } from "@/i18n/routing";
+import { Button } from "@/components/ui/button";
+import { Link } from "@/i18n/navigation";
+import UnderlinedText from "@/components/common/UnderlinedText";
+import TechCarouselAlt from "@/components/sections/TechCarouselAlt";
+import { HostingServiceCard } from "./HostingServiceCard";
 
 export async function generateMetadata({
   params,
@@ -53,35 +47,98 @@ export async function generateMetadata({
 
 export default function Servicios() {
   const t = useTranslations("services");
-  const format = useFormatter();
+
+  const services = [
+    {
+      title: t("services.cards.static.title"),
+      description: t("services.cards.static.body"),
+      icon: faWindowRestore,
+      iconColor: "text-primary",
+    },
+    {
+      title: t("services.cards.wordpress.title"),
+      description: t("services.cards.wordpress.body"),
+      icon: faWordpress,
+      iconColor: "text-accent",
+    },
+    {
+      title: t("services.cards.web-apps.title"),
+      description: t("services.cards.web-apps.body"),
+      icon: faCode,
+      iconColor: "text-selective-yellow-secondary-500",
+    },
+    {
+      title: t("services.cards.consulting.title"),
+      description: t("services.cards.consulting.body"),
+      icon: faMessage,
+      iconColor: "text-primary",
+    },
+    {
+      title: t("services.cards.support.title"),
+      description: t("services.cards.support.body"),
+      icon: faHeadphones,
+      iconColor: "text-accent",
+    },
+    {
+      title: t("services.cards.optimization.title"),
+      description: t("services.cards.optimization.body"),
+      icon: faRocket,
+      iconColor: "text-selective-yellow-secondary-500",
+    },
+  ];
 
   return (
     <main className="w-full">
       {/* Hero section */}
-      <div className="bg-orange-primary-50 flex w-full flex-col items-center px-8 pt-36 pb-12">
-        <div className="relative container flex items-center md:space-x-8 lg:min-h-[600px]">
-          {/* Title & CTA */}
-          <div className="flex w-full flex-col items-center space-y-6 text-center md:w-1/2">
-            <div className="px-6 md:px-3">
-              <h1
-                id="hero"
-                className="pb-3 text-4xl font-bold tracking-widest text-zinc-900 lg:text-5xl"
-              >
-                {t("hero.title")}
-              </h1>
-              <p className="text-xl text-zinc-800">{t("hero.subtitle")}</p>
+      <div className="flex w-full flex-col items-center pt-28 pb-8">
+        <div className="container">
+          {/* Floating Elements */}
+          <div className="relative hidden md:block">
+            <div className="animate-float">
+              <div className="bg-secondary absolute top-15 left-3/12 h-12 w-12 rounded-full opacity-40"></div>
             </div>
-            <NavButton href="/contact">{t("hero.button")}</NavButton>
+            <div className="animate-float" style={{ animationDelay: "1s" }}>
+              <div className="bg-accent absolute top-25 right-3/12 h-24 w-24 rounded-full opacity-35"></div>
+            </div>
+            <div className="animate-float" style={{ animationDelay: "2s" }}>
+              <div className="bg-primary absolute top-5 right-5/12 h-16 w-16 rounded-full opacity-20"></div>
+            </div>
           </div>
-
-          {/* Image */}
-          <div className="absolute flex h-full w-full flex-col items-center px-6 text-center opacity-20 md:right-0 md:w-1/2 md:px-0 md:opacity-100">
-            <Image
-              src={ocOnTheLaptop}
-              alt="OC on the laptop hero image"
-              className="max-h-full max-w-full object-contain"
-              style={{ height: "auto", width: "100%" }}
-            />
+          <div className="relative flex items-center justify-center md:space-x-8">
+            {/* Title & CTA */}
+            <div className="z-10 flex w-full flex-col items-center space-y-6 text-center md:w-1/2">
+              <div className="px-6 md:px-3">
+                <h1
+                  id="hero"
+                  className="pb-3 text-4xl font-bold tracking-widest lg:text-5xl"
+                >
+                  {t.rich("hero.title", {
+                    keyword: (chunks) => (
+                      <UnderlinedText>{chunks}</UnderlinedText>
+                    ),
+                  })}
+                </h1>
+                <p className="text-muted-foreground text-xl">
+                  {t("hero.subtitle")}
+                </p>
+              </div>
+              <Button
+                size="lg"
+                className="rounded-sm px-8 py-6 text-lg uppercase"
+                asChild
+              >
+                <Link href="/contact">{t("hero.button")}</Link>
+              </Button>
+            </div>
+            {/* Image */}
+            <div className="absolute z-0 flex h-full w-full flex-col items-center px-6 text-center opacity-20 md:relative md:right-0 md:w-1/2 md:px-0 md:opacity-100">
+              <Image
+                src={ocOnTheLaptop}
+                alt="OC on the laptop hero image"
+                className="max-h-full max-w-full object-contain"
+                style={{ height: "auto", width: "80%" }}
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -89,52 +146,48 @@ export default function Servicios() {
       {/* Services Section */}
       <PageSectionWrapper
         titleId="services"
-        titleName={t("services.title")}
+        titleName={t.rich("services.title", {
+          keyword: (chunks) => <UnderlinedText>{chunks}</UnderlinedText>,
+        })}
         subtitle={t("services.subtitle")}
+        altBackground
       >
         {/* Service cards */}
-        <div className="grid gap-6 px-2 md:grid-cols-2 lg:grid-cols-4">
-          <ServiceCardAlt
-            title={t("services.cards.static.title")}
-            icon={faWindowRestore}
-            iconColor="text-primary"
-          >
-            {t("services.cards.static.body")}
-          </ServiceCardAlt>
-
-          <ServiceCardAlt
-            title={t("services.cards.wordpress.title")}
-            icon={faWordpress}
-            iconColor="text-primary"
-          >
-            {t("services.cards.wordpress.body")}
-          </ServiceCardAlt>
-
-          <ServiceCardAlt
-            title={t("services.cards.web-apps.title")}
-            icon={faCode}
-            iconColor="text-primary"
-          >
-            {t("services.cards.web-apps.body")}
-          </ServiceCardAlt>
-
-          <ServiceCardAlt
-            title={t("services.cards.support.title")}
-            icon={faMessage}
-            iconColor="text-primary"
-          >
-            {t("services.cards.support.body")}
-          </ServiceCardAlt>
+        <div className="grid w-full gap-6 px-2 md:grid-cols-2 lg:grid-cols-3">
+          {services.map((service, index) => (
+            <ServiceCardAlt
+              key={index}
+              title={service.title}
+              icon={service.icon}
+              iconColor={service.iconColor}
+            >
+              {service.description}
+            </ServiceCardAlt>
+          ))}
         </div>
       </PageSectionWrapper>
 
       {/* Advantages Section */}
       <PageSectionWrapper
         titleId="advantages"
-        titleName={t("advantages.title")}
+        titleName={t.rich("advantages.title", {
+          keyword: (chunks) => <UnderlinedText>{chunks}</UnderlinedText>,
+        })}
         subtitle={t("advantages.subtitle")}
-        altBackground
       >
+        {/* Floating Elements */}
+        <div className="relative hidden w-full md:block">
+          <div className="animate-float">
+            <div className="bg-secondary absolute top-25 left-2/12 h-12 w-12 rounded-full opacity-40"></div>
+          </div>
+          <div className="animate-float" style={{ animationDelay: "1s" }}>
+            <div className="bg-accent absolute top-20 left-5/12 h-24 w-24 rounded-full opacity-35"></div>
+          </div>
+          <div className="animate-float" style={{ animationDelay: "2s" }}>
+            <div className="bg-primary absolute top-35 left-4/12 h-16 w-16 rounded-full opacity-45"></div>
+          </div>
+        </div>
+
         <div className="relative flex w-full">
           {/* Image */}
           <div className="absolute flex h-full w-full flex-col items-center justify-center px-6 opacity-20 md:px-0 lg:relative lg:left-0 lg:w-1/2 lg:opacity-100">
@@ -184,13 +237,28 @@ export default function Servicios() {
       </PageSectionWrapper>
 
       {/* Technologies section */}
-      <PageSectionWrapper
+      <div className="bg-primary border-primary flex w-full justify-center border-y">
+        <div className="container flex min-h-[160px] flex-col items-center gap-6 px-4 py-2 lg:flex-row">
+          <div className="text-primary-foreground lg:w-5/12">
+            <h2 id="technology" className="text-3xl font-semibold uppercase">
+              {t("technologies.title")}
+            </h2>
+            <p className="text-xl font-extralight">
+              {t("technologies.subtitle")}
+            </p>
+          </div>
+
+          <div className="lg:w-7/12">
+            <TechCarouselAlt></TechCarouselAlt>
+          </div>
+        </div>
+      </div>
+      {/* <PageSectionWrapper
         titleId="technology"
         titleName={t("technologies.title")}
         subtitle={t("technologies.subtitle")}
       >
         <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
-          {/* Tech Box */}
           <TechCard
             icon={faHtml5}
             className="group-hover:text-orange-600"
@@ -232,52 +300,97 @@ export default function Servicios() {
             className="group-hover:text-indigo-500"
           ></TechCard>
         </div>
-      </PageSectionWrapper>
+      </PageSectionWrapper> 
+      */}
 
       {/* Hosting section */}
       <PageSectionWrapper
         titleId="hosting"
-        titleName={t("hosting.title")}
+        titleName={t.rich("hosting.title", {
+          keyword: (chunks) => <UnderlinedText>{chunks}</UnderlinedText>,
+        })}
         subtitle={t("hosting.subtitle")}
-        altBackground
       >
         {/* Hosting plans */}
-        <div className="flex flex-col gap-4 px-2 md:flex-row">
-          <PriceCard
-            title={t("hosting.cards.basic.title")}
-            subtitle={t("hosting.cards.basic.description")}
-            price={format.number(9.99, { style: "currency", currency: "USD" })}
-            specs={{
-              ram: "2GB",
-              cores: "1",
-              storage: "25GB",
-              bandwidth: "1TB",
-            }}
-          />
-
-          <PriceCard
-            title={t("hosting.cards.advanced.title")}
-            subtitle={t("hosting.cards.advanced.description")}
-            price={format.number(19.99, { style: "currency", currency: "USD" })}
-            specs={{
-              ram: "2GB",
-              cores: "2",
-              storage: "40GB",
-              bandwidth: "2TB",
-            }}
-          />
-
-          <PriceCard
-            title={t("hosting.cards.pro.title")}
-            subtitle={t("hosting.cards.pro.description")}
-            price={format.number(29.99, { style: "currency", currency: "USD" })}
-            specs={{
-              ram: "4GB",
-              cores: "2",
-              storage: "80GB",
-              bandwidth: "4TB",
-            }}
-          />
+        <div className="grid w-full grid-cols-1 gap-4">
+          {[
+            {
+              title: t("hosting.cards.web.title"),
+              description: t("hosting.cards.web.description"),
+              features: [
+                {
+                  title: t(
+                    "hosting.cards.web.features.multiple_websites.title",
+                  ),
+                  description: t(
+                    "hosting.cards.web.features.multiple_websites.description",
+                  ),
+                },
+                {
+                  title: t(
+                    "hosting.cards.web.features.professional_email.title",
+                  ),
+                  description: t(
+                    "hosting.cards.web.features.professional_email.description",
+                  ),
+                },
+                {
+                  title: t("hosting.cards.web.features.custom_php.title"),
+                  description: t(
+                    "hosting.cards.web.features.custom_php.description",
+                  ),
+                },
+                {
+                  title: t("hosting.cards.web.features.team_access.title"),
+                  description: t(
+                    "hosting.cards.web.features.team_access.description",
+                  ),
+                },
+              ],
+            },
+            {
+              title: t("hosting.cards.cloud.title"),
+              description: t("hosting.cards.cloud.description"),
+              features: [
+                {
+                  title: t(
+                    "hosting.cards.cloud.features.dedicated_resources.title",
+                  ),
+                  description: t(
+                    "hosting.cards.cloud.features.dedicated_resources.description",
+                  ),
+                },
+                {
+                  title: t("hosting.cards.cloud.features.auto_scaling.title"),
+                  description: t(
+                    "hosting.cards.cloud.features.auto_scaling.description",
+                  ),
+                },
+                {
+                  title: t(
+                    "hosting.cards.cloud.features.high_concurrency.title",
+                  ),
+                  description: t(
+                    "hosting.cards.cloud.features.high_concurrency.description",
+                  ),
+                },
+                {
+                  title: t("hosting.cards.cloud.features.flexible_stack.title"),
+                  description: t(
+                    "hosting.cards.cloud.features.flexible_stack.description",
+                  ),
+                },
+              ],
+            },
+          ].map((service, index) => (
+            <HostingServiceCard
+              key={index}
+              title={service.title}
+              description={service.description}
+              features={service.features}
+              reversed={index % 2 == 1}
+            />
+          ))}
         </div>
       </PageSectionWrapper>
 

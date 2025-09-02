@@ -1,6 +1,9 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
+import { CardContent, CardHeader, CardTitle } from "../ui/card";
+import { Card } from "./Card";
+
 interface ServiceCardProps {
   icon: IconProp;
   title: string;
@@ -15,19 +18,20 @@ export default function ServiceCardAlt({
   iconColor,
 }: ServiceCardProps) {
   return (
-    <div className="group w-full transition-transform delay-75 duration-200 hover:-translate-y-3">
-      <div className="border-accent h-full rounded-lg border bg-white p-6 shadow-md transition-shadow delay-75 duration-200 group-hover:shadow-xl">
-        <FontAwesomeIcon
-          icon={icon}
-          className={`pb-3 text-4xl ${iconColor}`}
-          fixedWidth
-        />
+    <Card className="group" hoverable>
+      <CardHeader className="py-2">
+        <FontAwesomeIcon icon={icon} className={`pb-3 text-6xl ${iconColor}`} />
 
-        <h3 className="title-font mb-2 text-lg font-medium text-gray-900">
-          {title}
-        </h3>
-        <p className="text-base leading-relaxed">{children}</p>
-      </div>
-    </div>
+        <CardTitle className="text-2xl font-bold text-balance">
+          <h3>{title}</h3>
+        </CardTitle>
+      </CardHeader>
+
+      <CardContent>
+        <p className="text-muted-foreground text-base leading-relaxed">
+          {children}
+        </p>
+      </CardContent>
+    </Card>
   );
 }
