@@ -1,5 +1,5 @@
 @import "tailwindcss";
-
+@import "tw-animate-css";
 @custom-variant dark (&:is(.dark *));
 
 :root {
@@ -163,6 +163,7 @@
 
 /* Compatibility styles for Tailwind v3 → v4 */
 @layer base {
+
   *,
   ::after,
   ::before,
@@ -191,6 +192,7 @@
 }
 
 @keyframes float {
+
   0%,
   100% {
     transform: translateY(0px);
@@ -202,6 +204,7 @@
 }
 
 @keyframes wiggle {
+
   0%,
   100% {
     transform: rotate(0deg);
