@@ -1,7 +1,8 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip"
 import { faCheckCircle } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { Card } from "@/components/cards/Card"
 
 interface HostingServiceCardProps {
     title: string
@@ -15,7 +16,7 @@ interface HostingServiceCardProps {
 
 export function HostingServiceCard({ title, description, features, reversed }: HostingServiceCardProps) {
     return (
-        <Card className={`gap-3 bg-white p-4 flex flex-col ${reversed ? "md:flex-row-reverse" : "md:flex-row"}`}>
+        <Card className={`flex flex-col ${reversed ? "md:flex-row-reverse" : "md:flex-row"}`}>
             <CardHeader className="text-center md:w-6/12">
                 <CardTitle className="text-3xl font-bold mb-2">{title}</CardTitle>
                 <CardDescription className="text-lg text-muted-foreground">{description}</CardDescription>

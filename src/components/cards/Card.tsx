@@ -7,7 +7,7 @@ interface CardWrapperProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 export function Card({
-  hoverable = true,
+  hoverable = false,
   className,
   children,
   ...props
