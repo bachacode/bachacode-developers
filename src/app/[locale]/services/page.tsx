@@ -231,9 +231,9 @@ export default function Servicios() {
       </PageSectionWrapper>
 
       {/* Technologies section */}
-      <div className="w-full flex justify-center bg-orange-primary-50 border-primary border-y">
+      <div className="w-full flex justify-center bg-primary border-primary border-y">
         <div className="container flex flex-col lg:flex-row items-center min-h-[160px] px-4 py-2 gap-6">
-          <div className="lg:w-5/12">
+          <div className="lg:w-5/12 text-primary-foreground">
             <h2 id="technology" className="text-3xl font-semibold uppercase">{t("technologies.title")}</h2>
             <p className="text-xl font-extralight">{t("technologies.subtitle")}</p>
           </div>

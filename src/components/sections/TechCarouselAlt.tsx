@@ -25,13 +25,13 @@ function TechCarouselItem({
   title,
 }: Readonly<{ icon: IconProp; title: string; className?: string }>) {
   return (
-    <CarouselItem className="group flex basis-1/2 md:basis-1/3 flex-col items-center">
+    <CarouselItem className="group flex basis-1/2 md:basis-1/3 flex-col items-center text-primary-foreground">
       <FontAwesomeIcon
         fixedWidth
-        className="text-primary py-1.5 text-6xl transition-transform duration-300 group-hover:scale-105"
+        className="py-1.5 text-6xl transition-transform duration-300 group-hover:scale-105"
         icon={icon}
       />
-      <span className="text-primary transition-transform duration-300 group-hover:scale-105">
+      <span className="transition-transform duration-300 group-hover:scale-105">
         {title}
       </span>
     </CarouselItem>
@@ -55,34 +55,21 @@ export default function TechCarouselAlt() {
       ]}
     >
       <CarouselContent>
-        <TechCarouselItem
-          icon={faLaravel}
-          title="Laravel"
-        />
-        <TechCarouselItem
-          icon={faReact}
-          title="React.Js"
-        />
-        <TechCarouselItem
-          icon={faVuejs}
-          title="Vue.Js"
-        />
-        <TechCarouselItem
-          icon={faWordpress}
-          title="WordPress"
-        />
-        <TechCarouselItem
-          icon={faJs}
-          title="JavaScript"
-        />
-        <TechCarouselItem
-          icon={faPhp}
-          title="PHP"
-        />
-        <TechCarouselItem
-          icon={faGolang}
-          title="Golang"
-        />
+        {[
+          { icon: faLaravel, title: "Laravel" },
+          { icon: faReact, title: "React.Js" },
+          { icon: faVuejs, title: "Vue.Js" },
+          { icon: faWordpress, title: "WordPress" },
+          { icon: faJs, title: "JavaScript" },
+          { icon: faPhp, title: "PHP" },
+          { icon: faGolang, title: "Golang" },
+        ].map((tech, index) => (
+          <TechCarouselItem
+            key={index}
+            icon={tech.icon}
+            title={tech.title}
+          />
+        ))}
       </CarouselContent>
       <CarouselPrevious className="left-4" />
       <CarouselNext className="right-4" />
