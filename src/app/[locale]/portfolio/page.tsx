@@ -42,21 +42,21 @@ export default function Portafolio() {
       <div className="flex w-full flex-col items-center pt-28 pb-8">
         <div className="container flex justify-center relative space-x-8 px-8">
           {/* Floating Elements */}
-          <div className="absolute -z-10 w-full hidden lg:block">
+          <div className="absolute -z-10 w-full">
             <div
-              className="absolute top-20 left-20 w-32 h-32 bg-accent/20 rounded-full animate-bounce"
+              className="absolute top-20 lg:left-20 left-3/4 w-32 h-32 bg-accent/20 rounded-full animate-bounce"
               style={{ animationDelay: "0s", animationDuration: "3s" }}
             />
             <div
-              className="absolute top-96 left-12 w-24 h-24 bg-primary/20 rounded-full animate-bounce"
+              className="absolute top-96 lg:left-12 left-4/6 w-24 h-24 bg-primary/20 rounded-full animate-bounce"
               style={{ animationDelay: "1s", animationDuration: "4s" }}
             />
             <div
-              className="absolute top-72 left-60 w-20 h-20 bg-chart-4/30 rounded-full animate-bounce"
+              className="absolute top-72 lg:left-60 left-1/6 w-20 h-20 bg-chart-4/30 rounded-full animate-bounce"
               style={{ animationDelay: "2s", animationDuration: "5s" }}
             />
             <div
-              className="absolute top-80 right-1/2 w-28 h-28 bg-accent/15 rounded-full animate-bounce"
+              className="absolute top-80 lg:right-1/2 right-1/2 w-28 h-28 bg-accent/15 rounded-full animate-bounce"
               style={{ animationDelay: "0.5s", animationDuration: "3.5s" }}
             />
           </div>
