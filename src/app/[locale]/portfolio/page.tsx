@@ -33,7 +33,7 @@ export async function generateMetadata({
   };
 }
 
-export default function Portafolio() {
+export default function Portfolio() {
   const t = useTranslations("portfolio");
 
   return (
