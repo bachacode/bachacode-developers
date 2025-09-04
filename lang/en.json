@@ -327,8 +327,11 @@
       "title": "Portfolio"
     },
     "hero": {
-      "title": "Our Portfolio",
-      "subtitle": "Discover a selection of our most outstanding projects, which reflect our commitment to innovation and quality in web development."
+      "badge": "Our Awesome Portfolio!",
+      "title": "Successful <keyword>websites</keyword> we have made",
+      "subtitle": "Discover a selection of our most outstanding projects, which reflect our commitment to innovation and quality in web development.",
+      "projects": "Projects",
+      "success": "Success"
     },
     "projects": {
       "title": "Our projects",
