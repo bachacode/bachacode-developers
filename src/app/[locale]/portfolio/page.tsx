@@ -13,6 +13,8 @@ import { routing } from "@/i18n/routing";
 import { Badge } from "@/components/ui/badge";
 import UnderlinedText from "@/components/common/UnderlinedText";
 import MockupBrowserWindow from "./MockupBrowserWindow";
+import { Button } from "@/components/ui/button";
+import { Link } from "@/i18n/navigation";
 
 export async function generateMetadata({
   params,
@@ -38,9 +40,9 @@ export default function Portafolio() {
     <main className="w-full">
       {/* Hero section */}
       <div className="flex w-full flex-col items-center pt-28 pb-8">
-        <div className="container flex relative space-x-8">
+        <div className="container flex justify-center relative space-x-8 px-8">
           {/* Floating Elements */}
-          <div className="absolute w-full hidden md:block">
+          <div className="absolute -z-10 w-full hidden lg:block">
             <div
               className="absolute top-20 left-20 w-32 h-32 bg-accent/20 rounded-full animate-bounce"
               style={{ animationDelay: "0s", animationDuration: "3s" }}
@@ -58,7 +60,7 @@ export default function Portafolio() {
               style={{ animationDelay: "0.5s", animationDuration: "3.5s" }}
             />
           </div>
-          <div className="w-5/12 flex flex-col space-y-3">
+          <div className="lg:w-5/12 relative flex flex-col text-center items-center lg:items-start lg:text-start space-y-3">
             {/* Badge */}
             <Badge className="text-xl bg-orange-primary-50 border border-primary text-primary">
               {t("hero.badge")}
@@ -71,11 +73,20 @@ export default function Portafolio() {
               >
                 {t.rich("hero.title", { keyword: (chunks) => <UnderlinedText>{chunks}</UnderlinedText> })}
               </h1>
-              <p className="text-xl text-muted-foreground">{t("hero.subtitle")}</p>
+              <p className="text-xl text-muted-foreground pb-6">{t("hero.subtitle")}</p>
+
+
+              <Button
+                size="lg"
+                className="rounded-sm px-8 py-6 text-lg uppercase"
+                asChild
+              >
+                <Link href="/contact">{t("hero.button")}</Link>
+              </Button>
             </div>
           </div>
 
-          <div className="relative w-7/12">
+          <div className="relative hidden lg:block w-7/12">
             {/* Main Visual Container */}
             <div className="relative bg-gradient-to-br from-primary/10 via-accent/10 to-chart-1/10 rounded-3xl p-8 shadow-2xl">
               {/* Mock Browser Windows */}
