@@ -340,22 +340,6 @@
       "view_case_study": "View Case Study (Coming Soon)",
       "technologies_used": "Technologies used",
       "view_website": "View Website"
-    },
-    "clients": {
-      "title": "Testimonials",
-      "subtitle": "The words of our customers",
-      "testimonies": {
-        "tailor": {
-          "name": "Guillermo Saez",
-          "occupation": "CEO of TailorSheet",
-          "body": "With Bachacode Developers I found what many entrepreneurs are looking for and never find: The peace of mind of being able to leave your business in the hands of people who take care of it and help it grow with solutions that border on excellence. They provide ideas and are 100% involved with each project."
-        },
-        "mesgo": {
-          "name": "Luis Fernando Carbajal",
-          "occupation": "CEO of MESGO",
-          "body": "Thanks to Bachacode Developers we were able to meet the requirements established by CBI Group to obtain our supplier number. The website they developed not only exceeded our expectations, but also facilitated the process and the presentation of our company."
-        }
-      }
     }
   },
   "contact": {

@@ -2,7 +2,6 @@ import React from "react";
 import generateTitle from "@/utils/generateTitle";
 import { Metadata } from "next";
 import PageSectionWrapper from "@/components/layout/PageSectionWrapper";
-import TestimonialCard from "@/components/cards/TestimonialCard";
 import ContactSection from "@/components/sections/ContactSection";
 import { hasLocale, useTranslations } from "next-intl";
 import { getTranslations } from "next-intl/server";
@@ -128,27 +127,6 @@ export default function Portfolio() {
         subtitle={t("projects.subtitle")}
       >
         <ProjectShowcaseList />
-      </PageSectionWrapper>
-
-      {/* Testimonies */}
-      <PageSectionWrapper
-        titleId="testimonies"
-        titleName={t("clients.title")}
-        subtitle={t("clients.subtitle")}
-      >
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          <TestimonialCard
-            name={t("clients.testimonies.tailor.name")}
-            profession={t("clients.testimonies.tailor.occupation")}
-            testimony={t("clients.testimonies.tailor.body")}
-          />
-
-          <TestimonialCard
-            name={t("clients.testimonies.mesgo.name")}
-            profession={t("clients.testimonies.mesgo.occupation")}
-            testimony={t("clients.testimonies.mesgo.body")}
-          />
-        </div>
       </PageSectionWrapper>
 
       {/* Contact Us */}
