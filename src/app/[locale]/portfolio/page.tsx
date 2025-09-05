@@ -37,41 +37,46 @@ export default function Portfolio() {
     <main className="w-full">
       {/* Hero section */}
       <div className="flex w-full flex-col items-center pt-28 pb-8">
-        <div className="container flex justify-center relative space-x-8 px-8">
+        <div className="relative container flex justify-center space-x-8 px-8">
           {/* Floating Elements */}
           <div className="absolute -z-10 w-full">
             <div
-              className="absolute top-20 lg:left-20 left-3/4 w-32 h-32 bg-accent/20 rounded-full animate-bounce"
+              className="bg-accent/20 absolute top-20 left-3/4 h-32 w-32 animate-bounce rounded-full lg:left-20"
               style={{ animationDelay: "0s", animationDuration: "3s" }}
             />
             <div
-              className="absolute top-96 lg:left-12 left-4/6 w-24 h-24 bg-primary/20 rounded-full animate-bounce"
+              className="bg-primary/20 absolute top-96 left-4/6 h-24 w-24 animate-bounce rounded-full lg:left-12"
               style={{ animationDelay: "1s", animationDuration: "4s" }}
             />
             <div
-              className="absolute top-72 lg:left-60 left-1/6 w-20 h-20 bg-chart-4/30 rounded-full animate-bounce"
+              className="bg-chart-4/30 absolute top-72 left-1/6 h-20 w-20 animate-bounce rounded-full lg:left-60"
               style={{ animationDelay: "2s", animationDuration: "5s" }}
             />
             <div
-              className="absolute top-80 lg:right-1/2 right-1/2 w-28 h-28 bg-accent/15 rounded-full animate-bounce"
+              className="bg-accent/15 absolute top-80 right-1/2 h-28 w-28 animate-bounce rounded-full lg:right-1/2"
               style={{ animationDelay: "0.5s", animationDuration: "3.5s" }}
             />
           </div>
-          <div className="lg:w-5/12 relative flex flex-col text-center items-center lg:items-start lg:text-start space-y-3">
+          <div className="relative flex flex-col items-center space-y-3 text-center lg:w-5/12 lg:items-start lg:text-start">
             {/* Badge */}
-            <Badge className="text-xl bg-orange-primary-50 border border-primary text-primary">
+            <Badge className="bg-orange-primary-50 border-primary text-primary border text-xl">
               {t("hero.badge")}
             </Badge>
             {/* Title & Subtitle */}
             <div>
               <h1
                 id="hero"
-                className="pb-3 text-7xl font-bold tracking-widest leading-14 lg:text-5xl"
+                className="pb-3 text-7xl leading-14 font-bold tracking-widest lg:text-5xl"
               >
-                {t.rich("hero.title", { keyword: (chunks) => <UnderlinedText>{chunks}</UnderlinedText> })}
+                {t.rich("hero.title", {
+                  keyword: (chunks) => (
+                    <UnderlinedText>{chunks}</UnderlinedText>
+                  ),
+                })}
               </h1>
-              <p className="text-xl text-muted-foreground pb-6">{t("hero.subtitle")}</p>
-
+              <p className="text-muted-foreground pb-6 text-xl">
+                {t("hero.subtitle")}
+              </p>
 
               <Button
                 size="lg"
@@ -83,9 +88,9 @@ export default function Portfolio() {
             </div>
           </div>
 
-          <div className="relative hidden lg:block w-7/12">
+          <div className="relative hidden w-7/12 lg:block">
             {/* Main Visual Container */}
-            <div className="relative bg-gradient-to-br from-primary/10 via-accent/10 to-chart-1/10 rounded-3xl p-8 shadow-2xl">
+            <div className="from-primary/10 via-accent/10 to-chart-1/10 relative rounded-3xl bg-gradient-to-br p-8 shadow-2xl">
               {/* Mock Browser Windows */}
               <div className="space-y-6">
                 {/* Browser Window 1 */}
@@ -102,17 +107,21 @@ export default function Portfolio() {
               </div>
 
               {/* Floating Stats */}
-              <div className="absolute -top-4 -right-4 bg-white rounded-2xl shadow-lg p-4 border">
+              <div className="absolute -top-4 -right-4 rounded-2xl border bg-white p-4 shadow-lg">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-primary">15 +</div>
-                  <div className="text-xs text-muted-foreground">{t("hero.projects")}</div>
+                  <div className="text-primary text-2xl font-bold">15 +</div>
+                  <div className="text-muted-foreground text-xs">
+                    {t("hero.projects")}
+                  </div>
                 </div>
               </div>
 
-              <div className="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-lg p-4 border">
+              <div className="absolute -bottom-4 -left-4 rounded-2xl border bg-white p-4 shadow-lg">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-accent">100%</div>
-                  <div className="text-xs text-muted-foreground">{t("hero.success")}</div>
+                  <div className="text-accent text-2xl font-bold">100%</div>
+                  <div className="text-muted-foreground text-xs">
+                    {t("hero.success")}
+                  </div>
                 </div>
               </div>
             </div>
@@ -123,7 +132,9 @@ export default function Portfolio() {
       {/* Galería de proyectos */}
       <PageSectionWrapper
         titleId="projects"
-        titleName={t.rich("projects.title", { keyword: (chunks) => <UnderlinedText>{chunks}</UnderlinedText> })}
+        titleName={t.rich("projects.title", {
+          keyword: (chunks) => <UnderlinedText>{chunks}</UnderlinedText>,
+        })}
         subtitle={t("projects.subtitle")}
       >
         <ProjectShowcaseList />
@@ -131,6 +142,6 @@ export default function Portfolio() {
 
       {/* Contact Us */}
       <ContactSection />
-    </main >
+    </main>
   );
 }
