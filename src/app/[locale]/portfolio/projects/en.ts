@@ -49,30 +49,30 @@ const en: Project[] = [
     id: "jaime_morales",
     image: {
       src: jaimeMoralesHome,
-      alt: "Vista previa de la página de inicio de Jaime Morales",
+      alt: "Jaime Morales homepage preview",
     },
-    duration: "1 mes",
-    teamSize: "2 Miembros",
-    category: "Sitio web personal",
-    title: "Desarrollo completo de Jaime Morales",
+    duration: "1 month",
+    teamSize: "2 Members",
+    category: "Personal website",
+    title: "Complete development of Jaime Morales",
     subtitle: "Jaime Morales",
     description:
-      "Creamos, configuramos y diseñamos un sitio web en WordPress totalmente funcional para el Experto en Ciberseguridad Jaime Morales. Desde todos los diseños e imágenes hasta las páginas legales y los textos usados en todo el sitio web, todo fue desarrollado por nosotros.",
+      "We created, configured and designed a fully functional WordPress Website for Cybersecurity Expert Jaime Morales, from all the designs and images up to the legal pages and texts used throught the website, everything was developed by us.",
     results: [
       {
         value: "300ms",
-        metric: "Tiempo de Carga de Página (Escritorio)",
+        metric: "Page Load Time (Desktop)",
         description:
-          "El First Contentful Paint fue optimizado desde el inicio para lograr velocidades óptimas tanto en dispositivos móviles como de escritorio.",
+          "First Contentful Paint was optimized from the beginning to achieve optimal speeds on both mobile and desktop devices",
       },
       {
         value: "+ 10",
-        metric: "Páginas creadas/editadas",
+        metric: "Created/edited pages",
         description:
-          "Se diseñaron y crearon más de 10 páginas únicas para el sitio web, incluyendo el 99% de sus recursos estaticos.",
+          "More than 10 unique pages were designed and created for the website, including 99% of their assets",
       },
     ],
-    technologies: ["WordPress", "Elementor", "PHP", "CSS"],
+    technologies: ["WordPress", "Elementor", "PHP", "JavaScript", "CSS"],
     externalLink: "https://jaimemorales.es/",
   },
   {
