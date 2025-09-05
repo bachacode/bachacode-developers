@@ -327,42 +327,19 @@
       "title": "Portfolio"
     },
     "hero": {
-      "title": "Our Portfolio",
-      "subtitle": "Discover a selection of our most outstanding projects, which reflect our commitment to innovation and quality in web development."
+      "badge": "Our Awesome Portfolio!",
+      "title": "Successful <keyword>websites</keyword> we have made",
+      "subtitle": "Discover a selection of our most outstanding projects, which reflect our commitment to innovation and quality in web development.",
+      "button": "Get a budget",
+      "projects": "Projects",
+      "success": "Success"
     },
     "projects": {
-      "title": "Our projects",
-      "subtitle": "Websites we have worked on",
-      "sites": {
-        "tailorsheet": {
-          "title": "TailorSheet",
-          "body": "Apps courses and design with AppSheet. Learn from scratch with our courses and tutorials in Spanish. We design apps for your business in record time."
-        },
-        "mesgo": {
-          "title": "Mesgo",
-          "body": "Landing Page of Mexican Engineering Supply Group, a company specialized in the distribution of industrial materials, with a focus on electrical, electronic and mechanical engineering."
-        },
-        "jaimemorales": {
-          "title": "Jaime Morales",
-          "body": "Landing page of Jaime Morales, a cybersecurity expert that offers services and an specialized consultant, tutor and implementing AI with a cybersecurity approach."
-        }
-      }
-    },
-    "clients": {
-      "title": "Testimonials",
-      "subtitle": "The words of our customers",
-      "testimonies": {
-        "tailor": {
-          "name": "Guillermo Saez",
-          "occupation": "CEO of TailorSheet",
-          "body": "With Bachacode Developers I found what many entrepreneurs are looking for and never find: The peace of mind of being able to leave your business in the hands of people who take care of it and help it grow with solutions that border on excellence. They provide ideas and are 100% involved with each project."
-        },
-        "mesgo": {
-          "name": "Luis Fernando Carbajal",
-          "occupation": "CEO of MESGO",
-          "body": "Thanks to Bachacode Developers we were able to meet the requirements established by CBI Group to obtain our supplier number. The website they developed not only exceeded our expectations, but also facilitated the process and the presentation of our company."
-        }
-      }
+      "title": "<keyword>Web projects</keyword> we have worked in",
+      "subtitle": "Websites that we have built or improved to get more clients to their businesses",
+      "view_case_study": "View Case Study (Coming Soon)",
+      "technologies_used": "Technologies used",
+      "view_website": "View Website"
     }
   },
   "contact": {
