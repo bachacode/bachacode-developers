@@ -335,22 +335,11 @@
       "success": "Exitosos"
     },
     "projects": {
-      "title": "Nuestros proyectos",
-      "subtitle": "Los sitios web en lo que hemos trabajado",
-      "sites": {
-        "tailorsheet": {
-          "title": "TailorSheet",
-          "body": "Cursos y diseño de Apps con AppSheet. Aprende desde cero con nuestros cursos y tutoriales en español. Diseñamos apps para tu negocio en tiempo récord."
-        },
-        "mesgo": {
-          "title": "Mesgo",
-          "body": "Landing Page de Mexican Engineering Supply Group, empresa especializada en la distribución de materiales industriales, con un enfoque en la ingeniería eléctrica, electrónica y mecánica."
-        },
-        "jaimemorales": {
-          "title": "Jaime Morales",
-          "body": "Landing page de Jaime Morales, experto en ciberseguridad que ofrece servicios de consultoría especializada, tutoría e implementación de IA con enfoque de ciberseguridad."
-        }
-      }
+      "title": "<keyword>Proyectos web</keyword> en los que hemos trabajado",
+      "subtitle": "Sitios web que hemos construido o mejorado para aumentar la clientela de sus negocios",
+      "view_case_study": "Ver caso (Proximamente)",
+      "technologies_used": "Tecnologías usadas",
+      "view_website": "Ver sitio web"
     },
     "clients": {
       "title": "Testimonios",
