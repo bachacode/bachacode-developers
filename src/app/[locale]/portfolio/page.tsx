@@ -2,9 +2,6 @@ import React from "react";
 import generateTitle from "@/utils/generateTitle";
 import { Metadata } from "next";
 import PageSectionWrapper from "@/components/layout/PageSectionWrapper";
-import TailorsheetHome from "@/assets/images/tailorsheet-home.png";
-import jaimeMoralesHome from "@/assets/images/jaimemoralesdotes-home.png";
-import ProjectCard from "@/components/cards/ProjectCard";
 import TestimonialCard from "@/components/cards/TestimonialCard";
 import ContactSection from "@/components/sections/ContactSection";
 import { hasLocale, useTranslations } from "next-intl";
@@ -15,6 +12,7 @@ import UnderlinedText from "@/components/common/UnderlinedText";
 import MockupBrowserWindow from "./MockupBrowserWindow";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
+import { ProjectShowcaseList } from "./ProjectShowcase";
 
 export async function generateMetadata({
   params,
@@ -126,28 +124,10 @@ export default function Portfolio() {
       {/* Galería de proyectos */}
       <PageSectionWrapper
         titleId="projects"
-        titleName={t("projects.title")}
+        titleName={t.rich("projects.title", { keyword: (chunks) => <UnderlinedText>{chunks}</UnderlinedText> })}
         subtitle={t("projects.subtitle")}
-        fullWidth
       >
-        <div className="flex w-full flex-col">
-          {/* Component */}
-          <ProjectCard
-            title={t("projects.sites.tailorsheet.title")}
-            description={t("projects.sites.tailorsheet.body")}
-            image={TailorsheetHome}
-            buttonUrl="https://tailorsheet.com/"
-          />
-
-          <ProjectCard
-            title={t("projects.sites.jaimemorales.title")}
-            description={t("projects.sites.jaimemorales.body")}
-            image={jaimeMoralesHome}
-            buttonUrl="https://jaimemorales.es/"
-            inverted
-            altColor
-          />
-        </div>
+        <ProjectShowcaseList />
       </PageSectionWrapper>
 
       {/* Testimonies */}
