@@ -7,7 +7,6 @@ import { Metadata } from "next";
 import Image from "next/image";
 import React from "react";
 import generateTitle from "@/utils/generateTitle";
-import GoogleCaptchaWrapper from "@/components/layout/GoogleCaptchaWrapper";
 import { getTranslations } from "next-intl/server";
 import { hasLocale, useTranslations } from "next-intl";
 import { routing } from "@/i18n/routing";
@@ -48,7 +47,6 @@ function ContactCard({
 export default function Contacto() {
   const t = useTranslations("contact");
   return (
-    <GoogleCaptchaWrapper>
       <main className="bg-orange-primary-50 flex min-h-screen w-full flex-col items-center pb-12">
         <div className="mt-36">
           <div className="flex flex-col items-center space-y-2 pb-6 text-center">
@@ -121,6 +119,5 @@ export default function Contacto() {
           </div>
         </div>
       </main>
-    </GoogleCaptchaWrapper>
   );
 }
