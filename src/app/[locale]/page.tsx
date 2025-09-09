@@ -120,7 +120,7 @@ export default function Home() {
     <main className="w-full">
       {/* Hero section */}
       <div className="flex w-full flex-col items-center">
-        <div className="container flex flex-col items-center justify-center space-y-8 pt-28 pb-8">
+        <div className="container flex flex-col items-center justify-center space-y-8 py-8">
           {/* Title */}
           <div className="flex flex-col items-center text-center lg:w-1/2">
             <h1

@@ -25,7 +25,7 @@ export default function PageSectionWrapper({
       }`}
     >
       <div
-        className={`${fullWidth ? "w-full" : "container px-4"} flex flex-col items-center space-y-3 py-6`}
+        className={`${fullWidth ? "w-full" : "container px-4"} flex flex-col items-center space-y-3 py-8`}
       >
         {/* Title*/}
         <Heading id={titleId} title={titleName} subtitle={subtitle} />

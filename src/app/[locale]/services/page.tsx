@@ -90,7 +90,7 @@ export default function Servicios() {
   return (
     <main className="w-full">
       {/* Hero section */}
-      <div className="flex w-full flex-col items-center pt-28 pb-8">
+      <div className="flex w-full flex-col items-center py-8">
         <div className="container">
           {/* Floating Elements */}
           <div className="relative hidden md:block">
