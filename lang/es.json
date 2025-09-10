@@ -342,59 +342,76 @@
       "view_website": "Ver sitio web"
     }
   },
-  "contact": {
-    "metadata": {
-      "title": "Contacto"
+    "contact": {
+        "metadata": {
+            "title": "Contacto"
+        },
+        "hero": {
+            "title": "Contáctanos",
+            "subtitle": "¿Estás listo para llevar tu negocio en línea? Estamos aquí para ayudarte a crear un sitio web profesional."
+        },
+        "form_section": {
+            "title": "¿quieres comenzar tu proyecto?",
+            "subtitle": "¡envíanos un mensaje con tu propuesta!",
+            "form": {
+                "name": {
+                    "label": "Nombre completo",
+                    "placeholder": "Ingresa tu nombre completo"
+                },
+                "company_name": {
+                    "label": "Nombre de la empresa",
+                    "placeholder": "Ingresa el nombre de tu empresa"
+                },
+                "email": {
+                    "label": "Dirección de correo electrónico",
+                    "placeholder": "Ingresa tu dirección de correo electrónico"
+                },
+                "subject": {
+                    "label": "Asunto",
+                    "placeholder": "Ingresa el asunto del mensaje"
+                },
+                "message": {
+                    "label": "Tu mensaje",
+                    "placeholder": "Escríbenos tu mensaje"
+                },
+                "errors": {
+                    "required": "{field_name} es obligatorio.",
+                    "min": "{field_name} debe tener al menos {amount} caracteres.",
+                    "max": "{field_name} debe tener como máximo {amount} caracteres.",
+                    "email": "Este campo debe tener el formato de un correo electrónico, por ejemplo: ejemplo@email.com",
+                    "captchaError": "La verificación de seguridad falló. Inténtalo de nuevo.",
+                    "captchaVerify": "Por favor, verifica que no eres un robot.",
+                    "captchaFailed": "La verificación de seguridad expiró. Vuelve a verificar.",
+                    "captchaTokenError": "La verificación falló. Actualiza la página e inténtalo nuevamente."
+                },
+                "serverError": "Ocurrió un error en nuestro sistema. Por favor, inténtalo de nuevo en unos minutos. Si el problema persiste, comunícate con nuestro equipo de soporte.",
+                "success": "¡El correo electrónico se envió con éxito!",
+                "button": "Enviar mensaje"
+            }
+        },
+        "info_section": {
+            "title": "¿necesitas más formas de contactarnos?",
+            "subtitle": "encuentra nuestros datos de contacto abajo — ¡respondemos rápido!",
+            "cards": {
+                "email": {
+                    "title": "Correo electrónico",
+                    "tooltip": "Envíanos un correo directo"
+                },
+                "phone": {
+                    "title": "Número de teléfono",
+                    "tooltip": "Llámanos directamente"
+                },
+                "whatsapp": {
+                    "title": "Envíanos un mensaje por WhatsApp",
+                    "message": "Estoy interesado en trabajar con ustedes para realizar un proyecto o mejorar uno existente."
+                },
+                "quick_response": {
+                    "title": "Tiempo de respuesta rápido",
+                    "message": "Valoramos tu tiempo y nos esforzamos por responder lo más rápido posible. Nuestro equipo está comprometido a brindar respuestas claras y útiles en horas, no en días. Ya sea que tengas una pregunta sencilla o una solicitud detallada, puedes contar con nosotros para una comunicación rápida y confiable en todo momento."
+                }
+            }
+        }
     },
-    "hero": {
-      "title": "Contacto",
-      "subtitle": "¿Necesitas una respuesta rapida?",
-      "cards": {
-        "email": "Correo Electrónico",
-        "phone": "Teléfono",
-        "whatsapp": "Click Aquí"
-      }
-    },
-    "form_section": {
-      "title": "¿Quieres sacar tu proyecto a flote?",
-      "subtitle": "¡Envianos un mensaje con tu propuesta!",
-      "form": {
-        "name": {
-          "label": "Tu nombre",
-          "placeholder": "Ingrese su nombre completo"
-        },
-        "company_name": {
-          "label": "Nombre de la compañía",
-          "placeholder": "Ingrese el nombre de su compañía"
-        },
-        "email": {
-          "label": "Correo electrónico",
-          "placeholder": "Ingrese su correo electrónico"
-        },
-        "subject": {
-          "label": "Asunto",
-          "placeholder": "Ingrese el asunto del mensaje"
-        },
-        "message": {
-          "label": "Tu mensaje",
-          "placeholder": "Escribenos tu mensaje"
-        },
-        "errors": {
-          "required": "{field_name} es obligatorio.",
-          "min": "{field_name} debe de poseer al menos {amount} caracteres.",
-          "max": "{field_name} debe de ser de un maximo de {amount} caracteres.",
-          "email": "Este campo debe de tener formato de correo,  e.j: ejemplo@correo.com",
-          "captchaError": "El control de seguridad falló. Por favor, inténtalo de nuevo.",
-          "captchaVerify": "Por favor confirma que no eres un robot.",
-          "captchaFailed": "El control de seguridad caducó. Por favor, verifícalo de nuevo.",
-          "captchaTokenError": "No se pudo verificar. Recarga la página e inténtalo nuevamente."
-        },
-        "serverError": "Algo ha salido mal por nuestra parte. Por favor intenta nuevamente en unos minutos. Si el error persiste, ponte en contacto con nuestro equipo de soporte.",
-        "success": "¡El correo electrónico ha sido enviado exitosamente!",
-        "button": "Enviar mensaje"
-      }
-    }
-  },
   "price_card": {
     "month": "mes",
     "specs": {
