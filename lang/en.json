@@ -375,9 +375,9 @@
           "placeholder": "Write us your message"
         },
         "turnstile": {
-            "label": "Let us know you're human",
-            "error": "Security check failed. Please try again.",
-            "expire": "Security check expired. Please try again."
+          "label": "Let us know you're human",
+          "error": "Security check failed. Please try again.",
+          "expire": "Security check expired. Please try again."
         },
         "errors": {
           "required": "{field_name} is mandatory.",
@@ -386,34 +386,34 @@
           "email": "This field must be in the format of an email,  e.g: example@email.com"
         },
         "server": {
-            "internal": "Something went wrong on our end. Please try again in a few minutes. If this continues, reach out to our support team by other means.",
-            "bad_request": "Verification failed. Please refresh the page and try again.",
-            "success": "The email has been sent successfully!"
+          "internal": "Something went wrong on our end. Please try again in a few minutes. If this continues, reach out to our support team by other means.",
+          "bad_request": "Verification failed. Please refresh the page and try again.",
+          "success": "The email has been sent successfully!"
         },
         "button": "Send message"
       }
     },
     "info_section": {
-        "title": "need more ways to reach us?",
-        "subtitle": "find our contact details below — we respond quickly!",
-        "cards": {
-            "email": {
-                "title": "Email address",
-                "tooltip": "Send us a direct email"
-            },
-            "phone": {
-                "title": "Phone number",
-                "tooltip": "Give us a direct call"
-            },
-            "whatsapp": {
-                "title": "Send us a message with WhatsApp",
-                "message": "I'm interested in working with you to make a project or improve a current one."
-            },
-            "quick_response": {
-                "title": "Quick response time",
-                "message": "We value your time and strive to respond as quickly as possible. Our team is committed to providing clear, helpful answers within hours, not days. Whether you have a simple question or a detailed request, you can count on us for fast, reliable communication every time."
-            }
+      "title": "need more ways to reach us?",
+      "subtitle": "find our contact details below — we respond quickly!",
+      "cards": {
+        "email": {
+          "title": "Email address",
+          "tooltip": "Send us a direct email"
+        },
+        "phone": {
+          "title": "Phone number",
+          "tooltip": "Give us a direct call"
+        },
+        "whatsapp": {
+          "title": "Send us a message with WhatsApp",
+          "message": "I'm interested in working with you to make a project or improve a current one."
+        },
+        "quick_response": {
+          "title": "Quick response time",
+          "message": "We value your time and strive to respond as quickly as possible. Our team is committed to providing clear, helpful answers within hours, not days. Whether you have a simple question or a detailed request, you can count on us for fast, reliable communication every time."
         }
+      }
     }
   },
   "price_card": {

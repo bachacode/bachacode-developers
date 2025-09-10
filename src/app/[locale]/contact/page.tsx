@@ -19,7 +19,7 @@ import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-    } from "@/components/ui/tooltip";
+} from "@/components/ui/tooltip";
 
 export async function generateMetadata({
   params,
@@ -41,10 +41,13 @@ export async function generateMetadata({
 export default function Contact() {
   const t = useTranslations("contact");
   return (
-    <main className="flex w-full flex-col pb-8 items-center">
-      <div className="bg-orange-primary-50 border-primary w-full border-y py-8 px-6 text-center">
+    <main className="flex w-full flex-col items-center pb-8">
+      <div className="bg-orange-primary-50 border-primary w-full border-y px-6 py-8 text-center">
         <div className="text-primary">
-          <h1 id="contact" className="pb-3 text-3xl md:text-4xl font-semibold capitalize">
+          <h1
+            id="contact"
+            className="pb-3 text-3xl font-semibold capitalize md:text-4xl"
+          >
             {t("hero.title")}
           </h1>
           <p className="text-xl">{t("hero.subtitle")}</p>
@@ -52,10 +55,10 @@ export default function Contact() {
       </div>
 
       <div className="container px-12 pt-10">
-        <div className="flex md:flex-row flex-col-reverse w-full gap-6 justify-around">
-          {/* Contact Section */} 
+        <div className="flex w-full flex-col-reverse justify-around gap-6 md:flex-row">
+          {/* Contact Section */}
           <div className="w-full rounded pb-24 lg:w-6/12 lg:pb-12">
-            <div className="space-y-1 text-center  md:text-left pb-4">
+            <div className="space-y-1 pb-4 text-center md:text-left">
               <h2 className="text-2xl font-bold capitalize">
                 {t("form_section.title")}
               </h2>
@@ -65,8 +68,8 @@ export default function Contact() {
             </div>
             <ContactForm />
           </div>
-          {/* Info Section */} 
-          <div className="flex md:max-w-6/12 w-full flex-col items-center space-y-6 px-6">
+          {/* Info Section */}
+          <div className="flex w-full flex-col items-center space-y-6 px-6 md:max-w-6/12">
             <div className="w-full pb-4 text-center md:text-left">
               <h2 className="text-2xl font-bold capitalize">
                 {t("info_section.title")}
@@ -74,7 +77,7 @@ export default function Contact() {
               <span className="text-muted-foreground">
                 {t("info_section.subtitle")}
               </span>
-            </div> 
+            </div>
             <Card className="border-primary w-full py-4">
               <CardContent className="flex items-center justify-between">
                 <div>
@@ -88,20 +91,22 @@ export default function Contact() {
                     support@bachacode
                   </span>
                 </div>
-                  <Tooltip>
-                    <TooltipTrigger asChild>
+                <Tooltip>
+                  <TooltipTrigger asChild>
                     <a
                       href="mailto:support@bachacode.com"
-                      className="bg-transparent transition-colors duration-300 rounded-lg px-3 flex items-center py-2.5 hover:bg-primary hover:text-primary-foreground text-primary cursor-pointer"
+                      className="hover:bg-primary hover:text-primary-foreground text-primary flex cursor-pointer items-center rounded-lg bg-transparent px-3 py-2.5 transition-colors duration-300"
                     >
                       <FontAwesomeIcon
                         icon={faPaperPlane}
                         className="text-2xl"
                       />
                     </a>
-                    </TooltipTrigger>
-                    <TooltipContent>{t("info_section.cards.email.tooltip")}</TooltipContent>
-                  </Tooltip>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    {t("info_section.cards.email.tooltip")}
+                  </TooltipContent>
+                </Tooltip>
               </CardContent>
             </Card>
 
@@ -118,20 +123,22 @@ export default function Contact() {
                     +58 412-1163349
                   </span>
                 </div>
-                  <Tooltip>
-                    <TooltipTrigger asChild>
+                <Tooltip>
+                  <TooltipTrigger asChild>
                     <a
                       href="tel:+584121163349"
-                      className="bg-transparent transition-colors duration-300 rounded-lg px-3 flex items-center py-2.5 hover:bg-primary hover:text-primary-foreground text-primary cursor-pointer"
+                      className="hover:bg-primary hover:text-primary-foreground text-primary flex cursor-pointer items-center rounded-lg bg-transparent px-3 py-2.5 transition-colors duration-300"
                     >
                       <FontAwesomeIcon
                         icon={faPhoneVolume}
                         className="text-2xl"
                       />
                     </a>
-                    </TooltipTrigger>
-                    <TooltipContent>{t("info_section.cards.phone.tooltip")}</TooltipContent>
-                  </Tooltip>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    {t("info_section.cards.phone.tooltip")}
+                  </TooltipContent>
+                </Tooltip>
               </CardContent>
             </Card>
 
@@ -154,7 +161,7 @@ export default function Contact() {
               </a>
             </Card>
 
-            <Card className="bg-orange-primary-50 md:block hidden border-primary space-y-3 w-full border">
+            <Card className="bg-orange-primary-50 border-primary hidden w-full space-y-3 border md:block">
               <CardHeader className="flex items-center text-2xl">
                 <CardTitle className="font-light">
                   {t("info_section.cards.quick_response.title")}

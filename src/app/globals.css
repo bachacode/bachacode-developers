@@ -161,32 +161,32 @@
   --color-selective-yellow-secondary-950: #481f00;
 
   --animate-wiggle: wiggle 0.5s ease-in-out infinite;
-    @keyframes wiggle {
+  @keyframes wiggle {
     0%,
     100% {
-        transform: rotate(0deg);
+      transform: rotate(0deg);
     }
 
     25% {
-        transform: rotate(-6deg);
+      transform: rotate(-6deg);
     }
 
     75% {
-        transform: rotate(6deg);
+      transform: rotate(6deg);
     }
-    }
+  }
 
   --animate-wiggle: wiggle 3s ease-in-out infinite;
-    @keyframes float {
+  @keyframes float {
     0%,
     100% {
-        transform: translateY(0px);
+      transform: translateY(0px);
     }
 
     50% {
-        transform: translateY(-10px);
+      transform: translateY(-10px);
     }
-    }
+  }
 }
 
 /* Compatibility styles for Tailwind v3 → v4 */

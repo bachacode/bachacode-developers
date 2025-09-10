@@ -198,48 +198,49 @@ export default function ContactForm() {
 
         {/* Captcha/Turnstile */}
         <div className="flex flex-col space-y-1.5">
-                    { turnstileLabel && (
-                        <span className="text-md font-light text-muted-foreground">{t("turnstile.label")}</span>
-                    )
-                    }
-        <Turnstile
-          siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
-          theme="light"
-          retry="auto"
-          refreshExpired="auto"
-          sandbox={process.env.NODE_ENV === "development"}
-          size="flexible"
-          language={locale}
-          onError={() => {
-            setError(true);
-            setTurnstileStatus("error");
-            setNotification(t("turnstile.error"));
-            setTurnstileToken(null);
-          }}
-          onExpire={() => {
-            setError(true);
-            setTurnstileStatus("expired");
-            setNotification(t("turnstile.expire"));
-            setTurnstileToken(null);
-          }}
-          onLoad={() => {
-            setLoading(true);
-            setTurnstileLabel(true);
-            setTurnstileStatus("required");
-            setTurnstileToken(null);
-          }}
-          onVerify={(token) => {
-            setLoading(false);
-            setTurnstileStatus("success");
-            setTurnstileToken(token);
-          }}
-        />
+          {turnstileLabel && (
+            <span className="text-md text-muted-foreground font-light">
+              {t("turnstile.label")}
+            </span>
+          )}
+          <Turnstile
+            siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+            theme="light"
+            retry="auto"
+            refreshExpired="auto"
+            sandbox={process.env.NODE_ENV === "development"}
+            size="flexible"
+            language={locale}
+            onError={() => {
+              setError(true);
+              setTurnstileStatus("error");
+              setNotification(t("turnstile.error"));
+              setTurnstileToken(null);
+            }}
+            onExpire={() => {
+              setError(true);
+              setTurnstileStatus("expired");
+              setNotification(t("turnstile.expire"));
+              setTurnstileToken(null);
+            }}
+            onLoad={() => {
+              setLoading(true);
+              setTurnstileLabel(true);
+              setTurnstileStatus("required");
+              setTurnstileToken(null);
+            }}
+            onVerify={(token) => {
+              setLoading(false);
+              setTurnstileStatus("success");
+              setTurnstileToken(token);
+            }}
+          />
         </div>
         <div className="relative">
           {loading ? (
             <Button
               type="submit"
-              className="rounded bg-orange-primary-400 w-full"
+              className="bg-orange-primary-400 w-full rounded"
               disabled
             >
               <FontAwesomeIcon
@@ -250,7 +251,7 @@ export default function ContactForm() {
           ) : (
             <Button
               type="submit"
-              className="rounded bg-primary hover:bg-orange-primary-400 w-full cursor-pointer"
+              className="bg-primary hover:bg-orange-primary-400 w-full cursor-pointer rounded"
             >
               {t("button")}
             </Button>
