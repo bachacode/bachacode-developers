@@ -62,6 +62,7 @@ export default function ContactForm() {
       message: "",
     },
   });
+
   const [turnstileStatus, setTurnstileStatus] = useState<
     "success" | "error" | "expired" | "required"
   >("required");
@@ -69,13 +70,14 @@ export default function ContactForm() {
   const [loading, setLoading] = useState(false);
   const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
   const [error, setError] = useState(false);
+  const [turnstileLabel, setTurnstileLabel] = useState(false);
 
   async function onSubmit(data: ContactFormType) {
     setLoading(true);
 
     if (turnstileStatus !== "success" || turnstileToken === null) {
       setError(true);
-      setNotification(t("errors.captchaVerify"));
+      setNotification(t("turnstile.error"));
       setLoading(false);
       return;
     }
@@ -109,7 +111,7 @@ export default function ContactForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
         {/* Tu nombre */}
         <FormField
           control={form.control}
@@ -195,39 +197,50 @@ export default function ContactForm() {
         />
 
         {/* Captcha/Turnstile */}
-        <Turnstile
-          siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
-          theme="light"
-          retry="auto"
-          refreshExpired="auto"
-          sandbox={process.env.NODE_ENV === "development"}
-          onError={() => {
-            setError(true);
-            setTurnstileStatus("error");
-            setNotification("Security check failed. Please try again.");
-            setTurnstileToken(null);
-          }}
-          onExpire={() => {
-            setError(true);
-            setTurnstileStatus("expired");
-            setNotification("Security check expired. Please verify again.");
-            setTurnstileToken(null);
-          }}
-          onLoad={() => {
-            setError(false);
-            setTurnstileStatus("required");
-            setTurnstileToken(null);
-          }}
-          onVerify={(token) => {
-            setTurnstileStatus("success");
-            setTurnstileToken(token);
-          }}
-        />
+        <div className="flex flex-col space-y-1.5">
+          {turnstileLabel && (
+            <span className="text-md text-muted-foreground font-light">
+              {t("turnstile.label")}
+            </span>
+          )}
+          <Turnstile
+            siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+            theme="light"
+            retry="auto"
+            refreshExpired="auto"
+            sandbox={process.env.NODE_ENV === "development"}
+            size="flexible"
+            language={locale}
+            onError={() => {
+              setError(true);
+              setTurnstileStatus("error");
+              setNotification(t("turnstile.error"));
+              setTurnstileToken(null);
+            }}
+            onExpire={() => {
+              setError(true);
+              setTurnstileStatus("expired");
+              setNotification(t("turnstile.expire"));
+              setTurnstileToken(null);
+            }}
+            onLoad={() => {
+              setLoading(true);
+              setTurnstileLabel(true);
+              setTurnstileStatus("required");
+              setTurnstileToken(null);
+            }}
+            onVerify={(token) => {
+              setLoading(false);
+              setTurnstileStatus("success");
+              setTurnstileToken(token);
+            }}
+          />
+        </div>
         <div className="relative">
           {loading ? (
             <Button
               type="submit"
-              className="bg-orange-primary-400 w-full"
+              className="bg-orange-primary-400 w-full rounded"
               disabled
             >
               <FontAwesomeIcon
@@ -238,7 +251,7 @@ export default function ContactForm() {
           ) : (
             <Button
               type="submit"
-              className="bg-primary hover:bg-orange-primary-400 w-full cursor-pointer"
+              className="bg-primary hover:bg-orange-primary-400 w-full cursor-pointer rounded"
             >
               {t("button")}
             </Button>

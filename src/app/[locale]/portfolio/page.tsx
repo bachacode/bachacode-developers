@@ -36,7 +36,7 @@ export default function Portfolio() {
   return (
     <main className="w-full">
       {/* Hero section */}
-      <div className="flex w-full flex-col items-center pt-28 pb-8">
+      <div className="flex w-full flex-col items-center py-8">
         <div className="relative container flex justify-center space-x-8 px-8">
           {/* Floating Elements */}
           <div className="absolute -z-10 w-full">

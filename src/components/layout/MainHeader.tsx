@@ -13,7 +13,7 @@ export default function MainHeader() {
   const t = useTranslations("navigation");
 
   return (
-    <header className="fixed start-0 top-0 z-20 w-full border-b bg-white">
+    <header className="sticky start-0 top-0 z-20 w-full border-b bg-white">
       <nav className="relative mx-auto flex w-full max-w-7xl flex-wrap items-center justify-between py-4 lg:flex-nowrap lg:px-6">
         <Link href="/" className="flex items-center space-x-2 pl-8 lg:pl-0">
           <Image
