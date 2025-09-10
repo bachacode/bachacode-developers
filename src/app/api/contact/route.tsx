@@ -73,12 +73,14 @@ export async function POST(request: NextRequest) {
     message,
   });
 
+  const supportEmail = process.env.NEXT_PUBLIC_SUPPORT_EMAIL ?? "support@bachacode.com";
+
   try {
     await transporter.sendMail({
-      from: "support@bachacode.com", 
-      to: "support@bachacode.com", 
+      from: `"Bachacode Developers" <${supportEmail}>`, 
+      to: supportEmail, 
       replyTo: email,
-      subject: `${subject} - ${company ?? "Sin compañia"} - ${name}`, 
+      subject: `${subject} - ${company ?? "Sin compañia"} - ${name}`,
       html, 
     });
 
