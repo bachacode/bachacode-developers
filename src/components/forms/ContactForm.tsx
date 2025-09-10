@@ -77,7 +77,7 @@ export default function ContactForm() {
 
     if (turnstileStatus !== "success" || turnstileToken === null) {
       setError(true);
-      setNotification(t("errors.captchaVerify"));
+      setNotification(t("turnstile.error"));
       setLoading(false);
       return;
     }
