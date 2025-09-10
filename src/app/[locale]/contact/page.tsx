@@ -44,7 +44,7 @@ export default function Contact() {
     <main className="flex w-full flex-col pb-8 items-center">
       <div className="bg-orange-primary-50 border-primary w-full border-y py-8 px-6 text-center">
         <div className="text-primary">
-          <h1 id="contact" className="pb-3 text-5xl font-semibold capitalize">
+          <h1 id="contact" className="pb-3 text-3xl md:text-4xl font-semibold capitalize">
             {t("hero.title")}
           </h1>
           <p className="text-xl">{t("hero.subtitle")}</p>
@@ -66,8 +66,8 @@ export default function Contact() {
             <ContactForm />
           </div>
           {/* Info Section */} 
-          <div className="flex md:max-w-6/12 text-center md:text-left w-full flex-col items-center space-y-6 px-6">
-            <div className="w-full pb-4">
+          <div className="flex md:max-w-6/12 w-full flex-col items-center space-y-6 px-6">
+            <div className="w-full pb-4 text-center md:text-left">
               <h2 className="text-2xl font-bold capitalize">
                 {t("info_section.title")}
               </h2>
@@ -78,7 +78,7 @@ export default function Contact() {
             <Card className="border-primary w-full py-4">
               <CardContent className="flex items-center justify-between">
                 <div>
-                  <div className="flex items-center text-xl">
+                  <div className="flex items-center text-base md:text-xl">
                     <FontAwesomeIcon icon={faEnvelope} className="pr-1.5" />
                     <span className="font-bold">
                       {t("info_section.cards.email.title")}
@@ -108,7 +108,7 @@ export default function Contact() {
             <Card className="border-primary w-full py-4">
               <CardContent className="flex items-center justify-between">
                 <div>
-                  <div className="flex items-center text-xl">
+                  <div className="flex items-center text-base md:text-xl">
                     <FontAwesomeIcon icon={faPhone} className="pr-1.5" />
                     <span className="font-bold">
                       {t("info_section.cards.phone.title")}
@@ -136,7 +136,7 @@ export default function Contact() {
             </Card>
 
             <Card
-              className="text-primary-foreground group w-full border-0 bg-green-600 py-0 text-2xl font-light"
+              className="text-primary-foreground group w-full border-0 bg-green-600 py-0 font-light"
               hoverable
             >
               <a
@@ -145,7 +145,7 @@ export default function Contact() {
                 rel="noopener noreferrer"
                 className="flex flex-col gap-2 py-5"
               >
-                <CardHeader className="flex items-center text-2xl">
+                <CardHeader className="flex items-center text-xl md:text-2xl">
                   <FontAwesomeIcon icon={faWhatsapp} className="pr-1.5" />
                   <CardTitle>
                     {t("info_section.cards.whatsapp.title")}

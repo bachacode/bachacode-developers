@@ -239,7 +239,7 @@ export default function ContactForm() {
           {loading ? (
             <Button
               type="submit"
-              className="bg-orange-primary-400 w-full"
+              className="rounded bg-orange-primary-400 w-full"
               disabled
             >
               <FontAwesomeIcon
@@ -250,7 +250,7 @@ export default function ContactForm() {
           ) : (
             <Button
               type="submit"
-              className="bg-primary hover:bg-orange-primary-400 w-full cursor-pointer"
+              className="rounded bg-primary hover:bg-orange-primary-400 w-full cursor-pointer"
             >
               {t("button")}
             </Button>
