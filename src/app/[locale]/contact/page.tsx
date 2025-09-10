@@ -1,7 +1,6 @@
 import ContactForm from "@/components/forms/ContactForm";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import {
-  faClipboard,
   faEnvelope,
   faPaperPlane,
   faPhone,
@@ -16,7 +15,6 @@ import { hasLocale, useTranslations } from "next-intl";
 import { routing } from "@/i18n/routing";
 import { CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Card } from "@/components/cards/Card";
-import { Button } from "@/components/ui/button";
 import {
   Tooltip,
   TooltipContent,
@@ -43,7 +41,7 @@ export async function generateMetadata({
 export default function Contact() {
   const t = useTranslations("contact");
   return (
-    <main className="flex w-full flex-col items-center">
+    <main className="flex w-full flex-col pb-8 items-center">
       <div className="bg-orange-primary-50 border-primary w-full border-y py-8 px-6 text-center">
         <div className="text-primary">
           <h1 id="contact" className="pb-3 text-5xl font-semibold capitalize">
