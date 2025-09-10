@@ -374,18 +374,22 @@
           "label": "Your message",
           "placeholder": "Write us your message"
         },
+        "turnstile": {
+            "label": "Let us know you're human",
+            "error": "Security check failed. Please try again.",
+            "expire": "Security check expired. Please try again."
+        },
         "errors": {
           "required": "{field_name} is mandatory.",
           "min": "{field_name} must have at least {amount} characters.",
           "max": "{field_name} must have at most {amount} characters.",
-          "email": "This field must be in the format of an email,  e.g: example@email.com",
-          "captchaError": "Security check failed. Please try again.",
-          "captchaVerify": "Please verify you are not a robot.",
-          "captchaFailed": "Security check expired. Please verify again.",
-          "captchaTokenError": "Verification failed. Please refresh the page and try again."
+          "email": "This field must be in the format of an email,  e.g: example@email.com"
         },
-        "serverError": "Something went wrong on our end. Please try again in a few minutes. If this continues, reach out to our support team.",
-        "success": "The email has been sent successfully!",
+        "server": {
+            "internal": "Something went wrong on our end. Please try again in a few minutes. If this continues, reach out to our support team by other means.",
+            "bad_request": "Verification failed. Please refresh the page and try again.",
+            "success": "The email has been sent successfully!"
+        },
         "button": "Send message"
       }
     },

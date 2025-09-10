@@ -31,7 +31,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(
       {
         success: false,
-        message: t("serverError"),
+        message: t("server.internal"),
       },
       { status: 500 },
     );
@@ -50,7 +50,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(
       {
         success: false,
-        message: t("errors.captchaTokenError"),
+        message: t("server.bad_request"),
       },
       { status: 400 },
     );
@@ -75,22 +75,22 @@ export async function POST(request: NextRequest) {
 
   try {
     await transporter.sendMail({
-      from: "support@bachacode.com", // verified sender email
-      to: "support@bachacode.com", // recipient email
+      from: "support@bachacode.com", 
+      to: "support@bachacode.com", 
       replyTo: email,
-      subject: `${subject} - ${company ?? "Sin compañia"} - ${name}`, // Subject line
-      html, // html body
+      subject: `${subject} - ${company ?? "Sin compañia"} - ${name}`, 
+      html, 
     });
 
     return NextResponse.json({
       success: true,
-      message: t("success"),
+      message: t("server.success"),
     });
   } catch {
     return NextResponse.json(
       {
         success: false,
-        message: t("serverError"),
+        message: t("server.internal"),
       },
       { status: 500 },
     );

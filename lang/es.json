@@ -351,44 +351,48 @@
             "subtitle": "¿Estás listo para llevar tu negocio en línea? Estamos aquí para ayudarte a crear un sitio web profesional."
         },
         "form_section": {
-            "title": "¿quieres comenzar tu proyecto?",
-            "subtitle": "¡envíanos un mensaje con tu propuesta!",
-            "form": {
-                "name": {
-                    "label": "Nombre completo",
-                    "placeholder": "Ingresa tu nombre completo"
-                },
-                "company_name": {
-                    "label": "Nombre de la empresa",
-                    "placeholder": "Ingresa el nombre de tu empresa"
-                },
-                "email": {
-                    "label": "Dirección de correo electrónico",
-                    "placeholder": "Ingresa tu dirección de correo electrónico"
-                },
-                "subject": {
-                    "label": "Asunto",
-                    "placeholder": "Ingresa el asunto del mensaje"
-                },
-                "message": {
-                    "label": "Tu mensaje",
-                    "placeholder": "Escríbenos tu mensaje"
-                },
-                "errors": {
-                    "required": "{field_name} es obligatorio.",
-                    "min": "{field_name} debe tener al menos {amount} caracteres.",
-                    "max": "{field_name} debe tener como máximo {amount} caracteres.",
-                    "email": "Este campo debe tener el formato de un correo electrónico, por ejemplo: ejemplo@email.com",
-                    "captchaError": "La verificación de seguridad falló. Inténtalo de nuevo.",
-                    "captchaVerify": "Por favor, verifica que no eres un robot.",
-                    "captchaFailed": "La verificación de seguridad expiró. Vuelve a verificar.",
-                    "captchaTokenError": "La verificación falló. Actualiza la página e inténtalo nuevamente."
-                },
-                "serverError": "Ocurrió un error en nuestro sistema. Por favor, inténtalo de nuevo en unos minutos. Si el problema persiste, comunícate con nuestro equipo de soporte.",
-                "success": "¡El correo electrónico se envió con éxito!",
-                "button": "Enviar mensaje"
-            }
-        },
+    "title": "¿Quieres que tu proyecto empiece?",
+    "subtitle": "¡Envíanos un mensaje con tu propuesta!",
+    "form": {
+      "name": {
+        "label": "Nombre completo",
+        "placeholder": "Introduce tu nombre completo"
+      },
+      "company_name": {
+        "label": "Nombre de la empresa",
+        "placeholder": "Introduce el nombre de tu empresa"
+      },
+      "email": {
+        "label": "Dirección de correo electrónico",
+        "placeholder": "Introduce tu dirección de correo electrónico"
+      },
+      "subject": {
+        "label": "Asunto",
+        "placeholder": "Introduce el asunto del mensaje"
+      },
+      "message": {
+        "label": "Tu mensaje",
+        "placeholder": "Escríbenos tu mensaje"
+      },
+      "turnstile": {
+        "label": "Haznos saber que eres humano",
+        "error": "El chequeo de seguridad falló. Por favor, inténtalo de nuevo.",
+        "expire": "El chequeo de seguridad ha expirado. Por favor, inténtalo de nuevo."
+      },
+      "errors": {
+        "required": "{field_name} es obligatorio.",
+        "min": "{field_name} debe tener al menos {amount} caracteres.",
+        "max": "{field_name} debe tener como máximo {amount} caracteres.",
+        "email": "Este campo debe tener el formato de un correo electrónico, ej: ejemplo@email.com"
+      },
+      "server": {
+        "internal": "Algo ha salido mal por nuestra parte. Por favor, inténtalo de nuevo en unos minutos. Si esto continúa, contacta con nuestro equipo de soporte por otros medios.",
+        "bad_request": "La verificación falló. Por favor, actualiza la página e inténtalo de nuevo.",
+        "success": "¡El correo electrónico ha sido enviado con éxito!"
+      },
+      "button": "Enviar mensaje"
+    }
+  },
         "info_section": {
             "title": "¿necesitas más formas de contactarnos?",
             "subtitle": "encuentra nuestros datos de contacto abajo — ¡respondemos rápido!",
