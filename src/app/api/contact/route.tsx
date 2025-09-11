@@ -10,7 +10,7 @@ import { routing } from "@/i18n/routing";
 
 export async function POST(request: NextRequest) {
   const { turnstileToken, ...body } = await request.json();
-  const result = contactFormSchema.safeParse(body);
+  const parsedForm = contactFormSchema.safeParse(body);
   const locale = request.nextUrl.searchParams.get("locale") || "en";
 
   const t = await getTranslations({
@@ -18,15 +18,25 @@ export async function POST(request: NextRequest) {
     namespace: "contact.form_section.form",
   });
 
+  if (!parsedForm.success) {
+    return NextResponse.json(
+      { success: false, message: t("server.bad_request") },
+      { status: 400 },
+    );
+  }
+
   const turnstileSecretKey = process.env.TURNSTILE_SECRET_KEY;
+  const smtpHost = process.env.SMTP_HOST;
+  const smtpPort = process.env.SMTP_PORT;
   const smtpUsername = process.env.SMTP_USERNAME;
   const smtpPassword = process.env.SMTP_PASSWORD;
 
   if (
     !turnstileSecretKey ||
+    !smtpHost ||
+    !smtpPort ||
     !smtpUsername ||
-    !smtpPassword ||
-    !result.success
+    !smtpPassword
   ) {
     return NextResponse.json(
       {
@@ -36,8 +46,6 @@ export async function POST(request: NextRequest) {
       { status: 500 },
     );
   }
-
-  const { name, company, email, subject, message } = result.data;
 
   const validationResponse = await validateTurnstileToken({
     token: turnstileToken,
@@ -57,13 +65,15 @@ export async function POST(request: NextRequest) {
   }
 
   const transporter = nodemailer.createTransport({
-    host: "mail.smtp2go.com",
-    port: 2525,
+    host: smtpHost,
+    port: Number(smtpPort),
     auth: {
       user: smtpUsername,
       pass: smtpPassword,
     },
   });
+
+  const { name, company, email, subject, message } = parsedForm.data;
 
   const html = generateContactEmail({
     name,
@@ -89,7 +99,8 @@ export async function POST(request: NextRequest) {
       success: true,
       message: t("server.success"),
     });
-  } catch {
+  } catch (err) {
+    console.error("Email sending failed:", err);
     return NextResponse.json(
       {
         success: false,

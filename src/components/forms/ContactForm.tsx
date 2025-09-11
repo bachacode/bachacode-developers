@@ -76,37 +76,49 @@ export default function ContactForm() {
     setLoading(true);
 
     if (turnstileStatus !== "success" || turnstileToken === null) {
-      setError(true);
-      setNotification(t("turnstile.error"));
+      handleError(t("turnstile.error"));
       setLoading(false);
       return;
     }
 
-    await sendEmail(turnstileToken, data);
+    try {
+      const message = await sendEmail(turnstileToken!, data);
+
+      handleSuccess(message);
+      form.reset();
+
+      setTimeout(() => setLoading(false), 3000);
+    } catch (err) {
+      if (axios.isAxiosError(err) && err.response) {
+        handleError(err.response.data?.message || err.message);
+      } else {
+        handleError(t("server.internal"));
+      }
+
+      setLoading(false);
+    }
   }
 
   async function sendEmail(
     turnstileToken: string,
     data: z.infer<typeof formSchema>,
-  ) {
-    try {
-      const response = await axios.post(`/api/contact?locale=${locale}`, {
-        ...data,
-        turnstileToken,
-      });
+  ): Promise<string> {
+    const response = await axios.post(`/api/contact?locale=${locale}`, {
+      ...data,
+      turnstileToken,
+    });
 
-      setError(false);
-      setNotification(response.data.message);
-    } catch (err) {
-      if (axios.isAxiosError(err) && err.response) {
-        setNotification(err.response.data?.message || err.message);
-      } else {
-        setNotification("Something went wrong while sending your message.");
-      }
-      setError(true);
-    } finally {
-      setLoading(false);
-    }
+    return response.data.message;
+  }
+
+  function handleSuccess(message: string) {
+    setError(false);
+    setNotification(message);
+  }
+
+  function handleError(message: string) {
+    setError(true);
+    setNotification(message);
   }
 
   return (
